@@ -3,6 +3,9 @@
     [Year]         DATE NOT NULL,
     [BeginingDate] DATE NOT NULL,
     [EndDate]      DATE NOT NULL,
-    CONSTRAINT [PK_Festivals] PRIMARY KEY CLUSTERED ([FestivalId] ASC)
+	[EditDate] DATETIME NOT NULL, 
+    [EditedBy] INT NOT NULL,
+	CONSTRAINT [PK_Festivals] PRIMARY KEY CLUSTERED ([FestivalId] ASC),
+	CONSTRAINT [FK_Festivals_Users] FOREIGN KEY ([EditedBy]) REFERENCES [dbo].[Users] ([UserId]) 
 );
 
