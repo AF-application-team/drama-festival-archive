@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AF_Models
 {
-    class Position
+    public class Position
     {
     }
 }

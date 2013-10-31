@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AF_BusinessLogic
 {
-    class RelationFestivalPersonPositionService
+    public class RelationFestivalPersonPositionService
     {
     }
 }
