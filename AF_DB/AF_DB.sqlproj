@@ -80,4 +80,7 @@
   <ItemGroup>
     <None Include="AF_DB.publish.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="AF_DB.refactorlog" />
+  </ItemGroup>
 </Project>

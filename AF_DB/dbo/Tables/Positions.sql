@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Positions] (
     [PositionId]    INT            NOT NULL,
-    [PositionTItle] NVARCHAR (100) NOT NULL,
+    [PositionTitle] NVARCHAR (100) NOT NULL,
     [Section]       INT            NOT NULL,
     [Order]         INT            NOT NULL,
 	[EditDate] DATETIME NOT NULL, 

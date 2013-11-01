@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[Festivals] (
     [FestivalId]   INT  NOT NULL,
-    [Year]         DATE NOT NULL,
-    [BeginingDate] DATE NOT NULL,
+    [Year]         INT NOT NULL,
+    [BeginningDate] DATE NOT NULL,
     [EndDate]      DATE NOT NULL,
 	[EditDate] DATETIME NOT NULL, 
     [EditedBy] INT NOT NULL,

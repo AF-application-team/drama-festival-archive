@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="f2d6caee-1378-4bbb-b4b1-3dde85258d4b" ChangeDateTime="11/01/2013 16:12:51">
+    <Property Name="ElementName" Value="[dbo].[Festivals].[BeginingDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Festivals]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BeginningDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="684ce4d0-6c8c-4474-bec6-e3978b77085b" ChangeDateTime="11/01/2013 16:38:39">
+    <Property Name="ElementName" Value="[dbo].[Positions].[PositionTItle]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Positions]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PositionTitle" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b3d89003-0d3c-45cd-a413-456c676478ba" ChangeDateTime="11/01/2013 16:43:45">
+    <Property Name="ElementName" Value="[dbo].[RelationPersonAward].[RelationPersonAward]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RelationPersonAward]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RelationPersonAwardId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f1a36371-4810-4ed3-97a7-b889f22c07e1" ChangeDateTime="11/01/2013 16:47:39">
+    <Property Name="ElementName" Value="[dbo].[RelationPresonPlayRole].[RelationPresonPlayRole]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RelationPresonPlayRole]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RelationPresonPlayRoleId" />
+  </Operation>
+</Operations>
