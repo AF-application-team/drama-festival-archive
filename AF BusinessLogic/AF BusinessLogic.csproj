@@ -51,7 +51,7 @@
     <Compile Include="RelationFestivalPersonPositionService.cs" />
     <Compile Include="RelationPersonAwardService.cs" />
     <Compile Include="RelationPersonPlayJobService.cs" />
-    <Compile Include="RelationPresonPlayRoleService.cs" />
+    <Compile Include="RelationPersonPlayRoleService.cs" />
     <Compile Include="UserService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

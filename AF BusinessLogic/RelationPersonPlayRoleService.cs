@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AF_BusinessLogic
 {
-    public class RelationPresonPlayRoleService
+    public class RelationPersonPlayRoleService
     {
     }
 }
