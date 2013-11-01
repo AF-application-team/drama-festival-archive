@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AF_Models
 {
-    public class RelationPresonPlayRole
+    public class RelationPersonPlayRole
     {
         public int RelationPresonPlayRoleId { get; set; }
         public int PersonId { get; set; }

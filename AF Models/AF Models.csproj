@@ -60,7 +60,7 @@
     <Compile Include="RelationFestivalPersonPosition.cs" />
     <Compile Include="RelationPersonAward.cs" />
     <Compile Include="RelationPersonPlayJob.cs" />
-    <Compile Include="RelationPresonPlayRole.cs" />
+    <Compile Include="RelationPersonPlayRole.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
