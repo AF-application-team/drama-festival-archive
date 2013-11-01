@@ -20,7 +20,14 @@
                 <DockPanel>
                     <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top">
                         <TextBox Margin="5" Width="100" />
-                        <Button Width="auto" Height="20" Content="Search" Margin="0,5" Background="LightGray" />
+                        <Button Width="auto" Height="25" Content="Wyszukaj"  Padding="2,2" Margin="5,3" Background="LightGray" />
+                        <Button Width="27" Height="27" Background="LightGray" Content="Filtr" Margin="5,2"/>
+                        <Button Width="27" Height="27" Background="LightGray" Content="Pola" Margin="5,2"/>
+                       
+
+                    </ToolBar>
+                    <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top">
+                        <Label Content="Filtering:" />
                         <ComboBox SelectedIndex="0" Margin="10,5,5,5" >
                             <ComboBoxItem IsSelected="True">Job Filter</ComboBoxItem>
                             <ComboBoxItem>Directior</ComboBoxItem>
@@ -39,10 +46,18 @@
                             <ComboBoxItem>d</ComboBoxItem>
                             <ComboBoxItem>e</ComboBoxItem>
                         </ComboBox>
-
                     </ToolBar>
                     <DataGrid DockPanel.Dock="Bottom" >
-                    
+                        <DataGrid.Columns>
+                            <DataGridCheckBoxColumn Binding="{x:Null}" CanUserSort="False" CanUserReorder="False" CanUserResize="False" ClipboardContentBinding="{x:Null}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Id Osoby" IsReadOnly="True"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Imię"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Nazwisko"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Płeć" Visibility="Hidden"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Rocznik"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Profil"/>
+                        </DataGrid.Columns>
+
                     </DataGrid>
                 </DockPanel>
             </TabItem>
