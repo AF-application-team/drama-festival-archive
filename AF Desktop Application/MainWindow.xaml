@@ -1,7 +1,12 @@
 ﻿<Window x:Class="AF_Desktop_Application.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:AF_Desktop_Application"
         Title="MainWindow" WindowStartupLocation="CenterScreen" Width="1000" Height="700">
+    <Window.Resources>
+        <local:BindingProxy x:Key="proxy" Data="{Binding}" />
+        <BooleanToVisibilityConverter x:Key="Bool2Visibility"/>
+    </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="SAVE" />
@@ -23,11 +28,10 @@
                         <Button Width="auto" Height="25" Content="Wyszukaj"  Padding="2,2" Margin="5,3" Background="LightGray" />
                         <Button Width="27" Height="27" Background="LightGray" Content="Filtr" Margin="5,2"/>
                         <Button Width="27" Height="27" Background="LightGray" Content="Pola" Margin="5,2"/>
-                       
-
                     </ToolBar>
+                    
                     <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top">
-                        <Label Content="Filtering:" />
+                        <Label Content="Filtrowanie:" />
                         <ComboBox SelectedIndex="0" Margin="10,5,5,5" >
                             <ComboBoxItem IsSelected="True">Job Filter</ComboBoxItem>
                             <ComboBoxItem>Directior</ComboBoxItem>
@@ -47,15 +51,28 @@
                             <ComboBoxItem>e</ComboBoxItem>
                         </ComboBox>
                     </ToolBar>
+
+                    <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top">
+                        <Label Content="Kolumny:" />
+                        <CheckBox x:Name="PersonFirstNameColumnCheckbox" Content="Imię" IsChecked="True" />
+                        <CheckBox x:Name="PersonLastNameColumnCheckbox" Content="Nazwisko" IsChecked="True" />
+                        <CheckBox x:Name="PersonSexColumnCheckbox" Content="Płeć" IsChecked="False" />
+                        <CheckBox x:Name="PersonYearColumnCheckbox" Content="Rocznik" IsChecked="True" />
+                        <CheckBox x:Name="PersonProfileColumnCheckbox" Content="Profil" IsChecked="True" />
+                        <CheckBox x:Name="PersonEditInfoFillterCheckbox" Content="Edytor i data edycji" IsChecked="False" />
+                    </ToolBar>
+
                     <DataGrid DockPanel.Dock="Bottom" >
                         <DataGrid.Columns>
                             <DataGridCheckBoxColumn Binding="{x:Null}" CanUserSort="False" CanUserReorder="False" CanUserResize="False" ClipboardContentBinding="{x:Null}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Id Osoby" IsReadOnly="True"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Imię"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Nazwisko"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Płeć" Visibility="Hidden"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Rocznik"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Profil"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Id Osoby" IsReadOnly="True" Visibility="Visible"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Imię" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonFirstNameColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Nazwisko" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonLastNameColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Płeć" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonSexColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Rocznik" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonYearColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Profil" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonProfileColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Data Edycji" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonEditInfoFillterCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Edytor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonEditInfoFillterCheckbox}}"/>
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -132,7 +149,16 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />                        
                     </Grid.ColumnDefinitions>
-                    <Label Content="Categories" Grid.Column="0" />
+                    <DockPanel Grid.Column="0">
+                        <Label Content="Categories" DockPanel.Dock="Top" />
+                        <DataGrid>
+                            <DataGridColumnHeader Content="Grupa">
+                                
+                            </DataGridColumnHeader>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Nazwisko" IsReadOnly="True" Visibility="Visible"/>
+                            <!--<DataGridColumn />-->
+                        </DataGrid>
+                      </DockPanel>
                     <Label Content="Jobs" Grid.Column="1" />
                     <Label Content="Positions" Grid.Column="2" />
                     <Label Content="Other" Grid.Column="3" Margin="2,0,-2,0" />

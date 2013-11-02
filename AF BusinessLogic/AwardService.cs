@@ -8,5 +8,6 @@ namespace AF_BusinessLogic
 {
     public class AwardService
     {
+
     }
 }
