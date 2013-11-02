@@ -16,7 +16,6 @@ namespace AF_DataAccessLayer
         Award GetAward(int id);
         List<Award> GetAwardsPaged(int pageNr, int pageAmount);
         #endregion
-
         #region Category
         void AddCategory(Category newCategory);
         void RemoveCategory(int id);
@@ -24,7 +23,6 @@ namespace AF_DataAccessLayer
         Category GetCategory(int id);
         List<Category> GetCategoriesPaged(int pageNr, int pageAmount);
         #endregion
-
         #region Festival
         void AddFestival(Festival newFestival);
         void RemoveFestival(int id);
@@ -32,7 +30,6 @@ namespace AF_DataAccessLayer
         Festival GetFestival(int id);
         List<Festival> GetFestivalsPaged(int pageNr, int pageAmount);
         #endregion
-
         #region Job
         void AddJob(Job newJob);
         void RemoveJob(int id);
@@ -40,7 +37,6 @@ namespace AF_DataAccessLayer
         Job GetJob(int id);
         List<Job> GetJobsPaged(int pageNr, int pageAmount);
         #endregion
-
         #region News
         void AddNews(News newNews);
         void RemoveNews(int id);
@@ -48,7 +44,6 @@ namespace AF_DataAccessLayer
         News GetNews(int id);
         List<News> GetNewsPaged(int pageNr, int pageAmount);
         #endregion
-
         #region Person
         void AddPerson(Person newPerson);
         void RemovePerson(int id);
@@ -56,7 +51,6 @@ namespace AF_DataAccessLayer
         Person GetPerson(int id);
         List<Person> GetPeoplePaged(int pageNr, int pageAmount);
         #endregion
-
         #region Play
         void AddPlay(Play newPlay);
         void RemovePlay(int id);
@@ -64,7 +58,6 @@ namespace AF_DataAccessLayer
         Play GetPlay(int id);
         List<Play> GetPlaysPaged(int pageNr, int pageAmount);
         #endregion
-
         #region Position
         void AddPosition(Position newPosition);
         void RemovePosition(int id);
@@ -72,7 +65,6 @@ namespace AF_DataAccessLayer
         Position GetPosition(int id);
         List<Position> GetPositionsPaged(int pageNr, int pageAmount);
         #endregion
-
         #region RelationFestivalPersonPosition
         void AddRelationFestivalPersonPosition(RelationFestivalPersonPosition newRelationFestivalPersonPosition);
         void RemoveRelationFestivalPersonPosition(int id);
@@ -80,7 +72,6 @@ namespace AF_DataAccessLayer
         RelationFestivalPersonPosition GetRelationFestivalPersonPosition(int id);
         List<RelationFestivalPersonPosition> GetRelationFestivalPersonPositionPaged(int pageNr, int pageAmount);
         #endregion
-
         #region RelationPersonAward
         void AddRelationPersonAward(RelationPersonAward newRelationPersonAward);
         void RemoveRelationPersonAward(int id);
@@ -88,7 +79,6 @@ namespace AF_DataAccessLayer
         RelationPersonAward GetRelationPersonAward(int id);
         List<RelationPersonAward> GetRelationPersonAwardPaged(int pageNr, int pageAmount);
         #endregion
-
         #region RelationPersonPlayJob
         void AddRelationPersonPlayJob(RelationPersonPlayJob newRelationPersonPlayJob);
         void RemoveRelationPersonPlayJob(int id);
@@ -96,7 +86,6 @@ namespace AF_DataAccessLayer
         RelationPersonPlayJob GetRelationPersonPlayJob(int id);
         List<RelationPersonPlayJob> GetRelationPersonPlayJobPaged(int pageNr, int pageAmount);
         #endregion
-
         #region RelationPersonPlayRole
         void AddRelationPersonPlayRole(RelationPersonPlayRole newRelationPersonPlayRole);
         void RemoveRelationPersonPlayRole(int id);
@@ -104,7 +93,6 @@ namespace AF_DataAccessLayer
         RelationPersonPlayRole GetRelationPersonPlayRole(int id);
         List<RelationPersonPlayRole> GetRelationPersonPlayRolePaged(int pageNr, int pageAmount);
         #endregion
-
         #region User
         void AddUser(User newUser);
         void RemoveUser(int id);

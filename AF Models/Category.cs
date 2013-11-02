@@ -14,5 +14,8 @@ namespace AF_Models
         public int Order { get; set; }
         public DateTime EditDate { get; set; }
         public int EditedBy { get; set; }
+
+
+        public virtual User Edited { get; set; }
     }
 }
