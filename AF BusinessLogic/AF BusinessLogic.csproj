@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AF_Logic.cs" />
     <Compile Include="AwardService.cs" />
     <Compile Include="CategoryService.cs" />
     <Compile Include="FestivalService.cs" />
@@ -53,6 +54,16 @@
     <Compile Include="RelationPersonPlayJobService.cs" />
     <Compile Include="RelationPersonPlayRoleService.cs" />
     <Compile Include="UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AF DataAccessLayer\AF DataAccessLayer.csproj">
+      <Project>{457cbc3d-7ee1-4e1d-9830-1f48083740fa}</Project>
+      <Name>AF DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AF Models\AF Models.csproj">
+      <Project>{87104c17-7465-465f-99d6-c2c95051a714}</Project>
+      <Name>AF Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
