@@ -14,11 +14,11 @@
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" Height="20">
         </StatusBar>
-        <TabControl >
+        <TabControl>
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <Image Name="img" Height="auto" Width="auto" Source="Images/peopleIcon.png" />
+                        <Image Name="PeopleImg" Height="24" Width="auto" Source="Images/PeopleIcon.png" />
                         <TextBlock Text="Osoby" Margin="2,0,0,0" VerticalAlignment="Center" />
                     </StackPanel>
                 </TabItem.Header>
@@ -26,41 +26,62 @@
                     <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top">
                         <TextBox Margin="5" Width="100" />
                         <Button Width="auto" Height="25" Content="Wyszukaj"  Padding="2,2" Margin="5,3" Background="LightGray" />
-                        <Button Width="27" Height="27" Background="LightGray" Content="Filtr" Margin="5,2"/>
-                        <Button Width="27" Height="27" Background="LightGray" Content="Pola" Margin="5,2"/>
+                        <CheckBox x:Name="ShowPeopleColumnsCheckBox" Height="27" Content="Kolumny" Margin="5,2" />
+                        <CheckBox x:Name="ShowPeopleFiltersCheckBox" Height="27" Content="Filtry" Margin="5,2" />
                     </ToolBar>
-                    
-                    <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top">
+                    <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top" Visibility="{Binding ElementName=ShowPeopleColumnsCheckBox, Path=IsChecked, Converter={StaticResource Bool2Visibility}}">
+                        <Label Content="Kolumny:" />
+                        <CheckBox x:Name="PersonFirstNameColumnCheckbox" Content="Imię" IsChecked="True" Margin="2,0"/>
+                        <CheckBox x:Name="PersonLastNameColumnCheckbox" Content="Nazwisko" IsChecked="True" Margin="2,0"/>
+                        <CheckBox x:Name="PersonSexColumnCheckbox" Content="Płeć" IsChecked="False" Margin="2,0"/>
+                        <CheckBox x:Name="PersonYearColumnCheckbox" Content="Rocznik" IsChecked="True" Margin="2,0"/>
+                        <CheckBox x:Name="PersonProfileColumnCheckbox" Content="Profil" IsChecked="True" Margin="2,0"/>
+                        <CheckBox x:Name="PersonEditInfoFillterCheckbox" Content="Edytor i data edycji" IsChecked="False" Margin="2,0"/>
+                    </ToolBar>
+                    <StackPanel  Width="150" VerticalAlignment="Top" DockPanel.Dock="Right" Visibility="{Binding ElementName=ShowPeopleFiltersCheckBox, Path=IsChecked, Converter={StaticResource Bool2Visibility}}">
                         <Label Content="Filtrowanie:" />
-                        <ComboBox SelectedIndex="0" Margin="10,5,5,5" >
-                            <ComboBoxItem IsSelected="True">Job Filter</ComboBoxItem>
+                        <Label Content="Praca:" />
+                        <ComboBox x:Name="PersonJobFilter" Margin="5,5">
+                            <ComboBoxItem>Job Filter</ComboBoxItem>
                             <ComboBoxItem>Directior</ComboBoxItem>
                             <ComboBoxItem>Screenwriter</ComboBoxItem>
                         </ComboBox>
-                        <ComboBox SelectedIndex="0" Margin="5,5">
+                        <Label Content="Pozycja:"/>
+                        <ComboBox x:Name="PersonPositionFilter" Margin="5,5">
                             <ComboBoxItem>Position Filter</ComboBoxItem>
                             <ComboBoxItem>Jury</ComboBoxItem>
                             <ComboBoxItem>Lighting producer</ComboBoxItem>
                         </ComboBox>
-                        <ComboBox SelectedIndex="0" Margin="5,5">
-                            <ComboBoxItem>Class Profile</ComboBoxItem>
-                            <ComboBoxItem>a</ComboBoxItem>
-                            <ComboBoxItem>b</ComboBoxItem>
-                            <ComboBoxItem>c</ComboBoxItem>
-                            <ComboBoxItem>d</ComboBoxItem>
-                            <ComboBoxItem>e</ComboBoxItem>
+                        <Label Content="Nagroda:"/>
+                        <ComboBox x:Name="PersonAwardFilter" Margin="5,5">
+                            <ComboBoxItem>Grand Prix</ComboBoxItem>
+                            <ComboBoxItem>Small Grand Prix</ComboBoxItem>
                         </ComboBox>
-                    </ToolBar>
+                        <Label Content="Festiwal:"/>
+                        <ComboBox x:Name="PersonFestivalFilter" Margin="5,5">
+                            <ComboBoxItem>XX</ComboBoxItem>
+                            <ComboBoxItem>XXI</ComboBoxItem>
+                        </ComboBox>
+                        <Label Content="Rocznik:"/>
+                        <ComboBox x:Name="PersonYearFilter" Margin="5,5">
+                            <ComboBoxItem>1992</ComboBoxItem>
+                            <ComboBoxItem>1991</ComboBoxItem>
+                            <ComboBoxItem>1990</ComboBoxItem>
+                            <ComboBoxItem>1989</ComboBoxItem>
+                            <ComboBoxItem>1988</ComboBoxItem>
+                        </ComboBox>
+                        <Label Content="Profil:"/>
+                        <ListBox x:Name="PersonProfileFilter" Margin="5,5" SelectionMode="Multiple">
+                            <ListBoxItem>a</ListBoxItem>
+                            <ListBoxItem>b</ListBoxItem>
+                            <ListBoxItem>c</ListBoxItem>
+                            <ListBoxItem>d</ListBoxItem>
+                            <ListBoxItem>e</ListBoxItem>
+                        </ListBox>
 
-                    <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top">
-                        <Label Content="Kolumny:" />
-                        <CheckBox x:Name="PersonFirstNameColumnCheckbox" Content="Imię" IsChecked="True" />
-                        <CheckBox x:Name="PersonLastNameColumnCheckbox" Content="Nazwisko" IsChecked="True" />
-                        <CheckBox x:Name="PersonSexColumnCheckbox" Content="Płeć" IsChecked="False" />
-                        <CheckBox x:Name="PersonYearColumnCheckbox" Content="Rocznik" IsChecked="True" />
-                        <CheckBox x:Name="PersonProfileColumnCheckbox" Content="Profil" IsChecked="True" />
-                        <CheckBox x:Name="PersonEditInfoFillterCheckbox" Content="Edytor i data edycji" IsChecked="False" />
-                    </ToolBar>
+                    </StackPanel>
+
+
 
                     <DataGrid DockPanel.Dock="Bottom" >
                         <DataGrid.Columns>
@@ -78,37 +99,91 @@
                     </DataGrid>
                 </DockPanel>
             </TabItem>
-            <TabItem Header="Przedstawienia">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image x:Name="PlaysImg" Height="24" Width="auto" Source="Images/PlaysIcon.png" />
+                        <TextBlock Text="Przedstawienia" Margin="2,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
                 <DockPanel>
                     <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top">
                         <TextBox Margin="5" Width="100" />
-                        <Button Width="auto" Height="20" Content="Search" Margin="0,5" Background="LightGray" />
-                        <ComboBox SelectedIndex="0" Margin="10,5,5,5">
+                        <Button Width="auto" Height="25" Content="Wyszukaj"  Padding="2,2" Margin="5,3" Background="LightGray" />
+                        <CheckBox x:Name="ShowPlaysColumnsCheckBox" Height="27" Content="Kolumny" Margin="5,2" />
+                        <CheckBox x:Name="ShowPlaysFiltersCheckBox" Height="27" Content="Filtry" Margin="5,2" /> 
+                    </ToolBar>
+                    <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top" Visibility="{Binding ElementName=ShowPlaysColumnsCheckBox, Path=IsChecked, Converter={StaticResource Bool2Visibility}}">
+                        <Label Content="Kolumny:" />
+                        <CheckBox x:Name="PlayTitleColumnCheckbox" Content="Tytuł" IsChecked="True" Margin="2,0"/>
+                        <CheckBox x:Name="PlayAuthorColumnCheckbox" Content="Autor" IsChecked="True" Margin="2,0"/>
+                        <CheckBox x:Name="PlayPlayedByColumnCheckbox" Content="Wykonanie" IsChecked="True" Margin="2,0"/>
+                        <CheckBox x:Name="PlayFestivalColumnCheckbox" Content="Festiwal" IsChecked="True" Margin="2,0"/>
+                        <CheckBox x:Name="PlayDayColumnCheckbox" Content="Dzień" IsChecked="True" Margin="2,0"/>
+                        <CheckBox x:Name="PlayOrderColumnCheckbox" Content="Kolejność" IsChecked="True" Margin="2,0"/>
+                        <CheckBox x:Name="PlayMottoColumnCheckbox" Content="Motto" IsChecked="False" Margin="2,0"/>
+                        <CheckBox x:Name="PlayEditInfoFillterCheckbox" Content="Edytor i data edycji" IsChecked="False" Margin="2,0"/>
+                    </ToolBar>
+                    <StackPanel  Width="150" VerticalAlignment="Top" DockPanel.Dock="Right" Visibility="{Binding ElementName=ShowPlaysFiltersCheckBox, Path=IsChecked, Converter={StaticResource Bool2Visibility}}">
+                        <Label Content="Filtrowanie:" />
+                        <!--<Label Content="Wykonanie" />
+                        <ComboBox x:Name="PlayPlayedByFilter" Margin="5,5">
+                            
+                        </ComboBox>-->
+                        <Label Content="Festiwal:"/>
+                        <ComboBox x:Name="PlayFestivalFilter" Margin="5,5">
+                            <ComboBoxItem>XX</ComboBoxItem>
+                            <ComboBoxItem>XXI</ComboBoxItem>
+                        </ComboBox>
+                        <Label Content="Nagroda:"/>
+                        <ComboBox x:Name="PlayAwardFilter" Margin="5,5">
                             <ComboBoxItem>Award Filter</ComboBoxItem>
                             <ComboBoxItem>Grand Prix</ComboBoxItem>
                             <ComboBoxItem>Small Grand Prix</ComboBoxItem>
                         </ComboBox>
-                        <ComboBox SelectedIndex="0" Margin="5,5">
-                            <ComboBoxItem>Festival Filter</ComboBoxItem>
-                            <ComboBoxItem>XX</ComboBoxItem>
-                            <ComboBoxItem>XXI</ComboBoxItem>
+                        <Label Content="Rocznik:"/>
+                        <ComboBox x:Name="PlayYearFilter" Margin="5,5">
+                            <ComboBoxItem>1992</ComboBoxItem>
+                            <ComboBoxItem>1991</ComboBoxItem>
+                            <ComboBoxItem>1990</ComboBoxItem>
+                            <ComboBoxItem>1989</ComboBoxItem>
+                            <ComboBoxItem>1988</ComboBoxItem>
                         </ComboBox>
-                        <ComboBox SelectedIndex="0" Margin="5,5" >
-                            <ComboBoxItem>Class Profile</ComboBoxItem>
-                            <ComboBoxItem>a</ComboBoxItem>
-                            <ComboBoxItem>b</ComboBoxItem>
-                            <ComboBoxItem>c</ComboBoxItem>
-                            <ComboBoxItem>d</ComboBoxItem>
-                            <ComboBoxItem>e</ComboBoxItem>
-                        </ComboBox>
+                        <Label Content="Profil:"/>
+                        <ListBox x:Name="PlayProfileFilter" Margin="5,5" SelectionMode="Multiple">
+                            <ListBoxItem>a</ListBoxItem>
+                            <ListBoxItem>b</ListBoxItem>
+                            <ListBoxItem>c</ListBoxItem>
+                            <ListBoxItem>d</ListBoxItem>
+                            <ListBoxItem>e</ListBoxItem>
+                        </ListBox>
+                    </StackPanel>
 
-                    </ToolBar>
+
                     <DataGrid DockPanel.Dock="Bottom" >
-
+                        <DataGrid.Columns>
+                            <DataGridCheckBoxColumn Binding="{x:Null}" CanUserSort="False" CanUserReorder="False" CanUserResize="False" ClipboardContentBinding="{x:Null}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Id Przedstawienia" IsReadOnly="True" Visibility="Visible"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Tytuł" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayTitleColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Autor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayAuthorColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Wykonanie" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayPlayedByColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Festiwal" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayFestivalColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Dzień" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayDayColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Kolejność" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayOrderColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Motto" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayMottoColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Data Edycji" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayEditInfoFillterCheckbox}}"/>
+                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Edytor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayEditInfoFillterCheckbox}}"/>
+                        </DataGrid.Columns>
                     </DataGrid>
                 </DockPanel>
             </TabItem>
-            <TabItem Header="Nagrody">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Name="AwardsImg" Height="24" Width="auto" Source="Images/AwardsIcon.png" />
+                        <TextBlock Text="Nagrody" Margin="2,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
                 <DockPanel>
                     <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top">
                         <TextBox Margin="5" Width="100" />
@@ -138,7 +213,13 @@
                     </DataGrid>
                 </DockPanel>
             </TabItem>
-            <TabItem Header="Konfiguracja">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Name="ConfigImg" Height="24" Width="auto" Source="Images/ConfigurationIcon.png" />
+                        <TextBlock Text="Konfiguracja" Margin="2,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -147,18 +228,15 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />                        
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <DockPanel Grid.Column="0">
                         <Label Content="Categories" DockPanel.Dock="Top" />
                         <DataGrid>
-                            <DataGridColumnHeader Content="Grupa">
-                                
-                            </DataGridColumnHeader>
                             <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Nazwisko" IsReadOnly="True" Visibility="Visible"/>
                             <!--<DataGridColumn />-->
                         </DataGrid>
-                      </DockPanel>
+                    </DockPanel>
                     <Label Content="Jobs" Grid.Column="1" />
                     <Label Content="Positions" Grid.Column="2" />
                     <Label Content="Other" Grid.Column="3" Margin="2,0,-2,0" />
