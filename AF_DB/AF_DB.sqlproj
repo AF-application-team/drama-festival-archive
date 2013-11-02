@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{d720f851-36e3-4455-9472-c3a65f43c221}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -84,6 +84,8 @@
     <None Include="AF_DB.publish.xml" />
     <None Include="PostDeployment\Data\Categories.sql" />
     <None Include="PostDeployment\Data\Users.sql" />
+    <None Include="PostDeployment\Data\Positions.sql" />
+    <None Include="PostDeployment\Data\Jobs.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AF_DB.refactorlog" />
