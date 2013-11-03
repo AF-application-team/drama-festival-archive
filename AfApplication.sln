@@ -6,10 +6,15 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AF_DB", "AF_DB\AF_DB.sqlproj", "{D720F851-36E3-4455-9472-C3A65F43C221}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF Desktop Application", "AF Desktop Application\AF Desktop Application.csproj", "{83CD45FA-3531-4596-AEB4-8D34EC38CFA2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D80DA84C-D2D9-4A2A-946F-10A83BD9D02B} = {D80DA84C-D2D9-4A2A-946F-10A83BD9D02B}
+		{2E835597-8CBF-4EB0-B513-13465EA37166} = {2E835597-8CBF-4EB0-B513-13465EA37166}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF DataAccessLayer", "AF DataAccessLayer\AF DataAccessLayer.csproj", "{457CBC3D-7EE1-4E1D-9830-1F48083740FA}"
 	ProjectSection(ProjectDependencies) = postProject
 		{87104C17-7465-465F-99D6-C2C95051A714} = {87104C17-7465-465F-99D6-C2C95051A714}
+		{2E835597-8CBF-4EB0-B513-13465EA37166} = {2E835597-8CBF-4EB0-B513-13465EA37166}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF Models", "AF Models\AF Models.csproj", "{87104C17-7465-465F-99D6-C2C95051A714}"
@@ -22,10 +27,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{57F847
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF BusinessLogic", "AF BusinessLogic\AF BusinessLogic.csproj", "{D80DA84C-D2D9-4A2A-946F-10A83BD9D02B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2E835597-8CBF-4EB0-B513-13465EA37166} = {2E835597-8CBF-4EB0-B513-13465EA37166}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF Tests", "AF Tests\AF Tests.csproj", "{3CFE7C77-939D-4334-A18E-D0291FA09731}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingConsoleApplication", "TestingConsoleApplication\TestingConsoleApplication.csproj", "{6D96178B-4CF7-48E8-A407-BDCFD829B748}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF Constants", "AF Constants\AF Constants.csproj", "{2E835597-8CBF-4EB0-B513-13465EA37166}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +72,10 @@ Global
 		{6D96178B-4CF7-48E8-A407-BDCFD829B748}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D96178B-4CF7-48E8-A407-BDCFD829B748}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D96178B-4CF7-48E8-A407-BDCFD829B748}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E835597-8CBF-4EB0-B513-13465EA37166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E835597-8CBF-4EB0-B513-13465EA37166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E835597-8CBF-4EB0-B513-13465EA37166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E835597-8CBF-4EB0-B513-13465EA37166}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

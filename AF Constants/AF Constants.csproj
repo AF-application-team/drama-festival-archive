@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D80DA84C-D2D9-4A2A-946F-10A83BD9D02B}</ProjectGuid>
+    <ProjectGuid>{2E835597-8CBF-4EB0-B513-13465EA37166}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AF_BusinessLogic</RootNamespace>
-    <AssemblyName>AF BusinessLogic</AssemblyName>
+    <RootNamespace>AF_Constants</RootNamespace>
+    <AssemblyName>AF Constants</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,19 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AF_Logic.cs" />
-    <Compile Include="IAF_LogicService.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AF DataAccessLayer\AF DataAccessLayer.csproj">
-      <Project>{457cbc3d-7ee1-4e1d-9830-1f48083740fa}</Project>
-      <Name>AF DataAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AF Models\AF Models.csproj">
-      <Project>{87104c17-7465-465f-99d6-c2c95051a714}</Project>
-      <Name>AF Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
