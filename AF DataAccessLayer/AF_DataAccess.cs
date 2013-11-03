@@ -72,7 +72,6 @@ namespace AF_DataAccessLayer
                     Console.WriteLine(ex.InnerException);
                 }
             }
-
         }
 
         public void UpdateCategory(Category updateData)
@@ -138,6 +137,25 @@ namespace AF_DataAccessLayer
                 return null;
             }
         }
+
+        public List<Category> GetAllCategories()
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    IQueryable<Category> query = from c in context.Categories
+                                                 orderby c.Order
+                                                 select c;
+                    return (query.ToList<Category>());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
+        }
         #endregion
         #region Festival
         public void AddFestival(Festival newFestival)
@@ -168,28 +186,110 @@ namespace AF_DataAccessLayer
         #region Job
         public void AddJob(Job newJob)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.Jobs.Add(newJob);
+                    int recordsAffected = context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public void RemoveJob(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Job jo = context.Jobs.First(j => j.JobId == id);
+                    context.Jobs.Remove(jo);
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public void UpdateJob(Job updateData)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Job jo = context.Jobs.First(j => j.JobId == updateData.JobId);
+                    jo = updateData;
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public Job GetJob(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Job jo = context.Jobs.First(j => j.JobId == id);
+                    jo.Edited = context.Users.First(u => u.UserId == jo.EditedBy);
+                    return (jo);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public List<Job> GetJobsPaged(int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    IQueryable<Job> query = (from j in context.Jobs
+                                                  orderby j.JobTitle
+                                                  select j).Skip(skip).Take(pageAmount);  //efficient? join with users?
+                    return (query.ToList<Job>());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
+
+        public List<Job> GetAllJobs()
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    IQueryable<Job> query = from j in context.Jobs
+                                                 orderby j.JobTitle
+                                                 select j;
+                    return (query.ToList<Job>());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
+        } 
         #endregion
         #region News
         public void AddNews(News newNews)
@@ -272,27 +372,109 @@ namespace AF_DataAccessLayer
         #region Position
         public void AddPosition(Position newPosition)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.Positions.Add(newPosition);
+                    int recordsAffected = context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public void RemovePosition(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Position pos = context.Positions.First(p => p.PositionId == id);
+                    context.Positions.Remove(pos);
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public void UpdatePosition(Position updateData)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Position pos = context.Positions.First(p => p.PositionId == updateData.PositionId);
+                    pos = updateData;
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public Position GetPosition(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Position pos = context.Positions.First(p => p.PositionId == id);
+                    pos.Edited = context.Users.First(u => u.UserId == pos.EditedBy);
+                    return (pos);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public List<Position> GetPositionsPaged(int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    IQueryable<Position> query = (from p in context.Positions
+                                                  orderby p.Order
+                                                  select p).Skip(skip).Take(pageAmount); 
+                    return (query.ToList<Position>());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
+        }
+
+        public List<Position> GetAllPositions()
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    IQueryable<Position> query = from p in context.Positions
+                                                 orderby p.Order
+                                                 select p;
+                    return (query.ToList<Position>());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
         #endregion
         #region RelationFestivalPersonPosition

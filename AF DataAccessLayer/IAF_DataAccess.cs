@@ -22,6 +22,7 @@ namespace AF_DataAccessLayer
         void UpdateCategory(Category updateData);
         Category GetCategory(int id);
         List<Category> GetCategoriesPaged(int pageNr, int pageAmount);
+        List<Category> GetAllCategories();
         #endregion
         #region Festival
         void AddFestival(Festival newFestival);
@@ -36,6 +37,7 @@ namespace AF_DataAccessLayer
         void UpdateJob(Job updateData);
         Job GetJob(int id);
         List<Job> GetJobsPaged(int pageNr, int pageAmount);
+        List<Job> GetAllJobs(); 
         #endregion
         #region News
         void AddNews(News newNews);
@@ -64,6 +66,7 @@ namespace AF_DataAccessLayer
         void UpdatePosition(Position updateData);
         Position GetPosition(int id);
         List<Position> GetPositionsPaged(int pageNr, int pageAmount);
+        List<Position> GetAllPositions();  
         #endregion
         #region RelationFestivalPersonPosition
         void AddRelationFestivalPersonPosition(RelationFestivalPersonPosition newRelationFestivalPersonPosition);
