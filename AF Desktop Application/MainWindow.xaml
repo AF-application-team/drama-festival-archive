@@ -10,12 +10,18 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="SAVE" />
-            <MenuItem Header="SETTINGS" />
+            <MenuItem Padding="6,3,6,0">
+                <MenuItem.Header>SETTINGS</MenuItem.Header>
+                <MenuItem.Icon>
+                    <Image Source="Images/SettingsIcon.png" Height="20" />
+                </MenuItem.Icon>
+            </MenuItem>
+               
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" Height="20">
         </StatusBar>
-        <TabControl>
-            <TabItem>
+        <TabControl SelectionChanged="TabControl_SelectionChanged">
+            <TabItem x:Name="PeopleTab">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image Name="PeopleImg" Height="24" Width="auto" Source="Images/PeopleIcon.png" />
@@ -27,7 +33,25 @@
                         <TextBox Margin="5" Width="100" />
                         <Button Width="auto" Height="25" Content="Wyszukaj"  Padding="2,2" Margin="5,3" Background="LightGray" />
                         <CheckBox x:Name="ShowPeopleColumnsCheckBox" Height="27" Content="Kolumny" Margin="5,2" />
-                        <CheckBox x:Name="ShowPeopleFiltersCheckBox" Height="27" Content="Filtry" Margin="5,2" />
+                        <CheckBox x:Name="ShowPeopleFiltersCheckBox" Height="27" Content="Filtry" Margin="5,2,100,2" />
+                        <Button x:Name="AddPersonButton" Click="AddPersonButton_Click" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="27" Source="Images/PlusIcon.png" />
+                                <TextBlock VerticalAlignment="Center">Dodaj</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="RemovePersonButton" Click="RemovePersonButton_Click" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="25" Source="Images/XIcon.png" />
+                                <TextBlock VerticalAlignment="Center">Usuń</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="EditPersonButton" Click="EditPersonButton_Click" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="25" Source="Images/EditIcon.png" />
+                                <TextBlock VerticalAlignment="Center">Edytuj</TextBlock>
+                            </StackPanel>
+                        </Button>
                     </ToolBar>
                     <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top" Visibility="{Binding ElementName=ShowPeopleColumnsCheckBox, Path=IsChecked, Converter={StaticResource Bool2Visibility}}">
                         <Label Content="Kolumny:" />
@@ -99,7 +123,7 @@
                     </DataGrid>
                 </DockPanel>
             </TabItem>
-            <TabItem>
+            <TabItem x:Name="PlaysTab">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image x:Name="PlaysImg" Height="24" Width="auto" Source="Images/PlaysIcon.png" />
@@ -111,7 +135,25 @@
                         <TextBox Margin="5" Width="100" />
                         <Button Width="auto" Height="25" Content="Wyszukaj"  Padding="2,2" Margin="5,3" Background="LightGray" />
                         <CheckBox x:Name="ShowPlaysColumnsCheckBox" Height="27" Content="Kolumny" Margin="5,2" />
-                        <CheckBox x:Name="ShowPlaysFiltersCheckBox" Height="27" Content="Filtry" Margin="5,2" /> 
+                        <CheckBox x:Name="ShowPlaysFiltersCheckBox" Height="27" Content="Filtry" Margin="5,2,100,2" />
+                        <Button x:Name="AddPlayButton" Click="AddPlayButton_Click" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="27" Source="Images/PlusIcon.png" />
+                                <TextBlock VerticalAlignment="Center">Dodaj</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="RemovePlayButton" Click="RemovePlayButton_Click" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="25" Source="Images/XIcon.png" />
+                                <TextBlock VerticalAlignment="Center">Usuń</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="EditPlayButton" Click="EditPlayButton_Click" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="25" Source="Images/EditIcon.png" />
+                                <TextBlock VerticalAlignment="Center">Edytuj</TextBlock>
+                            </StackPanel>
+                        </Button>
                     </ToolBar>
                     <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top" Visibility="{Binding ElementName=ShowPlaysColumnsCheckBox, Path=IsChecked, Converter={StaticResource Bool2Visibility}}">
                         <Label Content="Kolumny:" />
@@ -177,7 +219,7 @@
                     </DataGrid>
                 </DockPanel>
             </TabItem>
-            <TabItem>
+            <TabItem x:Name="AwardsTab" >
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image Name="AwardsImg" Height="24" Width="auto" Source="Images/AwardsIcon.png" />
@@ -189,13 +231,25 @@
                         <TextBox Margin="5" Width="100" />
                         <Button Width="auto" Height="25" Content="Wyszukaj"  Padding="2,2" Margin="5,3" Background="LightGray" />
                         <CheckBox x:Name="ShowAwardsColumnsCheckBox" Height="27" Content="Kolumny" Margin="5,2" />
-                        <CheckBox x:Name="ShowAwardsFiltersCheckBox" Height="27" Content="Filtry" Margin="5,2,50,2" />
-                        <Button >
-                            <Button.Background>
-                                <ImageBrush/>
-                            </Button.Background>
+                        <CheckBox x:Name="ShowAwardsFiltersCheckBox" Height="27" Content="Filtry" Margin="5,2,100,2" />
+                        <Button x:Name="AddAwardButton" Click="AddAwardButton_Click" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="27" Source="Images/PlusIcon.png" />
+                                <TextBlock VerticalAlignment="Center">Dodaj</TextBlock>
+                            </StackPanel>
                         </Button>
-
+                        <Button x:Name="RemoveAwardButton" Click="RemoveAwardButton_Click" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="25" Source="Images/XIcon.png" />
+                                <TextBlock VerticalAlignment="Center">Usuń</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="EditAwardButton" Click="EditAwardButton_Click" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="25" Source="Images/EditIcon.png" />
+                                <TextBlock VerticalAlignment="Center">Edytuj</TextBlock>
+                            </StackPanel>
+                        </Button>
                     </ToolBar>
                     <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top" Visibility="{Binding ElementName=ShowAwardsColumnsCheckBox, Path=IsChecked, Converter={StaticResource Bool2Visibility}}">
                         <Label Content="Kolumny:" />
@@ -250,7 +304,7 @@
                     </DataGrid>
                 </DockPanel>
             </TabItem>
-            <TabItem>
+            <TabItem x:Name="ConfigTab">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image Name="ConfigImg" Height="24" Width="auto" Source="Images/ConfigurationIcon.png" />
@@ -269,7 +323,7 @@
                     </Grid.ColumnDefinitions>
                     <DockPanel Grid.Column="0">
                         <Label Content="Categories" DockPanel.Dock="Top" />
-                        <DataGrid>
+                        <DataGrid x:Name="CategoryDataGrid">
                             <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Nazwisko" IsReadOnly="True" Visibility="Visible"/>
                             <!--<DataGridColumn />-->
                         </DataGrid>

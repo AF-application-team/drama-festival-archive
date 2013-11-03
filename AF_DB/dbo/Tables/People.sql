@@ -3,7 +3,7 @@
     [FirstName] NVARCHAR (50)  NOT NULL,
     [LastName]  NVARCHAR (100) NOT NULL,
     [Sex]       BIT            NOT NULL,
-    [Year]      INT           NOT NULL,
+    [Year]      INT           NULL,
 	[Profile]	CHAR(1)		   NULL,
 	[EditDate] DATETIME NOT NULL, 
     [EditedBy] INT NOT NULL,
