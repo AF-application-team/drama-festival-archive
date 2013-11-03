@@ -1,4 +1,4 @@
-﻿using AF_DataAccessLayer
+﻿using AF_DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;

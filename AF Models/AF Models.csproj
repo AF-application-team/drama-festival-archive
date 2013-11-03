@@ -54,11 +54,17 @@
     <Compile Include="Category.cs" />
     <Compile Include="CategoryMap.cs" />
     <Compile Include="Festival.cs" />
+    <Compile Include="FestivalMap.cs" />
     <Compile Include="Job.cs" />
+    <Compile Include="JobMap.cs" />
     <Compile Include="News.cs" />
+    <Compile Include="NewsMap.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="PersonMap.cs" />
     <Compile Include="Play.cs" />
+    <Compile Include="PlayMap.cs" />
     <Compile Include="Position.cs" />
+    <Compile Include="PositionMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RelationFestivalPersonPosition.cs" />
     <Compile Include="RelationPersonAward.cs" />

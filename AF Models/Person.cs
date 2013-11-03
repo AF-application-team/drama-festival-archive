@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,10 @@ namespace AF_Models
         public int Year { get; set; }
         public DateTime EditDate { get; set; }
         public int EditedBy { get; set; }
-        public string Profile { get; set; } 
+        public string Profile { get; set; }
+
+
+        [ForeignKey("EditedBy")]
+        public virtual User Edited { get; set; }
     }
 }

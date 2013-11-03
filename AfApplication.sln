@@ -22,10 +22,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{57F847
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF BusinessLogic", "AF BusinessLogic\AF BusinessLogic.csproj", "{D80DA84C-D2D9-4A2A-946F-10A83BD9D02B}"
-	ProjectSection(ProjectDependencies) = postProject
-		{87104C17-7465-465F-99D6-C2C95051A714} = {87104C17-7465-465F-99D6-C2C95051A714}
-		{457CBC3D-7EE1-4E1D-9830-1F48083740FA} = {457CBC3D-7EE1-4E1D-9830-1F48083740FA}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF Tests", "AF Tests\AF Tests.csproj", "{3CFE7C77-939D-4334-A18E-D0291FA09731}"
 EndProject
