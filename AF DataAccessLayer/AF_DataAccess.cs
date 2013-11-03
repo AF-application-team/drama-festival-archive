@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using AF_Models;
@@ -10,7 +12,7 @@ namespace AF_DataAccessLayer
 {
     public class AF_DataAccess : IAF_DataAccess
     {
-        AF_Context context = new AF_Context();
+       // AF_Context context = new AF_Context();
         
         #region Award
         public void AddAward(Award newAward)
@@ -41,43 +43,100 @@ namespace AF_DataAccessLayer
         #region Category
         public void AddCategory(Category newCategory)
         {
-            using (context)
-            {   
-                context.Categories.Add(newCategory);
-                int recordsAffected = context.SaveChanges();
-
-                Console.WriteLine(
-                    "Saved {0} entities to the database, press any key to exit.",
-                    recordsAffected);
-                Console.ReadKey();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.Categories.Add(newCategory);
+                    int recordsAffected = context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
             }
         }
 
         public void RemoveCategory(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Category cat = context.Categories.First(c => c.CategoryId == id);
+                    context.Categories.Remove(cat);
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
+
         }
 
         public void UpdateCategory(Category updateData)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Category cat = context.Categories.First(c => c.CategoryId==updateData.CategoryId);
+                    cat = updateData;
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public Category GetCategory(int id)
         {
-            using (context)
+            using (var context = new AF_Context())
             {
-                IEnumerable<Category> query = from c in context.Categories 
-                            where c.CategoryId==id
-                            select c;
-                Category a = query.FirstOrDefault();
-                return (query.First()); //t => t.CategoryId == id
+                try
+                {
+                    Category cat = context.Categories.First(c => c.CategoryId == id);
+                    cat.Edited = context.Users.First(u => u.UserId == cat.EditedBy);
+
+                    /*IQueryable<Category> query = from c in context.Categories
+                                                 where c.CategoryId == id
+                                                 select c;
+                    Category cat = query.FirstOrDefault();
+                    IQueryable<User> query_rel = from u in context.Users
+                                                 where u.UserId == cat.EditedBy
+                                                 select u;
+                    cat.Edited = query_rel.FirstOrDefault();*/
+                    return (cat);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
             }
         }
 
         public List<Category> GetCategoriesPaged(int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    IQueryable<Category> query = (from c in context.Categories
+                                                 orderby c.Order
+                                                 select c).Skip(skip).Take(pageAmount);  //efficient? join with users?
+                    return(query.ToList<Category>());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
         #endregion
         #region Festival

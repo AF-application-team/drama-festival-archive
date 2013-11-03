@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace AF_Models
         CategoryMap() 
         {
             //Primary 
-            this.HasKey(t => t.CategoryId).Property(t => t.CategoryId).HasColumnName("CategoryId");
+            this.HasKey(t => t.CategoryId).Property(t => t.CategoryId).HasColumnName("CategoryId");//.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             //Properties
             this.Property(t => t.Title).HasColumnName("Title");
             this.Property(t => t.Group).HasColumnName("Group");
