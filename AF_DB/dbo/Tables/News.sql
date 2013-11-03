@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[News] (
-    [NewsId] INT            NOT NULL,
+    [NewsId] INT            NOT NULL IDENTITY(1,1),
     [Text]   NVARCHAR (MAX) NOT NULL,
     [EditDate] DATETIME NOT NULL, 
     [EditedBy] INT NOT NULL,

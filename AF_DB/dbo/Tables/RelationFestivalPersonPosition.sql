@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[RelationFestivalPersonPosition] (
-    [RelationFestivalPersonPositionId] INT NOT NULL,
+    [RelationFestivalPersonPositionId] INT NOT NULL IDENTITY(1,1),
     [FestivalId]                       INT NOT NULL,
     [PersonId]                         INT NOT NULL,
     [PositionId]                       INT NOT NULL,

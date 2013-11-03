@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[RelationPersonAward] (
-    [RelationPersonAwardId] INT NOT NULL,
+    [RelationPersonAwardId] INT NOT NULL IDENTITY(1,1),
     [PersonId]            INT NOT NULL,
     [AwardId]             INT NOT NULL,
 	[EditDate] DATETIME NOT NULL, 

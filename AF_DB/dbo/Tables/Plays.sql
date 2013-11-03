@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Plays] (
-    [PlayId]     INT            NOT NULL,
+    [PlayId]     INT            NOT NULL IDENTITY(1,1),
     [Title]      NVARCHAR (MAX) NOT NULL,
     [Author]     NVARCHAR (MAX) NOT NULL,
     [FestivalId] INT            NOT NULL,

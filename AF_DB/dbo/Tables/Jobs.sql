@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Jobs] (
-    [JobId]    INT            NOT NULL,
+    [JobId]    INT            NOT NULL IDENTITY(1,1),
     [JobTitle] NVARCHAR (100) NOT NULL,
 	[EditDate] DATETIME NOT NULL, 
     [EditedBy] INT NOT NULL,

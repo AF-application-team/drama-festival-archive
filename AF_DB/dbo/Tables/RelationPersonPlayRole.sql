@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[RelationPersonPlayRole] (
-    [RelationPersonPlayRoleId] INT            NOT NULL,
+    [RelationPersonPlayRoleId] INT            NOT NULL IDENTITY(1,1),
     [PersonId]               INT            NOT NULL,
     [PlayId]                 INT            NOT NULL,
     [Role]                   NVARCHAR (200) NOT NULL,

@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Positions] (
-    [PositionId]    INT            NOT NULL,
+    [PositionId]    INT            NOT NULL IDENTITY(1,1),
     [PositionTitle] NVARCHAR (100) NOT NULL,
     [Section]       INT            NOT NULL,
     [Order]         INT            NOT NULL,
