@@ -17,7 +17,7 @@ namespace AF_DataAccessLayer
         public DbSet<Festival> Festivals { get; set; }
         public DbSet<Job> Jobs { get; set; }
         public DbSet<News> News { get; set; }
-        public DbSet<Person> Person { get; set; }
+        public DbSet<Person> People { get; set; }
         public DbSet<Play> Plays { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<RelationFestivalPersonPosition> RelationsFestivalPersonPosition { get; set; }

@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{57F847
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF BusinessLogic", "AF BusinessLogic\AF BusinessLogic.csproj", "{D80DA84C-D2D9-4A2A-946F-10A83BD9D02B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF Tests", "AF Tests\AF Tests.csproj", "{3CFE7C77-939D-4334-A18E-D0291FA09731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingConsoleApplication", "TestingConsoleApplication\TestingConsoleApplication.csproj", "{6D96178B-4CF7-48E8-A407-BDCFD829B748}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +54,14 @@ Global
 		{D80DA84C-D2D9-4A2A-946F-10A83BD9D02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D80DA84C-D2D9-4A2A-946F-10A83BD9D02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D80DA84C-D2D9-4A2A-946F-10A83BD9D02B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CFE7C77-939D-4334-A18E-D0291FA09731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CFE7C77-939D-4334-A18E-D0291FA09731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CFE7C77-939D-4334-A18E-D0291FA09731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CFE7C77-939D-4334-A18E-D0291FA09731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D96178B-4CF7-48E8-A407-BDCFD829B748}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D96178B-4CF7-48E8-A407-BDCFD829B748}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D96178B-4CF7-48E8-A407-BDCFD829B748}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D96178B-4CF7-48E8-A407-BDCFD829B748}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
