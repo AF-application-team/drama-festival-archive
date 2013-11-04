@@ -346,27 +346,109 @@ namespace AF_DataAccessLayer
         #region Play
         public void AddPlay(Play newPlay)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.Plays.Add(newPlay);
+                    int recordsAffected = context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public void RemovePlay(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Play pla = context.Plays.First(p => p.PlayId == id);
+                    context.Plays.Remove(pla);
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public void UpdatePlay(Play updateData)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Play pla = context.Plays.First(p => p.PlayId == updateData.PlayId);
+                    pla = updateData;
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public Play GetPlay(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Play pla = context.Plays.First(p => p.PlayId == id);
+                    pla.Edited = context.Users.First(u => u.UserId == pla.EditedBy);
+                    return (pla);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public List<Play> GetPlaysPaged(int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    IQueryable<Play> query = (from p in context.Plays
+                                                  orderby p.Order
+                                                  select p).Skip(skip).Take(pageAmount);
+                    return (query.ToList<Play>());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
+        }
+
+        public List<Play> GetAllPlays()
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    IQueryable<Play> query = from p in context.Plays
+                                                 orderby p.Order
+                                                 select p;
+                    return (query.ToList<Play>());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
         #endregion
         #region Position
