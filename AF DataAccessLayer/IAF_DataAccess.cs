@@ -102,6 +102,7 @@ namespace AF_DataAccessLayer
         void UpdateUser(User updateData);
         User GetUser(int id);
         List<User> GetUserPaged(int pageNr, int pageAmount);
+        List<User> GetAllUsers();
         #endregion
     }
 }

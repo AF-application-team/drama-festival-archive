@@ -584,27 +584,108 @@ namespace AF_DataAccessLayer
         #region User
         public void AddUser(User newUser)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.Users.Add(newUser);
+                    int recordsAffected = context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public void RemoveUser(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    User us = context.Users.First(u => u.UserId == id);
+                    context.Users.Remove(us);
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public void UpdateUser(User updateData)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    User us = context.Users.First(u => u.UserId == updateData.UserId);
+                    us = updateData;
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public User GetUser(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    User us = context.Users.First(u => u.UserId == id);
+                    return (us);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public List<User> GetUserPaged(int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    IQueryable<User> query = (from u in context.Users
+                                                  orderby u.LastName
+                                                  select u).Skip(skip).Take(pageAmount);
+                    return (query.ToList<User>());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
+        }
+
+        public List<User> GetAllUsers()
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    IQueryable<User> query = from u in context.Users
+                                                 orderby u.LastName
+                                                 select u;
+                    return (query.ToList<User>());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
         #endregion
     }
