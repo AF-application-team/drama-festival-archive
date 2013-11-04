@@ -78,7 +78,6 @@
     <Compile Include="AwardWindow.xaml.cs">
       <DependentUpon>AwardWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BindingProxy.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -91,10 +90,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PropertiesWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PersonEditWindow.xaml.cs">
@@ -102,9 +97,6 @@
     </Compile>
     <Compile Include="PlayEditWindow.xaml.cs">
       <DependentUpon>PlayEditWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PropertiesWindow.xaml.cs">
-      <DependentUpon>PropertiesWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -157,9 +149,17 @@
     <Resource Include="Images\EditIcon.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AF BusinessLogic\AF BusinessLogic.csproj">
+      <Project>{d80da84c-d2d9-4a2a-946f-10a83bd9d02b}</Project>
+      <Name>AF BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AF Constants\AF Constants.csproj">
       <Project>{2e835597-8cbf-4eb0-b513-13465ea37166}</Project>
       <Name>AF Constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AF Models\AF Models.csproj">
+      <Project>{87104c17-7465-465f-99d6-c2c95051a714}</Project>
+      <Name>AF Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

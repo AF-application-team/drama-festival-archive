@@ -7,8 +7,8 @@ using AF_Models;
 
 namespace AF_BusinessLogic
 {
-    interface IAF_LogicService
+    public interface IAF_LogicService
     {
-        List<Category> GetCategories();
+        List<Category> GetAllCategories();
     }
 }

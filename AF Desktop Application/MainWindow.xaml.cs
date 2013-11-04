@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AF_Constants;
+using AF_BusinessLogic;
+using AF_Models;
 
 namespace AF_Desktop_Application
 {
@@ -21,7 +23,8 @@ namespace AF_Desktop_Application
     /// </summary>
     public partial class MainWindow : Window
     {
-        IAF_LogicService DB = new IAF_LogicService();
+        static IAF_LogicService DB = new AF_Logic();
+        public List<Category> categoriesList { get; set; } 
         
         public MainWindow()
         {
@@ -87,7 +90,9 @@ namespace AF_Desktop_Application
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ConfigTab.IsSelected)
-                this.CategoryDataGrid.
+            {
+                
+            }
         }
     }
 }

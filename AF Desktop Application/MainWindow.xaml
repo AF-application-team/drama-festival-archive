@@ -4,7 +4,6 @@
         xmlns:local="clr-namespace:AF_Desktop_Application"
         Title="MainWindow" WindowStartupLocation="CenterScreen" Width="1000" Height="700">
     <Window.Resources>
-        <local:BindingProxy x:Key="proxy" Data="{Binding}" />
         <BooleanToVisibilityConverter x:Key="Bool2Visibility"/>
     </Window.Resources>
     <DockPanel>
@@ -323,10 +322,6 @@
                     </Grid.ColumnDefinitions>
                     <DockPanel Grid.Column="0">
                         <Label Content="Categories" DockPanel.Dock="Top" />
-                        <DataGrid x:Name="CategoryDataGrid">
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Nazwisko" IsReadOnly="True" Visibility="Visible"/>
-                            <!--<DataGridColumn />-->
-                        </DataGrid>
                     </DockPanel>
                     <Label Content="Jobs" Grid.Column="1" />
                     <Label Content="Positions" Grid.Column="2" />
