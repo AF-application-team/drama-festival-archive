@@ -1,6 +1,7 @@
-﻿<Window x:Class="AF_Desktop_Application.PlayEditWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:AF_Desktop_Application" x:Class="AF_Desktop_Application.PlayEditWindow"
         Title="PlayEditWindow" Height="450" Width="400">
     <DockPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,5">
@@ -34,33 +35,31 @@
             <Label Content="Motto:" Grid.Row="7" Grid.Column="0"/>
             <Label Content="Data Edycji:" Grid.Row="8" Grid.Column="0"/>
             <Label Content="Edytor:" Grid.Row="9" Grid.Column="0"/>
-            
-            <TextBox x:Name="IdTextBox" Grid.Row="0" Grid.Column="1" IsEnabled="False"/>
-            <TextBox x:Name="TitleTextBox"  Grid.Row="1" Grid.Column="1"/>
-            <TextBox x:Name="AuthorTextBox" Grid.Row="2" Grid.Column="1"/>
-            <ComboBox x:Name="FestivalComboBox" Grid.Row="3" Grid.Column="1">
-            
-            </ComboBox>
+
+            <TextBox x:Name="IdTextBox" Grid.Row="0" Grid.Column="1" IsEnabled="False" Text="{Binding Path=PlayId}"/>
+            <TextBox x:Name="TitleTextBox"  Grid.Row="1" Grid.Column="1" Text="{Binding Path=Title}" />
+            <TextBox x:Name="AuthorTextBox" Grid.Row="2" Grid.Column="1" Text="{Binding Path=Author}"/>
+            <ComboBox x:Name="FestivalComboBox" Grid.Row="3" Grid.Column="1" />
             <ComboBox x:Name="DayComboBox" Grid.Row="4" Grid.Column="1">
-                <ComboBoxItem>1</ComboBoxItem>
-                <ComboBoxItem>2</ComboBoxItem>
-                <ComboBoxItem>3</ComboBoxItem>
-                <ComboBoxItem>4</ComboBoxItem>
-                <ComboBoxItem>5</ComboBoxItem>
-                <ComboBoxItem>6</ComboBoxItem>
+                <ComboBoxItem Content="1"/>
+                <ComboBoxItem Content="2"/>
+                <ComboBoxItem Content="3"/>
+                <ComboBoxItem Content="4"/>
+                <ComboBoxItem Content="5"/>
+                <ComboBoxItem Content="6"/>
             </ComboBox>
             <ComboBox x:Name="OrderComboBox" Grid.Row="5" Grid.Column="1">
-                <ComboBoxItem>1</ComboBoxItem>
-                <ComboBoxItem>2</ComboBoxItem>
-                <ComboBoxItem>3</ComboBoxItem>
-                <ComboBoxItem>4</ComboBoxItem>
-                <ComboBoxItem>5</ComboBoxItem>
-                <ComboBoxItem>6</ComboBoxItem>
+                <ComboBoxItem Content="1"/>
+                <ComboBoxItem Content="2"/>
+                <ComboBoxItem Content="3"/>
+                <ComboBoxItem Content="4"/>
+                <ComboBoxItem Content="5"/>
+                <ComboBoxItem Content="6"/>
             </ComboBox>
-            <TextBox x:Name="PlayedByTextBox" Grid.Row="6" Grid.Column="1"/>
-            <TextBox x:Name="MottoTextBox" Grid.Row="7" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True"/>
-            <TextBox x:Name="EditDateTextBox" Grid.Row="8" Grid.Column="1" IsEnabled="False"/>
-            <TextBox x:Name="EditedByTextBox" Grid.Row="9" Grid.Column="1" IsEnabled="False"/>
+            <TextBox x:Name="PlayedByTextBox" Grid.Row="6" Grid.Column="1" Text="{Binding Path=PlayedBy}"/>
+            <TextBox x:Name="MottoTextBox" Grid.Row="7" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding Path=Motto}"/>
+            <TextBox x:Name="EditDateTextBox" Grid.Row="8" Grid.Column="1" IsEnabled="False" Text="{Binding Path=EditDate}"/>
+            <TextBox x:Name="EditedByTextBox" Grid.Row="9" Grid.Column="1" IsEnabled="False" Text="{Binding Path=EditedBy}"/>
 
 
         </Grid>

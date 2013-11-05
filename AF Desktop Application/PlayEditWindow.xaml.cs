@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AF_Models;
 
 namespace AF_Desktop_Application
 {
@@ -21,11 +22,13 @@ namespace AF_Desktop_Application
     public partial class PlayEditWindow : Window
     {
         private int _editMode = Constants.EditModes.ReadMode;
+        public Play EditedPlay { get; set; }
  
-        public PlayEditWindow(int editMode)
+        public PlayEditWindow(int editMode, Play editedPlay)
         {
             InitializeComponent();
             _editMode = editMode;
+            EditedPlay = editedPlay;
             if (_editMode == Constants.EditModes.ReadMode)
             {
                 this.TitleTextBox.IsEnabled = false;
@@ -40,6 +43,8 @@ namespace AF_Desktop_Application
             {
                 
             }
+            this.DataContext = EditedPlay;
+
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)

@@ -2,13 +2,13 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:AF_Desktop_Application"
-        Title="MainWindow" WindowStartupLocation="CenterScreen" Width="1000" Height="700">
+        Title="MainWindow" WindowStartupLocation="CenterScreen" Width="1000" Height="700" WindowState="Maximized" Initialized="MainWindow_Initialized">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="Bool2Visibility"/>
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="SAVE" />
+            <MenuItem x:Name="SaveMenu" Header="SAVE" Click="SaveMenu_Click" />
             <MenuItem Padding="6,3,6,0">
                 <MenuItem.Header>SETTINGS</MenuItem.Header>
                 <MenuItem.Icon>
@@ -19,7 +19,7 @@
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" Height="20">
         </StatusBar>
-        <TabControl SelectionChanged="TabControl_SelectionChanged">
+        <TabControl x:Name="TabControl" SelectionChanged="TabControl_SelectionChanged" IsEnabled="False">
             <TabItem x:Name="PeopleTab">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -65,9 +65,7 @@
                         <Label Content="Filtrowanie:" />
                         <Label Content="Praca:" />
                         <ComboBox x:Name="PersonJobFilter" Margin="5,5">
-                            <ComboBoxItem>Job Filter</ComboBoxItem>
-                            <ComboBoxItem>Directior</ComboBoxItem>
-                            <ComboBoxItem>Screenwriter</ComboBoxItem>
+                            
                         </ComboBox>
                         <Label Content="Pozycja:"/>
                         <ComboBox x:Name="PersonPositionFilter" Margin="5,5">
@@ -94,7 +92,7 @@
                             <ComboBoxItem>1988</ComboBoxItem>
                         </ComboBox>
                         <Label Content="Profil:"/>
-                        <ListBox x:Name="PersonProfileFilter" Margin="5,5" SelectionMode="Multiple">
+                        <ListBox x:Name="PersonProfileFilter" Margin="5,5" SelectionMode="Single">
                             <ListBoxItem>a</ListBoxItem>
                             <ListBoxItem>b</ListBoxItem>
                             <ListBoxItem>c</ListBoxItem>
@@ -106,17 +104,17 @@
 
 
 
-                    <DataGrid DockPanel.Dock="Bottom" >
+                    <DataGrid DockPanel.Dock="Bottom" AutoGenerateColumns="False" >
                         <DataGrid.Columns>
-                            <DataGridCheckBoxColumn Binding="{x:Null}" CanUserSort="False" CanUserReorder="False" CanUserResize="False" ClipboardContentBinding="{x:Null}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Id Osoby" IsReadOnly="True" Visibility="Visible"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Imię" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonFirstNameColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Nazwisko" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonLastNameColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Płeć" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonSexColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Rocznik" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonYearColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Profil" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonProfileColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Data Edycji" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonEditInfoFillterCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Edytor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonEditInfoFillterCheckbox}}"/>
+                            <DataGridCheckBoxColumn CanUserSort="False" CanUserReorder="False" CanUserResize="False" ClipboardContentBinding="{x:Null}"/>
+                            <DataGridTextColumn Binding="{Binding Path=PersonId}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Id Osoby" IsReadOnly="True" Visibility="Visible"/>
+                            <DataGridTextColumn Binding="{Binding Path=FirstName}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Imię" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonFirstNameColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=LastName}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Nazwisko" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonLastNameColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=Sex}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Płeć" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonSexColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=Year}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Rocznik" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonYearColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=Profile}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Profil" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonProfileColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=EditDate}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Data Edycji" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonEditInfoFillterCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=EditedBy}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Edytor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonEditInfoFillterCheckbox}}"/>
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -201,20 +199,25 @@
                     </StackPanel>
 
 
-                    <DataGrid DockPanel.Dock="Bottom" >
+                    <DataGrid DockPanel.Dock="Bottom" x:Name="PlaysDataGrid" AutoGenerateColumns="False" CanUserReorderColumns="False" SelectionMode="Single" CanUserDeleteRows="True" CanUserAddRows="True" >
                         <DataGrid.Columns>
-                            <DataGridCheckBoxColumn Binding="{x:Null}" CanUserSort="False" CanUserReorder="False" CanUserResize="False" ClipboardContentBinding="{x:Null}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Id Przedstawienia" IsReadOnly="True" Visibility="Visible"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Tytuł" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayTitleColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Autor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayAuthorColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Wykonanie" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayPlayedByColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Festiwal" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayFestivalColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Dzień" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayDayColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Kolejność" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayOrderColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Motto" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayMottoColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Data Edycji" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayEditInfoFillterCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Edytor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayEditInfoFillterCheckbox}}"/>
+                            <DataGridCheckBoxColumn  CanUserSort="False" CanUserReorder="False" CanUserResize="False" ClipboardContentBinding="{x:Null}"/>
+                            <DataGridTextColumn Binding="{Binding Path=PlayId}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Id Przedstawienia" IsReadOnly="True" Visibility="Visible"/>
+                            <DataGridTextColumn Binding="{Binding Path=Title}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Tytuł" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayTitleColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=Author}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Autor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayAuthorColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=PlayedBy}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Wykonanie" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayPlayedByColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=FestivalId}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Festiwal" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayFestivalColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=Day}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Dzień" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayDayColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=Order}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Kolejność" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayOrderColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=Motto}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Motto" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayMottoColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=EditDate}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Data Edycji" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayEditInfoFillterCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=Edited/Login}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Edytor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayEditInfoFillterCheckbox}}"/>
                         </DataGrid.Columns>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="{x:Type DataGridRow}">
+                                <EventSetter Event="Loaded" Handler="PlayRow_Loaded"/>
+                            </Style>
+                        </DataGrid.RowStyle>
                     </DataGrid>
                 </DockPanel>
             </TabItem>
@@ -290,15 +293,15 @@
                     </StackPanel>
 
 
-                    <DataGrid DockPanel.Dock="Bottom" >
+                    <DataGrid DockPanel.Dock="Bottom" AutoGenerateColumns="False" >
                         <DataGrid.Columns>
                             <DataGridCheckBoxColumn Binding="{x:Null}" CanUserSort="False" CanUserReorder="False" CanUserResize="False" ClipboardContentBinding="{x:Null}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Id Nagrody" IsReadOnly="True" Visibility="Visible"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Kategoria" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardCategoryColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Przedstawienie" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardPlayColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Festiwal" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardFestivalColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Data Edycji" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardEditInfoFillterCheckbox}}"/>
-                            <DataGridTextColumn Binding="{x:Null}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Edytor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardEditInfoFillterCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=AwardId}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Id Nagrody" IsReadOnly="True" Visibility="Visible"/>
+                            <DataGridTextColumn Binding="{Binding Path=Cathegory}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Kategoria" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardCategoryColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=Play}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Przedstawienie" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardPlayColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=FestivalId}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Festiwal" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardFestivalColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=EditDate}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Data Edycji" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardEditInfoFillterCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=EditedBy}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Edytor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardEditInfoFillterCheckbox}}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </DockPanel>
@@ -315,16 +318,65 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="0*" />
                     </Grid.ColumnDefinitions>
                     <DockPanel Grid.Column="0">
                         <Label Content="Categories" DockPanel.Dock="Top" />
+                        <DockPanel DockPanel.Dock="Bottom">
+                            <Button HorizontalContentAlignment="Center" DockPanel.Dock="Right"> Dodaj Kategorię</Button>
+                            <TextBox x:Name="NewCategoryNameTextBox" SpellCheck.IsEnabled="True" Margin="1"/>
+                        </DockPanel>
+                        
+                        <ListBox x:Name="CategoriesListBox">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Title}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        
                     </DockPanel>
-                    <Label Content="Jobs" Grid.Column="1" />
-                    <Label Content="Positions" Grid.Column="2" />
+                    <DockPanel Grid.Column="1">
+                        <Label Content="Prace" DockPanel.Dock="Top" />
+                        <DockPanel DockPanel.Dock="Bottom">
+                            <Button HorizontalContentAlignment="Center" DockPanel.Dock="Right" Content="Dodaj Pracę"/>
+                            <TextBox x:Name="NewJobNameTextBox" SpellCheck.IsEnabled="True" Margin="1"/>
+                        </DockPanel>
+
+                        <ListBox x:Name="JobsListBox">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding JobTitle}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                    </DockPanel>
+                    <DockPanel Grid.Column="2">
+                        <Label Content="Pozycje" DockPanel.Dock="Top" />
+                        <DockPanel DockPanel.Dock="Bottom">
+                            <Button HorizontalContentAlignment="Center" DockPanel.Dock="Right" Content="Dodaj Pozycję"/>
+                            <TextBox x:Name="NewPositionNameTextBox" SpellCheck.IsEnabled="True" Margin="1"/>
+                        </DockPanel>
+
+                        <ListBox x:Name="PositionsListBox">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="{Binding PositionTitle}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                    </DockPanel>
                     <Label Content="Other" Grid.Column="3" Margin="2,0,-2,0" />
                 </Grid>
             </TabItem>
