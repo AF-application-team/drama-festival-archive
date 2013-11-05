@@ -13,9 +13,9 @@ namespace AF_BusinessLogic
     {
         IAF_DataAccess DataAccess = new AF_DataAccess();
 
-        public List<Category> GetAllCategories()
+        public async Task<List<Category>> GetAllCategories()
         {
-            return DataAccess.GetAllCategories();
+            return await DataAccess.GetAllCategories();
         }
         public async Task<List<Play>> GetPlaysPaged(int pageNr, int pageAmount)
         {

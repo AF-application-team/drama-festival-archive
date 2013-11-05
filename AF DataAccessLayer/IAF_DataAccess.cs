@@ -22,7 +22,7 @@ namespace AF_DataAccessLayer
         void UpdateCategory(Category updateData);
         Category GetCategory(int id);
         List<Category> GetCategoriesPaged(int pageNr, int pageAmount);
-        List<Category> GetAllCategories();
+        Task<List<Category>> GetAllCategories();
         #endregion
         #region Festival
         void AddFestival(Festival newFestival);

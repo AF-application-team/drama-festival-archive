@@ -138,16 +138,16 @@ namespace AF_DataAccessLayer
             }
         }
 
-        public List<Category> GetAllCategories()
+        public async Task<List<Category>> GetAllCategories()
         {
             using (var context = new AF_Context())
             {
                 try
                 {
-                    IQueryable<Category> query = from c in context.Categories
-                                                 orderby c.Order
-                                                 select c;
-                    return (query.ToList<Category>());
+                    List<Category> q = await (from c in context.Categories
+                                             orderby c.Order
+                                             select c).ToListAsync();
+                    return (q);
                 }
                 catch (Exception ex)
                 {
