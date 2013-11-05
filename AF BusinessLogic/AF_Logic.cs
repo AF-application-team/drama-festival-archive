@@ -16,5 +16,10 @@ namespace AF_BusinessLogic
         {
             return DataAccess.GetAllCategories();
         }
+
+        public List<Play> GetPlaysPaged(int pageNr, int pageAmount)
+        {
+            return DataAccess.GetPlaysPaged(1, 10);
+        }
     }
 }
