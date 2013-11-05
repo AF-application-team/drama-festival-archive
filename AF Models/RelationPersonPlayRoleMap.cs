@@ -24,7 +24,7 @@ namespace AF_Models
             //Relations
             this.HasRequired(t => t.Person).WithMany().HasForeignKey(f => f.PersonId);
             this.HasRequired(t => t.Play).WithMany().HasForeignKey(f => f.PlayId);
-            this.HasRequired(t => t.Edited).WithMany().HasForeignKey(f => f.EditedBy);
+            this.HasRequired(t => t.Editor).WithMany().HasForeignKey(f => f.EditedBy);
         }
     }
 }

@@ -20,6 +20,6 @@ namespace AF_Models
 
 
         [ForeignKey("EditedBy")]
-        public virtual User Edited { get; set; }
+        public virtual User Editor { get; set; }
     }
 }

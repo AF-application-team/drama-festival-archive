@@ -58,7 +58,7 @@ namespace AF_DataAccessLayer
         void RemovePlay(int id);
         void UpdatePlay(Play updateData);
         Play GetPlay(int id);
-        List<Play> GetPlaysPaged(int pageNr, int pageAmount);
+        Task<List<Play>> GetPlaysPaged(int pageNr, int pageAmount);
         List<Play> GetAllPlays();
         #endregion
         #region Position

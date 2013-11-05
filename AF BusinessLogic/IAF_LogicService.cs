@@ -10,9 +10,7 @@ namespace AF_BusinessLogic
     public interface IAF_LogicService
     {
         List<Category> GetAllCategories();
-
-        List<Play> GetPlaysPaged(int pageNr, int pageAmount);
-
+        Task<List<Play>> GetPlaysPaged(int pageNr, int pageAmount);
     }
 
 }
