@@ -1,4 +1,5 @@
-﻿using AF_DataAccessLayer;
+﻿using System.Collections.ObjectModel;
+using AF_DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,9 @@ namespace AF_BusinessLogic
         {
             return DataAccess.GetAllCategories();
         }
-        public Task<List<Play>> GetPlaysPaged(int pageNr, int pageAmount)
+        public async Task<List<Play>> GetPlaysPaged(int pageNr, int pageAmount)
         {
-            return DataAccess.GetPlaysPaged(pageNr, pageAmount);
+            return await DataAccess.GetPlaysPaged(pageNr, pageAmount);
         }
     }
 }
