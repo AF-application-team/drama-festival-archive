@@ -514,7 +514,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     context.Plays.Add(newPlay);
-                    int recordsAffected = context.SaveChanges();
+                    int recordsAffected = await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
                 {
@@ -531,7 +531,7 @@ namespace AF_DataAccessLayer
                 {
                     Play pla = context.Plays.First(p => p.PlayId == id);
                     context.Plays.Remove(pla);
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
                 {
@@ -548,7 +548,7 @@ namespace AF_DataAccessLayer
                 {
                     Play pla = context.Plays.First(p => p.PlayId == updateData.PlayId);
                     pla = updateData;
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
                 {
@@ -605,10 +605,9 @@ namespace AF_DataAccessLayer
             {
                 try
                 {
-                    IQueryable<Play> query = from p in context.Plays
-                                                 orderby p.Order
-                                                 select p;
-                    return (query.ToList<Play>());
+                    List<Play> q = await (from p in context.Plays
+                                           select p).ToListAsync();
+                    return (q);
                 }
                 catch (Exception ex)
                 {
@@ -626,7 +625,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     context.Positions.Add(newPosition);
-                    int recordsAffected = context.SaveChanges();
+                    int recordsAffected = await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
                 {
@@ -643,7 +642,7 @@ namespace AF_DataAccessLayer
                 {
                     Position pos = context.Positions.First(p => p.PositionId == id);
                     context.Positions.Remove(pos);
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
                 {
@@ -660,7 +659,7 @@ namespace AF_DataAccessLayer
                 {
                     Position pos = context.Positions.First(p => p.PositionId == updateData.PositionId);
                     pos = updateData;
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
                 {
@@ -694,10 +693,9 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    IQueryable<Position> query = (from p in context.Positions
-                                                  orderby p.Order
-                                                  select p).Skip(skip).Take(pageAmount); 
-                    return (query.ToList<Position>());
+                    List<Position> q = await (from p in context.Positions
+                                           select p).Skip(skip).Take(pageAmount).ToListAsync();
+                    return (q);
                 }
                 catch (Exception ex)
                 {
@@ -713,10 +711,9 @@ namespace AF_DataAccessLayer
             {
                 try
                 {
-                    IQueryable<Position> query = from p in context.Positions
-                                                 orderby p.Order
-                                                 select p;
-                    return (query.ToList<Position>());
+                    List<Position> q = await (from p in context.Positions
+                                           select p).ToListAsync();
+                    return (q);
                 }
                 catch (Exception ex)
                 {
