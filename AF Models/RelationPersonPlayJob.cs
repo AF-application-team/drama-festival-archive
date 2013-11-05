@@ -24,6 +24,6 @@ namespace AF_Models
         [ForeignKey("JobId")]
         public virtual Job Job { get; set; }
         [ForeignKey("EditedBy")]
-        public virtual User Edited { get; set; }
+        public virtual User Editor { get; set; }
     }
 }

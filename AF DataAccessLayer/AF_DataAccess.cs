@@ -98,7 +98,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     Category cat = context.Categories.First(c => c.CategoryId == id);
-                    cat.Edited = context.Users.First(u => u.UserId == cat.EditedBy);
+                    cat.Editor = context.Users.First(u => u.UserId == cat.EditedBy);
 
                     /*IQueryable<Category> query = from c in context.Categories
                                                  where c.CategoryId == id
@@ -107,7 +107,7 @@ namespace AF_DataAccessLayer
                     IQueryable<User> query_rel = from u in context.Users
                                                  where u.UserId == cat.EditedBy
                                                  select u;
-                    cat.Edited = query_rel.FirstOrDefault();*/
+                    cat.Editor = query_rel.FirstOrDefault();*/
                     return (cat);
                 }
                 catch (Exception ex)
@@ -241,7 +241,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     Job jo = context.Jobs.First(j => j.JobId == id);
-                    jo.Edited = context.Users.First(u => u.UserId == jo.EditedBy);
+                    jo.Editor = context.Users.First(u => u.UserId == jo.EditedBy);
                     return (jo);
                 }
                 catch (Exception ex)
@@ -401,7 +401,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     Play pla = context.Plays.First(p => p.PlayId == id);
-                    pla.Edited = context.Users.First(u => u.UserId == pla.EditedBy);
+                    pla.Editor = context.Users.First(u => u.UserId == pla.EditedBy);
                     return (pla);
                 }
                 catch (Exception ex)
@@ -412,17 +412,21 @@ namespace AF_DataAccessLayer
             }
         }
 
-        public List<Play> GetPlaysPaged(int pageNr, int pageAmount)
+        public async Task<List<Play>> GetPlaysPaged(int pageNr, int pageAmount)
         {
             using (var context = new AF_Context())
             {
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    IQueryable<Play> query = (from p in context.Plays
+                  /*  IQueryable<Play> query = (from p in context.Plays
                                                   orderby p.Order
-                                                  select p).Skip(skip).Take(pageAmount);
-                    return (query.ToList<Play>());
+                                                  select p).Skip(skip).Take(pageAmount);*/
+                    List<Play> q = await (from p in context.Plays
+                                                  orderby p.Order
+                                                  select p).Skip(skip).Take(pageAmount).ToListAsync();
+                    return (q);
+                    //return (query.ToList<Play>());
                 }
                 catch (Exception ex)
                 {
@@ -509,7 +513,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     Position pos = context.Positions.First(p => p.PositionId == id);
-                    pos.Edited = context.Users.First(u => u.UserId == pos.EditedBy);
+                    pos.Editor = context.Users.First(u => u.UserId == pos.EditedBy);
                     return (pos);
                 }
                 catch (Exception ex)

@@ -22,7 +22,7 @@ namespace AF_Models
             //Table 
             this.ToTable("Positions");
             //Relations
-            this.HasRequired(t => t.Edited).WithMany().HasForeignKey(f => f.EditedBy);       
+            this.HasRequired(t => t.Editor).WithMany().HasForeignKey(f => f.EditedBy);       
         }
     }
 }

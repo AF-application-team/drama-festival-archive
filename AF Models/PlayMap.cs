@@ -28,7 +28,7 @@ namespace AF_Models
             this.ToTable("Plays");
             //Relations
             this.HasRequired(t => t.Festival).WithMany().HasForeignKey(f => f.FestivalId);
-            this.HasRequired(t => t.Edited).WithMany().HasForeignKey(f => f.EditedBy);       
+            this.HasRequired(t => t.Editor).WithMany().HasForeignKey(f => f.EditedBy);       
         }
     }
 }

@@ -24,6 +24,6 @@ namespace AF_Models
         [ForeignKey("PositionId")]
         public virtual Position Position { get; set; }
         [ForeignKey("EditedBy")]
-        public virtual User Edited { get; set; }
+        public virtual User Editor { get; set; }
     }
 }

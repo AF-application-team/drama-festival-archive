@@ -23,7 +23,7 @@ namespace AF_Models
             //Relations
             this.HasRequired(t => t.Person).WithMany().HasForeignKey(f => f.PersonId);
             this.HasRequired(t => t.Award).WithMany().HasForeignKey(f => f.AwardId);
-            this.HasRequired(t => t.Edited).WithMany().HasForeignKey(f => f.EditedBy);
+            this.HasRequired(t => t.Editor).WithMany().HasForeignKey(f => f.EditedBy);
         }
     }
 }

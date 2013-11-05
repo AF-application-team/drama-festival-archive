@@ -24,6 +24,6 @@ namespace AF_Models
         [ForeignKey("FestivalId")]
         public virtual Festival Festival { get; set; }
         [ForeignKey("EditedBy")]
-        public virtual User Edited { get; set; }
+        public virtual User Editor { get; set; }
     }
 }
