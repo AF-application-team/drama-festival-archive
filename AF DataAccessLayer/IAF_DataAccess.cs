@@ -10,100 +10,108 @@ namespace AF_DataAccessLayer
     public interface IAF_DataAccess
     {
         #region Award
-        void AddAward(Award newAward);
-        void RemoveAward(int id);
-        void UpdateAward(Award updateData);
-        Award GetAward(int id);
-        List<Award> GetAwardsPaged(int pageNr, int pageAmount);
+        Task AddAward(Award newAward);
+        Task RemoveAward(int id);
+        Task UpdateAward(Award updateData);
+        Task<Award> GetAward(int id);
+        Task<List<Award>> GetAwardsPaged(int pageNr, int pageAmount);
+        Task<List<Award>> GetAllAwards(); 
         #endregion
         #region Category
-        void AddCategory(Category newCategory);
-        void RemoveCategory(int id);
-        void UpdateCategory(Category updateData);
-        Category GetCategory(int id);
-        List<Category> GetCategoriesPaged(int pageNr, int pageAmount);
+        Task AddCategory(Category newCategory);
+        Task RemoveCategory(int id);
+        Task UpdateCategory(Category updateData);
+        Task<Category> GetCategory(int id);
+        Task<List<Category>> GetCategoriesPaged(int pageNr, int pageAmount);
         Task<List<Category>> GetAllCategories();
         #endregion
         #region Festival
-        void AddFestival(Festival newFestival);
-        void RemoveFestival(int id);
-        void UpdateFestival(Festival updateData);
-        Festival GetFestival(int id);
-        List<Festival> GetFestivalsPaged(int pageNr, int pageAmount);
+        Task AddFestival(Festival newFestival);
+        Task RemoveFestival(int id);
+        Task UpdateFestival(Festival updateData);
+        Task<Festival> GetFestival(int id);
+        Task<List<Festival>> GetFestivalsPaged(int pageNr, int pageAmount);
+        Task<List<Festival>> GetAllFestivals();
         #endregion
         #region Job
-        void AddJob(Job newJob);
-        void RemoveJob(int id);
-        void UpdateJob(Job updateData);
-        Job GetJob(int id);
-        List<Job> GetJobsPaged(int pageNr, int pageAmount);
-        List<Job> GetAllJobs(); 
+        Task AddJob(Job newJob);
+        Task RemoveJob(int id);
+        Task UpdateJob(Job updateData);
+        Task<Job> GetJob(int id);
+        Task<List<Job>> GetJobsPaged(int pageNr, int pageAmount);
+        Task<List<Job>> GetAllJobs(); 
         #endregion
         #region News
-        void AddNews(News newNews);
-        void RemoveNews(int id);
-        void UpdateNews(News updateData);
-        News GetNews(int id);
-        List<News> GetNewsPaged(int pageNr, int pageAmount);
+        Task AddNews(News newNews);
+        Task RemoveNews(int id);
+        Task UpdateNews(News updateData);
+        Task<News> GetNews(int id);
+        Task<List<News>> GetNewsPaged(int pageNr, int pageAmount);
+        Task<List<News>> GetAllNews(); 
         #endregion
         #region Person
-        void AddPerson(Person newPerson);
-        void RemovePerson(int id);
-        void UpdatePerson(Person updateData);
-        Person GetPerson(int id);
-        List<Person> GetPeoplePaged(int pageNr, int pageAmount);
+        Task AddPerson(Person newPerson);
+        Task RemovePerson(int id);
+        Task UpdatePerson(Person updateData);
+        Task<Person> GetPerson(int id);
+        Task<List<Person>> GetPeoplePaged(int pageNr, int pageAmount);
+        Task<List<Person>> GetAllPeople(); 
         #endregion
         #region Play
-        void AddPlay(Play newPlay);
-        void RemovePlay(int id);
-        void UpdatePlay(Play updateData);
-        Play GetPlay(int id);
+        Task AddPlay(Play newPlay);
+        Task RemovePlay(int id);
+        Task UpdatePlay(Play updateData);
+        Task<Play> GetPlay(int id);
         Task<List<Play>> GetPlaysPaged(int pageNr, int pageAmount);
-        List<Play> GetAllPlays();
+        Task<List<Play>> GetAllPlays();
         #endregion
         #region Position
-        void AddPosition(Position newPosition);
-        void RemovePosition(int id);
-        void UpdatePosition(Position updateData);
-        Position GetPosition(int id);
-        List<Position> GetPositionsPaged(int pageNr, int pageAmount);
-        List<Position> GetAllPositions();  
+        Task AddPosition(Position newPosition);
+        Task RemovePosition(int id);
+        Task UpdatePosition(Position updateData);
+        Task<Position> GetPosition(int id);
+        Task<List<Position>> GetPositionsPaged(int pageNr, int pageAmount);
+        Task<List<Position>> GetAllPositions();  
         #endregion
         #region RelationFestivalPersonPosition
-        void AddRelationFestivalPersonPosition(RelationFestivalPersonPosition newRelationFestivalPersonPosition);
-        void RemoveRelationFestivalPersonPosition(int id);
-        void UpdateRelationFestivalPersonPosition(RelationFestivalPersonPosition updateData);
-        RelationFestivalPersonPosition GetRelationFestivalPersonPosition(int id);
-        List<RelationFestivalPersonPosition> GetRelationFestivalPersonPositionPaged(int pageNr, int pageAmount);
+        Task AddRelationFestivalPersonPosition(RelationFestivalPersonPosition newRelationFestivalPersonPosition);
+        Task RemoveRelationFestivalPersonPosition(int id);
+        Task UpdateRelationFestivalPersonPosition(RelationFestivalPersonPosition updateData);
+        Task<RelationFestivalPersonPosition> GetRelationFestivalPersonPosition(int id);
+        Task<List<RelationFestivalPersonPosition>> GetRelationFestivalPersonPositionPaged(int pageNr, int pageAmount);
+        Task<List<RelationFestivalPersonPosition>> GetAllRelationFestivalPersonPosition(); 
         #endregion
         #region RelationPersonAward
-        void AddRelationPersonAward(RelationPersonAward newRelationPersonAward);
-        void RemoveRelationPersonAward(int id);
-        void UpdateRelationPersonAward(RelationPersonAward updateData);
-        RelationPersonAward GetRelationPersonAward(int id);
-        List<RelationPersonAward> GetRelationPersonAwardPaged(int pageNr, int pageAmount);
+        Task AddRelationPersonAward(RelationPersonAward newRelationPersonAward);
+        Task RemoveRelationPersonAward(int id);
+        Task UpdateRelationPersonAward(RelationPersonAward updateData);
+        Task<RelationPersonAward> GetRelationPersonAward(int id);
+        Task<List<RelationPersonAward>> GetRelationPersonAwardPaged(int pageNr, int pageAmount);
+        Task<List<RelationPersonAward>> GetAllRelationPersonAward();
         #endregion
         #region RelationPersonPlayJob
-        void AddRelationPersonPlayJob(RelationPersonPlayJob newRelationPersonPlayJob);
-        void RemoveRelationPersonPlayJob(int id);
-        void UpdateRelationPersonPlayJob(RelationPersonPlayJob updateData);
-        RelationPersonPlayJob GetRelationPersonPlayJob(int id);
-        List<RelationPersonPlayJob> GetRelationPersonPlayJobPaged(int pageNr, int pageAmount);
+        Task AddRelationPersonPlayJob(RelationPersonPlayJob newRelationPersonPlayJob);
+        Task RemoveRelationPersonPlayJob(int id);
+        Task UpdateRelationPersonPlayJob(RelationPersonPlayJob updateData);
+        Task<RelationPersonPlayJob> GetRelationPersonPlayJob(int id);
+        Task<List<RelationPersonPlayJob>> GetRelationPersonPlayJobPaged(int pageNr, int pageAmount);
+        Task<List<RelationPersonPlayJob>> GetAllRelationPersonPlayJob();
         #endregion
         #region RelationPersonPlayRole
-        void AddRelationPersonPlayRole(RelationPersonPlayRole newRelationPersonPlayRole);
-        void RemoveRelationPersonPlayRole(int id);
-        void UpdateRelationPersonPlayRole(RelationPersonPlayRole updateData);
-        RelationPersonPlayRole GetRelationPersonPlayRole(int id);
-        List<RelationPersonPlayRole> GetRelationPersonPlayRolePaged(int pageNr, int pageAmount);
+        Task AddRelationPersonPlayRole(RelationPersonPlayRole newRelationPersonPlayRole);
+        Task RemoveRelationPersonPlayRole(int id);
+        Task UpdateRelationPersonPlayRole(RelationPersonPlayRole updateData);
+        Task<RelationPersonPlayRole> GetRelationPersonPlayRole(int id);
+        Task<List<RelationPersonPlayRole>> GetRelationPersonPlayRolePaged(int pageNr, int pageAmount);
+        Task<List<RelationPersonPlayRole>> GetAllRelationPersonPlayRole();
         #endregion
         #region User
-        void AddUser(User newUser);
-        void RemoveUser(int id);
-        void UpdateUser(User updateData);
-        User GetUser(int id);
-        List<User> GetUserPaged(int pageNr, int pageAmount);
-        List<User> GetAllUsers();
+        Task AddUser(User newUser);
+        Task RemoveUser(int id);
+        Task UpdateUser(User updateData);
+        Task<User> GetUser(int id);
+        Task<List<User>> GetUserPaged(int pageNr, int pageAmount);
+        Task<List<User>> GetAllUsers();
         #endregion
     }
 }

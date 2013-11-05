@@ -16,9 +16,9 @@ namespace TestingConsoleApplication
             IAF_DataAccess DAL = new AF_DataAccess();
 
             var cat = new Category { /*CategoryId = 40,*/ Title = "cat1", Group = 2, Order = 1, EditedBy = 1, EditDate = new DateTime(2011, 6, 10) };
-            DAL.AddCategory(cat);
-            Category a = DAL.GetCategory(5);
-            Console.WriteLine(a.Title);
+            //DAL.AddCategory(cat);
+            //Category a = DAL.GetCategory(5);
+            //Console.WriteLine(a.Title);
             Console.ReadKey();
         }
     }
