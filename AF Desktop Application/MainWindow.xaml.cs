@@ -27,24 +27,25 @@ namespace AF_Desktop_Application
         static IAF_LogicService DB = new AF_Logic();
 
         #region Global parameters
-            #region for People Tab
-            public ObservableCollection<Person> QuerriedPeople { get; set; }
+        #region for People Tab
+        public ObservableCollection<Person> QuerriedPeople { get; set; }
+        public int PeoplePerPage { get; set; }
 
-            #endregion
-            #region for Plays Tab
-            public ObservableCollection<Play> QuerriedPlays { get; set; }
-
-            #endregion
-            #region Awards Tab
-            public ObservableCollection<Award> QuerrieAwards { get; set; } 
+        #endregion
+        #region for Plays Tab
+        public ObservableCollection<Play> QuerriedPlays { get; set; }
+        public int PlaysPerPage { get; set; }
+        #endregion
+        #region Awards Tab
+        public ObservableCollection<Award> QuerrieAwards { get; set; }
+        public int AwardsPerPage { get; set; }
+        #endregion
+        #region Configuration Tab
+        public ObservableCollection<Category> CategoriesList { get; set; }
+        public ObservableCollection<Job> JobsList { get; set; }
+        public ObservableCollection<Position> PositionsList { get; set; } 
             
-            #endregion
-            #region Configuration Tab
-            public ObservableCollection<Category> CategoriesList { get; set; }
-            public ObservableCollection<Job> JobsList { get; set; }
-            public ObservableCollection<Position> Positions { get; set; } 
-            
-            #endregion
+        #endregion
         #endregion
 
         public MainWindow()
@@ -115,8 +116,7 @@ namespace AF_Desktop_Application
             }
             else if (TabControl.SelectedIndex == 2)
             {
-                //PlaysList = new ObservableCollection<Play>(await DB.GetPlaysPaged(1,10));
-                //PlaysDataGrid.ItemsSource = PlaysList;
+                
             }
         }
 
@@ -137,11 +137,17 @@ namespace AF_Desktop_Application
         {
             CategoriesList = new ObservableCollection<Category>(await DB.GetAllCategories());
             CategoriesListBox.ItemsSource = CategoriesList;
-            //JobsList = new ObservableCollection<Job>(await DB.GetAllJobs());
-            //JobsListBox.ItemsSource = JobsList;
-            //CategoriesList = new ObservableCollection<Position>(await DB.GetAllPositions());
-            //CategoriesListBox.ItemsSource = CategoriesList;
-            TabControl.IsEnabled = true;
+            AwardCategoryFilter.ItemsSource = CategoriesList;
+            PersonAwardFilter.ItemsSource = CategoriesList;
+            
+            JobsList = new ObservableCollection<Job>(await DB.GetAllJobs());
+            PersonJobFilter.ItemsSource = JobsList;
+            JobsListBox.ItemsSource = JobsList;
+            
+            PositionsList = new ObservableCollection<Position>(await DB.GetAllPositions());
+            PersonPositionFilter.ItemsSource = PositionsList;
+            PositionsListBox.ItemsSource = PositionsList;
+            this.IsEnabled = true;
 
         }
     }
