@@ -91,6 +91,10 @@
     <None Include="PostDeployment\Data\Plays.sql" />
     <None Include="PostDeployment\Data\Awards.sql" />
     <None Include="PostDeployment\Data\People.sql" />
+    <None Include="PostDeployment\Data\RelationPersonAward.sql" />
+    <None Include="PostDeployment\Data\RelationPersonPlayJob.sql" />
+    <None Include="PostDeployment\Data\RelationFestivalPersonPosition.sql" />
+    <None Include="PostDeployment\Data\RelationPersonPlayRole.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AF_DB.refactorlog" />
