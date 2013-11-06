@@ -87,6 +87,10 @@
     <None Include="PostDeployment\Data\Positions.sql" />
     <None Include="PostDeployment\Data\Jobs.sql" />
     <None Include="AF_DB_Ania.publish.xml" />
+    <None Include="PostDeployment\Data\Festivals.sql" />
+    <None Include="PostDeployment\Data\Plays.sql" />
+    <None Include="PostDeployment\Data\Awards.sql" />
+    <None Include="PostDeployment\Data\People.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AF_DB.refactorlog" />
