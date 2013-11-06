@@ -447,63 +447,215 @@ namespace AF_DataAccessLayer
         #region News
         public async Task AddNews(News newNews)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.News.Add(newNews);
+                    int recordsAffected = await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task RemoveNews(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    News ne = context.News.First(n => n.NewsId == id);
+                    context.News.Remove(ne);
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task UpdateNews(News updateData)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    News ne = context.News.First(n => n.NewsId == updateData.NewsId);
+                    ne = updateData;
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task<News> GetNews(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    //Category cat = await Task.Run<Category>(() => context.Categories.First(c => c.CategoryId == id));
+                    News ne = context.News.First(n => n.NewsId == id);
+                    ne.Editor = context.Users.First(u => u.UserId == ne.EditedBy);
+                    return (ne);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public async Task<List<News>> GetNewsPaged(int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    List<News> q = await (from n in context.News
+                                           select n).Skip(skip).Take(pageAmount).ToListAsync();
+                    return (q);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public async Task<List<News>> GetAllNews()
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    List<News> q = await (from n in context.News
+                                           select n).ToListAsync();
+                    return (q);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
         #endregion
         #region Person
         public async Task AddPerson(Person newPerson)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.People.Add(newPerson);
+                    int recordsAffected = await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task RemovePerson(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Person per = context.People.First(p => p.PersonId == id);
+                    context.People.Remove(per);
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task UpdatePerson(Person updateData)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Person per = context.People.First(a => a.PersonId == updateData.PersonId);
+                    per = updateData;
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task<Person> GetPerson(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    //Category cat = await Task.Run<Category>(() => context.Categories.First(c => c.CategoryId == id));
+                    Person per = context.People.First(p => p.PersonId == id);
+                    per.Editor = context.Users.First(u => u.UserId == per.EditedBy);
+                    return (per);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public async Task<List<Person>> GetPeoplePaged(int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    List<Person> q = await (from p in context.People
+                                           select p).Skip(skip).Take(pageAmount).ToListAsync();
+                    return (q);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public async Task<List<Person>> GetAllPeople()
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    List<Person> q = await (from p in context.People
+                                           select p).ToListAsync();
+                    return (q);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
         #endregion
         #region Play
@@ -726,127 +878,440 @@ namespace AF_DataAccessLayer
         #region RelationFestivalPersonPosition
         public async Task AddRelationFestivalPersonPosition(RelationFestivalPersonPosition newRelationFestivalPersonPosition)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.RelationsFestivalPersonPosition.Add(newRelationFestivalPersonPosition);
+                    int recordsAffected = await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task RemoveRelationFestivalPersonPosition(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    RelationFestivalPersonPosition rel = context.RelationsFestivalPersonPosition.First(r => r.RelationFestivalPersonPositionId == id);
+                    context.RelationsFestivalPersonPosition.Remove(rel);
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task UpdateRelationFestivalPersonPosition(RelationFestivalPersonPosition updateData)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    RelationFestivalPersonPosition rel = context.RelationsFestivalPersonPosition.First(r => r.RelationFestivalPersonPositionId == updateData.RelationFestivalPersonPositionId);
+                    rel = updateData;
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task<RelationFestivalPersonPosition> GetRelationFestivalPersonPosition(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    //Category cat = await Task.Run<Category>(() => context.Categories.First(c => c.CategoryId == id));
+                    RelationFestivalPersonPosition rel = context.RelationsFestivalPersonPosition.First(r => r.RelationFestivalPersonPositionId == id);
+                    rel.Editor = context.Users.First(u => u.UserId == rel.EditedBy);
+                    rel.Festival = context.Festivals.First(f => f.FestivalId == rel.FestivalId);
+                    rel.Person = context.People.First(p => p.PersonId == rel.PersonId);
+                    rel.Position = context.Positions.First(p => p.PositionId == rel.PositionId);
+                    return (rel);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public async Task<List<RelationFestivalPersonPosition>> GetRelationFestivalPersonPositionPaged(int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    List<RelationFestivalPersonPosition> q = await (from p in context.RelationsFestivalPersonPosition
+                                           select p).Skip(skip).Take(pageAmount).ToListAsync();
+                    return (q);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public async Task<List<RelationFestivalPersonPosition>> GetAllRelationFestivalPersonPosition()
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    List<RelationFestivalPersonPosition> q = await (from p in context.RelationsFestivalPersonPosition
+                                           select p).ToListAsync();
+                    return (q);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
         #endregion
         #region RelationPersonAward
         public async Task AddRelationPersonAward(RelationPersonAward newRelationPersonAward)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.RelationsPersonAward.Add(newRelationPersonAward);
+                    int recordsAffected = await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task RemoveRelationPersonAward(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    RelationPersonAward rel = context.RelationsPersonAward.First(r => r.RelationPersonAwardId == id);
+                    context.RelationsPersonAward.Remove(rel);
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task UpdateRelationPersonAward(RelationPersonAward updateData)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    RelationPersonAward rel = context.RelationsPersonAward.First(r => r.RelationPersonAwardId == updateData.RelationPersonAwardId);
+                    rel = updateData;
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task<RelationPersonAward> GetRelationPersonAward(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    //Category cat = await Task.Run<Category>(() => context.Categories.First(c => c.CategoryId == id));
+                    RelationPersonAward rel = context.RelationsPersonAward.First(r => r.RelationPersonAwardId == id);
+                    rel.Editor = context.Users.First(u => u.UserId == rel.EditedBy);
+                    rel.Person = context.People.First(p => p.PersonId == rel.PersonId);
+                    rel.Award = context.Awards.First(a => a.AwardId == rel.AwardId);
+                    return (rel);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public async Task<List<RelationPersonAward>> GetRelationPersonAwardPaged(int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    List<RelationPersonAward> q = await (from r in context.RelationsPersonAward
+                                           select r).Skip(skip).Take(pageAmount).ToListAsync();
+                    return (q);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public async Task<List<RelationPersonAward>> GetAllRelationPersonAward()
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    List<RelationPersonAward> q = await (from r in context.RelationsPersonAward
+                                           select r).ToListAsync();
+                    return (q);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         #endregion
         #region RelationPersonPlayJob
         public async Task AddRelationPersonPlayJob(RelationPersonPlayJob newRelationPersonPlayJob)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.RelationsPersonPlayJob.Add(newRelationPersonPlayJob);
+                    int recordsAffected = await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task RemoveRelationPersonPlayJob(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    RelationPersonPlayJob rel = context.RelationsPersonPlayJob.First(r => r.RelationPersonPlayJobId == id);
+                    context.RelationsPersonPlayJob.Remove(rel);
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task UpdateRelationPersonPlayJob(RelationPersonPlayJob updateData)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    RelationPersonPlayJob rel = context.RelationsPersonPlayJob.First(r => r.RelationPersonPlayJobId == updateData.RelationPersonPlayJobId);
+                    rel = updateData;
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task<RelationPersonPlayJob> GetRelationPersonPlayJob(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    //Category cat = await Task.Run<Category>(() => context.Categories.First(c => c.CategoryId == id));
+                    RelationPersonPlayJob rel = context.RelationsPersonPlayJob.First(r => r.RelationPersonPlayJobId == id);
+                    rel.Editor = context.Users.First(u => u.UserId == rel.EditedBy);
+                    rel.Person = context.People.First(p => p.PersonId == rel.PersonId);
+                    rel.Play = context.Plays.First(p => p.PlayId == rel.PlayId);
+                    rel.Job = context.Jobs.First(j => j.JobId == rel.JobId);
+                    return (rel);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public async Task<List<RelationPersonPlayJob>> GetRelationPersonPlayJobPaged(int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    List<RelationPersonPlayJob> q = await (from r in context.RelationsPersonPlayJob
+                                           select r).Skip(skip).Take(pageAmount).ToListAsync();
+                    return (q);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public async Task<List<RelationPersonPlayJob>> GetAllRelationPersonPlayJob()
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    List<RelationPersonPlayJob> q = await (from r in context.RelationsPersonPlayJob
+                                           select r).ToListAsync();
+                    return (q);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
-
         #endregion
         #region RelationPersonPlayRole
         public async Task AddRelationPersonPlayRole(RelationPersonPlayRole newRelationPersonPlayRole)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.RelationsPersonPlayRole.Add(newRelationPersonPlayRole);
+                    int recordsAffected = await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task RemoveRelationPersonPlayRole(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    RelationPersonPlayRole rel = context.RelationsPersonPlayRole.First(r => r.RelationPersonPlayRoleId == id);
+                    context.RelationsPersonPlayRole.Remove(rel);
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task UpdateRelationPersonPlayRole(RelationPersonPlayRole updateData)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    RelationPersonPlayRole rel = context.RelationsPersonPlayRole.First(r => r.RelationPersonPlayRoleId == updateData.RelationPersonPlayRoleId);
+                    rel = updateData;
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+            }
         }
 
         public async Task<RelationPersonPlayRole> GetRelationPersonPlayRole(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    //Category cat = await Task.Run<Category>(() => context.Categories.First(c => c.CategoryId == id));
+                    RelationPersonPlayRole rel = context.RelationsPersonPlayRole.First(r => r.RelationPersonPlayRoleId == id);
+                    rel.Editor = context.Users.First(u => u.UserId == rel.EditedBy);
+                    rel.Person = context.People.First(p => p.PersonId == rel.PersonId);
+                    rel.Play = context.Plays.First(p => p.PlayId == rel.PlayId);
+                    return (rel);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public async Task<List<RelationPersonPlayRole>> GetRelationPersonPlayRolePaged(int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    List<RelationPersonPlayRole> q = await (from r in context.RelationsPersonPlayRole
+                                           select r).Skip(skip).Take(pageAmount).ToListAsync();
+                    return (q);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         public async Task<List<RelationPersonPlayRole>> GetAllRelationPersonPlayRole()
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    List<RelationPersonPlayRole> q = await (from r in context.RelationsPersonPlayRole
+                                           select r).ToListAsync();
+                    return (q);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException);
+                }
+                return null;
+            }
         }
 
         #endregion
@@ -858,7 +1323,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     context.Users.Add(newUser);
-                    int recordsAffected = context.SaveChanges();
+                    int recordsAffected = await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
                 {
@@ -875,7 +1340,7 @@ namespace AF_DataAccessLayer
                 {
                     User us = context.Users.First(u => u.UserId == id);
                     context.Users.Remove(us);
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
                 {
@@ -892,7 +1357,7 @@ namespace AF_DataAccessLayer
                 {
                     User us = context.Users.First(u => u.UserId == updateData.UserId);
                     us = updateData;
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
                 {
@@ -925,10 +1390,9 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    IQueryable<User> query = (from u in context.Users
-                                                  orderby u.LastName
-                                                  select u).Skip(skip).Take(pageAmount);
-                    return (query.ToList<User>());
+                    List<User> q = await (from u in context.Users
+                                           select u).Skip(skip).Take(pageAmount).ToListAsync();
+                    return (q);
                 }
                 catch (Exception ex)
                 {
@@ -944,10 +1408,9 @@ namespace AF_DataAccessLayer
             {
                 try
                 {
-                    IQueryable<User> query = from u in context.Users
-                                                 orderby u.LastName
-                                                 select u;
-                    return (query.ToList<User>());
+                    List<User> q = await (from u in context.Users
+                                           select u).ToListAsync();
+                    return (q);
                 }
                 catch (Exception ex)
                 {
