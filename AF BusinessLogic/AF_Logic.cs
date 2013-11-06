@@ -47,7 +47,7 @@ namespace AF_BusinessLogic
         #region Categories
         public async Task AddCategory(Category newCategory)
         {
-            throw new NotImplementedException();
+            await DataAccess.AddCategory(newCategory);
         }
 
 
@@ -110,7 +110,7 @@ namespace AF_BusinessLogic
         #region Jobs
         public async Task AddJob(Job newJob)
         {
-            throw new NotImplementedException();
+            await DataAccess.AddJob(newJob);
         }
 
         public async Task RemoveJob(int id)
@@ -138,6 +138,7 @@ namespace AF_BusinessLogic
             return await DataAccess.GetAllJobs();
         } 
         #endregion
+        #region News
         public async Task AddNews(News newNews)
         {
             throw new NotImplementedException();
@@ -166,8 +167,9 @@ namespace AF_BusinessLogic
         public async Task<List<News>> GetAllNews()
         {
             throw new NotImplementedException();
-        }
-
+        } 
+        #endregion
+        #region People
         public async Task AddPerson(Person newPerson)
         {
             throw new NotImplementedException();
@@ -196,8 +198,10 @@ namespace AF_BusinessLogic
         public async Task<List<Person>> GetAllPeople()
         {
             throw new NotImplementedException();
-        }
+        } 
+        #endregion
 
+        #region Plays
         public async Task AddPlay(Play newPlay)
         {
             throw new NotImplementedException();
@@ -226,11 +230,12 @@ namespace AF_BusinessLogic
         public async Task<List<Play>> GetAllPlays()
         {
             throw new NotImplementedException();
-        }
-
+        } 
+        #endregion
+        #region Positions
         public async Task AddPosition(Position newPosition)
         {
-            throw new NotImplementedException();
+            await DataAccess.AddPosition(newPosition);
         }
 
         public async Task RemovePosition(int id)
@@ -256,8 +261,10 @@ namespace AF_BusinessLogic
         public async Task<List<Position>> GetAllPositions()
         {
             return await DataAccess.GetAllPositions();
-        }
-
+        } 
+        #endregion
+        
+        #region RelationFestivalPersonPosition
         public async Task AddRelationFestivalPersonPosition(RelationFestivalPersonPosition newRelationFestivalPersonPosition)
         {
             throw new NotImplementedException();
@@ -286,8 +293,9 @@ namespace AF_BusinessLogic
         public async Task<List<RelationFestivalPersonPosition>> GetAllRelationFestivalPersonPosition()
         {
             throw new NotImplementedException();
-        }
-
+        } 
+        #endregion
+        #region RelationPersonAward
         public async Task AddRelationPersonAward(RelationPersonAward newRelationPersonAward)
         {
             throw new NotImplementedException();
@@ -316,8 +324,9 @@ namespace AF_BusinessLogic
         public async Task<List<RelationPersonAward>> GetAllRelationPersonAward()
         {
             throw new NotImplementedException();
-        }
-
+        } 
+        #endregion
+        #region RelationPersonPlayJob
         public async Task AddRelationPersonPlayJob(RelationPersonPlayJob newRelationPersonPlayJob)
         {
             throw new NotImplementedException();
@@ -346,8 +355,9 @@ namespace AF_BusinessLogic
         public async Task<List<RelationPersonPlayJob>> GetAllRelationPersonPlayJob()
         {
             throw new NotImplementedException();
-        }
-
+        } 
+        #endregion
+        #region RelationPersonPlayRole
         public async Task AddRelationPersonPlayRole(RelationPersonPlayRole newRelationPersonPlayRole)
         {
             throw new NotImplementedException();
@@ -376,8 +386,10 @@ namespace AF_BusinessLogic
         public async Task<List<RelationPersonPlayRole>> GetAllRelationPersonPlayRole()
         {
             throw new NotImplementedException();
-        }
+        } 
+        #endregion
 
+        #region Users
         public async Task AddUser(User newUser)
         {
             throw new NotImplementedException();
@@ -395,7 +407,7 @@ namespace AF_BusinessLogic
 
         public async Task<User> GetUser(int id)
         {
-            throw new NotImplementedException();
+            return await DataAccess.GetUser(id);
         }
 
         public async Task<List<User>> GetUserPaged(int pageNr, int pageAmount)
@@ -406,6 +418,7 @@ namespace AF_BusinessLogic
         public async Task<List<User>> GetAllUsers()
         {
             throw new NotImplementedException();
-        }
+        } 
+        #endregion
     }
 }

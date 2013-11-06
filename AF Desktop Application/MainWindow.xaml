@@ -349,8 +349,8 @@
                     <DockPanel Grid.Column="0">
                         <Label Content="Categories" DockPanel.Dock="Top" />
                         <DockPanel DockPanel.Dock="Bottom">
-                            <Button HorizontalContentAlignment="Center" DockPanel.Dock="Right">Dodaj Kategorię</Button>
-                            <TextBox x:Name="NewCategoryNameTextBox" SpellCheck.IsEnabled="True" Margin="1"/>
+                            <Button x:Name="AddCategoryButton" HorizontalContentAlignment="Center" DockPanel.Dock="Right" Click="AddCategoryButton_Click">Dodaj Kategorię</Button>
+                            <TextBox x:Name="AddCategoryTextBox" SpellCheck.IsEnabled="True" Margin="1"/>
                         </DockPanel>
 
                         <ListBox x:Name="CategoriesListBox">
@@ -365,8 +365,8 @@
                     <DockPanel Grid.Column="1">
                         <Label Content="Prace" DockPanel.Dock="Top" />
                         <DockPanel DockPanel.Dock="Bottom">
-                            <Button HorizontalContentAlignment="Center" DockPanel.Dock="Right" Content="Dodaj Pracę"/>
-                            <TextBox x:Name="NewJobNameTextBox" SpellCheck.IsEnabled="True" Margin="1"/>
+                            <Button x:Name="AddJobButton" HorizontalContentAlignment="Center" DockPanel.Dock="Right" Content="Dodaj Pracę" Click="AddJobButton_Click"/>
+                            <TextBox x:Name="AddJobTextBox" SpellCheck.IsEnabled="True" Margin="1"/>
                         </DockPanel>
 
                         <ListBox x:Name="JobsListBox">
@@ -381,8 +381,8 @@
                     <DockPanel Grid.Column="2">
                         <Label Content="Pozycje" DockPanel.Dock="Top" />
                         <DockPanel DockPanel.Dock="Bottom">
-                            <Button HorizontalContentAlignment="Center" DockPanel.Dock="Right" Content="Dodaj Pozycję"/>
-                            <TextBox x:Name="NewPositionNameTextBox" SpellCheck.IsEnabled="True" Margin="1"/>
+                            <Button x:Name="AddPositionButton" HorizontalContentAlignment="Center" DockPanel.Dock="Right" Content="Dodaj Pozycję" Click="AddPositionButton_Click"/>
+                            <TextBox x:Name="AddPositionTextBox" SpellCheck.IsEnabled="True" Margin="1"/>
                         </DockPanel>
 
                         <ListBox x:Name="PositionsListBox">

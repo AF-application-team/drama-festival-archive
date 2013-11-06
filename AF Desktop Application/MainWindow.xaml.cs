@@ -25,6 +25,7 @@ namespace AF_Desktop_Application
     public partial class MainWindow : Window
     {
         static IAF_LogicService DB = new AF_Logic();
+        static User LoggedUser { get; set; }
 
         #region Global parameters
         #region for People Tab
@@ -135,20 +136,87 @@ namespace AF_Desktop_Application
 
         private async void MainWindow_Initialized(object sender, EventArgs e)
         {
+            RefreshCategories();
+            RefreshPositions();
+            RefreshJobs();
+
+            LoggedUser = await DB.GetUser(1);
+            this.IsEnabled = true;
+        }
+
+        #region Refeshing Lists
+        private async void RefreshCategories()
+        {
             CategoriesList = new ObservableCollection<Category>(await DB.GetAllCategories());
             CategoriesListBox.ItemsSource = CategoriesList;
             AwardCategoryFilter.ItemsSource = CategoriesList;
             PersonAwardFilter.ItemsSource = CategoriesList;
-            
+        }
+        private async void RefreshJobs()
+        {
             JobsList = new ObservableCollection<Job>(await DB.GetAllJobs());
             PersonJobFilter.ItemsSource = JobsList;
             JobsListBox.ItemsSource = JobsList;
-            
+        }
+        private async void RefreshPositions()
+        {
             PositionsList = new ObservableCollection<Position>(await DB.GetAllPositions());
             PersonPositionFilter.ItemsSource = PositionsList;
             PositionsListBox.ItemsSource = PositionsList;
-            this.IsEnabled = true;
 
+        } 
+        #endregion
+        #region Adding Categories, Jobs and Positions
+        private async void AddCategoryButton_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO Poprawić hardcodowane wartości służące do ustawienia kategorii w kolejności za pomocą procedur składowanych!!
+            AddCategoryButton.IsEnabled = false;
+            var cat = new Category
+            {
+                Title = AddCategoryTextBox.Text,
+                EditDate = DateTime.Now,
+                EditedBy = LoggedUser.UserId,
+                Group = 7,
+                Order = 10
+            };
+            await DB.AddCategory(cat);
+            AddCategoryTextBox.Text = "";
+            RefreshCategories();
+            AddCategoryButton.IsEnabled = true;
         }
+        private async void AddJobButton_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO Poprawić hardcodowane wartości służące do ustawienia kategorii w kolejności za pomocą procedur składowanych!!
+            AddJobButton.IsEnabled = false;
+            var job = new Job
+            {
+                JobTitle = AddJobTextBox.Text,
+                EditDate = DateTime.Now,
+                EditedBy = LoggedUser.UserId,
+            };
+            await DB.AddJob(job);
+            AddJobTextBox.Text = "";
+            RefreshJobs();
+            AddJobButton.IsEnabled = true;
+        }
+
+        private async void AddPositionButton_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO Poprawić hardcodowane wartości służące do ustawienia kategorii w kolejności za pomocą procedur składowanych!!
+            AddPositionButton.IsEnabled = false;
+            var position = new Position
+            {
+                PositionTitle = AddPositionTextBox.Text,
+                EditDate = DateTime.Now,
+                EditedBy = LoggedUser.UserId,
+                Section = 12,
+                Order = 6
+            };
+            await DB.AddPosition(position);
+            AddPositionTextBox.Text = "";
+            RefreshPositions();
+            AddPositionButton.IsEnabled = true;
+        } 
+        #endregion
     }
 }
