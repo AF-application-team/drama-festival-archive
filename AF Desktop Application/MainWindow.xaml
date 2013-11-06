@@ -4,9 +4,9 @@
         xmlns:local="clr-namespace:AF_Desktop_Application"
         Title="Archiwum Festiwalowe" 
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
-        Width="1000" Height="700"  
-        Initialized="MainWindow_Initialized"
-        IsEnabled="False">
+        Width="1000" Height="700" 
+        IsEnabled="False" MinWidth="1000" MinHeight="700"
+        Initialized="MainWindow_Initialized">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="Bool2Visibility"/>
     </Window.Resources>
@@ -31,9 +31,14 @@
                 </TabItem.Header>
                 <DockPanel>
                     <ToolBar Band="1" BandIndex="1" VerticalAlignment="Top" DockPanel.Dock="Top">
-                        <TextBox Margin="5" Width="100" />
-                        <Button Width="auto" Height="25" Content="Wyszukaj"  Padding="2,2" Margin="5,3" Background="LightGray" />
-                        <CheckBox x:Name="ShowPeopleColumnsCheckBox" Height="27" Content="Kolumny" Margin="5,2" />
+                        <Label Content="Imię:" VerticalAlignment="Center"/>
+                        <TextBox x:Name="FirstNameTextBox" Margin="5" Width="100" />
+                        <Label Content="Nazwisko:" VerticalAlignment="Center"/>
+                        <TextBox x:Name="LastNameTextBox" Margin="5" Width="100" />
+                        <Label Content="Rola:" VerticalAlignment="Center"/>
+                        <TextBox x:Name="RoleTextBox" Margin="5" Width="100" />
+                        <Button  x:Name="SearchPersonButton" Width="auto" Height="25" Content="Wyszukaj"  Padding="2,2" Margin="5,3" Background="LightGray" Click="SearchPersonButton_Click" />
+                        <CheckBox x:Name="ShowPeopleColumnsCheckBox" Height="27" Content="Kolumny" Margin="25,2,5,2" />
                         <CheckBox x:Name="ShowPeopleFiltersCheckBox" Height="27" Content="Filtry" Margin="5,2,100,2" IsChecked="True" />
                         <Button x:Name="AddPersonButton" Click="AddPersonButton_Click" >
                             <StackPanel Orientation="Horizontal">
@@ -89,18 +94,14 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
-                        <Label Content="Festiwal:"/>
-                        <ComboBox x:Name="PersonFestivalFilter" Margin="5,5">
+                        <Label Content="Festiwal:" Visibility="Collapsed"/>
+                        <ComboBox x:Name="PersonFestivalFilter" Margin="5,5" Visibility="Collapsed">
                             <ComboBoxItem>XX</ComboBoxItem>
                             <ComboBoxItem>XXI</ComboBoxItem>
                         </ComboBox>
                         <Label Content="Rocznik:"/>
                         <ComboBox x:Name="PersonYearFilter" Margin="5,5">
-                            <ComboBoxItem>1992</ComboBoxItem>
-                            <ComboBoxItem>1991</ComboBoxItem>
-                            <ComboBoxItem>1990</ComboBoxItem>
-                            <ComboBoxItem>1989</ComboBoxItem>
-                            <ComboBoxItem>1988</ComboBoxItem>
+                            
                         </ComboBox>
                         <Label Content="Profil:"/>
                         <ListBox x:Name="PersonProfileFilter" Margin="5,5" SelectionMode="Single">
@@ -119,6 +120,15 @@
                         <Label />
                         <Button Content="&gt;"/>
                         <Button Content="&gt;&gt;"/>
+                        
+                        <ComboBox x:Name="PeoplePerPageComboBox" Margin="25,0" >
+                            <ComboBoxItem>10</ComboBoxItem>
+                            <ComboBoxItem>25</ComboBoxItem>
+                            <ComboBoxItem IsSelected="True">50</ComboBoxItem>
+                            <ComboBoxItem>75</ComboBoxItem>
+                        </ComboBox>
+                            
+                        
                     </StatusBar>
 
                     <DataGrid DockPanel.Dock="Bottom" AutoGenerateColumns="False" >
@@ -219,6 +229,22 @@
                         </ListBox>
                     </StackPanel>
 
+                    <StatusBar DockPanel.Dock="Bottom" Height="30">
+                        <Button Content="&lt;&lt;"/>
+                        <Button Content="&lt;"/>
+                        <Label />
+                        <Button Content="&gt;"/>
+                        <Button Content="&gt;&gt;"/>
+
+                        <ComboBox x:Name="PlaysPerPageComboBox" Margin="25,0" >
+                            <ComboBoxItem>10</ComboBoxItem>
+                            <ComboBoxItem>25</ComboBoxItem>
+                            <ComboBoxItem IsSelected="True">50</ComboBoxItem>
+                            <ComboBoxItem>75</ComboBoxItem>
+                        </ComboBox>
+
+
+                    </StatusBar>
 
                     <DataGrid DockPanel.Dock="Bottom" x:Name="PlaysDataGrid" AutoGenerateColumns="False" CanUserReorderColumns="False" SelectionMode="Single" CanUserDeleteRows="True" CanUserAddRows="True" >
                         <DataGrid.Columns>
@@ -315,13 +341,29 @@
                         </ListBox>
                     </StackPanel>
 
+                    <StatusBar DockPanel.Dock="Bottom" Height="30">
+                        <Button Content="&lt;&lt;"/>
+                        <Button Content="&lt;"/>
+                        <Label />
+                        <Button Content="&gt;"/>
+                        <Button Content="&gt;&gt;"/>
 
-                    <DataGrid DockPanel.Dock="Bottom" AutoGenerateColumns="False" >
+                        <ComboBox x:Name="AwardsPerPageComboBox" Margin="25,0" >
+                            <ComboBoxItem>10</ComboBoxItem>
+                            <ComboBoxItem>25</ComboBoxItem>
+                            <ComboBoxItem IsSelected="True">50</ComboBoxItem>
+                            <ComboBoxItem>75</ComboBoxItem>
+                        </ComboBox>
+
+
+                    </StatusBar>
+
+                    <DataGrid x:Name="AwardsDataGrid" DockPanel.Dock="Bottom" AutoGenerateColumns="False" >
                         <DataGrid.Columns>
                             <DataGridCheckBoxColumn Binding="{x:Null}" CanUserSort="False" CanUserReorder="False" CanUserResize="False" ClipboardContentBinding="{x:Null}"/>
                             <DataGridTextColumn Binding="{Binding Path=AwardId}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Id Nagrody" IsReadOnly="True" Visibility="Visible"/>
-                            <DataGridTextColumn Binding="{Binding Path=Cathegory}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Kategoria" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardCategoryColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{Binding Path=Play}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Przedstawienie" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardPlayColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=Category.Title}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Kategoria" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardCategoryColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=Play.Title}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Przedstawienie" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardPlayColumnCheckbox}}"/>
                             <DataGridTextColumn Binding="{Binding Path=FestivalId}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Festiwal" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardFestivalColumnCheckbox}}"/>
                             <DataGridTextColumn Binding="{Binding Path=EditDate}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Data Edycji" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardEditInfoFillterCheckbox}}"/>
                             <DataGridTextColumn Binding="{Binding Path=EditedBy}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Edytor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardEditInfoFillterCheckbox}}"/>

@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using AF_Models;
+using AF_Searching_Criteria;
 
 namespace AF_DataAccessLayer
 {
@@ -84,6 +85,8 @@ namespace AF_DataAccessLayer
             }
         }
 
+        
+
         public async Task<List<Award>> GetAwardsPaged(int pageNr, int pageAmount)
         {
             using (var context = new AF_Context())
@@ -91,8 +94,10 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    List<Award> q = await (from a in context.Awards
-                                           select a).Skip(skip).Take(pageAmount).ToListAsync();
+                    List<Award> q = await (from a in context.Awards.Include(a => a.Category).Include(a =>  a.Play)
+                                               select a).OrderBy(a => a.AwardId).Skip(skip).Take(pageAmount).ToListAsync();
+                    
+                    
                     return (q);
                 }
                 catch (Exception ex)
@@ -657,6 +662,25 @@ namespace AF_DataAccessLayer
                 return null;
             }
         }
+
+        //public async Task<List<Person>> SearchPeople(PeopleSearchingCriteria criteria)
+        //{
+            //using (var context = new AF_Context())
+            //{
+            // List<Person> q =await context.Awards.Join(context.RelationsPersonAward,a => a,ap => ap.AwardId, (ap, a) => new {ap.AwardId = a.AAwardId});
+            //from p in context.People
+            //from a in context.Awards
+            //join pa in context.RelationsPersonAward
+            //    on new { a.AwardId, p.PersonId} equals new { pa.AwardId, pa.PersonId }
+            //    into details
+            //join c in context.Categories 
+            //    on new {a.CategoryId} equals new {c.CategoryId}
+            //    into table
+            //from tab in table
+            //where
+            //select new { ord.OrderID, prod.ProductID, det.UnitPrice };)
+        //}
+
         #endregion
         #region Play
         public async Task AddPlay(Play newPlay)

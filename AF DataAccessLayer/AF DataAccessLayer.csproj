@@ -63,6 +63,13 @@
       <Project>{87104c17-7465-465f-99d6-c2c95051a714}</Project>
       <Name>AF Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AF Searching Criteria\AF Searching Criteria.csproj">
+      <Project>{21c840e7-9e44-48a1-ae53-55f33d8e31d7}</Project>
+      <Name>AF Searching Criteria</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

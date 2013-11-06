@@ -36,7 +36,7 @@ namespace AF_BusinessLogic
 
         public async Task<List<Award>> GetAwardsPaged(int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            return await DataAccess.GetAwardsPaged(pageNr, pageAmount);
         }
 
         public async Task<List<Award>> GetAllAwards()

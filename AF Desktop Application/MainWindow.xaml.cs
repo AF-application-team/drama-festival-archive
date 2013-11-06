@@ -30,16 +30,16 @@ namespace AF_Desktop_Application
         #region Global parameters
         #region for People Tab
         public ObservableCollection<Person> QuerriedPeople { get; set; }
-        public int PeoplePerPage { get; set; }
+        public int PeoplePage { get; set; }
 
         #endregion
         #region for Plays Tab
         public ObservableCollection<Play> QuerriedPlays { get; set; }
-        public int PlaysPerPage { get; set; }
+        public int PlaysPage { get; set; }
         #endregion
         #region Awards Tab
-        public ObservableCollection<Award> QuerrieAwards { get; set; }
-        public int AwardsPerPage { get; set; }
+        public ObservableCollection<Award> QuerriedAwards { get; set; }
+        public int AwardsPage { get; set; }
         #endregion
         #region Configuration Tab
         public ObservableCollection<Category> CategoriesList { get; set; }
@@ -130,8 +130,10 @@ namespace AF_Desktop_Application
 
         private async void SaveMenu_Click(object sender, RoutedEventArgs e)
         {
-            this.QuerriedPlays = new ObservableCollection<Play>(await DB.GetPlaysPaged(1, 10));
-            PlaysDataGrid.ItemsSource = QuerriedPlays;
+            //QuerriedPlays = new ObservableCollection<Play>(await DB.GetPlaysPaged(1, 10));
+            //PlaysDataGrid.ItemsSource = QuerriedPlays;
+            this.QuerriedAwards = new ObservableCollection<Award>(await DB.GetAwardsPaged(1, 10));
+            AwardsDataGrid.ItemsSource = QuerriedAwards;
         }
 
         private async void MainWindow_Initialized(object sender, EventArgs e)
@@ -218,5 +220,10 @@ namespace AF_Desktop_Application
             AddPositionButton.IsEnabled = true;
         } 
         #endregion
+
+        private void SearchPersonButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
