@@ -38,6 +38,9 @@ namespace AF_DataAccessLayer
             {
                 try
                 {
+                    /*List<Award> awa = await (from a in context.Awards
+                        where a.AwardId == id
+                        select a).ToListAsync();*/
                     Award awa = context.Awards.First(a => a.AwardId == id);
                     context.Awards.Remove(awa);
                     await context.SaveChangesAsync();
@@ -55,7 +58,11 @@ namespace AF_DataAccessLayer
             {
                 try
                 {
+                    /*Award awa = await (from a in context.Awards
+                                             where a.AwardId == updateData.AwardId
+                                             select a).ToListAsync();*/
                     Award awa = context.Awards.First(a => a.AwardId == updateData.AwardId);
+                    
                     awa = updateData;
                     await context.SaveChangesAsync();
                 }
@@ -85,8 +92,6 @@ namespace AF_DataAccessLayer
             }
         }
 
-        
-
         public async Task<List<Award>> GetAwardsPaged(int pageNr, int pageAmount)
         {
             using (var context = new AF_Context())
@@ -96,8 +101,7 @@ namespace AF_DataAccessLayer
                     var skip = pageAmount * (pageNr - 1);
                     List<Award> q = await (from a in context.Awards.Include(a => a.Category).Include(a =>  a.Play)
                                                select a).OrderBy(a => a.AwardId).Skip(skip).Take(pageAmount).ToListAsync();
-                    
-                    
+
                     return (q);
                 }
                 catch (Exception ex)
@@ -203,9 +207,9 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    List<Category> q = await (from c in context.Categories
+                    List<Category> q = await (from c in context.Categories.Include(u => u.Editor)
                                                  orderby c.Order
-                                                 select c).Skip(skip).Take(pageAmount).ToListAsync();  //efficient? join with users?
+                                                 select c).Skip(skip).Take(pageAmount).ToListAsync();
                     return(q);
                 }
                 catch (Exception ex)
@@ -312,7 +316,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    List<Festival> q = await (from f in context.Festivals
+                    List<Festival> q = await (from f in context.Festivals.Include(u => u.Editor)
                                            select f).Skip(skip).Take(pageAmount).ToListAsync();
                     return (q);
                 }
@@ -419,7 +423,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    List<Job> q = await (from j in context.Jobs
+                    List<Job> q = await (from j in context.Jobs.Include(u => u.Editor)
                                            select j).Skip(skip).Take(pageAmount).ToListAsync();
                     return (q);
                 }
@@ -526,7 +530,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    List<News> q = await (from n in context.News
+                    List<News> q = await (from n in context.News.Include(u => u.Editor)
                                            select n).Skip(skip).Take(pageAmount).ToListAsync();
                     return (q);
                 }
@@ -633,7 +637,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    List<Person> q = await (from p in context.People
+                    List<Person> q = await (from p in context.People.Include(u => u.Editor)
                                            select p).Skip(skip).Take(pageAmount).ToListAsync();
                     return (q);
                 }
@@ -758,14 +762,10 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                  /*  IQueryable<Play> query = (from p in context.Plays
-                                                  orderby p.Order
-                                                  select p).Skip(skip).Take(pageAmount);*/
-                    List<Play> q = await (from p in context.Plays
+                    List<Play> q = await (from p in context.Plays.Include(f => f.Festival).Include(u => u.Editor)
                                                   orderby p.Order
                                                   select p).Skip(skip).Take(pageAmount).ToListAsync();
                     return (q);
-                    //return (query.ToList<Play>());
                 }
                 catch (Exception ex)
                 {
@@ -869,7 +869,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    List<Position> q = await (from p in context.Positions
+                    List<Position> q = await (from p in context.Positions.Include(u => u.Editor)
                                            select p).Skip(skip).Take(pageAmount).ToListAsync();
                     return (q);
                 }
@@ -979,7 +979,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    List<RelationFestivalPersonPosition> q = await (from p in context.RelationsFestivalPersonPosition
+                    List<RelationFestivalPersonPosition> q = await (from p in context.RelationsFestivalPersonPosition.Include(p => p.Position).Include(p => p.Person).Include(f => f.Festival)
                                            select p).Skip(skip).Take(pageAmount).ToListAsync();
                     return (q);
                 }
@@ -1088,7 +1088,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    List<RelationPersonAward> q = await (from r in context.RelationsPersonAward
+                    List<RelationPersonAward> q = await (from r in context.RelationsPersonAward.Include(p => p.Person).Include(a => a.Award)
                                            select r).Skip(skip).Take(pageAmount).ToListAsync();
                     return (q);
                 }
@@ -1199,7 +1199,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    List<RelationPersonPlayJob> q = await (from r in context.RelationsPersonPlayJob
+                    List<RelationPersonPlayJob> q = await (from r in context.RelationsPersonPlayJob.Include(p => p.Person).Include(p => p.Play).Include(j => j.Job)
                                            select r).Skip(skip).Take(pageAmount).ToListAsync();
                     return (q);
                 }
@@ -1308,7 +1308,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     var skip = pageAmount * (pageNr - 1);
-                    List<RelationPersonPlayRole> q = await (from r in context.RelationsPersonPlayRole
+                    List<RelationPersonPlayRole> q = await (from r in context.RelationsPersonPlayRole.Include(p => p.Person).Include(p => p.Play)
                                            select r).Skip(skip).Take(pageAmount).ToListAsync();
                     return (q);
                 }
