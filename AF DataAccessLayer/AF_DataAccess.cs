@@ -27,7 +27,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -68,7 +68,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -86,7 +86,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -106,7 +106,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -124,7 +124,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -142,7 +142,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -159,7 +159,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -176,7 +176,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -194,7 +194,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -214,7 +214,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -226,14 +226,12 @@ namespace AF_DataAccessLayer
             {
                 try
                 {
-                    List<Category> q = await (from c in context.Categories
-                                             orderby c.Order
-                                             select c).ToListAsync();
+                    List<Category> q = await context.Categories.OrderBy(c => c.Group).ThenBy(c => c.Order).ToListAsync();
                     return (q);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -251,7 +249,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -268,7 +266,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -285,7 +283,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -303,7 +301,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -322,7 +320,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -340,7 +338,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -359,7 +357,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -376,7 +374,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -393,7 +391,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -410,7 +408,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -429,7 +427,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -447,7 +445,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -465,7 +463,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -482,7 +480,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -499,7 +497,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -517,7 +515,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -536,7 +534,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -554,7 +552,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -572,7 +570,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -589,7 +587,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -606,7 +604,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -624,7 +622,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -643,7 +641,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -661,7 +659,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -698,7 +696,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -715,7 +713,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -732,7 +730,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -749,7 +747,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -769,7 +767,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -787,7 +785,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -805,7 +803,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -822,7 +820,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -839,7 +837,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -856,7 +854,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -875,7 +873,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -893,7 +891,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -911,7 +909,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -928,7 +926,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -945,7 +943,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -966,7 +964,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -985,7 +983,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1003,7 +1001,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1021,7 +1019,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -1038,7 +1036,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -1055,7 +1053,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -1075,7 +1073,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1094,7 +1092,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1112,7 +1110,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1131,7 +1129,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -1148,7 +1146,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -1165,7 +1163,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -1186,7 +1184,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1205,7 +1203,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1223,7 +1221,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1241,7 +1239,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -1258,7 +1256,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -1275,7 +1273,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -1295,7 +1293,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1314,7 +1312,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1332,7 +1330,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1351,7 +1349,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -1368,7 +1366,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -1385,7 +1383,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
             }
         }
@@ -1401,7 +1399,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1420,7 +1418,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
@@ -1438,7 +1436,7 @@ namespace AF_DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException);
+                    throw ex;
                 }
                 return null;
             }
