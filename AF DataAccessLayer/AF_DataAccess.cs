@@ -62,8 +62,7 @@ namespace AF_DataAccessLayer
                                              where a.AwardId == updateData.AwardId
                                              select a).ToListAsync();*/
                     Award awa = context.Awards.First(a => a.AwardId == updateData.AwardId);
-                    
-                    awa = updateData;
+                    context.Entry(awa).CurrentValues.SetValues(updateData);
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -285,7 +284,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     Festival fes = context.Festivals.First(f => f.FestivalId == updateData.FestivalId);
-                    fes = updateData;
+                    context.Entry(fes).CurrentValues.SetValues(updateData);
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -393,7 +392,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     Job jo = context.Jobs.First(j => j.JobId == updateData.JobId);
-                    jo = updateData;
+                    context.Entry(jo).CurrentValues.SetValues(updateData);
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -499,7 +498,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     News ne = context.News.First(n => n.NewsId == updateData.NewsId);
-                    ne = updateData;
+                    context.Entry(ne).CurrentValues.SetValues(updateData);
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -606,7 +605,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     Person per = context.People.First(a => a.PersonId == updateData.PersonId);
-                    per = updateData;
+                    context.Entry(per).CurrentValues.SetValues(updateData);
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -732,7 +731,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     Play pla = context.Plays.First(p => p.PlayId == updateData.PlayId);
-                    pla = updateData;
+                    context.Entry(pla).CurrentValues.SetValues(updateData);
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -839,7 +838,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     Position pos = context.Positions.First(p => p.PositionId == updateData.PositionId);
-                    pos = updateData;
+                    context.Entry(pos).CurrentValues.SetValues(updateData);
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -944,7 +943,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     RelationFestivalPersonPosition rel = context.RelationsFestivalPersonPosition.First(r => r.RelationFestivalPersonPositionId == updateData.RelationFestivalPersonPositionId);
-                    rel = updateData;
+                    context.Entry(rel).CurrentValues.SetValues(updateData);
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -1054,7 +1053,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     RelationPersonAward rel = context.RelationsPersonAward.First(r => r.RelationPersonAwardId == updateData.RelationPersonAwardId);
-                    rel = updateData;
+                    context.Entry(rel).CurrentValues.SetValues(updateData);
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -1164,7 +1163,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     RelationPersonPlayJob rel = context.RelationsPersonPlayJob.First(r => r.RelationPersonPlayJobId == updateData.RelationPersonPlayJobId);
-                    rel = updateData;
+                    context.Entry(rel).CurrentValues.SetValues(updateData);
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -1274,7 +1273,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     RelationPersonPlayRole rel = context.RelationsPersonPlayRole.First(r => r.RelationPersonPlayRoleId == updateData.RelationPersonPlayRoleId);
-                    rel = updateData;
+                    context.Entry(rel).CurrentValues.SetValues(updateData);
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -1384,7 +1383,7 @@ namespace AF_DataAccessLayer
                 try
                 {
                     User us = context.Users.First(u => u.UserId == updateData.UserId);
-                    us = updateData;
+                    context.Entry(us).CurrentValues.SetValues(updateData);
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
