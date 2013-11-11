@@ -170,8 +170,15 @@ namespace AF_DataAccessLayer
             {
                 try
                 {
+                    //TODO: wyczyscic lol
+                    //Category cat = context.Categories.Find(updateData.CategoryId);
                     Category cat = context.Categories.First(c => c.CategoryId==updateData.CategoryId);
-                    cat = updateData;
+                    cat.CategoryId = updateData.CategoryId;
+                    cat.EditDate = updateData.EditDate;
+                    cat.EditedBy = updateData.EditedBy;
+                    cat.Group = updateData.Group;
+                    cat.Order = updateData.Order;
+                    cat.Title = updateData.Title;
                     await context.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -885,8 +892,7 @@ namespace AF_DataAccessLayer
             {
                 try
                 {
-                    List<Position> q = await (from p in context.Positions
-                                           select p).ToListAsync();
+                    List<Position> q = await context.Positions.OrderBy(s => s.Section).ThenBy(o => o.Order).ToListAsync();
                     return (q);
                 }
                 catch (Exception ex)
