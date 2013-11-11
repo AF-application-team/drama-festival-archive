@@ -24,31 +24,7 @@ namespace AF_Desktop_Application
     /// </summary>
     public partial class MainWindow : Window
     {
-        static IAF_LogicService DB = new AF_Logic();
-        static User LoggedUser { get; set; }
-
-        #region Global parameters
-        #region for People Tab
-        public ObservableCollection<Person> QuerriedPeople { get; set; }
-        public int PeoplePage { get; set; }
-
-        #endregion
-        #region for Plays Tab
-        public ObservableCollection<Play> QuerriedPlays { get; set; }
-        public int PlaysPage { get; set; }
-        #endregion
-        #region Awards Tab
-        public ObservableCollection<Award> QuerriedAwards { get; set; }
-        public int AwardsPage { get; set; }
-        #endregion
-        #region Configuration Tab
-        public ObservableCollection<Category> CategoriesList { get; set; }
-        public ObservableCollection<Job> JobsList { get; set; }
-        public ObservableCollection<Position> PositionsList { get; set; } 
-            
-        #endregion
-        #endregion
-
+        static MainViewModel MViewModel { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -109,6 +85,28 @@ namespace AF_Desktop_Application
         } 
         #endregion
 
+        #region Refeshing Lists
+        private async Task RefreshCategories()
+        {
+            await MViewModel.RefreshCategories();
+            CategoriesListBox.ItemsSource = MViewModel.CategoriesList;
+            AwardCategoryFilter.ItemsSource = MViewModel.CategoriesList;
+            PersonAwardFilter.ItemsSource = MViewModel.CategoriesList;
+        }
+        private async Task RefreshJobs()
+        {
+            await MViewModel.RefreshJobs();
+            PersonJobFilter.ItemsSource = MViewModel.JobsList;
+            JobsListBox.ItemsSource = MViewModel.JobsList;
+        }
+        private async Task RefreshPositions()
+        {
+            await MViewModel.RefreshPositions();
+            PersonPositionFilter.ItemsSource = MViewModel.PositionsList;
+            PositionsListBox.ItemsSource = MViewModel.PositionsList;
+
+        }
+        #endregion
         private async void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (TabControl.SelectedIndex==3)
@@ -130,100 +128,80 @@ namespace AF_Desktop_Application
 
         private async void SaveMenu_Click(object sender, RoutedEventArgs e)
         {
+            //MessageBox.Show("Index = " + CategoriesListBox.SelectedIndex);
             //QuerriedPlays = new ObservableCollection<Play>(await DB.GetPlaysPaged(1, 10));
             //PlaysDataGrid.ItemsSource = QuerriedPlays;
-            this.QuerriedAwards = new ObservableCollection<Award>(await DB.GetAwardsPaged(1, 10));
-            AwardsDataGrid.ItemsSource = QuerriedAwards;
+            //this.QuerriedAwards = new ObservableCollection<Award>(await DB.GetAwardsPaged(1, 10));
+            //AwardsDataGrid.ItemsSource = QuerriedAwards;
         }
 
         private async void MainWindow_Initialized(object sender, EventArgs e)
         {
-            RefreshCategories();
-            RefreshPositions();
-            RefreshJobs();
-
-            LoggedUser = await DB.GetUser(1);
-            this.IsEnabled = true;
+            MViewModel = new MainViewModel();
+            this.DataContext = MViewModel;
+            await MViewModel.Initialize();
+            await RefreshCategories();
+            await RefreshJobs();
+            await RefreshPositions();
         }
 
-        #region Refeshing Lists
-        private async void RefreshCategories()
-        {
-            CategoriesList = new ObservableCollection<Category>(await DB.GetAllCategories());
-            CategoriesListBox.ItemsSource = CategoriesList;
-            AwardCategoryFilter.ItemsSource = CategoriesList;
-            PersonAwardFilter.ItemsSource = CategoriesList;
-        }
-        private async void RefreshJobs()
-        {
-            JobsList = new ObservableCollection<Job>(await DB.GetAllJobs());
-            PersonJobFilter.ItemsSource = JobsList;
-            JobsListBox.ItemsSource = JobsList;
-        }
-        private async void RefreshPositions()
-        {
-            PositionsList = new ObservableCollection<Position>(await DB.GetAllPositions());
-            PersonPositionFilter.ItemsSource = PositionsList;
-            PositionsListBox.ItemsSource = PositionsList;
-
-        } 
-        #endregion
+        
         #region Adding Categories, Jobs and Positions
+
         private async void AddCategoryButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO Poprawić hardcodowane wartości służące do ustawienia kategorii w kolejności za pomocą procedur składowanych!!
-            AddCategoryButton.IsEnabled = false;
-            var cat = new Category
-            {
-                Title = AddCategoryTextBox.Text,
-                EditDate = DateTime.Now,
-                EditedBy = LoggedUser.UserId,
-                Group = 7,
-                Order = 10
-            };
-            await DB.AddCategory(cat);
+            await MViewModel.AddCategory(AddCategoryTextBox.Text, 7, 10);
             AddCategoryTextBox.Text = "";
-            RefreshCategories();
-            AddCategoryButton.IsEnabled = true;
-        }
+            CategoriesListBox.ItemsSource = MViewModel.CategoriesList;
+        }   
         private async void AddJobButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO Poprawić hardcodowane wartości służące do ustawienia kategorii w kolejności za pomocą procedur składowanych!!
-            AddJobButton.IsEnabled = false;
-            var job = new Job
-            {
-                JobTitle = AddJobTextBox.Text,
-                EditDate = DateTime.Now,
-                EditedBy = LoggedUser.UserId,
-            };
-            await DB.AddJob(job);
-            AddJobTextBox.Text = "";
-            RefreshJobs();
-            AddJobButton.IsEnabled = true;
+            await MViewModel.AddJob(AddJobTextBox.Text);
+            AddJobTextBox.Text="";
+            JobsListBox.ItemsSource = MViewModel.JobsList;
         }
 
         private async void AddPositionButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO Poprawić hardcodowane wartości służące do ustawienia kategorii w kolejności za pomocą procedur składowanych!!
-            AddPositionButton.IsEnabled = false;
-            var position = new Position
-            {
-                PositionTitle = AddPositionTextBox.Text,
-                EditDate = DateTime.Now,
-                EditedBy = LoggedUser.UserId,
-                Section = 12,
-                Order = 6
-            };
-            await DB.AddPosition(position);
+            await MViewModel.AddPosition(AddPositionTextBox.Text, 12, 7);
             AddPositionTextBox.Text = "";
-            RefreshPositions();
-            AddPositionButton.IsEnabled = true;
+            PositionsListBox.ItemsSource = MViewModel.PositionsList;
         } 
         #endregion
 
         private void SearchPersonButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private async void Category_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            var tb = (TextBlock) sender;
+            Category c =  (Category)tb.DataContext;
+            if (new CategoryEditWindow(c).ShowDialog() == true)
+            {
+                await RefreshCategories();
+            }
+        }
+
+        private async void Job_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            var tb = (TextBlock)sender;
+            Job j= (Job)tb.DataContext;
+            if (new JobEditWindow(j).ShowDialog() == true)
+            {
+                await RefreshJobs();
+            }
+        }
+
+        private async void Position_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            var tb = (TextBlock)sender;
+            Position p = (Position)tb.DataContext;
+            if (new PositionEditWindow(p).ShowDialog() == true)
+            {
+                await RefreshPositions();
+            }
         }
     }
 }

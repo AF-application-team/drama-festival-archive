@@ -19,7 +19,7 @@ namespace AF_BusinessLogic
         Task<List<Award>> GetAllAwards();
         #endregion
         #region Category
-        Task AddCategory(Category newCategory);
+        Task AddCategory(string title, int group,int order, int userId);
         Task RemoveCategory(int id);
         Task UpdateCategory(Category updateData);
         Task<Category> GetCategory(int id);
@@ -35,7 +35,7 @@ namespace AF_BusinessLogic
         Task<List<Festival>> GetAllFestivals();
         #endregion
         #region Job
-        Task AddJob(Job newJob);
+        Task AddJob(string title, int userId);
         Task RemoveJob(int id);
         Task UpdateJob(Job updateData);
         Task<Job> GetJob(int id);
@@ -67,7 +67,7 @@ namespace AF_BusinessLogic
         Task<List<Play>> GetAllPlays();
         #endregion
         #region Position
-        Task AddPosition(Position newPosition);
+        Task AddPosition(string title, int section, int order, int userId);
         Task RemovePosition(int id);
         Task UpdatePosition(Position updateData);
         Task<Position> GetPosition(int id);

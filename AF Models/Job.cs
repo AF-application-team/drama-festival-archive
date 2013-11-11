@@ -17,5 +17,30 @@ namespace AF_Models
 
         [ForeignKey("EditedBy")]
         public virtual User Editor { get; set; }
+
+        public Job() { }
+        public Job(Job job)
+        {
+            JobId = job.JobId;
+            JobTitle = job.JobTitle;
+            EditDate = job.EditDate;
+            EditedBy = job.EditedBy;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            var j = obj as Job;
+            if ((System.Object)j == null)
+            {
+                return false;
+            }
+
+            return (JobId == j.JobId) && (JobTitle == j.JobTitle);
+        }
     }
 }

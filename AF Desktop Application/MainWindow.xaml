@@ -5,7 +5,7 @@
         Title="Archiwum Festiwalowe" 
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Width="1000" Height="700" 
-        IsEnabled="False" MinWidth="1000" MinHeight="700"
+        MinWidth="1000" MinHeight="700"
         Initialized="MainWindow_Initialized">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="Bool2Visibility"/>
@@ -21,7 +21,7 @@
             </MenuItem>
 
         </Menu>
-        <TabControl x:Name="TabControl" SelectionChanged="TabControl_SelectionChanged">
+        <TabControl x:Name="TabControl" SelectionChanged="TabControl_SelectionChanged" DataContext="">
             <TabItem x:Name="PeopleTab">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -395,10 +395,10 @@
                             <TextBox x:Name="AddCategoryTextBox" SpellCheck.IsEnabled="True" Margin="1"/>
                         </DockPanel>
 
-                        <ListBox x:Name="CategoriesListBox">
+                        <ListBox DataContext="{Binding Path=CategoriesList}" x:Name="CategoriesListBox" HorizontalContentAlignment="Stretch">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Title}" />
+                                    <TextBlock Text="{Binding Title}" MouseRightButtonUp="Category_MouseRightButtonUp" />
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
@@ -411,10 +411,10 @@
                             <TextBox x:Name="AddJobTextBox" SpellCheck.IsEnabled="True" Margin="1"/>
                         </DockPanel>
 
-                        <ListBox x:Name="JobsListBox">
+                        <ListBox x:Name="JobsListBox" HorizontalContentAlignment="Stretch">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding JobTitle}" />
+                                    <TextBlock Text="{Binding JobTitle}" MouseRightButtonUp="Job_MouseRightButtonUp"/>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
@@ -427,10 +427,10 @@
                             <TextBox x:Name="AddPositionTextBox" SpellCheck.IsEnabled="True" Margin="1"/>
                         </DockPanel>
 
-                        <ListBox x:Name="PositionsListBox">
+                        <ListBox x:Name="PositionsListBox" HorizontalContentAlignment="Stretch">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding PositionTitle}" />
+                                    <TextBlock Text="{Binding PositionTitle}" MouseRightButtonUp="Position_MouseRightButtonUp" />
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>

@@ -45,8 +45,16 @@ namespace AF_BusinessLogic
         }
         #endregion
         #region Categories
-        public async Task AddCategory(Category newCategory)
+        public async Task AddCategory(string title, int group, int order, int userId)
         {
+            var newCategory = new Category
+            {
+                Title = title,
+                EditDate = DateTime.Now,
+                EditedBy = userId,
+                Group = group,
+                Order = order
+            };
             await DataAccess.AddCategory(newCategory);
         }
 
@@ -58,7 +66,7 @@ namespace AF_BusinessLogic
 
         public async Task UpdateCategory(Category updateData)
         {
-            throw new NotImplementedException();
+            await DataAccess.UpdateCategory(updateData);
         }
 
         public async Task<Category> GetCategory(int id)
@@ -108,8 +116,14 @@ namespace AF_BusinessLogic
         } 
         #endregion
         #region Jobs
-        public async Task AddJob(Job newJob)
+        public async Task AddJob(string title, int userId)
         {
+            var newJob = new Job
+            {
+                JobTitle = title,
+                EditDate = DateTime.Now,
+                EditedBy = userId
+            };
             await DataAccess.AddJob(newJob);
         }
 
@@ -120,7 +134,7 @@ namespace AF_BusinessLogic
 
         public async Task UpdateJob(Job updateData)
         {
-            throw new NotImplementedException();
+            await DataAccess.UpdateJob(updateData);
         }
 
         public async Task<Job> GetJob(int id)
@@ -233,8 +247,16 @@ namespace AF_BusinessLogic
         } 
         #endregion
         #region Positions
-        public async Task AddPosition(Position newPosition)
+        public async Task AddPosition(string title, int section, int order, int userId)
         {
+            var newPosition= new Position
+            {
+                PositionTitle = title,
+                Section = section,
+                Order = order,
+                EditDate = DateTime.Now,
+                EditedBy = userId
+            };
             await DataAccess.AddPosition(newPosition);
         }
 
@@ -245,7 +267,7 @@ namespace AF_BusinessLogic
 
         public async Task UpdatePosition(Position updateData)
         {
-            throw new NotImplementedException();
+            await DataAccess.UpdatePosition(updateData);
         }
 
         public async Task<Position> GetPosition(int id)

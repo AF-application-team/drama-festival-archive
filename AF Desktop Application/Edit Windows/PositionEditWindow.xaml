@@ -1,0 +1,39 @@
+﻿<Window x:Class="AF_Desktop_Application.PositionEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PositionEditWindow" Height="265" Width="545">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,5">
+            <Button Content="Anuluj" IsCancel="True" Padding="5,5" Margin="5,0,5,0"/>
+            <Button x:Name="SaveButton" Content="Zapisz" IsDefault="True" Padding="5,5" Margin="5,0,5,0" Click="SaveButton_Click"/>
+        </StackPanel>
+        <Grid Margin="5,5,7,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Id:" Grid.Row="0" Grid.Column="0"/>
+            <Label Content="Tytuł:" Grid.Row="1" Grid.Column="0"/>
+            <Label Content="Sekcja:" Grid.Row="2" Grid.Column="0"/>
+            <Label Content="Kolejność:" Grid.Row="3" Grid.Column="0"/>
+            <Label Content="Data Edycji:" Grid.Row="4" Grid.Column="0"/>
+            <Label Content="Edytor:" Grid.Row="5" Grid.Column="0"/>
+
+            <TextBox x:Name="IdTextBox" Text="{Binding Path=PositionId}" Grid.Row="0" Grid.Column="1" IsEnabled="False"/>
+            <TextBox x:Name="TitleTextBox" Text="{Binding Path=PositionTitle}" Grid.Row="1" Grid.Column="1"/>
+            <TextBox x:Name="GroupTextBox" Text="{Binding Path=Section}" Grid.Row="2" Grid.Column="1"/>
+            <TextBox x:Name="OrderTextBox" Text="{Binding Path=Order}" Grid.Row="3" Grid.Column="1"/>
+            <TextBox x:Name="EditDateTextBox" Text="{Binding Path=EditDate}" Grid.Row="4" Grid.Column="1" IsEnabled="False"/>
+            <TextBox x:Name="EditedByTextBox" Text="{Binding Path=EditedBy}" Grid.Row="5" Grid.Column="1" IsEnabled="False"/>
+        </Grid>
+    </DockPanel>
+</Window>

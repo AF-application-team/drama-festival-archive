@@ -63,7 +63,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AwardWindow.xaml">
+    <Page Include="Edit Windows\AwardWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Edit Windows\CategoryEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Edit Windows\JobEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -75,28 +83,45 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AwardWindow.xaml.cs">
+    <Compile Include="Edit Windows\AwardWindow.xaml.cs">
       <DependentUpon>AwardWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View Models\CategoryEditViewModel.cs" />
+    <Compile Include="Edit Windows\CategoryEditWindow.xaml.cs">
+      <DependentUpon>CategoryEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View Models\JobEditViewModel.cs" />
+    <Compile Include="Edit Windows\JobEditWindow.xaml.cs">
+      <DependentUpon>JobEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PersonEditWindow.xaml">
+    <Page Include="Edit Windows\PersonEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PlayEditWindow.xaml">
+    <Page Include="Edit Windows\PlayEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Edit Windows\PositionEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PersonEditWindow.xaml.cs">
+    <Compile Include="Edit Windows\PersonEditWindow.xaml.cs">
       <DependentUpon>PersonEditWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PlayEditWindow.xaml.cs">
+    <Compile Include="Edit Windows\PlayEditWindow.xaml.cs">
       <DependentUpon>PlayEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View Models\PositionEditViewModel.cs" />
+    <Compile Include="Edit Windows\PositionEditWindow.xaml.cs">
+      <DependentUpon>PositionEditWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -160,6 +185,10 @@
     <ProjectReference Include="..\AF Models\AF Models.csproj">
       <Project>{87104c17-7465-465f-99d6-c2c95051a714}</Project>
       <Name>AF Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AF Searching Criteria\AF Searching Criteria.csproj">
+      <Project>{21c840e7-9e44-48a1-ae53-55f33d8e31d7}</Project>
+      <Name>AF Searching Criteria</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
