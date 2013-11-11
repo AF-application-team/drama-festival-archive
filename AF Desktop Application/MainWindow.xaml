@@ -9,6 +9,7 @@
         Initialized="MainWindow_Initialized">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="Bool2Visibility"/>
+        <local:ColorConverter x:Key="GroupColoringConverter"/>
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -398,7 +399,7 @@
                         <ListBox DataContext="{Binding Path=CategoriesList}" x:Name="CategoriesListBox" HorizontalContentAlignment="Stretch">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Title}" MouseRightButtonUp="Category_MouseRightButtonUp" />
+                                    <TextBlock Text="{Binding Title}" MouseRightButtonUp="Category_MouseRightButtonUp" Background="{Binding Path=Group, Converter={StaticResource GroupColoringConverter}, Mode=OneWay}" />
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
@@ -414,7 +415,7 @@
                         <ListBox x:Name="JobsListBox" HorizontalContentAlignment="Stretch">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding JobTitle}" MouseRightButtonUp="Job_MouseRightButtonUp"/>
+                                    <TextBlock Text="{Binding JobTitle}" MouseRightButtonUp="Job_MouseRightButtonUp" Background="{Binding Path=JobId, Converter={StaticResource GroupColoringConverter}, Mode=OneWay}"/>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
@@ -430,7 +431,7 @@
                         <ListBox x:Name="PositionsListBox" HorizontalContentAlignment="Stretch">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding PositionTitle}" MouseRightButtonUp="Position_MouseRightButtonUp" />
+                                    <TextBlock Text="{Binding PositionTitle}" MouseRightButtonUp="Position_MouseRightButtonUp" Background="{Binding Path=Section, Converter={StaticResource GroupColoringConverter}, Mode=OneWay}" />
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
