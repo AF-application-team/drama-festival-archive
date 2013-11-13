@@ -37,6 +37,8 @@ namespace AF_Models
             Order = play.Order;
             Motto = play.Motto;
             PlayedBy = play.PlayedBy;
+            EditedBy = play.EditedBy;
+            EditDate = play.EditDate;
         }
         
         public override bool Equals(object obj)
