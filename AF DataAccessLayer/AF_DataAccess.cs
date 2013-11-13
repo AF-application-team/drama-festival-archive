@@ -128,6 +128,40 @@ namespace AF_DataAccessLayer
                 return null;
             }
         }
+
+        public async Task<List<Award>> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount)
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    var query = (from a in context.Awards select a).Include(a => a.Play).Include(a => a.Category);
+                    if (criteria.FestivalIdFilter != null)
+                        query = query.Where(a => a.FestivalId == criteria.FestivalIdFilter);
+                    if (!String.IsNullOrEmpty(criteria.Author))
+                        query = query.Where(a => a.Play.Author.Contains(criteria.Author));
+                    if (!String.IsNullOrEmpty(criteria.Title))
+                        query = query.Where(a => a.Play.Title.Contains(criteria.Title));
+                    if (criteria.CategoryIdFilter != null)
+                        query = query.Where(a => a.CategoryId==criteria.CategoryIdFilter);
+                    return
+                        await
+                            (query.OrderBy(a => a.FestivalId)
+                                .ThenBy(a => a.Category.Group)
+                                .ThenBy(a => a.Category.Order)
+                                .Skip(skip)
+                                .Take(pageAmount)
+                                .ToListAsync());
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return null;
+            }
+        }
+
         #endregion
         #region Category
         public async Task AddCategory(Category newCategory)
@@ -346,7 +380,22 @@ namespace AF_DataAccessLayer
                 {
                     throw ex;
                 }
-                return null;
+            }
+        }
+
+        public async Task<int> CountFestivals()
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    int q = await (from f in context.Festivals select f).CountAsync();
+                    return q;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
         }
 
@@ -788,6 +837,39 @@ namespace AF_DataAccessLayer
                     List<Play> q = await (from p in context.Plays
                                            select p).ToListAsync();
                     return (q);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return null;
+            }
+        }
+
+        public async Task<List<Play>> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount)
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {   
+                    var skip = pageAmount * (pageNr - 1);
+                    var query = (from p in context.Plays select p);
+                    if (criteria.FestivalIdFilter != null)   
+                        query = query.Where(p => p.FestivalId==criteria.FestivalIdFilter);
+                    if (!String.IsNullOrEmpty(criteria.Author))
+                        query = query.Where(p => p.Author.Contains(criteria.Author));
+                    if (!String.IsNullOrEmpty(criteria.Title))
+                        query = query.Where(p => p.Title.Contains(criteria.Title));
+                    if (!String.IsNullOrEmpty(criteria.Motto))
+                        query = query.Where(p => p.Motto.Contains(criteria.Motto));
+                    return
+                        await
+                            (query.OrderBy(p => p.FestivalId)
+                                .ThenBy(p => p.Day)
+                                .ThenBy(p => p.Order)
+                                .Skip(skip)
+                                .Take(pageAmount)
+                                .ToListAsync());
                 }
                 catch (Exception ex)
                 {

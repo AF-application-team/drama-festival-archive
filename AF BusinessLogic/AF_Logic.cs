@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AF_Models;
+using AF_Searching_Criteria;
 
 namespace AF_BusinessLogic
 {
@@ -14,9 +15,17 @@ namespace AF_BusinessLogic
         IAF_DataAccess DataAccess = new AF_DataAccess();
 
         #region Awards
-        public async Task AddAward(Award newAward)
+        public async Task AddAward(int playId, int festivalId, int categoryId, int userId)
         {
-            throw new NotImplementedException();
+            var a = new Award()
+            {
+                CategoryId = categoryId,
+                FestivalId = festivalId,
+                PlayId = playId,
+                EditedBy = userId,
+                EditDate = DateTime.Now
+            };
+            await DataAccess.AddAward(a);
         }
 
         public async Task RemoveAward(int id)
@@ -26,7 +35,9 @@ namespace AF_BusinessLogic
 
         public async Task UpdateAward(Award updateData)
         {
-            throw new NotImplementedException();
+            var a = new Award(updateData);
+            a.EditDate = DateTime.Now;
+            await DataAccess.UpdateAward(a);
         }
 
         public async Task<Award> GetAward(int id)
@@ -43,6 +54,12 @@ namespace AF_BusinessLogic
         {
             throw new NotImplementedException();
         }
+
+        public async Task<List<Award>> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount)
+        {
+            return await DataAccess.SearchAwards(criteria, pageNr, pageAmount);
+        }
+
         #endregion
         #region Categories
         public async Task AddCategory(string title, int group, int order, int userId)
@@ -113,7 +130,13 @@ namespace AF_BusinessLogic
         public async Task<List<Festival>> GetAllFestivals()
         {
             throw new NotImplementedException();
-        } 
+        }
+
+        public async Task<int> CountFestivals()
+        {
+            return await DataAccess.CountFestivals();
+        }
+
         #endregion
         #region Jobs
         public async Task AddJob(string title, int userId)
@@ -218,7 +241,8 @@ namespace AF_BusinessLogic
         #region Plays
         public async Task AddPlay(Play newPlay)
         {
-            throw new NotImplementedException();
+            newPlay.EditDate = DateTime.Now;
+            await DataAccess.AddPlay(newPlay);
         }
 
         public async Task RemovePlay(int id)
@@ -228,7 +252,8 @@ namespace AF_BusinessLogic
 
         public async Task UpdatePlay(Play updateData)
         {
-            throw new NotImplementedException();
+            updateData.EditDate = DateTime.Now;
+            await DataAccess.UpdatePlay(updateData);
         }
 
         public async Task<Play> GetPlay(int id)
@@ -244,7 +269,12 @@ namespace AF_BusinessLogic
         public async Task<List<Play>> GetAllPlays()
         {
             throw new NotImplementedException();
-        } 
+        }
+
+        public async Task<List<Play>> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount)
+        {
+            return await DataAccess.SearchPlays(criteria, pageNr, pageAmount);
+        }
         #endregion
         #region Positions
         public async Task AddPosition(string title, int section, int order, int userId)
@@ -366,7 +396,7 @@ namespace AF_BusinessLogic
 
         public async Task<RelationPersonPlayJob> GetRelationPersonPlayJob(int id)
         {
-            throw new NotImplementedException();
+            return await DataAccess.GetRelationPersonPlayJob(id);
         }
 
         public async Task<List<RelationPersonPlayJob>> GetRelationPersonPlayJobPaged(int pageNr, int pageAmount)

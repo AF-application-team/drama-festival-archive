@@ -87,6 +87,7 @@
     <Compile Include="Edit Windows\AwardWindow.xaml.cs">
       <DependentUpon>AwardWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View Models\AwardEditViewModel.cs" />
     <Compile Include="View Models\CategoryEditViewModel.cs" />
     <Compile Include="Edit Windows\CategoryEditWindow.xaml.cs">
       <DependentUpon>CategoryEditWindow.xaml</DependentUpon>
@@ -120,6 +121,7 @@
     <Compile Include="Edit Windows\PlayEditWindow.xaml.cs">
       <DependentUpon>PlayEditWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View Models\PlayEditViewModel.cs" />
     <Compile Include="View Models\PositionEditViewModel.cs" />
     <Compile Include="Edit Windows\PositionEditWindow.xaml.cs">
       <DependentUpon>PositionEditWindow.xaml</DependentUpon>

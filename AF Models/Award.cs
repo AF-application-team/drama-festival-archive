@@ -17,7 +17,7 @@ namespace AF_Models
         public DateTime EditDate { get; set; }
         public int EditedBy { get; set; }
 
-
+        
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
         [ForeignKey("FestivalId")]
@@ -26,5 +26,36 @@ namespace AF_Models
         public virtual Play Play { get; set; }
         [ForeignKey("EditedBy")]
         public virtual User Editor { get; set; }
+        
+        public Award()
+        {
+            
+        }
+
+        public Award(Award award)
+        {
+            AwardId = award.AwardId;
+            CategoryId = award.CategoryId;
+            FestivalId = award.FestivalId;
+            PlayId = award.PlayId;
+            EditDate = award.EditDate;
+            EditedBy = award.EditedBy;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            var a = obj as Award;
+            if ((System.Object)a == null)
+            {
+                return false;
+            }
+
+            return (AwardId == a.AwardId) &&  (PlayId == a.PlayId) && (FestivalId == a.FestivalId) && (CategoryId == a.CategoryId);
+        }
     }
 }

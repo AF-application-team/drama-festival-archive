@@ -15,21 +15,43 @@ namespace AF_Desktop_Application
     public class MainViewModel
     {
         static IAF_LogicService DB = new AF_Logic();
-        static User LoggedUser { get; set; }
+        static public User LoggedUser { get; set; }
+        public List<int> FestivalsList { get; set; }
 
-        #region Global parameters
+
+        public MainViewModel()
+        {
+            PlaysCriteria = new PlaysSearchingCriteria();
+            PeopleCriteria = new PeopleSearchingCriteria();
+            AwardsCriteria = new AwardsSearchingCriteria();
+        }
+        public async Task Initialize()
+        {
+            await RefreshCategories();
+            await RefreshPositions();
+            await RefreshJobs();
+            FestivalsList = new List<int>();
+            int f = await DB.CountFestivals();
+            for (int i = 1; i < f; i++)
+                FestivalsList.Add(i);
+            LoggedUser = await DB.GetUser(1);
+        }
+        
+        #region Tab Properties
         #region People Tab
-        public ObservableCollection<Person> QuerriedPeople { get; set; }
+        public PeopleSearchingCriteria PeopleCriteria { get; set; }
         public int PeoplePage { get; set; }
-
+        public ObservableCollection<Person> QuerriedPeople { get; set; }
         #endregion
         #region Plays Tab
-        public ObservableCollection<Play> QuerriedPlays { get; set; }
+        public PlaysSearchingCriteria PlaysCriteria { get; set; }
         public int PlaysPage { get; set; }
+        public ObservableCollection<Play> QuerriedPlays { get; set; }
         #endregion
         #region Awards Tab
-        public ObservableCollection<Award> QuerriedAwards { get; set; }
+        public AwardsSearchingCriteria AwardsCriteria { get; set; }
         public int AwardsPage { get; set; }
+        public List<Award> QuerriedAwards { get; set; }
         #endregion
         #region Configuration Tab
         public ObservableCollection<Category> CategoriesList { get; set; }
@@ -39,39 +61,18 @@ namespace AF_Desktop_Application
         #endregion
         #endregion
 
-        public PlaysSearchingCriteria PlaysCriteria { get; set; }
-        public PeopleSearchingCriteria PeopleCriteria { get; set; }
-        public AwardsSearchingCriteria AwardsCriteria { get; set; }
-
-        public async Task Initialize()
-        {
-            await RefreshCategories();
-            await RefreshPositions();
-            await RefreshJobs();
-
-            LoggedUser = await DB.GetUser(1);
-        }
-
         #region Refeshing Lists
         public async Task RefreshCategories()
         {
             CategoriesList = new ObservableCollection<Category>(await DB.GetAllCategories());
-            //CategoriesListBox.ItemsSource = CategoriesList;
-            //AwardCategoryFilter.ItemsSource = CategoriesList;
-            //PersonAwardFilter.ItemsSource = CategoriesList;
         }
         public async Task RefreshJobs()
         {
             JobsList = new ObservableCollection<Job>(await DB.GetAllJobs());
-            //PersonJobFilter.ItemsSource = JobsList;
-            //JobsListBox.ItemsSource = JobsList;
         }
         public async Task RefreshPositions()
         {
             PositionsList = new ObservableCollection<Position>(await DB.GetAllPositions());
-            //PersonPositionFilter.ItemsSource = PositionsList;
-            //PositionsListBox.ItemsSource = PositionsList;
-
         }
         #endregion
 
@@ -98,6 +99,27 @@ namespace AF_Desktop_Application
                 await DB.AddPosition(title, section, order, LoggedUser.UserId);
                 await RefreshPositions();
             }
+        }
+
+        #region Searching
+        public async Task SearchPlays(int pageNr, int pageAmount)
+        {
+            QuerriedPlays = new ObservableCollection<Play>(await DB.SearchPlays(PlaysCriteria, pageNr, pageAmount));
+        }
+
+        public async Task SearchAwards(int pageNr, int pageAmount)
+        {
+            QuerriedAwards = await DB.SearchAwards(AwardsCriteria, pageNr, pageAmount);
+        } 
+        #endregion
+
+        public async Task<bool> ChangeUser(int userId)
+        {
+            if (LoggedUser.UserId == userId)
+                return false;
+            else 
+                LoggedUser = await DB.GetUser(userId);
+            return true;
         }
 
     }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AF_Searching_Criteria;
 
 namespace AF_DataAccessLayer
 {
@@ -15,7 +16,8 @@ namespace AF_DataAccessLayer
         Task UpdateAward(Award updateData);
         Task<Award> GetAward(int id);
         Task<List<Award>> GetAwardsPaged(int pageNr, int pageAmount);
-        Task<List<Award>> GetAllAwards(); 
+        Task<List<Award>> GetAllAwards();
+        Task<List<Award>> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount);
         #endregion
         #region Category
         Task AddCategory(Category newCategory);
@@ -32,6 +34,7 @@ namespace AF_DataAccessLayer
         Task<Festival> GetFestival(int id);
         Task<List<Festival>> GetFestivalsPaged(int pageNr, int pageAmount);
         Task<List<Festival>> GetAllFestivals();
+        Task<int> CountFestivals();
         #endregion
         #region Job
         Task AddJob(Job newJob);
@@ -64,6 +67,7 @@ namespace AF_DataAccessLayer
         Task<Play> GetPlay(int id);
         Task<List<Play>> GetPlaysPaged(int pageNr, int pageAmount);
         Task<List<Play>> GetAllPlays();
+        Task<List<Play>> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
         #endregion
         #region Position
         Task AddPosition(Position newPosition);

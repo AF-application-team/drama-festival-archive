@@ -26,6 +26,16 @@ namespace AF_Searching_Criteria
         public string Motto { get; set; }
         public int? CategoryIdFilter { get; set; }
         public int? FestivalIdFilter { get; set; }
+
+        public override string ToString()
+        {
+            return "PlaysSearchingCryteria \n" +
+                   "[Title=" + Title + "] \n" +
+                   "[Author=" + Author + "] \n" +
+                   "[Motto=" + Motto +"] \n" +
+                   "[CategoryIdFilter=" + CategoryIdFilter + "] \n" +
+                   "[FestivalIdFilter=" + FestivalIdFilter + "]";
+        }
     }
 
     public class AwardsSearchingCriteria
@@ -36,5 +46,14 @@ namespace AF_Searching_Criteria
         public string Author { get; set; }
         public int? CategoryIdFilter { get; set; }
         public int? FestivalIdFilter { get; set; }
+
+        public override string ToString()
+        {
+            return "PlaysSearchingCryteria \n" +
+                   "[Title=" + Title + "] \n" +
+                   "[Author=" + Author + "] \n" +
+                   "[CategoryIdFilter=" + CategoryIdFilter + "] \n" +
+                   "[FestivalIdFilter=" + FestivalIdFilter + "]";
+        }
     }
 }

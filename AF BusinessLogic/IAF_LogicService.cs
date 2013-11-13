@@ -5,18 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AF_Models;
+using AF_Searching_Criteria;
 
 namespace AF_BusinessLogic
 {
     public interface IAF_LogicService
     {
         #region Award
-        Task AddAward(Award newAward);
+        Task AddAward(int playId, int festivalId, int categoryId, int userId);
         Task RemoveAward(int id);
         Task UpdateAward(Award updateData);
         Task<Award> GetAward(int id);
         Task<List<Award>> GetAwardsPaged(int pageNr, int pageAmount);
         Task<List<Award>> GetAllAwards();
+        Task<List<Award>> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount); 
         #endregion
         #region Category
         Task AddCategory(string title, int group,int order, int userId);
@@ -33,6 +35,7 @@ namespace AF_BusinessLogic
         Task<Festival> GetFestival(int id);
         Task<List<Festival>> GetFestivalsPaged(int pageNr, int pageAmount);
         Task<List<Festival>> GetAllFestivals();
+        Task<int> CountFestivals();
         #endregion
         #region Job
         Task AddJob(string title, int userId);
@@ -65,6 +68,7 @@ namespace AF_BusinessLogic
         Task<Play> GetPlay(int id);
         Task<List<Play>> GetPlaysPaged(int pageNr, int pageAmount);
         Task<List<Play>> GetAllPlays();
+        Task<List<Play>> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
         #endregion
         #region Position
         Task AddPosition(string title, int section, int order, int userId);

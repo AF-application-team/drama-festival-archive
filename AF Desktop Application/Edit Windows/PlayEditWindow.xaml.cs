@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AF_Desktop_Application.View_Models;
 using AF_Models;
 
 namespace AF_Desktop_Application
@@ -21,35 +22,30 @@ namespace AF_Desktop_Application
     /// </summary>
     public partial class PlayEditWindow : Window
     {
-        private int _editMode = Constants.EditModes.ReadMode;
-        public Play EditedPlay { get; set; }
- 
-        public PlayEditWindow(int editMode, Play editedPlay)
+        public PlayEditViewModel PEViewModel { get; set; }
+        public PlayEditWindow(List<int> fesitvalsList)
         {
+            PEViewModel =new PlayEditViewModel(fesitvalsList);
             InitializeComponent();
-            _editMode = editMode;
-            EditedPlay = editedPlay;
-            if (_editMode == Constants.EditModes.ReadMode)
-            {
-                this.TitleTextBox.IsEnabled = false;
-                this.AuthorTextBox.IsEnabled = false;
-                this.FestivalComboBox.IsEnabled = false;
-                this.DayComboBox.IsEnabled = false;
-                this.OrderComboBox.IsEnabled = false;
-                this.PlayedByTextBox.IsEnabled = false;
-                this.MottoTextBox.IsEnabled = false;
-            }
-            else if (_editMode == Constants.EditModes.EditMode || _editMode == Constants.EditModes.AddMode)
-            {
-                
-            }
-            this.DataContext = EditedPlay;
-
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        public PlayEditWindow(Play editedPlay, List<int> fesitvalsList)
         {
-            this.DialogResult = true;
+            PEViewModel = new PlayEditViewModel(editedPlay, fesitvalsList);
+            InitializeComponent();
+        }
+
+        private void Window_Initialized(object sender, EventArgs e)
+        {
+            this.DataContext = PEViewModel.EditedPlay;
+            FestivalComboBox.ItemsSource = PEViewModel.FestivalsList;
+            DayComboBox.ItemsSource = PEViewModel.Ints;
+            OrderComboBox.ItemsSource = PEViewModel.Ints;
+
+        }
+        private async void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = await PEViewModel.SavePlay();
         }
     }
 }
