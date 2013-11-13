@@ -1440,7 +1440,7 @@ namespace AF_DataAccessLayer
                 }
             }
         }
-
+        
         public async Task RemoveUser(int id)
         {
             using (var context = new AF_Context())

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using AF_Models;
 
 namespace AF_DataAccessLayer
 {
-    class AF_Context : DbContext
+    public class AF_Context : DbContext
     {
         public AF_Context() : base("AF_Context") { }
 
@@ -29,7 +30,7 @@ namespace AF_DataAccessLayer
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
+            
             //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 

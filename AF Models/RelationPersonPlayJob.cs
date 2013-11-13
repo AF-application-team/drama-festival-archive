@@ -25,5 +25,17 @@ namespace AF_Models
         public virtual Job Job { get; set; }
         [ForeignKey("EditedBy")]
         public virtual User Editor { get; set; }
+
+
+        public RelationPersonPlayJob() { }
+        public RelationPersonPlayJob(RelationPersonPlayJob relation)
+        {
+            RelationPersonPlayJobId = relation.RelationPersonPlayJobId;
+            PersonId = relation.PersonId;
+            PlayId = relation.PlayId;
+            JobId = relation.JobId;
+            EditDate = relation.EditDate;
+            EditedBy = relation.EditedBy;
+        }
     }
 }
