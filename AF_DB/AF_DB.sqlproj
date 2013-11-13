@@ -95,6 +95,7 @@
     <None Include="PostDeployment\Data\RelationPersonPlayJob.sql" />
     <None Include="PostDeployment\Data\RelationFestivalPersonPosition.sql" />
     <None Include="PostDeployment\Data\RelationPersonPlayRole.sql" />
+    <None Include="AF_DB_Test_Ania.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AF_DB.refactorlog" />

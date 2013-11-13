@@ -86,23 +86,23 @@ namespace AF_Tests
         #endregion
         
         #region relation
-        /*
+        
         [TestMethod]
         public async Task GetRelationPersonPlayJobId_Should_ReturnRelation()
         {
-            RelationPersonAward r = await DAL.GetRelationPersonAward(42);
+            RelationPersonPlayJob r = await DAL.GetRelationPersonPlayJob(2);
 
             Assert.IsNotNull(r);
-            Assert.AreEqual(214, r.PersonId);
+            Assert.AreEqual(73, r.PersonId);
         }
-
+        /*
         [TestMethod]
         public async Task AddRelationPersonPlayJob_Should_ReturnSameAddRelationPersonPlayJob()
         {
-            var rel = new RelationPersonPlayJob(){ PersonId = 155, PlayId = 13, JobId = 1, EditedBy = 2, EditDate = new DateTime(2011, 6, 10) };
+            var rel = new RelationPersonPlayJob{PersonId = 43, PlayId = 13, JobId = 16, EditedBy = 2, EditDate = new DateTime(2011, 6, 10)};
             await DAL.AddRelationPersonPlayJob(rel);
 
-            RelationPersonPlayJob relation = await DAL.GetRelationPersonPlayJob(125);
+            RelationPersonPlayJob relation = await DAL.GetRelationPersonPlayJob(84);
 
             Assert.IsNotNull(relation);
             Assert.AreEqual(relation, rel);
