@@ -66,7 +66,7 @@
     <Compile Include="Service.svc.cs">
       <DependentUpon>Service.svc</DependentUpon>
     </Compile>
-    <Compile Include="IService.cs" />
+    <Compile Include="IAFService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +79,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AF Models\AF Models.csproj">
+      <Project>{87104c17-7465-465f-99d6-c2c95051a714}</Project>
+      <Name>AF Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AF.Common\AF.Common.csproj">
+      <Project>{e668eb49-87ea-4f12-8f87-27d95f63f4e1}</Project>
+      <Name>AF.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
