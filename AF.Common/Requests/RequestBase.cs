@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace WinLabs.Common.Requests
+namespace AF.Common.Requests
 {
     [DataContract]
     public abstract class RequestBase

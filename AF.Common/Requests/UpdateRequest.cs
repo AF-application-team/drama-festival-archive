@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinLabs.Common.Requests
+namespace AF.Common.Requests
 {
     [DataContract]
     public class UpdateRequest<TData> : RequestBase

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace WinLabs.Common.Requests
+namespace AF.Common.Requests
 {
     [DataContract]
     public class ListResponse<TData> : ResponseBase
