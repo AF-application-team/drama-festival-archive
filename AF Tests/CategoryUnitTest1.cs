@@ -86,32 +86,39 @@ namespace AF_Tests
         #endregion
         
         #region relation
-        /*
         [TestMethod]
         public async Task GetRelationPersonPlayJobId_Should_ReturnRelation()
         {
-            RelationPersonAward r = await DAL.GetRelationPersonAward(42);
+            RelationPersonPlayJob r = await DAL.GetRelationPersonPlayJob(2);
 
             Assert.IsNotNull(r);
-            Assert.AreEqual(214, r.PersonId);
+            Assert.AreEqual(73, r.PersonId);
         }
 
         [TestMethod]
-        public async Task AddRelationPersonPlayJob_Should_ReturnSameAddRelationPersonPlayJob()
+        public async Task GetAllRelationPersonPlayJob_Should_ReturnRelationsPersonPlayJob()
         {
-            var rel = new RelationPersonPlayJob(){ PersonId = 155, PlayId = 13, JobId = 1, EditedBy = 2, EditDate = new DateTime(2011, 6, 10) };
+            List<RelationPersonPlayJob> relation = await DAL.GetAllRelationPersonPlayJob();
+            Assert.AreEqual(83, relation.Count);
+            Assert.AreEqual(73, relation.First().PersonId);
+        } 
+        
+        [TestMethod]
+        public async Task AddRelationPersonPlayJob_Should_ReturnSameAddRelation()
+        {
+            var rel = new RelationPersonPlayJob{PersonId = 43, PlayId = 13, JobId = 16, EditedBy = 2, EditDate = new DateTime(2011, 6, 10)};
             await DAL.AddRelationPersonPlayJob(rel);
 
             RelationPersonPlayJob relation = await DAL.GetRelationPersonPlayJob(125);
 
             Assert.IsNotNull(relation);
-            Assert.AreEqual(relation, rel);
+            Assert.IsTrue(relation.Equals(rel));
         }
-
+        
         [TestMethod]
         public async Task RemoveRelationPersonPlayJob_Should_ReturnNull()
         {
-            await DAL.RemoveCategory(2);
+            await DAL.RemoveRelationPersonPlayJob(2);
         }
         
         [TestMethod]
@@ -119,20 +126,12 @@ namespace AF_Tests
         {
             RelationPersonPlayJob rel1 = await DAL.GetRelationPersonPlayJob(8);
             RelationPersonPlayJob rel2 = new RelationPersonPlayJob(rel1);
-            rel1.PlayId = 5;
+            rel1.PlayId = 10;
             await DAL.UpdateRelationPersonPlayJob(rel1);
-            //poprawic jesce rAZ pobrac z bazy sprawdzic assert
+            RelationPersonPlayJob rel3 = await DAL.GetRelationPersonPlayJob(rel1.RelationPersonPlayJobId);
+            Assert.IsFalse(rel3.Equals(rel2));
             Assert.AreNotEqual(rel1.PlayId, rel2.PlayId);
         }
-
-        [TestMethod]
-        public async Task GetRelationPersonPlayJob_Should_ReturnRelationsPersonPlayJob()
-        {
-            List<RelationPersonPlayJob> relation = await DAL.GetAllRelationPersonPlayJob();
-            Assert.AreEqual(83, relation.Count);
-            Assert.AreEqual("97", relation.First().PersonId);
-        } 
-        */
         #endregion
         
     }
