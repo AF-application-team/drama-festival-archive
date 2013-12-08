@@ -12,22 +12,22 @@ namespace AF_Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class AFService : IAFService
     {
-        public string GetData(int value)
-        {
-            return string.Format("You entered: {0}", value);
-        }
+        //public string GetData(int value)
+        //{
+        //    return string.Format("You entered: {0}", value);
+        //}
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
-        }
+        //public CompositeType GetDataUsingDataContract(CompositeType composite)
+        //{
+        //    if (composite == null)
+        //    {
+        //        throw new ArgumentNullException("composite");
+        //    }
+        //    if (composite.BoolValue)
+        //    {
+        //        composite.StringValue += "Suffix";
+        //    }
+        //    return composite;
+        //}
     }
 }

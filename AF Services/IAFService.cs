@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using AF.Common.DTO;
+using AF.Common.Queries;
 using AF_Models;
 
 namespace AF_Services
@@ -19,7 +21,7 @@ namespace AF_Services
         Award UpdateAward(Award updateData);
         Award GetAward(int id);
         //List<AwardDTO> GetAwardsPaged(int pageNr, int pageAmount);
-        List<AwardDTO> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount);
+        List<AwardMixedDTO> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount);
         //<List<Award> GetAllAwards();
         #endregion
         #region Category

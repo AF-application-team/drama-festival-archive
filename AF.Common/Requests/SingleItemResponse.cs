@@ -9,7 +9,7 @@ namespace AF.Common.Requests
         [DataMember]
         public TData Data { get; set; }
 
-        public SingleItemResponse(Guid requestId, TData data) : base(requestId)
+        public SingleItemResponse(TData data)
         {
             Data = data;
         }
@@ -19,7 +19,7 @@ namespace AF.Common.Requests
     {
         public static SingleItemResponse<TData> Create<TData>(RequestBase request, TData data)
         {
-            return new SingleItemResponse<TData>(request.Id, data);
+            return new SingleItemResponse<TData>(data);
         }
     }
 }

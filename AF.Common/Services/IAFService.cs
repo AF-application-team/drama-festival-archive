@@ -1,51 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
+using AF.Common.DTO;
+using AF.Common.Queries;
+using AF.Common.Requests;
 using AF_Models;
 
-namespace AF_Services
+namespace AF.Common.Services
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
     public interface IAFService
     {
         #region Award
-        Award AddAward(int playId, int festivalId, int categoryId, int userId);
+        Award AddAward(UpdateRequest<AwardDataDTO> request);
         //Void RemoveAward(int id);
-        Award UpdateAward(Award updateData);
-        Award GetAward(int id);
+        Award UpdateAward(UpdateRequest<AwardDataDTO> updateData);
+        Award GetAward(SingleRequest request);
         //List<AwardDTO> GetAwardsPaged(int pageNr, int pageAmount);
-        List<AwardDTO> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount);
+        List<AwardMixedDTO> SearchAwards(QueryRequest<AwardsSearchingCriteria> request);
         //<List<Award> GetAllAwards();
         #endregion
         #region Category
-        Category AddCategory(string title, int group, int order, int userId);
+        Category AddCategory(UpdateRequest<CategoryDTO> request);
         //RemoveCategory(int id);
-        Category UpdateCategory(Category updateData);
-        Category GetCategory(int id);
+        Category UpdateCategory(UpdateRequest<CategoryDTO> request);
+        Category GetCategory(SingleRequest request);
         //List<Category> GetCategoriesPaged(int pageNr, int pageAmount);
-        List<Category> GetAllCategories();
+        List<CategoryDTO> GetAllCategories(EmptyRequest request);
         #endregion
         #region Festival
-        Festival AddFestival(Festival newFestival);
+        Festival AddFestival(UpdateRequest<FestivalDTO> request);
         //RemoveFestival(int id);
-        Festival UpdateFestival(Festival updateData);
-        Festival GetFestival(int id);
-        List<Festival> GetFestivalsPaged(int pageNr, int pageAmount);
+        Festival UpdateFestival(UpdateRequest<FestivalDTO> request);
+        Festival GetFestival(SingleRequest request);
+        //List<Festival> GetFestivalsPaged(QueryRequest<FestivalDTO> request);
         //List<Festival> GetAllFestivals();
         int CountFestivals();
         #endregion
         #region Job
-        Job AddJob(string title, int userId);
+        Job AddJob(UpdateRequest<JobDTO> request );
         //RemoveJob(int id);
-        Job UpdateJob(Job updateData);
-        Job GetJob(int id);
+        Job UpdateJob(UpdateRequest<JobDTO> request);
+        Job GetJob(SingleRequest request);
         //List<Job> GetJobsPaged(int pageNr, int pageAmount);
-        List<Job> GetAllJobs();
+        List<JobDTO> GetAllJobs(EmptyRequest request);
         #endregion
         #region News
         //AddNews(News newNews);
@@ -56,69 +55,70 @@ namespace AF_Services
         //List<News> GetAllNews();
         #endregion
         #region Person
-        //Person AddPerson(Person newPerson);
-        //RemovePerson(int id);
-        //Person UpdatePerson(Person updateData);
-        //Person GetPerson(int id);
+        //PersonDTO AddPerson(UpdateRequest<PersonDataDTO> request);
+        //RemovePerson(SingleRequest request);
+        //Person UpdatePerson(UpdateRequest<PersonDataDTO> request);
+        //Person GetPerson(SingleRequest request);
+        
         //List<PersonDTO> GetPeoplePaged(int pageNr, int pageAmount);
         //List<Person> GetAllPeople();
         #endregion
         #region Play
-        Play AddPlay(Play newPlay);
+        Play AddPlay(UpdateRequest<PlayDataDTO> request);
         //RemovePlay(int id);
-        Play UpdatePlay(Play updateData);
-        Play GetPlay(int id);
+        Play UpdatePlay(UpdateRequest<PlayDataDTO> request);
+        Play GetPlay(SingleRequest request);
         //List<PlayDTO> GetPlaysPaged(int pageNr, int pageAmount);
         //List<Play> GetAllPlays();
-        List<Play> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
+        List<PlayDataDTO> SearchPlays(QueryRequest<PlaysSearchingCriteria> request);
         #endregion
         #region Position
-        Position AddPosition(string title, int section, int order, int userId);
+        Position AddPosition(UpdateRequest<PositionDTO> request);
         //RemovePosition(int id);
-        Position UpdatePosition(Position updateData);
-        Position GetPosition(int id);
+        Position UpdatePosition(UpdateRequest<PositionDTO> request);
+        Position GetPosition(SingleRequest request);
         //List<Position> GetPositionsPaged(int pageNr, int pageAmount);
-        List<Position> GetAllPositions();
+        List<PositionDTO> GetAllPositions(EmptyRequest request);
         #endregion
         #region RelationFestivalPersonPosition
-        AddRelationFestivalPersonPosition(RelationFestivalPersonPosition newRelationFestivalPersonPosition);
-        RemoveRelationFestivalPersonPosition(int id);
-        UpdateRelationFestivalPersonPosition(RelationFestivalPersonPosition updateData);
-        RelationFestivalPersonPosition> GetRelationFestivalPersonPosition(int id);
-        List<RelationFestivalPersonPosition> GetRelationFestivalPersonPositionPaged(int pageNr, int pageAmount);
-        List<RelationFestivalPersonPosition> GetAllRelationFestivalPersonPosition();
+        RelationFestivalPersonPositionDTO AddRelationFestivalPersonPosition(UpdateRequest<RelationFestivalPersonPositionDTO> request);
+        bool RemoveRelationFestivalPersonPosition(SingleRequest request);
+        RelationFestivalPersonPositionDTO UpdateRelationFestivalPersonPosition(UpdateRequest<RelationFestivalPersonPositionDTO> request);
+        RelationFestivalPersonPosition GetRelationFestivalPersonPosition(SingleRequest request);
+        //List<RelationFestivalPersonPosition> GetRelationFestivalPersonPositionPaged(QueryRequest<> );
+        //List<RelationFestivalPersonPosition> GetAllRelationFestivalPersonPosition();
         #endregion
         #region RelationPersonAward
-        AddRelationPersonAward(RelationPersonAward newRelationPersonAward);
-        RemoveRelationPersonAward(int id);
-        UpdateRelationPersonAward(RelationPersonAward updateData);
-        RelationPersonAward> GetRelationPersonAward(int id);
-        List<RelationPersonAward> GetRelationPersonAwardPaged(int pageNr, int pageAmount);
-        List<RelationPersonAward> GetAllRelationPersonAward();
+        RelationPersonAwardDTO AddRelationPersonAward(UpdateRequest<RelationPersonAwardDTO> request);
+        bool RemoveRelationPersonAward(SingleRequest request);
+        RelationPersonAwardDTO UpdateRelationPersonAward(UpdateRequest<RelationPersonAwardDTO> request);
+        RelationPersonAward GetRelationPersonAward(SingleRequest request);
+        //List<RelationPersonAward> GetRelationPersonAwardPaged(int pageNr, int pageAmount);
+        //List<RelationPersonAward> GetAllRelationPersonAward();
         #endregion
         #region RelationPersonPlayJob
-        AddRelationPersonPlayJob(RelationPersonPlayJob newRelationPersonPlayJob);
-        RemoveRelationPersonPlayJob(int id);
-        UpdateRelationPersonPlayJob(RelationPersonPlayJob updateData);
-        RelationPersonPlayJob> GetRelationPersonPlayJob(int id);
-        List<RelationPersonPlayJob> GetRelationPersonPlayJobPaged(int pageNr, int pageAmount);
-        List<RelationPersonPlayJob> GetAllRelationPersonPlayJob();
+        RelationPersonPlayJobDTO AddRelationPersonPlayJob(UpdateRequest<RelationPersonPlayJobDTO> request);
+        bool RemoveRelationPersonPlayJob(SingleRequest request);
+        RelationPersonPlayJobDTO UpdateRelationPersonPlayJob(UpdateRequest<RelationPersonPlayJobDTO> request);
+        RelationPersonPlayJob GetRelationPersonPlayJob(SingleRequest request);
+        //List<RelationPersonPlayJob> GetRelationPersonPlayJobPaged(int pageNr, int pageAmount);
+        //List<RelationPersonPlayJob> GetAllRelationPersonPlayJob();
         #endregion
         #region RelationPersonPlayRole
-        AddRelationPersonPlayRole(RelationPersonPlayRole newRelationPersonPlayRole);
-        RemoveRelationPersonPlayRole(int id);
-        UpdateRelationPersonPlayRole(RelationPersonPlayRole updateData);
-        RelationPersonPlayRole> GetRelationPersonPlayRole(int id);
-        List<RelationPersonPlayRole> GetRelationPersonPlayRolePaged(int pageNr, int pageAmount);
-        List<RelationPersonPlayRole> GetAllRelationPersonPlayRole();
+        RelationPersonPlayRoleDTO AddRelationPersonPlayRole(UpdateRequest<RelationPersonPlayRoleDTO> request);
+        bool RemoveRelationPersonPlayRole(SingleRequest request);
+        RelationPersonPlayRoleDTO UpdateRelationPersonPlayRole(UpdateRequest<RelationPersonPlayRoleDTO> request);
+        RelationPersonPlayRole GetRelationPersonPlayRole(SingleRequest request);
+        //List<RelationPersonPlayRole> GetRelationPersonPlayRolePaged(int pageNr, int pageAmount);
+        //List<RelationPersonPlayRole> GetAllRelationPersonPlayRole();
         #endregion
         #region User
-        AddUser(User newUser);
-        RemoveUser(int id);
-        UpdateUser(User updateData);
-        User> GetUser(int id);
-        List<User> GetUserPaged(int pageNr, int pageAmount);
-        List<User> GetAllUsers();
+        UserDTO AddUser(UpdateRequest<UserDTO> request);
+        bool RemoveUser(SingleRequest request);
+        UserDTO UpdateUser(UpdateRequest<UserDTO> request);
+        User GetUser(SingleRequest request);
+        //List<User> GetUserPaged(int pageNr, int pageAmount);
+        List<UserDTO> GetAllUsers(EmptyRequest request);
         #endregion
 
 

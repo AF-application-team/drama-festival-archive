@@ -10,7 +10,7 @@ namespace AF.Common.Requests
         [DataMember]
         public IList<TData> Data { get; set; }
 
-        public ListResponse(Guid requestGuid, IList<TData> data) : base(requestGuid)
+        public ListResponse(IList<TData> data)
         {
             Data = data;
         }
@@ -20,12 +20,12 @@ namespace AF.Common.Requests
     {
         public static ListResponse<TData> Create<TData>(RequestBase request, IList<TData> data)
         {
-            return new ListResponse<TData>(request.Id, data);
+            return new ListResponse<TData>(data);
         }
 
         public static ListResponse<TData> Create<TData>(RequestBase request, IEnumerable<TData> data)
         {
-            return new ListResponse<TData>(request.Id, new List<TData>(data));
+            return new ListResponse<TData>(new List<TData>(data));
         }
     }
 }
