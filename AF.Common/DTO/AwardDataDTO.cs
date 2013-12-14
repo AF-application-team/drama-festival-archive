@@ -8,5 +8,9 @@ namespace AF.Common.DTO
 {
     public class AwardDataDTO
     {
+        public int AwardId { get; set; }
+        public int CategoryId { get; set; }
+        public int FestivalId { get; set; }
+        public int PlayId { get; set; }
     }
 }
