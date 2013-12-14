@@ -240,7 +240,7 @@ namespace AF_Desktop_Application
         {
             var mi = (MenuItem) sender;
 
-            if (await MViewModel.ChangeUser(int.Parse(mi.Tag.ToString()))) ;
+            if (await MViewModel.ChangeUser(int.Parse(mi.Tag.ToString())))
             {
                 UserMenuItem1.IsChecked = !UserMenuItem1.IsChecked;
                 UserMenuItem2.IsChecked = !UserMenuItem2.IsChecked;

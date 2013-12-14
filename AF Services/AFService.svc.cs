@@ -7,7 +7,8 @@ using System.ServiceModel.Web;
 using System.Text;
 using AF.Common.DTO;
 using AF.Common.Queries;
-using Af.Common.Services;
+using AF.Common.Requests;
+using AF.Common.Services;
 using AF_Models;
 
 namespace AF_Services
@@ -46,218 +47,218 @@ namespace AF_Services
         //    }
         //    return composite;
         //}
-        public Award AddAward(int playId, int festivalId, int categoryId, int userId)
+        public SingleItemResponse<Award> AddAward(int playId, int festivalId, int categoryId, int userId)
         {
             throw new NotImplementedException();
         }
 
-        public Award UpdateAward(Award updateData)
+        public SingleItemResponse<Award> UpdateAward(Award updateData)
         {
             throw new NotImplementedException();
         }
 
-        public Award GetAward(int id)
+        public SingleItemResponse<Award> GetAward(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<AwardMixedDTO> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount)
+        public ListResponse<AwardMixedDTO> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount)
         {
             throw new NotImplementedException();
         }
 
-        public Category AddCategory(string title, int @group, int order, int userId)
+        public SingleItemResponse<Category> AddCategory(string title, int @group, int order, int userId)
         {
             throw new NotImplementedException();
         }
 
-        public Category UpdateCategory(Category updateData)
+        public SingleItemResponse<Category> UpdateCategory(Category updateData)
         {
             throw new NotImplementedException();
         }
 
-        public Category GetCategory(int id)
+        public SingleItemResponse<Category> GetCategory(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Category> GetAllCategories()
+        public ListResponse<Category> GetAllCategories()
         {
             throw new NotImplementedException();
         }
 
-        public Festival AddFestival(Festival newFestival)
+        public SingleItemResponse<Festival> AddFestival(Festival newFestival)
         {
             throw new NotImplementedException();
         }
 
-        public Festival UpdateFestival(Festival updateData)
+        public SingleItemResponse<Festival> UpdateFestival(Festival updateData)
         {
             throw new NotImplementedException();
         }
 
-        public Festival GetFestival(int id)
+        public SingleItemResponse<Festival> GetFestival(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Festival> GetFestivalsPaged(int pageNr, int pageAmount)
+        public ListResponse<Festival> GetFestivalsPaged(int pageNr, int pageAmount)
         {
             throw new NotImplementedException();
         }
 
-        public int CountFestivals()
+        public SingleItemResponse<int> CountFestivals()
         {
             throw new NotImplementedException();
         }
 
-        public Job AddJob(string title, int userId)
+        public SingleItemResponse<Job> AddJob(string title, int userId)
         {
             throw new NotImplementedException();
         }
 
-        public Job UpdateJob(Job updateData)
+        public SingleItemResponse<Job> UpdateJob(Job updateData)
         {
             throw new NotImplementedException();
         }
 
-        public Job GetJob(int id)
+        public SingleItemResponse<Job> GetJob(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Job> GetAllJobs()
+        public ListResponse<Job> GetAllJobs()
         {
             throw new NotImplementedException();
         }
 
-        public Play AddPlay(Play newPlay)
+        public SingleItemResponse<Play> AddPlay(Play newPlay)
         {
             throw new NotImplementedException();
         }
 
-        public Play UpdatePlay(Play updateData)
+        public SingleItemResponse<Play> UpdatePlay(Play updateData)
         {
             throw new NotImplementedException();
         }
 
-        public Play GetPlay(int id)
+        public SingleItemResponse<Play> GetPlay(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Play> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount)
+        public ListResponse<Play> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount)
         {
             throw new NotImplementedException();
         }
 
-        public Position AddPosition(string title, int section, int order, int userId)
+        public SingleItemResponse<Position> AddPosition(string title, int section, int order, int userId)
         {
             throw new NotImplementedException();
         }
 
-        public Position UpdatePosition(Position updateData)
+        public SingleItemResponse<Position> UpdatePosition(Position updateData)
         {
             throw new NotImplementedException();
         }
 
-        public Position GetPosition(int id)
+        public SingleItemResponse<Position> GetPosition(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Position> GetAllPositions()
+        public ListResponse<Position> GetAllPositions()
         {
             throw new NotImplementedException();
         }
 
-        public RelationFestivalPersonPosition AddRelationFestivalPersonPosition(
+        public SingleItemResponse<RelationFestivalPersonPosition> AddRelationFestivalPersonPosition(
             RelationFestivalPersonPosition newRelationFestivalPersonPosition)
         {
             throw new NotImplementedException();
         }
 
-        public bool RemoveRelationFestivalPersonPosition(int id)
+        public SingleItemResponse<bool> RemoveRelationFestivalPersonPosition(int id)
         {
             throw new NotImplementedException();
         }
 
-        public RelationFestivalPersonPosition UpdateRelationFestivalPersonPosition(RelationFestivalPersonPosition updateData)
+        public SingleItemResponse<RelationFestivalPersonPosition> UpdateRelationFestivalPersonPosition(RelationFestivalPersonPosition updateData)
         {
             throw new NotImplementedException();
         }
 
-        public RelationFestivalPersonPosition GetRelationFestivalPersonPosition(int id)
+        public SingleItemResponse<RelationFestivalPersonPosition> GetRelationFestivalPersonPosition(int id)
         {
             throw new NotImplementedException();
         }
 
-        public RelationPersonAward AddRelationPersonAward(RelationPersonAward newRelationPersonAward)
+        public SingleItemResponse<RelationPersonAward> AddRelationPersonAward(RelationPersonAward newRelationPersonAward)
         {
             throw new NotImplementedException();
         }
 
-        public bool RemoveRelationPersonAward(int id)
+        public SingleItemResponse<bool> RemoveRelationPersonAward(int id)
         {
             throw new NotImplementedException();
         }
 
-        public RelationPersonAward UpdateRelationPersonAward(RelationPersonAward updateData)
+        public SingleItemResponse<RelationPersonAward> UpdateRelationPersonAward(RelationPersonAward updateData)
         {
             throw new NotImplementedException();
         }
 
-        public RelationPersonAward GetRelationPersonAward(int id)
+        public SingleItemResponse<RelationPersonAward> GetRelationPersonAward(int id)
         {
             throw new NotImplementedException();
         }
 
-        public RelationPersonPlayJob AddRelationPersonPlayJob(RelationPersonPlayJob newRelationPersonPlayJob)
+        public SingleItemResponse<RelationPersonPlayJob> AddRelationPersonPlayJob(RelationPersonPlayJob newRelationPersonPlayJob)
         {
             throw new NotImplementedException();
         }
 
-        public bool RemoveRelationPersonPlayJob(int id)
+        public SingleItemResponse<bool> RemoveRelationPersonPlayJob(int id)
         {
             throw new NotImplementedException();
         }
 
-        public RelationPersonPlayJob UpdateRelationPersonPlayJob(RelationPersonPlayJob updateData)
+        public SingleItemResponse<RelationPersonPlayJob> UpdateRelationPersonPlayJob(RelationPersonPlayJob updateData)
         {
             throw new NotImplementedException();
         }
 
-        public RelationPersonPlayJob GetRelationPersonPlayJob(int id)
+        public SingleItemResponse<RelationPersonPlayJob> GetRelationPersonPlayJob(int id)
         {
             throw new NotImplementedException();
         }
 
-        public RelationPersonPlayRole AddRelationPersonPlayRole(RelationPersonPlayRole newRelationPersonPlayRole)
+        public SingleItemResponse<RelationPersonPlayRole> AddRelationPersonPlayRole(RelationPersonPlayRole newRelationPersonPlayRole)
         {
             throw new NotImplementedException();
         }
 
-        public bool RemoveRelationPersonPlayRole(int id)
+        public SingleItemResponse<bool> RemoveRelationPersonPlayRole(int id)
         {
             throw new NotImplementedException();
         }
 
-        public RelationPersonPlayRole UpdateRelationPersonPlayRole(RelationPersonPlayRole updateData)
+        public SingleItemResponse<RelationPersonPlayRole> UpdateRelationPersonPlayRole(RelationPersonPlayRole updateData)
         {
             throw new NotImplementedException();
         }
 
-        public RelationPersonPlayRole GetRelationPersonPlayRole(int id)
+        public SingleItemResponse<RelationPersonPlayRole> GetRelationPersonPlayRole(int id)
         {
             throw new NotImplementedException();
         }
 
-        public User GetUser(int id)
+        public SingleItemResponse<User> GetUser(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<User> GetAllUsers()
+        public ListResponse<User> GetAllUsers()
         {
             throw new NotImplementedException();
         }
