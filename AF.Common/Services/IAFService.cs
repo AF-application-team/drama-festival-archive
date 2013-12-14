@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using AF.Common.DTO;
 using AF.Common.Queries;
+using AF.Common.Requests;
 using AF_Models;
 
-namespace AF_Services
+namespace Af.Common.Services
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
@@ -13,53 +14,53 @@ namespace AF_Services
     {
         #region Award
         [OperationContract]
-        Award AddAward(int playId, int festivalId, int categoryId, int userId);
+        SingleItemResponse<Award> AddAward(int playId, int festivalId, int categoryId, int userId);
         //Void RemoveAward(int id);
         [OperationContract]
-        Award UpdateAward(Award updateData);
+        SingleItemResponse<Award> UpdateAward(Award updateData);
         [OperationContract]
-        Award GetAward(int id);
+        SingleItemResponse<Award> GetAward(int id);
         //List<AwardDTO> GetAwardsPaged(int pageNr, int pageAmount);
         [OperationContract]
-        List<AwardMixedDTO> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount);
+        ListResponse<AwardMixedDTO> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount);
         //<List<Award> GetAllAwards();
         #endregion
         #region Category
         [OperationContract]
-        Category AddCategory(string title, int group, int order, int userId);
+        SingleItemResponse<Category> AddCategory(string title, int group, int order, int userId);
         //RemoveCategory(int id);
         [OperationContract]
-        Category UpdateCategory(Category updateData);
+        SingleItemResponse<Category> UpdateCategory(Category updateData);
         [OperationContract]
-        Category GetCategory(int id);
+        SingleItemResponse<Category> GetCategory(int id);
         //List<Category> GetCategoriesPaged(int pageNr, int pageAmount);
         [OperationContract]
-        List<Category> GetAllCategories();
+        ListResponse<Category> GetAllCategories();
         #endregion
         #region Festival
         [OperationContract]
-        Festival AddFestival(Festival newFestival);
+        SingleItemResponse<Festival> AddFestival(Festival newFestival);
         //RemoveFestival(int id);
         [OperationContract]
-        Festival UpdateFestival(Festival updateData);
+        SingleItemResponse<Festival> UpdateFestival(Festival updateData);
         [OperationContract]
-        Festival GetFestival(int id);
+        SingleItemResponse<Festival> GetFestival(int id);
         [OperationContract]
-        List<Festival> GetFestivalsPaged(int pageNr, int pageAmount);
+        ListResponse<Festival> GetFestivalsPaged(int pageNr, int pageAmount);
         //List<Festival> GetAllFestivals();
         int CountFestivals();
         #endregion
         #region Job
         [OperationContract]
-        Job AddJob(string title, int userId);
+        SingleItemResponse<Job> AddJob(string title, int userId);
         //RemoveJob(int id);
         [OperationContract]
-        Job UpdateJob(Job updateData);
+        SingleItemResponse<Job> UpdateJob(Job updateData);
         [OperationContract]
-        Job GetJob(int id);
+        SingleItemResponse<Job> GetJob(int id);
         //List<Job> GetJobsPaged(int pageNr, int pageAmount);
         [OperationContract]
-        List<Job> GetAllJobs();
+        ListResponse<Job> GetAllJobs();
         #endregion
         #region News
         //AddNews(News newNews);
@@ -79,74 +80,74 @@ namespace AF_Services
         #endregion
         #region Play
         [OperationContract]
-        Play AddPlay(Play newPlay);
+        SingleItemResponse<Play> AddPlay(Play newPlay);
         //RemovePlay(int id);
         [OperationContract]
-        Play UpdatePlay(Play updateData);
+        SingleItemResponse<Play> UpdatePlay(Play updateData);
         [OperationContract]
-        Play GetPlay(int id);
+        SingleItemResponse<Play> GetPlay(int id);
         //List<PlayDTO> GetPlaysPaged(int pageNr, int pageAmount);
         //List<Play> GetAllPlays();
         [OperationContract]
-        List<Play> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
+        ListResponse<Play> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
         #endregion
         #region Position
         [OperationContract]
-        Position AddPosition(string title, int section, int order, int userId);
+        SingleItemResponse<Position> AddPosition(string title, int section, int order, int userId);
         //RemovePosition(int id);
         [OperationContract]
-        Position UpdatePosition(Position updateData);
+        SingleItemResponse<Position> UpdatePosition(Position updateData);
         [OperationContract]
-        Position GetPosition(int id);
+        SingleItemResponse<Position> GetPosition(int id);
         //List<Position> GetPositionsPaged(int pageNr, int pageAmount);
         [OperationContract]
-        List<Position> GetAllPositions();
+        ListResponse<Position> GetAllPositions();
         #endregion
         #region RelationFestivalPersonPosition
         [OperationContract]
-        RelationFestivalPersonPosition AddRelationFestivalPersonPosition(RelationFestivalPersonPosition newRelationFestivalPersonPosition);
+        SingleItemResponse<RelationFestivalPersonPosition> AddRelationFestivalPersonPosition(RelationFestivalPersonPosition newRelationFestivalPersonPosition);
         [OperationContract]
-        bool RemoveRelationFestivalPersonPosition(int id);
+        SingleItemResponse<bool> RemoveRelationFestivalPersonPosition(int id);
         [OperationContract]
-        RelationFestivalPersonPosition UpdateRelationFestivalPersonPosition(RelationFestivalPersonPosition updateData);
+        SingleItemResponse<RelationFestivalPersonPosition> UpdateRelationFestivalPersonPosition(RelationFestivalPersonPosition updateData);
         [OperationContract]
-        RelationFestivalPersonPosition GetRelationFestivalPersonPosition(int id);
+        SingleItemResponse<RelationFestivalPersonPosition> GetRelationFestivalPersonPosition(int id);
         //List<RelationFestivalPersonPosition> GetRelationFestivalPersonPositionPaged(int pageNr, int pageAmount);
         //List<RelationFestivalPersonPosition> GetAllRelationFestivalPersonPosition();
         #endregion
         #region RelationPersonAward
         [OperationContract]
-        RelationPersonAward AddRelationPersonAward(RelationPersonAward newRelationPersonAward);
+        SingleItemResponse<RelationPersonAward> AddRelationPersonAward(RelationPersonAward newRelationPersonAward);
         [OperationContract]
-        bool RemoveRelationPersonAward(int id);
+        SingleItemResponse<bool> RemoveRelationPersonAward(int id);
         [OperationContract]
-        RelationPersonAward UpdateRelationPersonAward(RelationPersonAward updateData);
+        SingleItemResponse<RelationPersonAward> UpdateRelationPersonAward(RelationPersonAward updateData);
         [OperationContract]
-        RelationPersonAward GetRelationPersonAward(int id);
+        SingleItemResponse<RelationPersonAward> GetRelationPersonAward(int id);
         //List<RelationPersonAward> GetRelationPersonAwardPaged(int pageNr, int pageAmount);
         //List<RelationPersonAward> GetAllRelationPersonAward();
         #endregion
         #region RelationPersonPlayJob
         [OperationContract]
-        RelationPersonPlayJob AddRelationPersonPlayJob(RelationPersonPlayJob newRelationPersonPlayJob);
+        SingleItemResponse<RelationPersonPlayJob> AddRelationPersonPlayJob(RelationPersonPlayJob newRelationPersonPlayJob);
         [OperationContract]
-        bool RemoveRelationPersonPlayJob(int id);
+        SingleItemResponse<bool> RemoveRelationPersonPlayJob(int id);
         [OperationContract]
-        RelationPersonPlayJob UpdateRelationPersonPlayJob(RelationPersonPlayJob updateData);
+        SingleItemResponse<RelationPersonPlayJob> UpdateRelationPersonPlayJob(RelationPersonPlayJob updateData);
         [OperationContract]
-        RelationPersonPlayJob GetRelationPersonPlayJob(int id);
+        SingleItemResponse<RelationPersonPlayJob> GetRelationPersonPlayJob(int id);
         //List<RelationPersonPlayJob> GetRelationPersonPlayJobPaged(int pageNr, int pageAmount);
         //List<RelationPersonPlayJob> GetAllRelationPersonPlayJob();
         #endregion
         #region RelationPersonPlayRole
         [OperationContract]
-        RelationPersonPlayRole AddRelationPersonPlayRole(RelationPersonPlayRole newRelationPersonPlayRole);
+        SingleItemResponse<RelationPersonPlayRole> AddRelationPersonPlayRole(RelationPersonPlayRole newRelationPersonPlayRole);
         [OperationContract]
-        bool RemoveRelationPersonPlayRole(int id);
+        SingleItemResponse<bool> RemoveRelationPersonPlayRole(int id);
         [OperationContract]
-        RelationPersonPlayRole UpdateRelationPersonPlayRole(RelationPersonPlayRole updateData);
+        SingleItemResponse<RelationPersonPlayRole> UpdateRelationPersonPlayRole(RelationPersonPlayRole updateData);
         [OperationContract]
-        RelationPersonPlayRole GetRelationPersonPlayRole(int id);
+        SingleItemResponse<RelationPersonPlayRole> GetRelationPersonPlayRole(int id);
         //List<RelationPersonPlayRole> GetRelationPersonPlayRolePaged(int pageNr, int pageAmount);
         //List<RelationPersonPlayRole> GetAllRelationPersonPlayRole();
         #endregion
@@ -155,10 +156,10 @@ namespace AF_Services
         //bool RemoveUser(int id);
         //UpdateUser(User updateData);
         [OperationContract]
-        User GetUser(int id);
+        SingleItemResponse<User> GetUser(int id);
         //List<User> GetUserPaged(int pageNr, int pageAmount);
         [OperationContract]
-        List<User> GetAllUsers();
+        ListResponse<User> GetAllUsers();
         #endregion
 
 

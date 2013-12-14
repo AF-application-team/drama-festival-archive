@@ -67,7 +67,9 @@
     <Compile Include="Requests\UpdateRequest.cs" />
     <Compile Include="Services\IAFService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AF Models\AF Models.csproj">
       <Project>{87104c17-7465-465f-99d6-c2c95051a714}</Project>
