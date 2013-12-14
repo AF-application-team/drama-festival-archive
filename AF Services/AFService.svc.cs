@@ -17,6 +17,10 @@ namespace AF_Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class AFService : IAFService
     {
+        public AFService()
+        {
+            Console.WriteLine("AF Service started to work...");
+        }
         /* Award AddAward(int playId, int festivalId, int categoryId, int userId);
 
          List<AwardMixedDTO> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount)

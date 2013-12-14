@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="AF.Common.Services.IAFService" CodeBehind="AFService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="AF_Services.AFService" CodeBehind="AFService.svc.cs" %>
