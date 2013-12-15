@@ -12,5 +12,6 @@ namespace AF.Common.DTO
         public int CategoryId { get; set; }
         public int FestivalId { get; set; }
         public int PlayId { get; set; }
+
     }
 }

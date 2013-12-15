@@ -11,11 +11,11 @@
 namespace AF.Common.Requests
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseBase", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ResponseBase", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(AF.Common.Requests.ListResponseOfAwardMixedDTO3eQi8U0z))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(AF.Common.Requests.ListResponseOfCategoryBtxHs14H))]
@@ -37,9 +37,9 @@ namespace AF.Common.Requests
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H))]
     public partial class ResponseBase : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -52,15 +52,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ListResponseOfAwardMixedDTO3eQi8U0z", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ListResponseOfAwardMixedDTO3eQi8U0z", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class ListResponseOfAwardMixedDTO3eQi8U0z : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF.Common.DTO.AwardMixedDTO[] DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF.Common.DTO.AwardMixedDTO[] Data
         {
@@ -74,15 +74,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleItemResponseOfCategoryBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SingleItemResponseOfCategoryBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class SingleItemResponseOfCategoryBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.Category DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Category Data
         {
@@ -96,15 +96,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ListResponseOfCategoryBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ListResponseOfCategoryBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class ListResponseOfCategoryBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.Category[] DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Category[] Data
         {
@@ -118,15 +118,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleItemResponseOfFestivalBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SingleItemResponseOfFestivalBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class SingleItemResponseOfFestivalBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.Festival DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Festival Data
         {
@@ -140,15 +140,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ListResponseOfFestivalBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ListResponseOfFestivalBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class ListResponseOfFestivalBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.Festival[] DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Festival[] Data
         {
@@ -162,15 +162,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleItemResponseOfJobBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SingleItemResponseOfJobBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class SingleItemResponseOfJobBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.Job DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Job Data
         {
@@ -184,15 +184,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ListResponseOfJobBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ListResponseOfJobBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class ListResponseOfJobBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.Job[] DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Job[] Data
         {
@@ -206,15 +206,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleItemResponseOfPlayBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SingleItemResponseOfPlayBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class SingleItemResponseOfPlayBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.Play DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Play Data
         {
@@ -228,15 +228,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ListResponseOfPlayBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ListResponseOfPlayBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class ListResponseOfPlayBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.Play[] DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Play[] Data
         {
@@ -250,15 +250,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleItemResponseOfPositionBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SingleItemResponseOfPositionBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class SingleItemResponseOfPositionBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.Position DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Position Data
         {
@@ -272,15 +272,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ListResponseOfPositionBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ListResponseOfPositionBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class ListResponseOfPositionBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.Position[] DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Position[] Data
         {
@@ -294,15 +294,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.RelationFestivalPersonPosition DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.RelationFestivalPersonPosition Data
         {
@@ -316,15 +316,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleItemResponseOfboolean", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SingleItemResponseOfboolean", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class SingleItemResponseOfboolean : AF.Common.Requests.ResponseBase
     {
-        
+
         private bool DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Data
         {
@@ -338,15 +338,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleItemResponseOfRelationPersonAwardBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SingleItemResponseOfRelationPersonAwardBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class SingleItemResponseOfRelationPersonAwardBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.RelationPersonAward DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.RelationPersonAward Data
         {
@@ -360,15 +360,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleItemResponseOfRelationPersonPlayJobBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SingleItemResponseOfRelationPersonPlayJobBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class SingleItemResponseOfRelationPersonPlayJobBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.RelationPersonPlayJob DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.RelationPersonPlayJob Data
         {
@@ -382,15 +382,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleItemResponseOfRelationPersonPlayRoleBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SingleItemResponseOfRelationPersonPlayRoleBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class SingleItemResponseOfRelationPersonPlayRoleBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.RelationPersonPlayRole DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.RelationPersonPlayRole Data
         {
@@ -404,15 +404,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleItemResponseOfUserBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SingleItemResponseOfUserBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class SingleItemResponseOfUserBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.User DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User Data
         {
@@ -426,15 +426,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ListResponseOfUserBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ListResponseOfUserBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class ListResponseOfUserBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.User[] DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User[] Data
         {
@@ -448,15 +448,15 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleItemResponseOfAwardBtxHs14H", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SingleItemResponseOfAwardBtxHs14H", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     public partial class SingleItemResponseOfAwardBtxHs14H : AF.Common.Requests.ResponseBase
     {
-        
+
         private AF_Models.Award DataField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Award Data
         {
@@ -470,17 +470,17 @@ namespace AF.Common.Requests
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="QueryBase", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "QueryBase", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Requests")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(AF.Common.Queries.PlaysSearchingCriteria))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(AF.Common.Queries.AwardsSearchingCriteria))]
     public partial class QueryBase : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -497,36 +497,36 @@ namespace AF.Common.Requests
 namespace AF_Models
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Award", Namespace="http://schemas.datacontract.org/2004/07/AF_Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Award", Namespace = "http://schemas.datacontract.org/2004/07/AF_Models")]
     public partial class Award : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private int AwardIdField;
-        
+
         private AF_Models.Category CategoryField;
-        
+
         private int CategoryIdField;
-        
+
         private System.DateTime EditDateField;
-        
+
         private int EditedByField;
-        
+
         private AF_Models.User EditorField;
-        
+
         private AF_Models.Festival FestivalField;
-        
+
         private int FestivalIdField;
-        
+
         private AF_Models.Play PlayField;
-        
+
         private int PlayIdField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -538,7 +538,7 @@ namespace AF_Models
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int AwardId
         {
@@ -551,7 +551,7 @@ namespace AF_Models
                 this.AwardIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Category Category
         {
@@ -564,7 +564,7 @@ namespace AF_Models
                 this.CategoryField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int CategoryId
         {
@@ -577,7 +577,7 @@ namespace AF_Models
                 this.CategoryIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EditDate
         {
@@ -590,7 +590,7 @@ namespace AF_Models
                 this.EditDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int EditedBy
         {
@@ -603,7 +603,7 @@ namespace AF_Models
                 this.EditedByField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User Editor
         {
@@ -616,7 +616,7 @@ namespace AF_Models
                 this.EditorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Festival Festival
         {
@@ -629,7 +629,7 @@ namespace AF_Models
                 this.FestivalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int FestivalId
         {
@@ -642,7 +642,7 @@ namespace AF_Models
                 this.FestivalIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Play Play
         {
@@ -655,7 +655,7 @@ namespace AF_Models
                 this.PlayField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int PlayId
         {
@@ -669,29 +669,29 @@ namespace AF_Models
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Category", Namespace="http://schemas.datacontract.org/2004/07/AF_Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Category", Namespace = "http://schemas.datacontract.org/2004/07/AF_Models")]
     public partial class Category : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private int CategoryIdField;
-        
+
         private System.DateTime EditDateField;
-        
+
         private int EditedByField;
-        
+
         private AF_Models.User EditorField;
-        
+
         private int GroupField;
-        
+
         private int OrderField;
-        
+
         private string TitleField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -703,7 +703,7 @@ namespace AF_Models
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int CategoryId
         {
@@ -716,7 +716,7 @@ namespace AF_Models
                 this.CategoryIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EditDate
         {
@@ -729,7 +729,7 @@ namespace AF_Models
                 this.EditDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int EditedBy
         {
@@ -742,7 +742,7 @@ namespace AF_Models
                 this.EditedByField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User Editor
         {
@@ -755,7 +755,7 @@ namespace AF_Models
                 this.EditorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Group
         {
@@ -768,7 +768,7 @@ namespace AF_Models
                 this.GroupField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Order
         {
@@ -781,7 +781,7 @@ namespace AF_Models
                 this.OrderField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Title
         {
@@ -795,25 +795,25 @@ namespace AF_Models
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/AF_Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "User", Namespace = "http://schemas.datacontract.org/2004/07/AF_Models")]
     public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string EmailField;
-        
+
         private string FirstNameField;
-        
+
         private string LastNameField;
-        
+
         private string LoginField;
-        
+
         private int UserIdField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -825,7 +825,7 @@ namespace AF_Models
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Email
         {
@@ -838,7 +838,7 @@ namespace AF_Models
                 this.EmailField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string FirstName
         {
@@ -851,7 +851,7 @@ namespace AF_Models
                 this.FirstNameField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string LastName
         {
@@ -864,7 +864,7 @@ namespace AF_Models
                 this.LastNameField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Login
         {
@@ -877,7 +877,7 @@ namespace AF_Models
                 this.LoginField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int UserId
         {
@@ -891,29 +891,29 @@ namespace AF_Models
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Festival", Namespace="http://schemas.datacontract.org/2004/07/AF_Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Festival", Namespace = "http://schemas.datacontract.org/2004/07/AF_Models")]
     public partial class Festival : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private System.DateTime BeginningDateField;
-        
+
         private System.DateTime EditDateField;
-        
+
         private int EditedByField;
-        
+
         private AF_Models.User EditorField;
-        
+
         private System.DateTime EndDateField;
-        
+
         private int FestivalIdField;
-        
+
         private int YearField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -925,7 +925,7 @@ namespace AF_Models
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime BeginningDate
         {
@@ -938,7 +938,7 @@ namespace AF_Models
                 this.BeginningDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EditDate
         {
@@ -951,7 +951,7 @@ namespace AF_Models
                 this.EditDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int EditedBy
         {
@@ -964,7 +964,7 @@ namespace AF_Models
                 this.EditedByField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User Editor
         {
@@ -977,7 +977,7 @@ namespace AF_Models
                 this.EditorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EndDate
         {
@@ -990,7 +990,7 @@ namespace AF_Models
                 this.EndDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int FestivalId
         {
@@ -1003,7 +1003,7 @@ namespace AF_Models
                 this.FestivalIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Year
         {
@@ -1017,25 +1017,25 @@ namespace AF_Models
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Job", Namespace="http://schemas.datacontract.org/2004/07/AF_Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Job", Namespace = "http://schemas.datacontract.org/2004/07/AF_Models")]
     public partial class Job : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private System.DateTime EditDateField;
-        
+
         private int EditedByField;
-        
+
         private AF_Models.User EditorField;
-        
+
         private int JobIdField;
-        
+
         private string JobTitleField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -1047,7 +1047,7 @@ namespace AF_Models
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EditDate
         {
@@ -1060,7 +1060,7 @@ namespace AF_Models
                 this.EditDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int EditedBy
         {
@@ -1073,7 +1073,7 @@ namespace AF_Models
                 this.EditedByField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User Editor
         {
@@ -1086,7 +1086,7 @@ namespace AF_Models
                 this.EditorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int JobId
         {
@@ -1099,7 +1099,7 @@ namespace AF_Models
                 this.JobIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string JobTitle
         {
@@ -1113,39 +1113,39 @@ namespace AF_Models
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Play", Namespace="http://schemas.datacontract.org/2004/07/AF_Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Play", Namespace = "http://schemas.datacontract.org/2004/07/AF_Models")]
     public partial class Play : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string AuthorField;
-        
+
         private int DayField;
-        
+
         private System.DateTime EditDateField;
-        
+
         private int EditedByField;
-        
+
         private AF_Models.User EditorField;
-        
+
         private AF_Models.Festival FestivalField;
-        
+
         private int FestivalIdField;
-        
+
         private string MottoField;
-        
+
         private int OrderField;
-        
+
         private int PlayIdField;
-        
+
         private string PlayedByField;
-        
+
         private string TitleField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -1157,7 +1157,7 @@ namespace AF_Models
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Author
         {
@@ -1170,7 +1170,7 @@ namespace AF_Models
                 this.AuthorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Day
         {
@@ -1183,7 +1183,7 @@ namespace AF_Models
                 this.DayField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EditDate
         {
@@ -1196,7 +1196,7 @@ namespace AF_Models
                 this.EditDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int EditedBy
         {
@@ -1209,7 +1209,7 @@ namespace AF_Models
                 this.EditedByField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User Editor
         {
@@ -1222,7 +1222,7 @@ namespace AF_Models
                 this.EditorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Festival Festival
         {
@@ -1235,7 +1235,7 @@ namespace AF_Models
                 this.FestivalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int FestivalId
         {
@@ -1248,7 +1248,7 @@ namespace AF_Models
                 this.FestivalIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Motto
         {
@@ -1261,7 +1261,7 @@ namespace AF_Models
                 this.MottoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Order
         {
@@ -1274,7 +1274,7 @@ namespace AF_Models
                 this.OrderField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int PlayId
         {
@@ -1287,7 +1287,7 @@ namespace AF_Models
                 this.PlayIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string PlayedBy
         {
@@ -1300,7 +1300,7 @@ namespace AF_Models
                 this.PlayedByField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Title
         {
@@ -1314,29 +1314,29 @@ namespace AF_Models
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Position", Namespace="http://schemas.datacontract.org/2004/07/AF_Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Position", Namespace = "http://schemas.datacontract.org/2004/07/AF_Models")]
     public partial class Position : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private System.DateTime EditDateField;
-        
+
         private int EditedByField;
-        
+
         private AF_Models.User EditorField;
-        
+
         private int OrderField;
-        
+
         private int PositionIdField;
-        
+
         private string PositionTitleField;
-        
+
         private int SectionField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -1348,7 +1348,7 @@ namespace AF_Models
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EditDate
         {
@@ -1361,7 +1361,7 @@ namespace AF_Models
                 this.EditDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int EditedBy
         {
@@ -1374,7 +1374,7 @@ namespace AF_Models
                 this.EditedByField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User Editor
         {
@@ -1387,7 +1387,7 @@ namespace AF_Models
                 this.EditorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Order
         {
@@ -1400,7 +1400,7 @@ namespace AF_Models
                 this.OrderField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int PositionId
         {
@@ -1413,7 +1413,7 @@ namespace AF_Models
                 this.PositionIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string PositionTitle
         {
@@ -1426,7 +1426,7 @@ namespace AF_Models
                 this.PositionTitleField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Section
         {
@@ -1440,35 +1440,35 @@ namespace AF_Models
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RelationFestivalPersonPosition", Namespace="http://schemas.datacontract.org/2004/07/AF_Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "RelationFestivalPersonPosition", Namespace = "http://schemas.datacontract.org/2004/07/AF_Models")]
     public partial class RelationFestivalPersonPosition : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private System.DateTime EditDateField;
-        
+
         private int EditedByField;
-        
+
         private AF_Models.User EditorField;
-        
+
         private AF_Models.Festival FestivalField;
-        
+
         private int FestivalIdField;
-        
+
         private AF_Models.Person PersonField;
-        
+
         private int PersonIdField;
-        
+
         private AF_Models.Position PositionField;
-        
+
         private int PositionIdField;
-        
+
         private int RelationFestivalPersonPositionIdField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -1480,7 +1480,7 @@ namespace AF_Models
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EditDate
         {
@@ -1493,7 +1493,7 @@ namespace AF_Models
                 this.EditDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int EditedBy
         {
@@ -1506,7 +1506,7 @@ namespace AF_Models
                 this.EditedByField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User Editor
         {
@@ -1519,7 +1519,7 @@ namespace AF_Models
                 this.EditorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Festival Festival
         {
@@ -1532,7 +1532,7 @@ namespace AF_Models
                 this.FestivalField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int FestivalId
         {
@@ -1545,7 +1545,7 @@ namespace AF_Models
                 this.FestivalIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Person Person
         {
@@ -1558,7 +1558,7 @@ namespace AF_Models
                 this.PersonField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int PersonId
         {
@@ -1571,7 +1571,7 @@ namespace AF_Models
                 this.PersonIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Position Position
         {
@@ -1584,7 +1584,7 @@ namespace AF_Models
                 this.PositionField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int PositionId
         {
@@ -1597,7 +1597,7 @@ namespace AF_Models
                 this.PositionIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int RelationFestivalPersonPositionId
         {
@@ -1611,33 +1611,33 @@ namespace AF_Models
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/AF_Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Person", Namespace = "http://schemas.datacontract.org/2004/07/AF_Models")]
     public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private System.DateTime EditDateField;
-        
+
         private int EditedByField;
-        
+
         private AF_Models.User EditorField;
-        
+
         private string FirstNameField;
-        
+
         private string LastNameField;
-        
+
         private int PersonIdField;
-        
+
         private string ProfileField;
-        
+
         private bool SexField;
-        
+
         private int YearField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -1649,7 +1649,7 @@ namespace AF_Models
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EditDate
         {
@@ -1662,7 +1662,7 @@ namespace AF_Models
                 this.EditDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int EditedBy
         {
@@ -1675,7 +1675,7 @@ namespace AF_Models
                 this.EditedByField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User Editor
         {
@@ -1688,7 +1688,7 @@ namespace AF_Models
                 this.EditorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string FirstName
         {
@@ -1701,7 +1701,7 @@ namespace AF_Models
                 this.FirstNameField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string LastName
         {
@@ -1714,7 +1714,7 @@ namespace AF_Models
                 this.LastNameField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int PersonId
         {
@@ -1727,7 +1727,7 @@ namespace AF_Models
                 this.PersonIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Profile
         {
@@ -1740,7 +1740,7 @@ namespace AF_Models
                 this.ProfileField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool Sex
         {
@@ -1753,7 +1753,7 @@ namespace AF_Models
                 this.SexField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Year
         {
@@ -1767,31 +1767,31 @@ namespace AF_Models
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RelationPersonAward", Namespace="http://schemas.datacontract.org/2004/07/AF_Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "RelationPersonAward", Namespace = "http://schemas.datacontract.org/2004/07/AF_Models")]
     public partial class RelationPersonAward : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private AF_Models.Award AwardField;
-        
+
         private int AwardIdField;
-        
+
         private System.DateTime EditDateField;
-        
+
         private int EditedByField;
-        
+
         private AF_Models.User EditorField;
-        
+
         private AF_Models.Person PersonField;
-        
+
         private int PersonIdField;
-        
+
         private int RelationPersonAwardIdField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -1803,7 +1803,7 @@ namespace AF_Models
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Award Award
         {
@@ -1816,7 +1816,7 @@ namespace AF_Models
                 this.AwardField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int AwardId
         {
@@ -1829,7 +1829,7 @@ namespace AF_Models
                 this.AwardIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EditDate
         {
@@ -1842,7 +1842,7 @@ namespace AF_Models
                 this.EditDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int EditedBy
         {
@@ -1855,7 +1855,7 @@ namespace AF_Models
                 this.EditedByField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User Editor
         {
@@ -1868,7 +1868,7 @@ namespace AF_Models
                 this.EditorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Person Person
         {
@@ -1881,7 +1881,7 @@ namespace AF_Models
                 this.PersonField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int PersonId
         {
@@ -1894,7 +1894,7 @@ namespace AF_Models
                 this.PersonIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int RelationPersonAwardId
         {
@@ -1908,35 +1908,35 @@ namespace AF_Models
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RelationPersonPlayJob", Namespace="http://schemas.datacontract.org/2004/07/AF_Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "RelationPersonPlayJob", Namespace = "http://schemas.datacontract.org/2004/07/AF_Models")]
     public partial class RelationPersonPlayJob : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private System.DateTime EditDateField;
-        
+
         private int EditedByField;
-        
+
         private AF_Models.User EditorField;
-        
+
         private AF_Models.Job JobField;
-        
+
         private int JobIdField;
-        
+
         private AF_Models.Person PersonField;
-        
+
         private int PersonIdField;
-        
+
         private AF_Models.Play PlayField;
-        
+
         private int PlayIdField;
-        
+
         private int RelationPersonPlayJobIdField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -1948,7 +1948,7 @@ namespace AF_Models
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EditDate
         {
@@ -1961,20 +1961,14 @@ namespace AF_Models
                 this.EditDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int EditedBy
         {
-            get
-            {
-                return this.EditedByField;
-            }
-            set
-            {
-                this.EditedByField = value;
-            }
+            get { return this.EditedByField; }
+            set { this.EditedByField = value; }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User Editor
         {
@@ -1987,7 +1981,7 @@ namespace AF_Models
                 this.EditorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Job Job
         {
@@ -2000,7 +1994,7 @@ namespace AF_Models
                 this.JobField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int JobId
         {
@@ -2013,7 +2007,7 @@ namespace AF_Models
                 this.JobIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Person Person
         {
@@ -2026,7 +2020,7 @@ namespace AF_Models
                 this.PersonField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int PersonId
         {
@@ -2039,7 +2033,7 @@ namespace AF_Models
                 this.PersonIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Play Play
         {
@@ -2052,7 +2046,7 @@ namespace AF_Models
                 this.PlayField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int PlayId
         {
@@ -2065,7 +2059,7 @@ namespace AF_Models
                 this.PlayIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int RelationPersonPlayJobId
         {
@@ -2079,33 +2073,33 @@ namespace AF_Models
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RelationPersonPlayRole", Namespace="http://schemas.datacontract.org/2004/07/AF_Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "RelationPersonPlayRole", Namespace = "http://schemas.datacontract.org/2004/07/AF_Models")]
     public partial class RelationPersonPlayRole : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private System.DateTime EditDateField;
-        
+
         private int EditedByField;
-        
+
         private AF_Models.User EditorField;
-        
+
         private AF_Models.Person PersonField;
-        
+
         private int PersonIdField;
-        
+
         private AF_Models.Play PlayField;
-        
+
         private int PlayIdField;
-        
+
         private int RelationPersonPlayRoleIdField;
-        
+
         private string RoleField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -2117,7 +2111,7 @@ namespace AF_Models
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime EditDate
         {
@@ -2130,7 +2124,7 @@ namespace AF_Models
                 this.EditDateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int EditedBy
         {
@@ -2143,7 +2137,7 @@ namespace AF_Models
                 this.EditedByField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.User Editor
         {
@@ -2156,7 +2150,7 @@ namespace AF_Models
                 this.EditorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Person Person
         {
@@ -2169,7 +2163,7 @@ namespace AF_Models
                 this.PersonField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int PersonId
         {
@@ -2182,7 +2176,7 @@ namespace AF_Models
                 this.PersonIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AF_Models.Play Play
         {
@@ -2195,7 +2189,7 @@ namespace AF_Models
                 this.PlayField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int PlayId
         {
@@ -2208,7 +2202,7 @@ namespace AF_Models
                 this.PlayIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int RelationPersonPlayRoleId
         {
@@ -2221,7 +2215,7 @@ namespace AF_Models
                 this.RelationPersonPlayRoleIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Role
         {
@@ -2239,16 +2233,16 @@ namespace AF_Models
 namespace AF.Common.DTO
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AwardMixedDTO", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "AwardMixedDTO", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.DTO")]
     public partial class AwardMixedDTO : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -2265,24 +2259,24 @@ namespace AF.Common.DTO
 namespace AF.Common.Queries
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PlaysSearchingCriteria", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Queries")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "PlaysSearchingCriteria", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Queries")]
     public partial class PlaysSearchingCriteria : AF.Common.Requests.QueryBase
     {
-        
+
         private string AuthorField;
-        
+
         private System.Nullable<int> CategoryIdFilterField;
-        
+
         private System.Nullable<int> FestivalIdFilterField;
-        
+
         private string MottoField;
-        
+
         private string TitleField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Author
         {
@@ -2295,7 +2289,7 @@ namespace AF.Common.Queries
                 this.AuthorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> CategoryIdFilter
         {
@@ -2308,7 +2302,7 @@ namespace AF.Common.Queries
                 this.CategoryIdFilterField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> FestivalIdFilter
         {
@@ -2321,7 +2315,7 @@ namespace AF.Common.Queries
                 this.FestivalIdFilterField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Motto
         {
@@ -2334,7 +2328,7 @@ namespace AF.Common.Queries
                 this.MottoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Title
         {
@@ -2348,21 +2342,21 @@ namespace AF.Common.Queries
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AwardsSearchingCriteria", Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Queries")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "AwardsSearchingCriteria", Namespace = "http://schemas.datacontract.org/2004/07/AF.Common.Queries")]
     public partial class AwardsSearchingCriteria : AF.Common.Requests.QueryBase
     {
-        
+
         private string AuthorField;
-        
+
         private System.Nullable<int> CategoryIdFilterField;
-        
+
         private System.Nullable<int> FestivalIdFilterField;
-        
+
         private string TitleField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Author
         {
@@ -2375,7 +2369,7 @@ namespace AF.Common.Queries
                 this.AuthorField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> CategoryIdFilter
         {
@@ -2388,7 +2382,7 @@ namespace AF.Common.Queries
                 this.CategoryIdFilterField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> FestivalIdFilter
         {
@@ -2401,7 +2395,7 @@ namespace AF.Common.Queries
                 this.FestivalIdFilterField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Title
         {
@@ -2419,260 +2413,260 @@ namespace AF.Common.Queries
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ServiceModel.ServiceContractAttribute(ConfigurationName="IAFService")]
+[System.ServiceModel.ServiceContractAttribute(ConfigurationName = "IAFService")]
 public interface IAFService
 {
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddAward", ReplyAction="http://tempuri.org/IAFService/AddAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddAward", ReplyAction = "http://tempuri.org/IAFService/AddAwardResponse")]
     AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H AddAward(int playId, int festivalId, int categoryId, int userId);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddAward", ReplyAction="http://tempuri.org/IAFService/AddAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddAward", ReplyAction = "http://tempuri.org/IAFService/AddAwardResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H> AddAwardAsync(int playId, int festivalId, int categoryId, int userId);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateAward", ReplyAction="http://tempuri.org/IAFService/UpdateAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateAward", ReplyAction = "http://tempuri.org/IAFService/UpdateAwardResponse")]
     AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H UpdateAward(AF_Models.Award updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateAward", ReplyAction="http://tempuri.org/IAFService/UpdateAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateAward", ReplyAction = "http://tempuri.org/IAFService/UpdateAwardResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H> UpdateAwardAsync(AF_Models.Award updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAward", ReplyAction="http://tempuri.org/IAFService/GetAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetAward", ReplyAction = "http://tempuri.org/IAFService/GetAwardResponse")]
     AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H GetAward(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAward", ReplyAction="http://tempuri.org/IAFService/GetAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetAward", ReplyAction = "http://tempuri.org/IAFService/GetAwardResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H> GetAwardAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/SearchAwards", ReplyAction="http://tempuri.org/IAFService/SearchAwardsResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/SearchAwards", ReplyAction = "http://tempuri.org/IAFService/SearchAwardsResponse")]
     AF.Common.Requests.ListResponseOfAwardMixedDTO3eQi8U0z SearchAwards(AF.Common.Queries.AwardsSearchingCriteria criteria, int pageNr, int pageAmount);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/SearchAwards", ReplyAction="http://tempuri.org/IAFService/SearchAwardsResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/SearchAwards", ReplyAction = "http://tempuri.org/IAFService/SearchAwardsResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfAwardMixedDTO3eQi8U0z> SearchAwardsAsync(AF.Common.Queries.AwardsSearchingCriteria criteria, int pageNr, int pageAmount);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddCategory", ReplyAction="http://tempuri.org/IAFService/AddCategoryResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddCategory", ReplyAction = "http://tempuri.org/IAFService/AddCategoryResponse")]
     AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H AddCategory(string title, int group, int order, int userId);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddCategory", ReplyAction="http://tempuri.org/IAFService/AddCategoryResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddCategory", ReplyAction = "http://tempuri.org/IAFService/AddCategoryResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H> AddCategoryAsync(string title, int group, int order, int userId);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateCategory", ReplyAction="http://tempuri.org/IAFService/UpdateCategoryResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateCategory", ReplyAction = "http://tempuri.org/IAFService/UpdateCategoryResponse")]
     AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H UpdateCategory(AF_Models.Category updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateCategory", ReplyAction="http://tempuri.org/IAFService/UpdateCategoryResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateCategory", ReplyAction = "http://tempuri.org/IAFService/UpdateCategoryResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H> UpdateCategoryAsync(AF_Models.Category updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetCategory", ReplyAction="http://tempuri.org/IAFService/GetCategoryResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetCategory", ReplyAction = "http://tempuri.org/IAFService/GetCategoryResponse")]
     AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H GetCategory(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetCategory", ReplyAction="http://tempuri.org/IAFService/GetCategoryResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetCategory", ReplyAction = "http://tempuri.org/IAFService/GetCategoryResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H> GetCategoryAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllCategories", ReplyAction="http://tempuri.org/IAFService/GetAllCategoriesResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetAllCategories", ReplyAction = "http://tempuri.org/IAFService/GetAllCategoriesResponse")]
     AF.Common.Requests.ListResponseOfCategoryBtxHs14H GetAllCategories();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllCategories", ReplyAction="http://tempuri.org/IAFService/GetAllCategoriesResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetAllCategories", ReplyAction = "http://tempuri.org/IAFService/GetAllCategoriesResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfCategoryBtxHs14H> GetAllCategoriesAsync();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddFestival", ReplyAction="http://tempuri.org/IAFService/AddFestivalResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddFestival", ReplyAction = "http://tempuri.org/IAFService/AddFestivalResponse")]
     AF.Common.Requests.SingleItemResponseOfFestivalBtxHs14H AddFestival(AF_Models.Festival newFestival);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddFestival", ReplyAction="http://tempuri.org/IAFService/AddFestivalResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddFestival", ReplyAction = "http://tempuri.org/IAFService/AddFestivalResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfFestivalBtxHs14H> AddFestivalAsync(AF_Models.Festival newFestival);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateFestival", ReplyAction="http://tempuri.org/IAFService/UpdateFestivalResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateFestival", ReplyAction = "http://tempuri.org/IAFService/UpdateFestivalResponse")]
     AF.Common.Requests.SingleItemResponseOfFestivalBtxHs14H UpdateFestival(AF_Models.Festival updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateFestival", ReplyAction="http://tempuri.org/IAFService/UpdateFestivalResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateFestival", ReplyAction = "http://tempuri.org/IAFService/UpdateFestivalResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfFestivalBtxHs14H> UpdateFestivalAsync(AF_Models.Festival updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetFestival", ReplyAction="http://tempuri.org/IAFService/GetFestivalResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetFestival", ReplyAction = "http://tempuri.org/IAFService/GetFestivalResponse")]
     AF.Common.Requests.SingleItemResponseOfFestivalBtxHs14H GetFestival(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetFestival", ReplyAction="http://tempuri.org/IAFService/GetFestivalResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetFestival", ReplyAction = "http://tempuri.org/IAFService/GetFestivalResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfFestivalBtxHs14H> GetFestivalAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetFestivalsPaged", ReplyAction="http://tempuri.org/IAFService/GetFestivalsPagedResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetFestivalsPaged", ReplyAction = "http://tempuri.org/IAFService/GetFestivalsPagedResponse")]
     AF.Common.Requests.ListResponseOfFestivalBtxHs14H GetFestivalsPaged(int pageNr, int pageAmount);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetFestivalsPaged", ReplyAction="http://tempuri.org/IAFService/GetFestivalsPagedResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetFestivalsPaged", ReplyAction = "http://tempuri.org/IAFService/GetFestivalsPagedResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfFestivalBtxHs14H> GetFestivalsPagedAsync(int pageNr, int pageAmount);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddJob", ReplyAction="http://tempuri.org/IAFService/AddJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddJob", ReplyAction = "http://tempuri.org/IAFService/AddJobResponse")]
     AF.Common.Requests.SingleItemResponseOfJobBtxHs14H AddJob(string title, int userId);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddJob", ReplyAction="http://tempuri.org/IAFService/AddJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddJob", ReplyAction = "http://tempuri.org/IAFService/AddJobResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfJobBtxHs14H> AddJobAsync(string title, int userId);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateJob", ReplyAction="http://tempuri.org/IAFService/UpdateJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateJob", ReplyAction = "http://tempuri.org/IAFService/UpdateJobResponse")]
     AF.Common.Requests.SingleItemResponseOfJobBtxHs14H UpdateJob(AF_Models.Job updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateJob", ReplyAction="http://tempuri.org/IAFService/UpdateJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateJob", ReplyAction = "http://tempuri.org/IAFService/UpdateJobResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfJobBtxHs14H> UpdateJobAsync(AF_Models.Job updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetJob", ReplyAction="http://tempuri.org/IAFService/GetJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetJob", ReplyAction = "http://tempuri.org/IAFService/GetJobResponse")]
     AF.Common.Requests.SingleItemResponseOfJobBtxHs14H GetJob(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetJob", ReplyAction="http://tempuri.org/IAFService/GetJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetJob", ReplyAction = "http://tempuri.org/IAFService/GetJobResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfJobBtxHs14H> GetJobAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllJobs", ReplyAction="http://tempuri.org/IAFService/GetAllJobsResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetAllJobs", ReplyAction = "http://tempuri.org/IAFService/GetAllJobsResponse")]
     AF.Common.Requests.ListResponseOfJobBtxHs14H GetAllJobs();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllJobs", ReplyAction="http://tempuri.org/IAFService/GetAllJobsResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetAllJobs", ReplyAction = "http://tempuri.org/IAFService/GetAllJobsResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfJobBtxHs14H> GetAllJobsAsync();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddPlay", ReplyAction="http://tempuri.org/IAFService/AddPlayResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddPlay", ReplyAction = "http://tempuri.org/IAFService/AddPlayResponse")]
     AF.Common.Requests.SingleItemResponseOfPlayBtxHs14H AddPlay(AF_Models.Play newPlay);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddPlay", ReplyAction="http://tempuri.org/IAFService/AddPlayResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddPlay", ReplyAction = "http://tempuri.org/IAFService/AddPlayResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfPlayBtxHs14H> AddPlayAsync(AF_Models.Play newPlay);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdatePlay", ReplyAction="http://tempuri.org/IAFService/UpdatePlayResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdatePlay", ReplyAction = "http://tempuri.org/IAFService/UpdatePlayResponse")]
     AF.Common.Requests.SingleItemResponseOfPlayBtxHs14H UpdatePlay(AF_Models.Play updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdatePlay", ReplyAction="http://tempuri.org/IAFService/UpdatePlayResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdatePlay", ReplyAction = "http://tempuri.org/IAFService/UpdatePlayResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfPlayBtxHs14H> UpdatePlayAsync(AF_Models.Play updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetPlay", ReplyAction="http://tempuri.org/IAFService/GetPlayResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetPlay", ReplyAction = "http://tempuri.org/IAFService/GetPlayResponse")]
     AF.Common.Requests.SingleItemResponseOfPlayBtxHs14H GetPlay(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetPlay", ReplyAction="http://tempuri.org/IAFService/GetPlayResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetPlay", ReplyAction = "http://tempuri.org/IAFService/GetPlayResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfPlayBtxHs14H> GetPlayAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/SearchPlays", ReplyAction="http://tempuri.org/IAFService/SearchPlaysResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/SearchPlays", ReplyAction = "http://tempuri.org/IAFService/SearchPlaysResponse")]
     AF.Common.Requests.ListResponseOfPlayBtxHs14H SearchPlays(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/SearchPlays", ReplyAction="http://tempuri.org/IAFService/SearchPlaysResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/SearchPlays", ReplyAction = "http://tempuri.org/IAFService/SearchPlaysResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfPlayBtxHs14H> SearchPlaysAsync(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddPosition", ReplyAction="http://tempuri.org/IAFService/AddPositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddPosition", ReplyAction = "http://tempuri.org/IAFService/AddPositionResponse")]
     AF.Common.Requests.SingleItemResponseOfPositionBtxHs14H AddPosition(string title, int section, int order, int userId);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddPosition", ReplyAction="http://tempuri.org/IAFService/AddPositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddPosition", ReplyAction = "http://tempuri.org/IAFService/AddPositionResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfPositionBtxHs14H> AddPositionAsync(string title, int section, int order, int userId);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdatePosition", ReplyAction="http://tempuri.org/IAFService/UpdatePositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdatePosition", ReplyAction = "http://tempuri.org/IAFService/UpdatePositionResponse")]
     AF.Common.Requests.SingleItemResponseOfPositionBtxHs14H UpdatePosition(AF_Models.Position updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdatePosition", ReplyAction="http://tempuri.org/IAFService/UpdatePositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdatePosition", ReplyAction = "http://tempuri.org/IAFService/UpdatePositionResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfPositionBtxHs14H> UpdatePositionAsync(AF_Models.Position updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetPosition", ReplyAction="http://tempuri.org/IAFService/GetPositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetPosition", ReplyAction = "http://tempuri.org/IAFService/GetPositionResponse")]
     AF.Common.Requests.SingleItemResponseOfPositionBtxHs14H GetPosition(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetPosition", ReplyAction="http://tempuri.org/IAFService/GetPositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetPosition", ReplyAction = "http://tempuri.org/IAFService/GetPositionResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfPositionBtxHs14H> GetPositionAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllPositions", ReplyAction="http://tempuri.org/IAFService/GetAllPositionsResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetAllPositions", ReplyAction = "http://tempuri.org/IAFService/GetAllPositionsResponse")]
     AF.Common.Requests.ListResponseOfPositionBtxHs14H GetAllPositions();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllPositions", ReplyAction="http://tempuri.org/IAFService/GetAllPositionsResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetAllPositions", ReplyAction = "http://tempuri.org/IAFService/GetAllPositionsResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfPositionBtxHs14H> GetAllPositionsAsync();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/AddRelationFestivalPersonPositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddRelationFestivalPersonPosition", ReplyAction = "http://tempuri.org/IAFService/AddRelationFestivalPersonPositionResponse")]
     AF.Common.Requests.SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H AddRelationFestivalPersonPosition(AF_Models.RelationFestivalPersonPosition newRelationFestivalPersonPosition);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/AddRelationFestivalPersonPositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddRelationFestivalPersonPosition", ReplyAction = "http://tempuri.org/IAFService/AddRelationFestivalPersonPositionResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H> AddRelationFestivalPersonPositionAsync(AF_Models.RelationFestivalPersonPosition newRelationFestivalPersonPosition);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/RemoveRelationFestivalPersonPositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/RemoveRelationFestivalPersonPosition", ReplyAction = "http://tempuri.org/IAFService/RemoveRelationFestivalPersonPositionResponse")]
     AF.Common.Requests.SingleItemResponseOfboolean RemoveRelationFestivalPersonPosition(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/RemoveRelationFestivalPersonPositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/RemoveRelationFestivalPersonPosition", ReplyAction = "http://tempuri.org/IAFService/RemoveRelationFestivalPersonPositionResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfboolean> RemoveRelationFestivalPersonPositionAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/UpdateRelationFestivalPersonPositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateRelationFestivalPersonPosition", ReplyAction = "http://tempuri.org/IAFService/UpdateRelationFestivalPersonPositionResponse")]
     AF.Common.Requests.SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H UpdateRelationFestivalPersonPosition(AF_Models.RelationFestivalPersonPosition updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/UpdateRelationFestivalPersonPositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateRelationFestivalPersonPosition", ReplyAction = "http://tempuri.org/IAFService/UpdateRelationFestivalPersonPositionResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H> UpdateRelationFestivalPersonPositionAsync(AF_Models.RelationFestivalPersonPosition updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/GetRelationFestivalPersonPositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetRelationFestivalPersonPosition", ReplyAction = "http://tempuri.org/IAFService/GetRelationFestivalPersonPositionResponse")]
     AF.Common.Requests.SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H GetRelationFestivalPersonPosition(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/GetRelationFestivalPersonPositionResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetRelationFestivalPersonPosition", ReplyAction = "http://tempuri.org/IAFService/GetRelationFestivalPersonPositionResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H> GetRelationFestivalPersonPositionAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddRelationPersonAward", ReplyAction = "http://tempuri.org/IAFService/AddRelationPersonAwardResponse")]
     AF.Common.Requests.SingleItemResponseOfRelationPersonAwardBtxHs14H AddRelationPersonAward(AF_Models.RelationPersonAward newRelationPersonAward);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddRelationPersonAward", ReplyAction = "http://tempuri.org/IAFService/AddRelationPersonAwardResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonAwardBtxHs14H> AddRelationPersonAwardAsync(AF_Models.RelationPersonAward newRelationPersonAward);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/RemoveRelationPersonAward", ReplyAction = "http://tempuri.org/IAFService/RemoveRelationPersonAwardResponse")]
     AF.Common.Requests.SingleItemResponseOfboolean RemoveRelationPersonAward(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/RemoveRelationPersonAward", ReplyAction = "http://tempuri.org/IAFService/RemoveRelationPersonAwardResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfboolean> RemoveRelationPersonAwardAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateRelationPersonAward", ReplyAction = "http://tempuri.org/IAFService/UpdateRelationPersonAwardResponse")]
     AF.Common.Requests.SingleItemResponseOfRelationPersonAwardBtxHs14H UpdateRelationPersonAward(AF_Models.RelationPersonAward updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateRelationPersonAward", ReplyAction = "http://tempuri.org/IAFService/UpdateRelationPersonAwardResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonAwardBtxHs14H> UpdateRelationPersonAwardAsync(AF_Models.RelationPersonAward updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetRelationPersonAward", ReplyAction = "http://tempuri.org/IAFService/GetRelationPersonAwardResponse")]
     AF.Common.Requests.SingleItemResponseOfRelationPersonAwardBtxHs14H GetRelationPersonAward(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonAwardResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetRelationPersonAward", ReplyAction = "http://tempuri.org/IAFService/GetRelationPersonAwardResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonAwardBtxHs14H> GetRelationPersonAwardAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonPlayJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddRelationPersonPlayJob", ReplyAction = "http://tempuri.org/IAFService/AddRelationPersonPlayJobResponse")]
     AF.Common.Requests.SingleItemResponseOfRelationPersonPlayJobBtxHs14H AddRelationPersonPlayJob(AF_Models.RelationPersonPlayJob newRelationPersonPlayJob);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonPlayJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddRelationPersonPlayJob", ReplyAction = "http://tempuri.org/IAFService/AddRelationPersonPlayJobResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonPlayJobBtxHs14H> AddRelationPersonPlayJobAsync(AF_Models.RelationPersonPlayJob newRelationPersonPlayJob);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonPlayJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/RemoveRelationPersonPlayJob", ReplyAction = "http://tempuri.org/IAFService/RemoveRelationPersonPlayJobResponse")]
     AF.Common.Requests.SingleItemResponseOfboolean RemoveRelationPersonPlayJob(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonPlayJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/RemoveRelationPersonPlayJob", ReplyAction = "http://tempuri.org/IAFService/RemoveRelationPersonPlayJobResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfboolean> RemoveRelationPersonPlayJobAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonPlayJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateRelationPersonPlayJob", ReplyAction = "http://tempuri.org/IAFService/UpdateRelationPersonPlayJobResponse")]
     AF.Common.Requests.SingleItemResponseOfRelationPersonPlayJobBtxHs14H UpdateRelationPersonPlayJob(AF_Models.RelationPersonPlayJob updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonPlayJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateRelationPersonPlayJob", ReplyAction = "http://tempuri.org/IAFService/UpdateRelationPersonPlayJobResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonPlayJobBtxHs14H> UpdateRelationPersonPlayJobAsync(AF_Models.RelationPersonPlayJob updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonPlayJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetRelationPersonPlayJob", ReplyAction = "http://tempuri.org/IAFService/GetRelationPersonPlayJobResponse")]
     AF.Common.Requests.SingleItemResponseOfRelationPersonPlayJobBtxHs14H GetRelationPersonPlayJob(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonPlayJobResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetRelationPersonPlayJob", ReplyAction = "http://tempuri.org/IAFService/GetRelationPersonPlayJobResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonPlayJobBtxHs14H> GetRelationPersonPlayJobAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonPlayRoleResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddRelationPersonPlayRole", ReplyAction = "http://tempuri.org/IAFService/AddRelationPersonPlayRoleResponse")]
     AF.Common.Requests.SingleItemResponseOfRelationPersonPlayRoleBtxHs14H AddRelationPersonPlayRole(AF_Models.RelationPersonPlayRole newRelationPersonPlayRole);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonPlayRoleResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/AddRelationPersonPlayRole", ReplyAction = "http://tempuri.org/IAFService/AddRelationPersonPlayRoleResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonPlayRoleBtxHs14H> AddRelationPersonPlayRoleAsync(AF_Models.RelationPersonPlayRole newRelationPersonPlayRole);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonPlayRoleResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/RemoveRelationPersonPlayRole", ReplyAction = "http://tempuri.org/IAFService/RemoveRelationPersonPlayRoleResponse")]
     AF.Common.Requests.SingleItemResponseOfboolean RemoveRelationPersonPlayRole(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonPlayRoleResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/RemoveRelationPersonPlayRole", ReplyAction = "http://tempuri.org/IAFService/RemoveRelationPersonPlayRoleResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfboolean> RemoveRelationPersonPlayRoleAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonPlayRoleResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateRelationPersonPlayRole", ReplyAction = "http://tempuri.org/IAFService/UpdateRelationPersonPlayRoleResponse")]
     AF.Common.Requests.SingleItemResponseOfRelationPersonPlayRoleBtxHs14H UpdateRelationPersonPlayRole(AF_Models.RelationPersonPlayRole updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonPlayRoleResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/UpdateRelationPersonPlayRole", ReplyAction = "http://tempuri.org/IAFService/UpdateRelationPersonPlayRoleResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonPlayRoleBtxHs14H> UpdateRelationPersonPlayRoleAsync(AF_Models.RelationPersonPlayRole updateData);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonPlayRoleResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetRelationPersonPlayRole", ReplyAction = "http://tempuri.org/IAFService/GetRelationPersonPlayRoleResponse")]
     AF.Common.Requests.SingleItemResponseOfRelationPersonPlayRoleBtxHs14H GetRelationPersonPlayRole(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonPlayRoleResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetRelationPersonPlayRole", ReplyAction = "http://tempuri.org/IAFService/GetRelationPersonPlayRoleResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonPlayRoleBtxHs14H> GetRelationPersonPlayRoleAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetUser", ReplyAction="http://tempuri.org/IAFService/GetUserResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetUser", ReplyAction = "http://tempuri.org/IAFService/GetUserResponse")]
     AF.Common.Requests.SingleItemResponseOfUserBtxHs14H GetUser(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetUser", ReplyAction="http://tempuri.org/IAFService/GetUserResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetUser", ReplyAction = "http://tempuri.org/IAFService/GetUserResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfUserBtxHs14H> GetUserAsync(int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllUsers", ReplyAction="http://tempuri.org/IAFService/GetAllUsersResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetAllUsers", ReplyAction = "http://tempuri.org/IAFService/GetAllUsersResponse")]
     AF.Common.Requests.ListResponseOfUserBtxHs14H GetAllUsers();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllUsers", ReplyAction="http://tempuri.org/IAFService/GetAllUsersResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IAFService/GetAllUsers", ReplyAction = "http://tempuri.org/IAFService/GetAllUsersResponse")]
     System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfUserBtxHs14H> GetAllUsersAsync();
 }
 
@@ -2685,446 +2679,446 @@ public interface IAFServiceChannel : IAFService, System.ServiceModel.IClientChan
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
 public partial class AFServiceClient : System.ServiceModel.ClientBase<IAFService>, IAFService
 {
-    
+
     public AFServiceClient()
     {
     }
-    
-    public AFServiceClient(string endpointConfigurationName) : 
-            base(endpointConfigurationName)
+
+    public AFServiceClient(string endpointConfigurationName) :
+        base(endpointConfigurationName)
     {
     }
-    
-    public AFServiceClient(string endpointConfigurationName, string remoteAddress) : 
-            base(endpointConfigurationName, remoteAddress)
+
+    public AFServiceClient(string endpointConfigurationName, string remoteAddress) :
+        base(endpointConfigurationName, remoteAddress)
     {
     }
-    
-    public AFServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-            base(endpointConfigurationName, remoteAddress)
+
+    public AFServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
+        base(endpointConfigurationName, remoteAddress)
     {
     }
-    
-    public AFServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-            base(binding, remoteAddress)
+
+    public AFServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
+        base(binding, remoteAddress)
     {
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H AddAward(int playId, int festivalId, int categoryId, int userId)
     {
         return base.Channel.AddAward(playId, festivalId, categoryId, userId);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H> AddAwardAsync(int playId, int festivalId, int categoryId, int userId)
     {
         return base.Channel.AddAwardAsync(playId, festivalId, categoryId, userId);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H UpdateAward(AF_Models.Award updateData)
     {
         return base.Channel.UpdateAward(updateData);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H> UpdateAwardAsync(AF_Models.Award updateData)
     {
         return base.Channel.UpdateAwardAsync(updateData);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H GetAward(int id)
     {
         return base.Channel.GetAward(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfAwardBtxHs14H> GetAwardAsync(int id)
     {
         return base.Channel.GetAwardAsync(id);
     }
-    
+
     public AF.Common.Requests.ListResponseOfAwardMixedDTO3eQi8U0z SearchAwards(AF.Common.Queries.AwardsSearchingCriteria criteria, int pageNr, int pageAmount)
     {
         return base.Channel.SearchAwards(criteria, pageNr, pageAmount);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfAwardMixedDTO3eQi8U0z> SearchAwardsAsync(AF.Common.Queries.AwardsSearchingCriteria criteria, int pageNr, int pageAmount)
     {
         return base.Channel.SearchAwardsAsync(criteria, pageNr, pageAmount);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H AddCategory(string title, int group, int order, int userId)
     {
         return base.Channel.AddCategory(title, group, order, userId);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H> AddCategoryAsync(string title, int group, int order, int userId)
     {
         return base.Channel.AddCategoryAsync(title, group, order, userId);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H UpdateCategory(AF_Models.Category updateData)
     {
         return base.Channel.UpdateCategory(updateData);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H> UpdateCategoryAsync(AF_Models.Category updateData)
     {
         return base.Channel.UpdateCategoryAsync(updateData);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H GetCategory(int id)
     {
         return base.Channel.GetCategory(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfCategoryBtxHs14H> GetCategoryAsync(int id)
     {
         return base.Channel.GetCategoryAsync(id);
     }
-    
+
     public AF.Common.Requests.ListResponseOfCategoryBtxHs14H GetAllCategories()
     {
         return base.Channel.GetAllCategories();
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfCategoryBtxHs14H> GetAllCategoriesAsync()
     {
         return base.Channel.GetAllCategoriesAsync();
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfFestivalBtxHs14H AddFestival(AF_Models.Festival newFestival)
     {
         return base.Channel.AddFestival(newFestival);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfFestivalBtxHs14H> AddFestivalAsync(AF_Models.Festival newFestival)
     {
         return base.Channel.AddFestivalAsync(newFestival);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfFestivalBtxHs14H UpdateFestival(AF_Models.Festival updateData)
     {
         return base.Channel.UpdateFestival(updateData);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfFestivalBtxHs14H> UpdateFestivalAsync(AF_Models.Festival updateData)
     {
         return base.Channel.UpdateFestivalAsync(updateData);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfFestivalBtxHs14H GetFestival(int id)
     {
         return base.Channel.GetFestival(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfFestivalBtxHs14H> GetFestivalAsync(int id)
     {
         return base.Channel.GetFestivalAsync(id);
     }
-    
+
     public AF.Common.Requests.ListResponseOfFestivalBtxHs14H GetFestivalsPaged(int pageNr, int pageAmount)
     {
         return base.Channel.GetFestivalsPaged(pageNr, pageAmount);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfFestivalBtxHs14H> GetFestivalsPagedAsync(int pageNr, int pageAmount)
     {
         return base.Channel.GetFestivalsPagedAsync(pageNr, pageAmount);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfJobBtxHs14H AddJob(string title, int userId)
     {
         return base.Channel.AddJob(title, userId);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfJobBtxHs14H> AddJobAsync(string title, int userId)
     {
         return base.Channel.AddJobAsync(title, userId);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfJobBtxHs14H UpdateJob(AF_Models.Job updateData)
     {
         return base.Channel.UpdateJob(updateData);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfJobBtxHs14H> UpdateJobAsync(AF_Models.Job updateData)
     {
         return base.Channel.UpdateJobAsync(updateData);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfJobBtxHs14H GetJob(int id)
     {
         return base.Channel.GetJob(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfJobBtxHs14H> GetJobAsync(int id)
     {
         return base.Channel.GetJobAsync(id);
     }
-    
+
     public AF.Common.Requests.ListResponseOfJobBtxHs14H GetAllJobs()
     {
         return base.Channel.GetAllJobs();
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfJobBtxHs14H> GetAllJobsAsync()
     {
         return base.Channel.GetAllJobsAsync();
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfPlayBtxHs14H AddPlay(AF_Models.Play newPlay)
     {
         return base.Channel.AddPlay(newPlay);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfPlayBtxHs14H> AddPlayAsync(AF_Models.Play newPlay)
     {
         return base.Channel.AddPlayAsync(newPlay);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfPlayBtxHs14H UpdatePlay(AF_Models.Play updateData)
     {
         return base.Channel.UpdatePlay(updateData);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfPlayBtxHs14H> UpdatePlayAsync(AF_Models.Play updateData)
     {
         return base.Channel.UpdatePlayAsync(updateData);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfPlayBtxHs14H GetPlay(int id)
     {
         return base.Channel.GetPlay(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfPlayBtxHs14H> GetPlayAsync(int id)
     {
         return base.Channel.GetPlayAsync(id);
     }
-    
+
     public AF.Common.Requests.ListResponseOfPlayBtxHs14H SearchPlays(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount)
     {
         return base.Channel.SearchPlays(criteria, pageNr, pageAmount);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfPlayBtxHs14H> SearchPlaysAsync(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount)
     {
         return base.Channel.SearchPlaysAsync(criteria, pageNr, pageAmount);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfPositionBtxHs14H AddPosition(string title, int section, int order, int userId)
     {
         return base.Channel.AddPosition(title, section, order, userId);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfPositionBtxHs14H> AddPositionAsync(string title, int section, int order, int userId)
     {
         return base.Channel.AddPositionAsync(title, section, order, userId);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfPositionBtxHs14H UpdatePosition(AF_Models.Position updateData)
     {
         return base.Channel.UpdatePosition(updateData);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfPositionBtxHs14H> UpdatePositionAsync(AF_Models.Position updateData)
     {
         return base.Channel.UpdatePositionAsync(updateData);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfPositionBtxHs14H GetPosition(int id)
     {
         return base.Channel.GetPosition(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfPositionBtxHs14H> GetPositionAsync(int id)
     {
         return base.Channel.GetPositionAsync(id);
     }
-    
+
     public AF.Common.Requests.ListResponseOfPositionBtxHs14H GetAllPositions()
     {
         return base.Channel.GetAllPositions();
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfPositionBtxHs14H> GetAllPositionsAsync()
     {
         return base.Channel.GetAllPositionsAsync();
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H AddRelationFestivalPersonPosition(AF_Models.RelationFestivalPersonPosition newRelationFestivalPersonPosition)
     {
         return base.Channel.AddRelationFestivalPersonPosition(newRelationFestivalPersonPosition);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H> AddRelationFestivalPersonPositionAsync(AF_Models.RelationFestivalPersonPosition newRelationFestivalPersonPosition)
     {
         return base.Channel.AddRelationFestivalPersonPositionAsync(newRelationFestivalPersonPosition);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfboolean RemoveRelationFestivalPersonPosition(int id)
     {
         return base.Channel.RemoveRelationFestivalPersonPosition(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfboolean> RemoveRelationFestivalPersonPositionAsync(int id)
     {
         return base.Channel.RemoveRelationFestivalPersonPositionAsync(id);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H UpdateRelationFestivalPersonPosition(AF_Models.RelationFestivalPersonPosition updateData)
     {
         return base.Channel.UpdateRelationFestivalPersonPosition(updateData);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H> UpdateRelationFestivalPersonPositionAsync(AF_Models.RelationFestivalPersonPosition updateData)
     {
         return base.Channel.UpdateRelationFestivalPersonPositionAsync(updateData);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H GetRelationFestivalPersonPosition(int id)
     {
         return base.Channel.GetRelationFestivalPersonPosition(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationFestivalPersonPositionBtxHs14H> GetRelationFestivalPersonPositionAsync(int id)
     {
         return base.Channel.GetRelationFestivalPersonPositionAsync(id);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfRelationPersonAwardBtxHs14H AddRelationPersonAward(AF_Models.RelationPersonAward newRelationPersonAward)
     {
         return base.Channel.AddRelationPersonAward(newRelationPersonAward);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonAwardBtxHs14H> AddRelationPersonAwardAsync(AF_Models.RelationPersonAward newRelationPersonAward)
     {
         return base.Channel.AddRelationPersonAwardAsync(newRelationPersonAward);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfboolean RemoveRelationPersonAward(int id)
     {
         return base.Channel.RemoveRelationPersonAward(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfboolean> RemoveRelationPersonAwardAsync(int id)
     {
         return base.Channel.RemoveRelationPersonAwardAsync(id);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfRelationPersonAwardBtxHs14H UpdateRelationPersonAward(AF_Models.RelationPersonAward updateData)
     {
         return base.Channel.UpdateRelationPersonAward(updateData);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonAwardBtxHs14H> UpdateRelationPersonAwardAsync(AF_Models.RelationPersonAward updateData)
     {
         return base.Channel.UpdateRelationPersonAwardAsync(updateData);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfRelationPersonAwardBtxHs14H GetRelationPersonAward(int id)
     {
         return base.Channel.GetRelationPersonAward(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonAwardBtxHs14H> GetRelationPersonAwardAsync(int id)
     {
         return base.Channel.GetRelationPersonAwardAsync(id);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfRelationPersonPlayJobBtxHs14H AddRelationPersonPlayJob(AF_Models.RelationPersonPlayJob newRelationPersonPlayJob)
     {
         return base.Channel.AddRelationPersonPlayJob(newRelationPersonPlayJob);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonPlayJobBtxHs14H> AddRelationPersonPlayJobAsync(AF_Models.RelationPersonPlayJob newRelationPersonPlayJob)
     {
         return base.Channel.AddRelationPersonPlayJobAsync(newRelationPersonPlayJob);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfboolean RemoveRelationPersonPlayJob(int id)
     {
         return base.Channel.RemoveRelationPersonPlayJob(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfboolean> RemoveRelationPersonPlayJobAsync(int id)
     {
         return base.Channel.RemoveRelationPersonPlayJobAsync(id);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfRelationPersonPlayJobBtxHs14H UpdateRelationPersonPlayJob(AF_Models.RelationPersonPlayJob updateData)
     {
         return base.Channel.UpdateRelationPersonPlayJob(updateData);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonPlayJobBtxHs14H> UpdateRelationPersonPlayJobAsync(AF_Models.RelationPersonPlayJob updateData)
     {
         return base.Channel.UpdateRelationPersonPlayJobAsync(updateData);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfRelationPersonPlayJobBtxHs14H GetRelationPersonPlayJob(int id)
     {
         return base.Channel.GetRelationPersonPlayJob(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonPlayJobBtxHs14H> GetRelationPersonPlayJobAsync(int id)
     {
         return base.Channel.GetRelationPersonPlayJobAsync(id);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfRelationPersonPlayRoleBtxHs14H AddRelationPersonPlayRole(AF_Models.RelationPersonPlayRole newRelationPersonPlayRole)
     {
         return base.Channel.AddRelationPersonPlayRole(newRelationPersonPlayRole);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonPlayRoleBtxHs14H> AddRelationPersonPlayRoleAsync(AF_Models.RelationPersonPlayRole newRelationPersonPlayRole)
     {
         return base.Channel.AddRelationPersonPlayRoleAsync(newRelationPersonPlayRole);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfboolean RemoveRelationPersonPlayRole(int id)
     {
         return base.Channel.RemoveRelationPersonPlayRole(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfboolean> RemoveRelationPersonPlayRoleAsync(int id)
     {
         return base.Channel.RemoveRelationPersonPlayRoleAsync(id);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfRelationPersonPlayRoleBtxHs14H UpdateRelationPersonPlayRole(AF_Models.RelationPersonPlayRole updateData)
     {
         return base.Channel.UpdateRelationPersonPlayRole(updateData);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonPlayRoleBtxHs14H> UpdateRelationPersonPlayRoleAsync(AF_Models.RelationPersonPlayRole updateData)
     {
         return base.Channel.UpdateRelationPersonPlayRoleAsync(updateData);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfRelationPersonPlayRoleBtxHs14H GetRelationPersonPlayRole(int id)
     {
         return base.Channel.GetRelationPersonPlayRole(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfRelationPersonPlayRoleBtxHs14H> GetRelationPersonPlayRoleAsync(int id)
     {
         return base.Channel.GetRelationPersonPlayRoleAsync(id);
     }
-    
+
     public AF.Common.Requests.SingleItemResponseOfUserBtxHs14H GetUser(int id)
     {
         return base.Channel.GetUser(id);
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponseOfUserBtxHs14H> GetUserAsync(int id)
     {
         return base.Channel.GetUserAsync(id);
     }
-    
+
     public AF.Common.Requests.ListResponseOfUserBtxHs14H GetAllUsers()
     {
         return base.Channel.GetAllUsers();
     }
-    
+
     public System.Threading.Tasks.Task<AF.Common.Requests.ListResponseOfUserBtxHs14H> GetAllUsersAsync()
     {
         return base.Channel.GetAllUsersAsync();

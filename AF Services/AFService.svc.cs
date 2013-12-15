@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -9,7 +10,9 @@ using AF.Common.DTO;
 using AF.Common.Queries;
 using AF.Common.Requests;
 using AF.Common.Services;
+using AF_DataAccessLayer;
 using AF_Models;
+
 
 namespace AF_Services
 {
@@ -51,29 +54,118 @@ namespace AF_Services
         //    }
         //    return composite;
         //}
-        public SingleItemResponse<Award> AddAward(int playId, int festivalId, int categoryId, int userId)
+        public SingleItemResponse<AwardDataDTO> AddAward(AwardDataDTO newAward) //void?
         {
-            throw new NotImplementedException();
+            var newAwardFull = new Award()
+            {
+                CategoryId = newAward.CategoryId,
+                FestivalId = newAward.FestivalId,
+                PlayId = newAward.PlayId,
+                EditedBy = userId,
+                EditDate = DateTime.Now
+            };
+
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.Awards.Add(newAwardFull);
+                    context.SaveChangesAsync();
+                    //GetAward((int))
+                    //return
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
         }
 
-        public SingleItemResponse<Award> UpdateAward(Award updateData)
+        public SingleItemResponse<AwardDataDTO> UpdateAward(AwardDataDTO updateData)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                var updateDataFull = new Award()
+                {
+                    CategoryId = updateData.CategoryId,
+                    FestivalId = updateData.FestivalId,
+                    PlayId = updateData.PlayId,
+                    EditedBy = userId,
+                    EditDate = DateTime.Now
+                };
+
+                try
+                {
+                    Award awa = context.Awards.First(a => a.AwardId == updateData.AwardId);
+                    context.Entry(awa).CurrentValues.SetValues(updateDataFull);
+                    context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
         }
 
-        public SingleItemResponse<Award> GetAward(int id)
+        public SingleItemResponse<AwardDataDTO> GetAward(int id)
         {
             throw new NotImplementedException();
         }
 
         public ListResponse<AwardMixedDTO> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    var query = (from a in context.Awards select a).Include(a => a.Play).Include(a => a.Category);
+                    if (criteria.FestivalIdFilter != null)
+                        query = query.Where(a => a.FestivalId == criteria.FestivalIdFilter);
+                    if (!String.IsNullOrEmpty(criteria.Author))
+                        query = query.Where(a => a.Play.Author.Contains(criteria.Author));
+                    if (!String.IsNullOrEmpty(criteria.Title))
+                        query = query.Where(a => a.Play.Title.Contains(criteria.Title));
+                    if (criteria.CategoryIdFilter != null)
+                        query = query.Where(a => a.CategoryId == criteria.CategoryIdFilter);
+                    return (query.OrderBy(a => a.FestivalId)
+                                .ThenBy(a => a.Category.Group)
+                                .ThenBy(a => a.Category.Order)
+                                .Skip(skip)
+                                .Take(pageAmount)
+                                .ToList());
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return null;
+            }
         }
 
-        public SingleItemResponse<Category> AddCategory(string title, int @group, int order, int userId)
+        public SingleItemResponse<CategoryDTO> AddCategory(CategoryDTO newCategory)
         {
-            throw new NotImplementedException();
+            var newCategoryFull = new Category
+            {
+                Title = newCategory.Title,
+                EditDate = DateTime.Now,
+                EditedBy = userId,
+                Group = newCategory.Group,
+                Order = newCategory.Order
+            };
+
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.Categories.Add(newCategory);
+                    int recordsAffected = await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
         }
 
         public SingleItemResponse<Category> UpdateCategory(Category updateData)
