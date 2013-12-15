@@ -1,4 +1,4 @@
-﻿<Window x:Class="AF_Desktop_Application.CategoryEditWindow"
+﻿<Window x:Class="AF_Desktop_Application.Edit_Windows.CategoryEditWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="CategoryEditWindow" Height="265" Width="545">

@@ -1,4 +1,4 @@
-﻿<Window x:Class="AF_Desktop_Application.JobEditWindow"
+﻿<Window x:Class="AF_Desktop_Application.Edit_Windows.JobEditWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="JobEditWindow" Height="245" Width="545">

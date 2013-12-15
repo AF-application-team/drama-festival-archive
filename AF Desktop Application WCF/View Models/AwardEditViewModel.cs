@@ -8,7 +8,7 @@ using AF_BusinessLogic;
 using AF_Models;
 using AF.Common.Queries;
 
-namespace AF_Desktop_Application.View_Models
+namespace AF_Desktop_Application_WCF.View_Models
 {
     public class AwardEditViewModel
     {

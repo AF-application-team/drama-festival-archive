@@ -1,4 +1,4 @@
-﻿<Window x:Class="AF_Desktop_Application.PositionEditWindow"
+﻿<Window x:Class="AF_Desktop_Application_WCF.PositionEditWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PositionEditWindow" Height="265" Width="545">

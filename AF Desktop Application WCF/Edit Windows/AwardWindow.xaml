@@ -1,4 +1,4 @@
-﻿<Window x:Class="AF_Desktop_Application.AwardWindow"
+﻿<Window x:Class="AF_Desktop_Application.Edit_Windows.AwardWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="AwardWindow" Height="420" Width="570" Initialized="Window_Initialized">

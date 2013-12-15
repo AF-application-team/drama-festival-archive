@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace AF_Desktop_Application
+namespace AF_Desktop_Application_WCF
 {
     /// <summary>
     /// Interaction logic for PersonEditWindow.xaml

@@ -15,9 +15,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AF_Constants;
 using AF_BusinessLogic;
+using AF_Desktop_Application.Edit_Windows;
 using AF_Models;
 
-namespace AF_Desktop_Application
+namespace AF_Desktop_Application_WCF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

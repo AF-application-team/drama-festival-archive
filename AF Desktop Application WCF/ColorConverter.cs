@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace AF_Desktop_Application
+namespace AF_Desktop_Application_WCF
 {
     class ColorConverter : IValueConverter
     {

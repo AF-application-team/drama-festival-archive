@@ -7,7 +7,7 @@ using System.Windows;
 using AF_BusinessLogic;
 using AF_Models;
 
-namespace AF_Desktop_Application
+namespace AF_Desktop_Application_WCF.View_Models
 {
     public class JobEditViewModel
     {

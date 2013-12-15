@@ -12,10 +12,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using AF_Desktop_Application.View_Models;
+using AF_Desktop_Application_WCF.View_Models;
 using AF_Models;
 
-namespace AF_Desktop_Application
+namespace AF_Desktop_Application_WCF
 {
     /// <summary>
     /// Interaction logic for PlayEditWindow.xaml

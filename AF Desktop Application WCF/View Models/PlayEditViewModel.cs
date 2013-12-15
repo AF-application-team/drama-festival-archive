@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using AF_BusinessLogic;
 using AF_Models;
 
-namespace AF_Desktop_Application.View_Models
+namespace AF_Desktop_Application_WCF.View_Models
 {
     public class PlayEditViewModel
     {

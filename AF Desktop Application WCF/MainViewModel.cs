@@ -10,7 +10,7 @@ using AF_BusinessLogic;
 using AF_Models;
 using AF.Common.Queries;
 
-namespace AF_Desktop_Application
+namespace AF_Desktop_Application_WCF
 {
     public class MainViewModel
     {
