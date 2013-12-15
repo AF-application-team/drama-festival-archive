@@ -176,9 +176,10 @@ namespace AF_Services
         }
 
         #endregion
+        #region Category
+
         public SingleItemResponse<CategoryDTO> AddCategory(CategoryDTO newCategory)
         {
-            /*
             var newCategoryFull = new Category
             {
                 Title = newCategory.Title,
@@ -192,33 +193,105 @@ namespace AF_Services
             {
                 try
                 {
-                    context.Categories.Add(newCategory);
-                    int recordsAffected = await context.SaveChangesAsync();
+                    context.Categories.Add(newCategoryFull);
+                    context.SaveChanges();
+                    int id = newCategoryFull.CategoryId;
+                    return GetCategory(id);
                 }
                 catch (Exception ex)
                 {
                     throw;
                 }
             }
-             * */
-            throw new NotImplementedException();
         }
 
         public SingleItemResponse<CategoryDTO> UpdateCategory(CategoryDTO updateData)
         {
-            throw new NotImplementedException();
+            var updateDataFull = new Category
+            {
+                Title = updateData.Title,
+                EditDate = DateTime.Now,
+                //EditedBy = userId,
+                Group = updateData.Group,
+                Order = updateData.Order
+            };
+
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Category cat = context.Categories.First(c => c.CategoryId == updateData.CategoryId);
+                    cat.CategoryId = updateData.CategoryId;
+                    cat.EditDate = DateTime.Now;
+                    //cat.EditedBy = updateData.EditedBy;
+                    cat.Group = updateData.Group;
+                    cat.Order = updateData.Order;
+                    cat.Title = updateData.Title;
+                    context.SaveChanges();
+                    int id = updateDataFull.CategoryId;
+                    return GetCategory(id);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public SingleItemResponse<CategoryDTO> GetCategory(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Category cat = context.Categories.First(c => c.CategoryId == id);
+                    //cat.Editor = context.Users.First(u => u.UserId == cat.EditedBy);
+
+                    var newCategoryDto = new CategoryDTO()
+                    {
+                        CategoryId = cat.CategoryId,
+                        Title = cat.Title,
+                        Group = cat.Group,
+                        Order = cat.Order,
+                    };
+                    return (new SingleItemResponse<CategoryDTO>(newCategoryDto));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public ListResponse<CategoryDTO> GetAllCategories()
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    List<CategoryDTO> tmp = new List<CategoryDTO>();
+                    foreach (Category a in context.Categories.OrderBy(c => c.Group).ThenBy(c => c.Order))
+                    {
+                        var newCategoryDto = new CategoryDTO()
+                        {
+                            CategoryId = a.CategoryId,
+                            Title = a.Title,
+                            Group = a.Group,
+                            Order = a.Order,
+                        };
+                        tmp.Add(newCategoryDto);
+                    }
+                    return (new ListResponse<CategoryDTO>(tmp));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+                return null;
+            }
         }
 
+        #endregion
         public SingleItemResponse<FestivalDTO> AddFestival(FestivalDTO newFestival)
         {
             throw new NotImplementedException();
