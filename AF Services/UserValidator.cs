@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IdentityModel.Selectors;
 using System.IdentityModel.Tokens;
 using System.Linq;
-using System.Web;
 using AF_DataAccessLayer;
 using AF_Models;
 using SimpleCrypto;
 
-namespace AF_Services
+namespace AF.Services
 {
     public class UserValidator : UserNamePasswordValidator
     {
