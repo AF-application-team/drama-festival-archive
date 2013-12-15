@@ -50,7 +50,9 @@ namespace AF_Services
         //    }
         //    return composite;
         //}
-        public SingleItemResponse<AwardDataDTO> AddAward(AwardDataDTO newAward) //void?
+
+
+        public SingleItemResponse<AwardDataDTO> AddAward(AwardDataDTO newAward)
         {
             var newAwardFull = new Award()
             {
@@ -164,108 +166,107 @@ namespace AF_Services
             }
         }
 
-        public SingleItemResponse<Category> UpdateCategory(Category updateData)
+        public SingleItemResponse<CategoryDTO> UpdateCategory(CategoryDTO updateData)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Category> GetCategory(int id)
+        public SingleItemResponse<CategoryDTO> GetCategory(int id)
         {
             throw new NotImplementedException();
         }
 
-        public ListResponse<Category> GetAllCategories()
+        public ListResponse<CategoryDTO> GetAllCategories()
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Festival> AddFestival(Festival newFestival)
+        public SingleItemResponse<FestivalDTO> AddFestival(FestivalDTO newFestival)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Festival> UpdateFestival(Festival updateData)
+        public SingleItemResponse<FestivalDTO> UpdateFestival(FestivalDTO updateData)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Festival> GetFestival(int id)
+        public SingleItemResponse<FestivalDTO> GetFestival(int id)
         {
             throw new NotImplementedException();
         }
 
-        public ListResponse<Festival> GetFestivalsPaged(int pageNr, int pageAmount)
+        public ListResponse<FestivalDTO> GetFestivalsPaged(int pageNr, int pageAmount)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<int> CountFestivals()
+        public int CountFestivals()
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Job> AddJob(string title, int userId)
+        public SingleItemResponse<JobDTO> AddJob(JobDTO newJob)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Job> UpdateJob(Job updateData)
+        public SingleItemResponse<JobDTO> UpdateJob(JobDTO updateData)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Job> GetJob(int id)
+        public SingleItemResponse<JobDTO> GetJob(int id)
         {
             throw new NotImplementedException();
         }
 
-        public ListResponse<Job> GetAllJobs()
+        public ListResponse<JobDTO> GetAllJobs()
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Play> AddPlay(Play newPlay)
+        public SingleItemResponse<PlayDataDTO> AddPlay(PlayDataDTO newPlay)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Play> UpdatePlay(Play updateData)
+        public SingleItemResponse<PlayDataDTO> UpdatePlay(PlayDataDTO updateData)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Play> GetPlay(int id)
+        public SingleItemResponse<PlayDataDTO> GetPlay(int id)
         {
             throw new NotImplementedException();
         }
 
-        public ListResponse<Play> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount)
+        public ListResponse<PlayDataDTO> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Position> AddPosition(string title, int section, int order, int userId)
+        public SingleItemResponse<PositionDTO> AddPosition(PositionDTO newPosition)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Position> UpdatePosition(Position updateData)
+        public SingleItemResponse<PositionDTO> UpdatePosition(PositionDTO updateData)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<Position> GetPosition(int id)
+        public SingleItemResponse<PositionDTO> GetPosition(int id)
         {
             throw new NotImplementedException();
         }
 
-        public ListResponse<Position> GetAllPositions()
+        public ListResponse<PositionDTO> GetAllPositions()
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<RelationFestivalPersonPosition> AddRelationFestivalPersonPosition(
-            RelationFestivalPersonPosition newRelationFestivalPersonPosition)
+        public SingleItemResponse<RelationFestivalPersonPositionDTO> AddRelationFestivalPersonPosition(RelationFestivalPersonPositionDTO newRelationFestivalPersonPosition)
         {
             throw new NotImplementedException();
         }
@@ -275,17 +276,17 @@ namespace AF_Services
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<RelationFestivalPersonPosition> UpdateRelationFestivalPersonPosition(RelationFestivalPersonPosition updateData)
+        public SingleItemResponse<RelationFestivalPersonPositionDTO> UpdateRelationFestivalPersonPosition(RelationFestivalPersonPositionDTO updateData)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<RelationFestivalPersonPosition> GetRelationFestivalPersonPosition(int id)
+        public SingleItemResponse<RelationFestivalPersonPositionDTO> GetRelationFestivalPersonPosition(int id)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<RelationPersonAward> AddRelationPersonAward(RelationPersonAward newRelationPersonAward)
+        public SingleItemResponse<RelationPersonAwardDTO> AddRelationPersonAward(RelationPersonAwardDTO newRelationPersonAward)
         {
             throw new NotImplementedException();
         }
@@ -295,17 +296,17 @@ namespace AF_Services
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<RelationPersonAward> UpdateRelationPersonAward(RelationPersonAward updateData)
+        public SingleItemResponse<RelationPersonAwardDTO> UpdateRelationPersonAward(RelationPersonAwardDTO updateData)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<RelationPersonAward> GetRelationPersonAward(int id)
+        public SingleItemResponse<RelationPersonAwardDTO> GetRelationPersonAward(int id)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<RelationPersonPlayJob> AddRelationPersonPlayJob(RelationPersonPlayJob newRelationPersonPlayJob)
+        public SingleItemResponse<RelationPersonPlayJobDTO> AddRelationPersonPlayJob(RelationPersonPlayJobDTO newRelationPersonPlayJob)
         {
             throw new NotImplementedException();
         }
@@ -315,17 +316,17 @@ namespace AF_Services
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<RelationPersonPlayJob> UpdateRelationPersonPlayJob(RelationPersonPlayJob updateData)
+        public SingleItemResponse<RelationPersonPlayJobDTO> UpdateRelationPersonPlayJob(RelationPersonPlayJobDTO updateData)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<RelationPersonPlayJob> GetRelationPersonPlayJob(int id)
+        public SingleItemResponse<RelationPersonPlayJobDTO> GetRelationPersonPlayJob(int id)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<RelationPersonPlayRole> AddRelationPersonPlayRole(RelationPersonPlayRole newRelationPersonPlayRole)
+        public SingleItemResponse<RelationPersonPlayRoleDTO> AddRelationPersonPlayRole(RelationPersonPlayRoleDTO newRelationPersonPlayRole)
         {
             throw new NotImplementedException();
         }
@@ -335,22 +336,22 @@ namespace AF_Services
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<RelationPersonPlayRole> UpdateRelationPersonPlayRole(RelationPersonPlayRole updateData)
+        public SingleItemResponse<RelationPersonPlayRoleDTO> UpdateRelationPersonPlayRole(RelationPersonPlayRoleDTO updateData)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<RelationPersonPlayRole> GetRelationPersonPlayRole(int id)
+        public SingleItemResponse<RelationPersonPlayRoleDTO> GetRelationPersonPlayRole(int id)
         {
             throw new NotImplementedException();
         }
 
-        public SingleItemResponse<User> GetUser(int id)
+        public SingleItemResponse<UserDTO> GetUser(int id)
         {
             throw new NotImplementedException();
         }
 
-        public ListResponse<User> GetAllUsers()
+        public ListResponse<UserDTO> GetAllUsers()
         {
             throw new NotImplementedException();
         }
