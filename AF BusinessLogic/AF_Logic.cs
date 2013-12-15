@@ -20,7 +20,6 @@ namespace AF_BusinessLogic
             var a = new Award()
             {
                 CategoryId = categoryId,
-                FestivalId = festivalId,
                 PlayId = playId,
                 EditedBy = userId,
                 EditDate = DateTime.Now

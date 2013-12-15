@@ -12,7 +12,6 @@ namespace AF_Models
     {
         public int AwardId { get; set; }
         public int CategoryId { get; set; } 
-        public int FestivalId { get; set; }
         public int PlayId { get; set; }
         public DateTime EditDate { get; set; }
         public int EditedBy { get; set; }
@@ -36,7 +35,6 @@ namespace AF_Models
         {
             AwardId = award.AwardId;
             CategoryId = award.CategoryId;
-            FestivalId = award.FestivalId;
             PlayId = award.PlayId;
             EditDate = award.EditDate;
             EditedBy = award.EditedBy;
@@ -55,7 +53,7 @@ namespace AF_Models
                 return false;
             }
 
-            return (AwardId == a.AwardId) &&  (PlayId == a.PlayId) && (FestivalId == a.FestivalId) && (CategoryId == a.CategoryId);
+            return (AwardId == a.AwardId) &&  (PlayId == a.PlayId) && (CategoryId == a.CategoryId);
         }
     }
 }

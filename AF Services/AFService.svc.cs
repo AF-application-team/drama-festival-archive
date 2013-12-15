@@ -57,7 +57,6 @@ namespace AF.Services
             var newAwardFull = new Award()
             {
                 CategoryId = newAward.CategoryId,
-                FestivalId = newAward.FestivalId,
                 PlayId = newAward.PlayId,
                 //EditedBy = userId,
                 EditDate = DateTime.Now
@@ -84,7 +83,6 @@ namespace AF.Services
             var updateDataFull = new Award()
             {
                 CategoryId = updateData.CategoryId,
-                FestivalId = updateData.FestivalId,
                 PlayId = updateData.PlayId,
                 //EditedBy = userId,
                 EditDate = DateTime.Now
@@ -113,14 +111,13 @@ namespace AF.Services
             {
                 try
                 {
-                    Award awa = context.Awards.First(a => a.CategoryId == id);
+                    Award awa = context.Awards.First(a => a.AwardId == id);
                     //awa.Editor = context.Users.First(u => u.UserId == awa.EditedBy);
 
                     var newAwardDto = new AwardDataDTO()
                     {
                         AwardId = awa.AwardId,
                         CategoryId = awa.CategoryId,
-                        FestivalId = awa.FestivalId,
                         PlayId = awa.PlayId,
                     };
                     return (new SingleItemResponse<AwardDataDTO>(newAwardDto));
@@ -141,7 +138,7 @@ namespace AF.Services
                     var skip = pageAmount*(pageNr - 1);
                     var query = (from a in context.Awards select a).Include(a => a.Play).Include(a => a.Category);
                     if (criteria.FestivalIdFilter != null)
-                        query = query.Where(a => a.FestivalId == criteria.FestivalIdFilter);
+                        query = query.Where(a => a.Play.FestivalId == criteria.FestivalIdFilter);
                     if (!String.IsNullOrEmpty(criteria.Author))
                         query = query.Where(a => a.Play.Author.Contains(criteria.Author));
                     if (!String.IsNullOrEmpty(criteria.Title))
@@ -150,7 +147,7 @@ namespace AF.Services
                         query = query.Where(a => a.CategoryId == criteria.CategoryIdFilter);
                     List<AwardMixedDTO> tmp = new List<AwardMixedDTO>();
                     //List<AwardDataDTO> tmp;
-                    foreach (Award b in (query.OrderBy(a => a.FestivalId)
+                    foreach (Award b in (query.OrderBy(a => a.Play.FestivalId)
                         .ThenBy(a => a.Category.Group)
                         .ThenBy(a => a.Category.Order)
                         .Skip(skip)
@@ -160,7 +157,6 @@ namespace AF.Services
                         {
                             AwardId = b.AwardId,
                             CategoryTitle = b.Category.Title,
-                            FestivalId = b.FestivalId,
                             PlayTitle = b.Play.Title,
                         };
                         tmp.Add(newAwardDto);

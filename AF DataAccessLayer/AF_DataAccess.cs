@@ -138,7 +138,7 @@ namespace AF_DataAccessLayer
                     var skip = pageAmount * (pageNr - 1);
                     var query = (from a in context.Awards select a).Include(a => a.Play).Include(a => a.Category);
                     if (criteria.FestivalIdFilter != null)
-                        query = query.Where(a => a.FestivalId == criteria.FestivalIdFilter);
+                        query = query.Where(a => a.Play.FestivalId == criteria.FestivalIdFilter);
                     if (!String.IsNullOrEmpty(criteria.Author))
                         query = query.Where(a => a.Play.Author.Contains(criteria.Author));
                     if (!String.IsNullOrEmpty(criteria.Title))
@@ -147,7 +147,7 @@ namespace AF_DataAccessLayer
                         query = query.Where(a => a.CategoryId==criteria.CategoryIdFilter);
                     return
                         await
-                            (query.OrderBy(a => a.FestivalId)
+                            (query.OrderBy(a => a.Play.FestivalId)
                                 .ThenBy(a => a.Category.Group)
                                 .ThenBy(a => a.Category.Order)
                                 .Skip(skip)

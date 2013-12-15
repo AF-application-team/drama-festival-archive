@@ -16,7 +16,6 @@ namespace AF_Models
             this.HasKey(t => t.AwardId).Property(t => t.AwardId).HasColumnName("AwardId");
             //Property
             this.Property(t => t.CategoryId).HasColumnName("CategoryId");
-            this.Property(t => t.FestivalId).HasColumnName("FestivalId");
             this.Property(t => t.PlayId).HasColumnName("PlayId");
             this.Property(t => t.EditDate).HasColumnName("EditDate");
             this.Property(t => t.EditedBy).HasColumnName("EditedBy");
@@ -24,7 +23,6 @@ namespace AF_Models
             this.ToTable("Awards");
             //Relations
             this.HasRequired(t => t.Category).WithMany().HasForeignKey(f => f.CategoryId);
-            this.HasRequired(t => t.Festival).WithMany().HasForeignKey(f => f.FestivalId);
             this.HasRequired(t => t.Play).WithMany().HasForeignKey(f => f.PlayId);
             this.HasRequired(t => t.Editor).WithMany().HasForeignKey(f => f.EditedBy);       
         }
