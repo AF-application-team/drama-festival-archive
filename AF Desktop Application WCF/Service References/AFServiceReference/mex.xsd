@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AF.Common.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AwardDataDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AwardId" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="FestivalId" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AwardDataDTO" nillable="true" type="tns:AwardDataDTO" />
+  <xs:complexType name="ArrayOfAwardMixedDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AwardMixedDTO" nillable="true" type="tns:AwardMixedDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAwardMixedDTO" nillable="true" type="tns:ArrayOfAwardMixedDTO" />
+  <xs:complexType name="AwardMixedDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AwardId" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FestivalId" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayTitle" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AwardMixedDTO" nillable="true" type="tns:AwardMixedDTO" />
+  <xs:complexType name="CategoryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="Group" type="xs:int" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryDTO" nillable="true" type="tns:CategoryDTO" />
+  <xs:complexType name="ArrayOfCategoryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoryDTO" nillable="true" type="tns:CategoryDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategoryDTO" nillable="true" type="tns:ArrayOfCategoryDTO" />
+  <xs:complexType name="FestivalDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginningDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EditDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EditedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FestivalId" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FestivalDTO" nillable="true" type="tns:FestivalDTO" />
+  <xs:complexType name="ArrayOfFestivalDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FestivalDTO" nillable="true" type="tns:FestivalDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFestivalDTO" nillable="true" type="tns:ArrayOfFestivalDTO" />
+  <xs:complexType name="JobDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="JobId" type="xs:int" />
+      <xs:element minOccurs="0" name="JobTitle" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobDTO" nillable="true" type="tns:JobDTO" />
+  <xs:complexType name="ArrayOfJobDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobDTO" nillable="true" type="tns:JobDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobDTO" nillable="true" type="tns:ArrayOfJobDTO" />
+  <xs:complexType name="PlayDataDTO">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="PlayDataDTO" nillable="true" type="tns:PlayDataDTO" />
+  <xs:complexType name="ArrayOfPlayDataDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayDataDTO" nillable="true" type="tns:PlayDataDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayDataDTO" nillable="true" type="tns:ArrayOfPlayDataDTO" />
+  <xs:complexType name="PositionDTO">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="PositionDTO" nillable="true" type="tns:PositionDTO" />
+  <xs:complexType name="ArrayOfPositionDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PositionDTO" nillable="true" type="tns:PositionDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPositionDTO" nillable="true" type="tns:ArrayOfPositionDTO" />
+  <xs:complexType name="RelationFestivalPersonPositionDTO">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="RelationFestivalPersonPositionDTO" nillable="true" type="tns:RelationFestivalPersonPositionDTO" />
+  <xs:complexType name="RelationPersonAwardDTO">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="RelationPersonAwardDTO" nillable="true" type="tns:RelationPersonAwardDTO" />
+  <xs:complexType name="RelationPersonPlayJobDTO">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="RelationPersonPlayJobDTO" nillable="true" type="tns:RelationPersonPlayJobDTO" />
+  <xs:complexType name="RelationPersonPlayRoleDTO">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="RelationPersonPlayRoleDTO" nillable="true" type="tns:RelationPersonPlayRoleDTO" />
+  <xs:complexType name="UserDTO">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="UserDTO" nillable="true" type="tns:UserDTO" />
+  <xs:complexType name="ArrayOfUserDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDTO" nillable="true" type="tns:UserDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserDTO" nillable="true" type="tns:ArrayOfUserDTO" />
+</xs:schema>

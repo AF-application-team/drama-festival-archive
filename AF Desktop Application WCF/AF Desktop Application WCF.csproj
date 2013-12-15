@@ -90,6 +90,11 @@
     <Compile Include="Edit Windows\AwardWindow.xaml.cs">
       <DependentUpon>AwardWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Service References\AFServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="View Models\AwardEditViewModel.cs" />
     <Compile Include="View Models\CategoryEditViewModel.cs" />
     <Compile Include="Edit Windows\CategoryEditWindow.xaml.cs">
@@ -146,11 +151,39 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\AF.Common.DTO.AwardDataDTO.datasource" />
+    <None Include="Properties\DataSources\AF.Common.DTO.AwardMixedDTO.datasource" />
+    <None Include="Properties\DataSources\AF.Common.DTO.CategoryDTO.datasource" />
+    <None Include="Properties\DataSources\AF.Common.DTO.FestivalDTO.datasource" />
+    <None Include="Properties\DataSources\AF.Common.DTO.JobDTO.datasource" />
+    <None Include="Properties\DataSources\AF.Common.DTO.PlayDataDTO.datasource" />
+    <None Include="Properties\DataSources\AF.Common.DTO.PositionDTO.datasource" />
+    <None Include="Properties\DataSources\AF.Common.DTO.RelationFestivalPersonPositionDTO.datasource" />
+    <None Include="Properties\DataSources\AF.Common.DTO.RelationPersonAwardDTO.datasource" />
+    <None Include="Properties\DataSources\AF.Common.DTO.RelationPersonPlayJobDTO.datasource" />
+    <None Include="Properties\DataSources\AF.Common.DTO.RelationPersonPlayRoleDTO.datasource" />
+    <None Include="Properties\DataSources\AF.Common.DTO.UserDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\AFServiceReference\AFService.wsdl" />
+    <None Include="Service References\AFServiceReference\mex.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AFServiceReference\mex1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AFServiceReference\mex2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AFServiceReference\mex3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AFServiceReference\mex4.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -192,6 +225,27 @@
       <Project>{E668EB49-87EA-4F12-8F87-27D95F63F4E1}</Project>
       <Name>AF.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AFServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AFServiceReference\mex.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AFServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AFServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AFServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

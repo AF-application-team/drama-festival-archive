@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AF.Common.Requests" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost:44300/AFService.svc/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+  <xs:complexType name="SingleItemResponseOfAwardDataDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AwardDataDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q1:AwardDataDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfAwardDataDTO3eQi8U0z" nillable="true" type="tns:SingleItemResponseOfAwardDataDTO3eQi8U0z" />
+  <xs:complexType name="ResponseBase">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+  <xs:complexType name="QueryBase">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="QueryBase" nillable="true" type="tns:QueryBase" />
+  <xs:complexType name="ListResponseOfAwardMixedDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ListResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AwardMixedDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q2:ArrayOfAwardMixedDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListResponseOfAwardMixedDTO3eQi8U0z" nillable="true" type="tns:ListResponseOfAwardMixedDTO3eQi8U0z" />
+  <xs:complexType name="SingleItemResponseOfCategoryDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CategoryDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q3:CategoryDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfCategoryDTO3eQi8U0z" nillable="true" type="tns:SingleItemResponseOfCategoryDTO3eQi8U0z" />
+  <xs:complexType name="ListResponseOfCategoryDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ListResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CategoryDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q4:ArrayOfCategoryDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListResponseOfCategoryDTO3eQi8U0z" nillable="true" type="tns:ListResponseOfCategoryDTO3eQi8U0z" />
+  <xs:complexType name="SingleItemResponseOfFestivalDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="FestivalDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q5:FestivalDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfFestivalDTO3eQi8U0z" nillable="true" type="tns:SingleItemResponseOfFestivalDTO3eQi8U0z" />
+  <xs:complexType name="ListResponseOfFestivalDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ListResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="FestivalDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q6:ArrayOfFestivalDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListResponseOfFestivalDTO3eQi8U0z" nillable="true" type="tns:ListResponseOfFestivalDTO3eQi8U0z" />
+  <xs:complexType name="SingleItemResponseOfJobDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="JobDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q7:JobDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfJobDTO3eQi8U0z" nillable="true" type="tns:SingleItemResponseOfJobDTO3eQi8U0z" />
+  <xs:complexType name="ListResponseOfJobDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ListResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="JobDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q8:ArrayOfJobDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListResponseOfJobDTO3eQi8U0z" nillable="true" type="tns:ListResponseOfJobDTO3eQi8U0z" />
+  <xs:complexType name="SingleItemResponseOfPlayDataDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PlayDataDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q9:PlayDataDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfPlayDataDTO3eQi8U0z" nillable="true" type="tns:SingleItemResponseOfPlayDataDTO3eQi8U0z" />
+  <xs:complexType name="ListResponseOfPlayDataDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ListResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PlayDataDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q10:ArrayOfPlayDataDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListResponseOfPlayDataDTO3eQi8U0z" nillable="true" type="tns:ListResponseOfPlayDataDTO3eQi8U0z" />
+  <xs:complexType name="SingleItemResponseOfPositionDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PositionDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q11:PositionDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfPositionDTO3eQi8U0z" nillable="true" type="tns:SingleItemResponseOfPositionDTO3eQi8U0z" />
+  <xs:complexType name="ListResponseOfPositionDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ListResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PositionDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q12:ArrayOfPositionDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListResponseOfPositionDTO3eQi8U0z" nillable="true" type="tns:ListResponseOfPositionDTO3eQi8U0z" />
+  <xs:complexType name="SingleItemResponseOfRelationFestivalPersonPositionDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="RelationFestivalPersonPositionDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q13:RelationFestivalPersonPositionDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfRelationFestivalPersonPositionDTO3eQi8U0z" nillable="true" type="tns:SingleItemResponseOfRelationFestivalPersonPositionDTO3eQi8U0z" />
+  <xs:complexType name="SingleItemResponseOfboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfboolean" nillable="true" type="tns:SingleItemResponseOfboolean" />
+  <xs:complexType name="SingleItemResponseOfRelationPersonAwardDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="RelationPersonAwardDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q14:RelationPersonAwardDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfRelationPersonAwardDTO3eQi8U0z" nillable="true" type="tns:SingleItemResponseOfRelationPersonAwardDTO3eQi8U0z" />
+  <xs:complexType name="SingleItemResponseOfRelationPersonPlayJobDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="RelationPersonPlayJobDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q15:RelationPersonPlayJobDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfRelationPersonPlayJobDTO3eQi8U0z" nillable="true" type="tns:SingleItemResponseOfRelationPersonPlayJobDTO3eQi8U0z" />
+  <xs:complexType name="SingleItemResponseOfRelationPersonPlayRoleDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="RelationPersonPlayRoleDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q16:RelationPersonPlayRoleDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfRelationPersonPlayRoleDTO3eQi8U0z" nillable="true" type="tns:SingleItemResponseOfRelationPersonPlayRoleDTO3eQi8U0z" />
+  <xs:complexType name="SingleItemResponseOfUserDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="UserDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q17:UserDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfUserDTO3eQi8U0z" nillable="true" type="tns:SingleItemResponseOfUserDTO3eQi8U0z" />
+  <xs:complexType name="ListResponseOfUserDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ListResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="UserDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q18:ArrayOfUserDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListResponseOfUserDTO3eQi8U0z" nillable="true" type="tns:ListResponseOfUserDTO3eQi8U0z" />
+</xs:schema>

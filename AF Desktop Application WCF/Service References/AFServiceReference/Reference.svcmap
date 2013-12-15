@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8a320c53-4273-4d91-99be-749a8c38a85a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost:44300/AFService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mex.disco" MetadataType="Disco" ID="e91732e9-f340-4648-b1d7-3601beeb77f2" SourceId="1" SourceUrl="https://localhost:44300/AFService.svc/mex?disco" />
+    <MetadataFile FileName="mex.xsd" MetadataType="Schema" ID="cca30999-20a7-4027-a157-72dc5bdd2909" SourceId="1" SourceUrl="https://localhost:44300/AFService.svc/mex?xsd=xsd2" />
+    <MetadataFile FileName="mex1.xsd" MetadataType="Schema" ID="23680dd3-c79f-417c-b21b-17cf3e5f1a66" SourceId="1" SourceUrl="https://localhost:44300/AFService.svc/mex?xsd=xsd3" />
+    <MetadataFile FileName="mex2.xsd" MetadataType="Schema" ID="3b4abffd-104d-436c-920c-0fac85557e13" SourceId="1" SourceUrl="https://localhost:44300/AFService.svc/mex?xsd=xsd0" />
+    <MetadataFile FileName="mex3.xsd" MetadataType="Schema" ID="e11b563f-bfe5-43c1-9a77-54dc4cc714c8" SourceId="1" SourceUrl="https://localhost:44300/AFService.svc/mex?xsd=xsd1" />
+    <MetadataFile FileName="AFService.wsdl" MetadataType="Wsdl" ID="a82859d1-7561-4611-b40d-a4c95eebdbb2" SourceId="1" SourceUrl="https://localhost:44300/AFService.svc/mex?wsdl" />
+    <MetadataFile FileName="mex4.xsd" MetadataType="Schema" ID="6b9992f5-7d4c-4f4a-af23-0a8794abcfee" SourceId="1" SourceUrl="https://localhost:44300/AFService.svc/mex?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
