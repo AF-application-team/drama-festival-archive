@@ -243,7 +243,7 @@ namespace AF_Services
             throw new NotImplementedException();
         }
 
-        public int CountFestivals()
+        public SingleItemResponse<int> CountFestivals()
         {
             throw new NotImplementedException();
         }

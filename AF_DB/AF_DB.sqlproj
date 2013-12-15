@@ -65,7 +65,6 @@
     <Folder Include="PostDeployment\Data" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\User.sql" />
     <Build Include="dbo\Tables\News.sql" />
     <Build Include="dbo\Tables\People.sql" />
     <Build Include="dbo\Tables\Festivals.sql" />
@@ -79,6 +78,7 @@
     <Build Include="dbo\Tables\RelationPersonPlayJob.sql" />
     <Build Include="dbo\Tables\RelationPersonAward.sql" />
     <PostDeploy Include="PostDeployment\Data.sql" />
+    <Build Include="dbo\Tables\User.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AF_DB.publish.xml" />

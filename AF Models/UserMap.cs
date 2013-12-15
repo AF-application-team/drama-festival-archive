@@ -16,6 +16,8 @@ namespace AF_Models
             this.HasKey(t => t.UserId).Property(t => t.UserId).HasColumnName("UserId");
             //Properties
             this.Property(t => t.Login).HasColumnName("Login");
+            this.Property(t => t.Password).HasColumnName("Password");
+            this.Property(t => t.Salt).HasColumnName("Salt");
             this.Property(t => t.FirstName).HasColumnName("FirstName");
             this.Property(t => t.LastName).HasColumnName("LastName");
             this.Property(t => t.Email).HasColumnName("Email");
