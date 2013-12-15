@@ -52,6 +52,7 @@ namespace AF_Services
         //}
 
 
+        #region Awards
         public SingleItemResponse<AwardDataDTO> AddAward(AwardDataDTO newAward)
         {
             var newAwardFull = new Award()
@@ -59,7 +60,7 @@ namespace AF_Services
                 CategoryId = newAward.CategoryId,
                 FestivalId = newAward.FestivalId,
                 PlayId = newAward.PlayId,
-                EditedBy = userId,
+                //EditedBy = userId,
                 EditDate = DateTime.Now
             };
 
@@ -68,46 +69,68 @@ namespace AF_Services
                 try
                 {
                     context.Awards.Add(newAwardFull);
-                    context.SaveChangesAsync();
-                    //GetAward((int))
-                    //return
+                    context.SaveChanges();
+                    int id = newAwardFull.AwardId;
+                    return GetAward(id);
                 }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    throw;
                 }
             }
         }
 
         public SingleItemResponse<AwardDataDTO> UpdateAward(AwardDataDTO updateData)
         {
+            var updateDataFull = new Award()
+            {
+                CategoryId = updateData.CategoryId,
+                FestivalId = updateData.FestivalId,
+                PlayId = updateData.PlayId,
+                //EditedBy = userId,
+                EditDate = DateTime.Now
+            };
+
             using (var context = new AF_Context())
             {
-                var updateDataFull = new Award()
-                {
-                    CategoryId = updateData.CategoryId,
-                    FestivalId = updateData.FestivalId,
-                    PlayId = updateData.PlayId,
-                    EditedBy = userId,
-                    EditDate = DateTime.Now
-                };
-
                 try
                 {
                     Award awa = context.Awards.First(a => a.AwardId == updateData.AwardId);
                     context.Entry(awa).CurrentValues.SetValues(updateDataFull);
-                    context.SaveChangesAsync();
+                    context.SaveChanges();
+                    int id = updateDataFull.AwardId;
+                    return GetAward(id);
                 }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    throw;
                 }
             }
         }
 
         public SingleItemResponse<AwardDataDTO> GetAward(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Award awa = context.Awards.First(a => a.CategoryId == id);
+                    //awa.Editor = context.Users.First(u => u.UserId == awa.EditedBy);
+
+                    var newAwardDto = new AwardDataDTO()
+                    {
+                        AwardId = awa.AwardId,
+                        CategoryId = awa.CategoryId,
+                        FestivalId = awa.FestivalId,
+                        PlayId = awa.PlayId,
+                    };
+                    return (new SingleItemResponse<AwardDataDTO>(newAwardDto));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public ListResponse<AwardMixedDTO> SearchAwards(AwardsSearchingCriteria criteria, int pageNr, int pageAmount)
@@ -116,7 +139,7 @@ namespace AF_Services
             {
                 try
                 {
-                    var skip = pageAmount * (pageNr - 1);
+                    var skip = pageAmount*(pageNr - 1);
                     var query = (from a in context.Awards select a).Include(a => a.Play).Include(a => a.Category);
                     if (criteria.FestivalIdFilter != null)
                         query = query.Where(a => a.FestivalId == criteria.FestivalIdFilter);
@@ -126,28 +149,41 @@ namespace AF_Services
                         query = query.Where(a => a.Play.Title.Contains(criteria.Title));
                     if (criteria.CategoryIdFilter != null)
                         query = query.Where(a => a.CategoryId == criteria.CategoryIdFilter);
-                    return (query.OrderBy(a => a.FestivalId)
-                                .ThenBy(a => a.Category.Group)
-                                .ThenBy(a => a.Category.Order)
-                                .Skip(skip)
-                                .Take(pageAmount)
-                                .ToList());
+                    List<AwardMixedDTO> tmp = new List<AwardMixedDTO>();
+                    //List<AwardDataDTO> tmp;
+                    foreach (Award b in (query.OrderBy(a => a.FestivalId)
+                        .ThenBy(a => a.Category.Group)
+                        .ThenBy(a => a.Category.Order)
+                        .Skip(skip)
+                        .Take(pageAmount)))
+                    {
+                        var newAwardDto = new AwardMixedDTO()
+                        {
+                            AwardId = b.AwardId,
+                            CategoryTitle = b.Category.Title,
+                            FestivalId = b.FestivalId,
+                            PlayTitle = b.Play.Title,
+                        };
+                        tmp.Add(newAwardDto);
+                    }
+                    return (new ListResponse<AwardMixedDTO>(tmp));
                 }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    throw;
                 }
-                return null;
             }
         }
 
+        #endregion
         public SingleItemResponse<CategoryDTO> AddCategory(CategoryDTO newCategory)
         {
+            /*
             var newCategoryFull = new Category
             {
                 Title = newCategory.Title,
                 EditDate = DateTime.Now,
-                EditedBy = userId,
+                //EditedBy = userId,
                 Group = newCategory.Group,
                 Order = newCategory.Order
             };
@@ -161,9 +197,11 @@ namespace AF_Services
                 }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    throw;
                 }
             }
+             * */
+            throw new NotImplementedException();
         }
 
         public SingleItemResponse<CategoryDTO> UpdateCategory(CategoryDTO updateData)

@@ -8,14 +8,14 @@ namespace AF.Common.Requests
     public class ListResponse<TData> : ResponseBase
     {
         [DataMember]
-        public IList<TData> Data { get; set; }
+        public List<TData> Data { get; set; }
 
-        public ListResponse(IList<TData> data)
+        public ListResponse(List<TData> data)
         {
             Data = data;
         }
     }
-
+    /*
     public static class ListResponse
     {
         public static ListResponse<TData> Create<TData>(RequestBase request, IList<TData> data)
@@ -28,4 +28,5 @@ namespace AF.Common.Requests
             return new ListResponse<TData>(new List<TData>(data));
         }
     }
+      */
 }
