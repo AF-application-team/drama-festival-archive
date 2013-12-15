@@ -8,5 +8,13 @@ namespace AF.Common.DTO
 {
     public class PlayDataDTO
     {
+        public int PlayId { get; set; }
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public int FestivalId { get; set; }
+        public int Day { get; set; }
+        public int Order { get; set; }
+        public string PlayedBy { get; set; }
+        public string Motto { get; set; }
     }
 }

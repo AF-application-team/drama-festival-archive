@@ -8,5 +8,9 @@ namespace AF.Common.DTO
 {
     public class PositionDTO
     {
+        public int PositionId { get; set; }
+        public string PositionTitle { get; set; }
+        public int Section { get; set; }
+        public int Order { get; set; }
     }
 }

@@ -97,7 +97,7 @@ namespace AF.Services
                     Award awa = context.Awards.First(a => a.AwardId == updateData.AwardId);
                     context.Entry(awa).CurrentValues.SetValues(updateDataFull);
                     context.SaveChanges();
-                    int id = updateDataFull.AwardId;
+                    int id = updateData.AwardId;
                     return GetAward(id);
                 }
                 catch (Exception ex)
@@ -220,14 +220,9 @@ namespace AF.Services
                 try
                 {
                     Category cat = context.Categories.First(c => c.CategoryId == updateData.CategoryId);
-                    cat.CategoryId = updateData.CategoryId;
-                    cat.EditDate = DateTime.Now;
-                    //cat.EditedBy = updateData.EditedBy;
-                    cat.Group = updateData.Group;
-                    cat.Order = updateData.Order;
-                    cat.Title = updateData.Title;
+                    context.Entry(cat).CurrentValues.SetValues(updateDataFull);
                     context.SaveChanges();
-                    int id = updateDataFull.CategoryId;
+                    int id = updateData.CategoryId;
                     return GetCategory(id);
                 }
                 catch (Exception ex)
@@ -286,95 +281,489 @@ namespace AF.Services
                 {
                     throw;
                 }
+            }
+        }
+
+        #endregion
+        #region Festival
+
+        public SingleItemResponse<FestivalDTO> AddFestival(FestivalDTO newFestival)
+        {
+            var newFestivalFull = new Festival()
+            {
+                Year = newFestival.Year,
+                BeginningDate = newFestival.BeginningDate,
+                EndDate = newFestival.EndDate,
+                //EditedBy = userId,
+                EditDate = DateTime.Now
+            };
+
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.Festivals.Add(newFestivalFull);
+                    context.SaveChanges();
+                    int id = newFestivalFull.FestivalId;
+                    return GetFestival(id);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+        }
+
+        public SingleItemResponse<FestivalDTO> UpdateFestival(FestivalDTO updateData)
+        {
+            var updateDataFull = new Festival()
+            {
+                Year = updateData.Year,
+                BeginningDate = updateData.BeginningDate,
+                EndDate = updateData.EndDate,
+                //EditedBy = userId,
+                EditDate = DateTime.Now
+            };
+
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Festival fes = context.Festivals.First(f => f.FestivalId == updateData.FestivalId);
+                    context.Entry(fes).CurrentValues.SetValues(updateDataFull);
+                    context.SaveChanges();
+                    int id = updateData.FestivalId;
+                    return GetFestival(id);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+        }
+
+        public SingleItemResponse<FestivalDTO> GetFestival(int id)
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Festival fes = context.Festivals.First(f => f.FestivalId == id);
+
+                    var newFestivalDto = new FestivalDTO()
+                    {
+                        FestivalId = fes.FestivalId,
+                        Year = fes.Year,
+                        BeginningDate = fes.BeginningDate,
+                        EndDate = fes.EndDate,
+                    };
+                    return (new SingleItemResponse<FestivalDTO>(newFestivalDto));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+        }
+
+        public ListResponse<FestivalDTO> GetFestivalsPaged(int pageNr, int pageAmount)
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount*(pageNr - 1);
+                    List<FestivalDTO> tmp = new List<FestivalDTO>();
+                    foreach (Festival fe in (from f in context.Festivals.Include(u => u.Editor)
+                        select f).Skip(skip).Take(pageAmount))
+                    {
+                        var newFestivalDto = new FestivalDTO()
+                        {
+                            FestivalId = fe.FestivalId,
+                            Year = fe.Year,
+                            BeginningDate = fe.BeginningDate,
+                            EndDate = fe.EndDate
+                        };
+                        tmp.Add(newFestivalDto);
+                    }
+                    return (new ListResponse<FestivalDTO>(tmp));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+                return null;
+            }
+        }
+
+        public SingleItemResponse<int> CountFestivals()
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    return (new SingleItemResponse<int>(context.Festivals.Count()));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
                 return null;
             }
         }
 
         #endregion
-        public SingleItemResponse<FestivalDTO> AddFestival(FestivalDTO newFestival)
-        {
-            throw new NotImplementedException();
-        }
-
-        public SingleItemResponse<FestivalDTO> UpdateFestival(FestivalDTO updateData)
-        {
-            throw new NotImplementedException();
-        }
-
-        public SingleItemResponse<FestivalDTO> GetFestival(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ListResponse<FestivalDTO> GetFestivalsPaged(int pageNr, int pageAmount)
-        {
-            throw new NotImplementedException();
-        }
-
-        public SingleItemResponse<int> CountFestivals()
-        {
-            throw new NotImplementedException();
-        }
-
+        #region Job
         public SingleItemResponse<JobDTO> AddJob(JobDTO newJob)
         {
-            throw new NotImplementedException();
+            var newJobFull = new Job()
+            {
+                JobTitle = newJob.JobTitle,
+                //EditedBy = userId,
+                EditDate = DateTime.Now
+            };
+
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.Jobs.Add(newJobFull);
+                    context.SaveChanges();
+                    int id = newJobFull.JobId;
+                    return GetJob(id);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public SingleItemResponse<JobDTO> UpdateJob(JobDTO updateData)
         {
-            throw new NotImplementedException();
+            var updateDataFull = new Job()
+            {
+                JobTitle = updateData.JobTitle,
+                //EditedBy = userId,
+                EditDate = DateTime.Now
+            };
+
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Job jo = context.Jobs.First(j => j.JobId == updateData.JobId);
+                    context.Entry(jo).CurrentValues.SetValues(updateDataFull);
+                    context.SaveChanges();
+                    int id = updateData.JobId;
+                    return GetJob(id);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public SingleItemResponse<JobDTO> GetJob(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Job jo = context.Jobs.First(j => j.JobId == id);
+
+                    var newJobDto = new JobDTO()
+                    {
+                        JobId = jo.JobId,
+                        JobTitle = jo.JobTitle
+                    };
+                    return (new SingleItemResponse<JobDTO>(newJobDto));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public ListResponse<JobDTO> GetAllJobs()
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    List<JobDTO> tmp = new List<JobDTO>();
+                    foreach (Job jo in from j in context.Jobs select j)
+                    {
+                        var newJobDto = new JobDTO()
+                        {
+                            JobId = jo.JobId,
+                            JobTitle = jo.JobTitle
+                        };
+                        tmp.Add(newJobDto);
+                    }
+                    return (new ListResponse<JobDTO>(tmp));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+                return null;
+            }
         }
+        #endregion
+        #region Play
 
         public SingleItemResponse<PlayDataDTO> AddPlay(PlayDataDTO newPlay)
         {
-            throw new NotImplementedException();
+            var newPlayFull = new Play()
+            {
+                Title = newPlay.Title,
+                Author = newPlay.Author,
+                FestivalId = newPlay.FestivalId,
+                Day = newPlay.Day,
+                Order = newPlay.Order,
+                PlayedBy = newPlay.PlayedBy,
+                Motto = newPlay.Motto,
+                //EditedBy = userId,
+                EditDate = DateTime.Now
+            };
+
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.Plays.Add(newPlayFull);
+                    context.SaveChanges();
+                    int id = newPlayFull.PlayId;
+                    return GetPlay(id);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public SingleItemResponse<PlayDataDTO> UpdatePlay(PlayDataDTO updateData)
         {
-            throw new NotImplementedException();
+            var updateDataFull = new Play()
+            {
+                Title = updateData.Title,
+                Author = updateData.Author,
+                FestivalId = updateData.FestivalId,
+                Day = updateData.Day,
+                Order = updateData.Order,
+                PlayedBy = updateData.PlayedBy,
+                Motto = updateData.Motto,
+                //EditedBy = userId,
+                EditDate = DateTime.Now
+            };
+
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Play pla = context.Plays.First(p => p.PlayId == updateData.PlayId);
+                    context.Entry(pla).CurrentValues.SetValues(updateDataFull);
+                    context.SaveChanges();
+                    int id = updateData.PlayId;
+                    return GetPlay(id);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public SingleItemResponse<PlayDataDTO> GetPlay(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Play pla = context.Plays.First(p => p.PlayId == id);
+
+                    var newPlayDto = new PlayDataDTO()
+                    {
+                        PlayId = pla.PlayId,
+                        Title = pla.Title,
+                        Author = pla.Author,
+                        FestivalId = pla.FestivalId,
+                        Day = pla.Day,
+                        Order = pla.Order,
+                        PlayedBy = pla.PlayedBy,
+                        Motto = pla.Motto
+                    };
+                    return (new SingleItemResponse<PlayDataDTO>(newPlayDto));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public ListResponse<PlayDataDTO> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount*(pageNr - 1);
+                    var query = (from p in context.Plays select p);
+                    if (criteria.FestivalIdFilter != null)
+                        query = query.Where(p => p.FestivalId == criteria.FestivalIdFilter);
+                    if (!String.IsNullOrEmpty(criteria.Author))
+                        query = query.Where(p => p.Author.Contains(criteria.Author));
+                    if (!String.IsNullOrEmpty(criteria.Title))
+                        query = query.Where(p => p.Title.Contains(criteria.Title));
+                    if (!String.IsNullOrEmpty(criteria.Motto))
+                        query = query.Where(p => p.Motto.Contains(criteria.Motto));
+
+                    List<PlayDataDTO> tmp = new List<PlayDataDTO>();
+                    foreach (Play pla in (query.OrderBy(p => p.FestivalId)
+                        .ThenBy(p => p.Day)
+                        .ThenBy(p => p.Order)
+                        .Skip(skip)
+                        .Take(pageAmount)))
+                    {
+                        var newPlayDto = new PlayDataDTO()
+                        {
+                            PlayId = pla.PlayId,
+                            Title = pla.Title,
+                            Author = pla.Author,
+                            FestivalId = pla.FestivalId,
+                            Day = pla.Day,
+                            Order = pla.Order,
+                            PlayedBy = pla.PlayedBy,
+                            Motto = pla.Motto
+                        };
+                        tmp.Add(newPlayDto);
+                    }
+                    return (new ListResponse<PlayDataDTO>(tmp));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
+
+        #endregion
+        #region Position
 
         public SingleItemResponse<PositionDTO> AddPosition(PositionDTO newPosition)
         {
-            throw new NotImplementedException();
+            var newPositionFull = new Position()
+            {
+                PositionTitle = newPosition.PositionTitle,
+                Section = newPosition.Section,
+                Order = newPosition.Order,
+                //EditedBy = userId,
+                EditDate = DateTime.Now
+            };
+
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    context.Positions.Add(newPositionFull);
+                    context.SaveChanges();
+                    int id = newPositionFull.PositionId;
+                    return GetPosition(id);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public SingleItemResponse<PositionDTO> UpdatePosition(PositionDTO updateData)
         {
-            throw new NotImplementedException();
+            var updateDataFull = new Position()
+            {
+                PositionTitle = updateData.PositionTitle,
+                Section = updateData.Section,
+                Order = updateData.Order,
+                //EditedBy = userId,
+                EditDate = DateTime.Now
+            };
+
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Position pos = context.Positions.First(p => p.PositionId == updateData.PositionId);
+                    context.Entry(pos).CurrentValues.SetValues(updateDataFull);
+                    context.SaveChanges();
+                    int id = updateData.PositionId;
+                    return GetPosition(id);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public SingleItemResponse<PositionDTO> GetPosition(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Position pos = context.Positions.First(p => p.PositionId == id);
+                    //awa.Editor = context.Users.First(u => u.UserId == awa.EditedBy);
+
+                    var newPositionDto = new PositionDTO()
+                    {
+                        PositionId = pos.PositionId,
+                        PositionTitle = pos.PositionTitle,
+                        Section = pos.Section,
+                        Order = pos.Order
+                    };
+                    return (new SingleItemResponse<PositionDTO>(newPositionDto));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public ListResponse<PositionDTO> GetAllPositions()
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    List<PositionDTO> tmp = new List<PositionDTO>();
+                    foreach (Position pos in context.Positions.OrderBy(s => s.Section).ThenBy(o => o.Order))
+                    {
+                        var newPositionDto = new PositionDTO()
+                        {
+                            PositionId = pos.PositionId,
+                            PositionTitle = pos.PositionTitle,
+                            Section = pos.Section,
+                            Order = pos.Order
+                        };
+                        tmp.Add(newPositionDto);
+                    }
+                    return (new ListResponse<PositionDTO>(tmp));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
+
+        #endregion
+
 
         public SingleItemResponse<RelationFestivalPersonPositionDTO> AddRelationFestivalPersonPosition(RelationFestivalPersonPositionDTO newRelationFestivalPersonPosition)
         {
@@ -458,12 +847,55 @@ namespace AF.Services
 
         public SingleItemResponse<UserDTO> GetUser(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    User us = context.Users.First(u => u.UserId == id);
+
+                    var newUserDto = new UserDTO()
+                    {
+                        UserId = us.UserId,
+                        Login = us.Login,
+                        FirstName = us.FirstName,
+                        LastName = us.LastName,
+                        Email = us.Email
+                    };
+                    return (new SingleItemResponse<UserDTO>(newUserDto));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
 
         public ListResponse<UserDTO> GetAllUsers()
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    List<UserDTO> tmp = new List<UserDTO>();
+                    foreach (User a in (from u in context.Users select u))
+                    {
+                        var newUserDto = new UserDTO()
+                        {
+                            UserId = a.UserId,
+                            Login = a.Login,
+                            FirstName = a.FirstName,
+                            LastName = a.LastName,
+                            Email = a.Email
+                        };
+                        tmp.Add(newUserDto);
+                    }
+                    return (new ListResponse<UserDTO>(tmp));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
         }
     }
 }

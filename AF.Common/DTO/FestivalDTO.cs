@@ -12,7 +12,5 @@ namespace AF.Common.DTO
         public int Year { get; set; }
         public DateTime BeginningDate { get; set; }
         public DateTime EndDate { get; set; }
-        public DateTime EditDate { get; set; }
-        public int EditedBy { get; set; }
     }
 }
