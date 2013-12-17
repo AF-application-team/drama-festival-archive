@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.ServiceModel;
 using AF.Common.DTO;
 using AF.Common.Queries;
 using AF.Common.Requests;
@@ -50,7 +51,6 @@ namespace AF.Services
         //    return composite;
         //}
 
-
         #region Awards
         public SingleItemResponse<AwardDataDTO> AddAward(AwardDataDTO newAward)
         {
@@ -58,7 +58,7 @@ namespace AF.Services
             {
                 CategoryId = newAward.CategoryId,
                 PlayId = newAward.PlayId,
-                //EditedBy = userId,
+                EditedBy = GetUserId(),
                 EditDate = DateTime.Now
             };
 
@@ -84,7 +84,7 @@ namespace AF.Services
             {
                 CategoryId = updateData.CategoryId,
                 PlayId = updateData.PlayId,
-                //EditedBy = userId,
+                EditedBy = GetUserId(),
                 EditDate = DateTime.Now
             };
 
@@ -156,6 +156,7 @@ namespace AF.Services
                         var newAwardDto = new AwardMixedDTO()
                         {
                             AwardId = b.AwardId,
+                            FestivalId = b.Play.FestivalId,
                             CategoryTitle = b.Category.Title,
                             PlayTitle = b.Play.Title,
                         };
@@ -179,7 +180,7 @@ namespace AF.Services
             {
                 Title = newCategory.Title,
                 EditDate = DateTime.Now,
-                //EditedBy = userId,
+                EditedBy = GetUserId(),
                 Group = newCategory.Group,
                 Order = newCategory.Order
             };
@@ -206,7 +207,7 @@ namespace AF.Services
             {
                 Title = updateData.Title,
                 EditDate = DateTime.Now,
-                //EditedBy = userId,
+                EditedBy = GetUserId(),
                 Group = updateData.Group,
                 Order = updateData.Order
             };
@@ -290,7 +291,7 @@ namespace AF.Services
                 Year = newFestival.Year,
                 BeginningDate = newFestival.BeginningDate,
                 EndDate = newFestival.EndDate,
-                //EditedBy = userId,
+                EditedBy = GetUserId(),
                 EditDate = DateTime.Now
             };
 
@@ -317,7 +318,7 @@ namespace AF.Services
                 Year = updateData.Year,
                 BeginningDate = updateData.BeginningDate,
                 EndDate = updateData.EndDate,
-                //EditedBy = userId,
+                EditedBy = GetUserId(),
                 EditDate = DateTime.Now
             };
 
@@ -415,7 +416,7 @@ namespace AF.Services
             var newJobFull = new Job()
             {
                 JobTitle = newJob.JobTitle,
-                //EditedBy = userId,
+                EditedBy = GetUserId(),
                 EditDate = DateTime.Now
             };
 
@@ -440,7 +441,7 @@ namespace AF.Services
             var updateDataFull = new Job()
             {
                 JobTitle = updateData.JobTitle,
-                //EditedBy = userId,
+                EditedBy = GetUserId(),
                 EditDate = DateTime.Now
             };
 
@@ -522,7 +523,7 @@ namespace AF.Services
                 Order = newPlay.Order,
                 PlayedBy = newPlay.PlayedBy,
                 Motto = newPlay.Motto,
-                //EditedBy = userId,
+                EditedBy = GetUserId(),
                 EditDate = DateTime.Now
             };
 
@@ -553,7 +554,7 @@ namespace AF.Services
                 Order = updateData.Order,
                 PlayedBy = updateData.PlayedBy,
                 Motto = updateData.Motto,
-                //EditedBy = userId,
+                EditedBy = GetUserId(),
                 EditDate = DateTime.Now
             };
 
@@ -720,7 +721,7 @@ namespace AF.Services
                 PositionTitle = newPosition.PositionTitle,
                 Section = newPosition.Section,
                 Order = newPosition.Order,
-                //EditedBy = userId,
+                EditedBy = GetUserId(),
                 EditDate = DateTime.Now
             };
 
@@ -747,7 +748,7 @@ namespace AF.Services
                 PositionTitle = updateData.PositionTitle,
                 Section = updateData.Section,
                 Order = updateData.Order,
-                //EditedBy = userId,
+                EditedBy = GetUserId(),
                 EditDate = DateTime.Now
             };
 
@@ -948,6 +949,23 @@ namespace AF.Services
                         tmp.Add(newUserDto);
                     }
                     return (new ListResponse<UserDTO>(tmp));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+        }
+
+        private int GetUserId()
+        {
+            string login = ServiceSecurityContext.Current.PrimaryIdentity.Name;
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    User us = context.Users.First(u => u.Login == login);
+                    return (us.UserId);
                 }
                 catch (Exception ex)
                 {
