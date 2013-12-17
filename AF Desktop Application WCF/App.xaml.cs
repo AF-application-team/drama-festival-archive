@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace AF_Desktop_Application
+namespace AF_Desktop_Application_WCF
 {
     /// <summary>
     /// Interaction logic for App.xaml

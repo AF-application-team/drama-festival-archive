@@ -4,27 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using AF_BusinessLogic;
-using AF_Models;
+using AF.Common.DTO;
+using AF_Desktop_Application_WCF.AFServiceReference;
 
 namespace AF_Desktop_Application_WCF.View_Models
 {
     public class JobEditViewModel
     {
-        static IAF_LogicService DB = new AF_Logic();
-        public Job OriginalJob { get; set; }
-        public Job EditedJob { get; set; }
+        private static AFServiceClient _client = new AFServiceClient("WSHttpBinding_IAFService");
+        public JobDTO OriginalJob { get; set; }
+        public JobDTO EditedJob { get; set; }
 
-        async public static Task<JobEditViewModel> BuildJobEditViewModel(int originalJobId)
+        public async void Initialize(int id)
         {
-            Job tmpData = await DB.GetJob(originalJobId);
-            return new JobEditViewModel(tmpData);
-        }
-
-        public JobEditViewModel(Job originalJob)
-        {
-            OriginalJob = originalJob;
-            EditedJob = new Job(OriginalJob);
+            OriginalJob = (await _client.GetJobAsync(id)).Data;
+            EditedJob = new JobDTO(OriginalJob);
         }
 
         public async Task<bool> SaveChanges()
@@ -39,7 +33,7 @@ namespace AF_Desktop_Application_WCF.View_Models
                 return true;
             else
             {
-                await DB.UpdateJob(EditedJob);
+                await _client.UpdateJobAsync(EditedJob);
             }
             return true;
         }

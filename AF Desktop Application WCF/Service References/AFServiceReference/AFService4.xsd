@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AF.Common.Queries" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AF.Common.Queries" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://localhost:44300/AFService.svc/mex?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" />
+  <xs:import schemaLocation="https://localhost:44300/AFService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" />
   <xs:complexType name="AwardsSearchingCriteria">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/AF.Common.Requests" base="q1:QueryBase">

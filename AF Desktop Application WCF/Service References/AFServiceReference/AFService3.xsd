@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://localhost:44300/AFService.svc/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
-  <xs:import schemaLocation="https://localhost:44300/AFService.svc/mex?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" />
-  <xs:import schemaLocation="https://localhost:44300/AFService.svc/mex?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/AF.Common.Queries" />
+  <xs:import schemaLocation="https://localhost:44300/AFService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+  <xs:import schemaLocation="https://localhost:44300/AFService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" />
+  <xs:import schemaLocation="https://localhost:44300/AFService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/AF.Common.Queries" />
   <xs:element name="AddAward">
     <xs:complexType>
       <xs:sequence>
@@ -172,31 +172,43 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CountFestivals">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CountFestivalsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="CountFestivalsResult" nillable="true" type="q20:SingleItemResponseOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddJob">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newJob" nillable="true" type="q20:JobDTO" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newJob" nillable="true" type="q21:JobDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddJobResult" nillable="true" type="q21:SingleItemResponseOfJobDTO3eQi8U0z" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddJobResult" nillable="true" type="q22:SingleItemResponseOfJobDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateJob">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q22:JobDTO" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q23:JobDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdateJobResult" nillable="true" type="q23:SingleItemResponseOfJobDTO3eQi8U0z" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdateJobResult" nillable="true" type="q24:SingleItemResponseOfJobDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -210,7 +222,7 @@
   <xs:element name="GetJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetJobResult" nillable="true" type="q24:SingleItemResponseOfJobDTO3eQi8U0z" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetJobResult" nillable="true" type="q25:SingleItemResponseOfJobDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -222,35 +234,35 @@
   <xs:element name="GetAllJobsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetAllJobsResult" nillable="true" type="q25:ListResponseOfJobDTO3eQi8U0z" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetAllJobsResult" nillable="true" type="q26:ListResponseOfJobDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddPlay">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newPlay" nillable="true" type="q26:PlayDataDTO" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newPlay" nillable="true" type="q27:PlayDataDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddPlayResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddPlayResult" nillable="true" type="q27:SingleItemResponseOfPlayDataDTO3eQi8U0z" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddPlayResult" nillable="true" type="q28:SingleItemResponseOfPlayDataDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdatePlay">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q28:PlayDataDTO" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q29:PlayDataDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdatePlayResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdatePlayResult" nillable="true" type="q29:SingleItemResponseOfPlayDataDTO3eQi8U0z" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdatePlayResult" nillable="true" type="q30:SingleItemResponseOfPlayDataDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -264,14 +276,14 @@
   <xs:element name="GetPlayResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetPlayResult" nillable="true" type="q30:SingleItemResponseOfPlayDataDTO3eQi8U0z" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetPlayResult" nillable="true" type="q31:SingleItemResponseOfPlayDataDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SearchPlays">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/AF.Common.Queries" minOccurs="0" name="criteria" nillable="true" type="q31:PlaysSearchingCriteria" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/AF.Common.Queries" minOccurs="0" name="criteria" nillable="true" type="q32:PlaysSearchingCriteria" />
         <xs:element minOccurs="0" name="pageNr" type="xs:int" />
         <xs:element minOccurs="0" name="pageAmount" type="xs:int" />
       </xs:sequence>
@@ -280,35 +292,35 @@
   <xs:element name="SearchPlaysResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="SearchPlaysResult" nillable="true" type="q32:ListResponseOfPlayDataDTO3eQi8U0z" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="SearchPlaysResult" nillable="true" type="q33:ListResponseOfPlayDataDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddPosition">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newPosition" nillable="true" type="q33:PositionDTO" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newPosition" nillable="true" type="q34:PositionDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddPositionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddPositionResult" nillable="true" type="q34:SingleItemResponseOfPositionDTO3eQi8U0z" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddPositionResult" nillable="true" type="q35:SingleItemResponseOfPositionDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdatePosition">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q35:PositionDTO" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q36:PositionDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdatePositionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdatePositionResult" nillable="true" type="q36:SingleItemResponseOfPositionDTO3eQi8U0z" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdatePositionResult" nillable="true" type="q37:SingleItemResponseOfPositionDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -322,7 +334,7 @@
   <xs:element name="GetPositionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetPositionResult" nillable="true" type="q37:SingleItemResponseOfPositionDTO3eQi8U0z" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetPositionResult" nillable="true" type="q38:SingleItemResponseOfPositionDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -334,21 +346,21 @@
   <xs:element name="GetAllPositionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetAllPositionsResult" nillable="true" type="q38:ListResponseOfPositionDTO3eQi8U0z" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetAllPositionsResult" nillable="true" type="q39:ListResponseOfPositionDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddRelationFestivalPersonPosition">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newRelationFestivalPersonPosition" nillable="true" type="q39:RelationFestivalPersonPositionDTO" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newRelationFestivalPersonPosition" nillable="true" type="q40:RelationFestivalPersonPositionDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddRelationFestivalPersonPositionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddRelationFestivalPersonPositionResult" nillable="true" type="q40:SingleItemResponseOfRelationFestivalPersonPositionDTO3eQi8U0z" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddRelationFestivalPersonPositionResult" nillable="true" type="q41:SingleItemResponseOfRelationFestivalPersonPositionDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -362,21 +374,21 @@
   <xs:element name="RemoveRelationFestivalPersonPositionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="RemoveRelationFestivalPersonPositionResult" nillable="true" type="q41:SingleItemResponseOfboolean" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="RemoveRelationFestivalPersonPositionResult" nillable="true" type="q42:SingleItemResponseOfboolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateRelationFestivalPersonPosition">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q42:RelationFestivalPersonPositionDTO" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q43:RelationFestivalPersonPositionDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateRelationFestivalPersonPositionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdateRelationFestivalPersonPositionResult" nillable="true" type="q43:SingleItemResponseOfRelationFestivalPersonPositionDTO3eQi8U0z" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdateRelationFestivalPersonPositionResult" nillable="true" type="q44:SingleItemResponseOfRelationFestivalPersonPositionDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -390,21 +402,21 @@
   <xs:element name="GetRelationFestivalPersonPositionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetRelationFestivalPersonPositionResult" nillable="true" type="q44:SingleItemResponseOfRelationFestivalPersonPositionDTO3eQi8U0z" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetRelationFestivalPersonPositionResult" nillable="true" type="q45:SingleItemResponseOfRelationFestivalPersonPositionDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddRelationPersonAward">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newRelationPersonAward" nillable="true" type="q45:RelationPersonAwardDTO" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newRelationPersonAward" nillable="true" type="q46:RelationPersonAwardDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddRelationPersonAwardResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddRelationPersonAwardResult" nillable="true" type="q46:SingleItemResponseOfRelationPersonAwardDTO3eQi8U0z" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddRelationPersonAwardResult" nillable="true" type="q47:SingleItemResponseOfRelationPersonAwardDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -418,21 +430,21 @@
   <xs:element name="RemoveRelationPersonAwardResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="RemoveRelationPersonAwardResult" nillable="true" type="q47:SingleItemResponseOfboolean" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="RemoveRelationPersonAwardResult" nillable="true" type="q48:SingleItemResponseOfboolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateRelationPersonAward">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q48:RelationPersonAwardDTO" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q49:RelationPersonAwardDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateRelationPersonAwardResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdateRelationPersonAwardResult" nillable="true" type="q49:SingleItemResponseOfRelationPersonAwardDTO3eQi8U0z" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdateRelationPersonAwardResult" nillable="true" type="q50:SingleItemResponseOfRelationPersonAwardDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -446,21 +458,21 @@
   <xs:element name="GetRelationPersonAwardResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetRelationPersonAwardResult" nillable="true" type="q50:SingleItemResponseOfRelationPersonAwardDTO3eQi8U0z" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetRelationPersonAwardResult" nillable="true" type="q51:SingleItemResponseOfRelationPersonAwardDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddRelationPersonPlayJob">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newRelationPersonPlayJob" nillable="true" type="q51:RelationPersonPlayJobDTO" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newRelationPersonPlayJob" nillable="true" type="q52:RelationPersonPlayJobDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddRelationPersonPlayJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddRelationPersonPlayJobResult" nillable="true" type="q52:SingleItemResponseOfRelationPersonPlayJobDTO3eQi8U0z" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddRelationPersonPlayJobResult" nillable="true" type="q53:SingleItemResponseOfRelationPersonPlayJobDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -474,21 +486,21 @@
   <xs:element name="RemoveRelationPersonPlayJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="RemoveRelationPersonPlayJobResult" nillable="true" type="q53:SingleItemResponseOfboolean" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="RemoveRelationPersonPlayJobResult" nillable="true" type="q54:SingleItemResponseOfboolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateRelationPersonPlayJob">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q54:RelationPersonPlayJobDTO" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q55:RelationPersonPlayJobDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateRelationPersonPlayJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdateRelationPersonPlayJobResult" nillable="true" type="q55:SingleItemResponseOfRelationPersonPlayJobDTO3eQi8U0z" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdateRelationPersonPlayJobResult" nillable="true" type="q56:SingleItemResponseOfRelationPersonPlayJobDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -502,21 +514,21 @@
   <xs:element name="GetRelationPersonPlayJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetRelationPersonPlayJobResult" nillable="true" type="q56:SingleItemResponseOfRelationPersonPlayJobDTO3eQi8U0z" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetRelationPersonPlayJobResult" nillable="true" type="q57:SingleItemResponseOfRelationPersonPlayJobDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddRelationPersonPlayRole">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newRelationPersonPlayRole" nillable="true" type="q57:RelationPersonPlayRoleDTO" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="newRelationPersonPlayRole" nillable="true" type="q58:RelationPersonPlayRoleDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddRelationPersonPlayRoleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddRelationPersonPlayRoleResult" nillable="true" type="q58:SingleItemResponseOfRelationPersonPlayRoleDTO3eQi8U0z" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="AddRelationPersonPlayRoleResult" nillable="true" type="q59:SingleItemResponseOfRelationPersonPlayRoleDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -530,21 +542,21 @@
   <xs:element name="RemoveRelationPersonPlayRoleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="RemoveRelationPersonPlayRoleResult" nillable="true" type="q59:SingleItemResponseOfboolean" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="RemoveRelationPersonPlayRoleResult" nillable="true" type="q60:SingleItemResponseOfboolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateRelationPersonPlayRole">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q60:RelationPersonPlayRoleDTO" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="updateData" nillable="true" type="q61:RelationPersonPlayRoleDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateRelationPersonPlayRoleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdateRelationPersonPlayRoleResult" nillable="true" type="q61:SingleItemResponseOfRelationPersonPlayRoleDTO3eQi8U0z" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="UpdateRelationPersonPlayRoleResult" nillable="true" type="q62:SingleItemResponseOfRelationPersonPlayRoleDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -558,7 +570,7 @@
   <xs:element name="GetRelationPersonPlayRoleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetRelationPersonPlayRoleResult" nillable="true" type="q62:SingleItemResponseOfRelationPersonPlayRoleDTO3eQi8U0z" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetRelationPersonPlayRoleResult" nillable="true" type="q63:SingleItemResponseOfRelationPersonPlayRoleDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -572,7 +584,7 @@
   <xs:element name="GetUserResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetUserResult" nillable="true" type="q63:SingleItemResponseOfUserDTO3eQi8U0z" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetUserResult" nillable="true" type="q64:SingleItemResponseOfUserDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -584,7 +596,7 @@
   <xs:element name="GetAllUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q64:ListResponseOfUserDTO3eQi8U0z" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/AF.Common.Requests" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q65:ListResponseOfUserDTO3eQi8U0z" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

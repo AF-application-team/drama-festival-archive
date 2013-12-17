@@ -69,7 +69,6 @@
                         <CheckBox x:Name="PersonSexColumnCheckbox" Content="Płeć" IsChecked="False" Margin="2,0"/>
                         <CheckBox x:Name="PersonYearColumnCheckbox" Content="Rocznik" IsChecked="True" Margin="2,0"/>
                         <CheckBox x:Name="PersonProfileColumnCheckbox" Content="Profil" IsChecked="True" Margin="2,0"/>
-                        <CheckBox x:Name="PersonEditInfoFillterCheckbox" Content="Edytor i data edycji" IsChecked="False" Margin="2,0"/>
                     </ToolBar>
                     <StackPanel  Width="150" VerticalAlignment="Top" DockPanel.Dock="Right" Visibility="{Binding ElementName=ShowPeopleFiltersCheckBox, Path=IsChecked, Converter={StaticResource Bool2Visibility}}">
                         <Label Content="Filtrowanie:" />
@@ -143,8 +142,6 @@
                             <DataGridTextColumn Binding="{Binding Path=Sex}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Płeć" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonSexColumnCheckbox}}"/>
                             <DataGridTextColumn Binding="{Binding Path=Year}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Rocznik" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonYearColumnCheckbox}}"/>
                             <DataGridTextColumn Binding="{Binding Path=Profile}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Profil" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonProfileColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{Binding Path=EditDate}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Data Edycji" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonEditInfoFillterCheckbox}}"/>
-                            <DataGridTextColumn Binding="{Binding Path=EditedBy}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Edytor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PersonEditInfoFillterCheckbox}}"/>
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -198,7 +195,6 @@
                         <CheckBox x:Name="PlayDayColumnCheckbox" Content="Dzień" IsChecked="True" Margin="2,0"/>
                         <CheckBox x:Name="PlayOrderColumnCheckbox" Content="Kolejność" IsChecked="True" Margin="2,0"/>
                         <CheckBox x:Name="PlayMottoColumnCheckbox" Content="Motto" IsChecked="False" Margin="2,0"/>
-                        <CheckBox x:Name="PlayEditInfoFillterCheckbox" Content="Edytor i data edycji" IsChecked="False" Margin="2,0"/>
                     </ToolBar>
                     <StackPanel x:Name="PlaysFiltersPanel" Width="150" 
                                 VerticalAlignment="Top" DockPanel.Dock="Right" 
@@ -271,8 +267,6 @@
                             <DataGridTextColumn Binding="{Binding Path=Day}" ClipboardContentBinding="{x:Null}" Header="Dzień" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayDayColumnCheckbox}}"/>
                             <DataGridTextColumn Binding="{Binding Path=Order}" ClipboardContentBinding="{x:Null}" Header="Kolejność" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayOrderColumnCheckbox}}"/>
                             <DataGridTextColumn Binding="{Binding Path=Motto}" ClipboardContentBinding="{x:Null}" Header="Motto" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayMottoColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{Binding Path=EditDate}" ClipboardContentBinding="{x:Null}" Header="Data Edycji" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayEditInfoFillterCheckbox}}"/>
-                            <DataGridTextColumn Binding="{Binding Path=Edited/Login}" ClipboardContentBinding="{x:Null}" Header="Edytor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=PlayEditInfoFillterCheckbox}}"/>
                         </DataGrid.Columns>
                         <DataGrid.RowStyle>
                             <Style TargetType="{x:Type DataGridRow}">
@@ -322,7 +316,6 @@
                         <CheckBox x:Name="AwardCategoryColumnCheckbox" Content="Kategoria" IsChecked="True" Margin="2,0"/>
                         <CheckBox x:Name="AwardPlayColumnCheckbox" Content="Przedstawienie" IsChecked="True" Margin="2,0"/>
                         <CheckBox x:Name="AwardFestivalColumnCheckbox" Content="Festiwal" IsChecked="True" Margin="2,0"/>
-                        <CheckBox x:Name="AwardEditInfoFillterCheckbox" Content="Edytor i data edycji" IsChecked="False" Margin="2,0"/>
                     </ToolBar>
                     <StackPanel x:Name="AwardsFiltersPanel" Width="150" VerticalAlignment="Top" DockPanel.Dock="Right" Visibility="{Binding ElementName=ShowAwardsFiltersCheckBox, Path=IsChecked, Converter={StaticResource Bool2Visibility}}">
                         <Label Content="Filtrowanie:" />
@@ -386,8 +379,6 @@
                             <DataGridTextColumn Binding="{Binding Path=Category.Title}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Kategoria" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardCategoryColumnCheckbox}}"/>
                             <DataGridTextColumn Binding="{Binding Path=Play.Title}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Przedstawienie" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardPlayColumnCheckbox}}"/>
                             <DataGridTextColumn Binding="{Binding Path=FestivalId}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Festiwal" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardFestivalColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{Binding Path=EditDate}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Data Edycji" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardEditInfoFillterCheckbox}}"/>
-                            <DataGridTextColumn Binding="{Binding Path=EditedBy}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Edytor" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardEditInfoFillterCheckbox}}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </DockPanel>

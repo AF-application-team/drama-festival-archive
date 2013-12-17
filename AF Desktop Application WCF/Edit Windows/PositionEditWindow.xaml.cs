@@ -11,8 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AF.Common.DTO;
 using AF_Desktop_Application_WCF.View_Models;
-using AF_Models;
 
 namespace AF_Desktop_Application_WCF
 {
@@ -22,10 +22,11 @@ namespace AF_Desktop_Application_WCF
     public partial class PositionEditWindow : Window
     {
        public PositionEditViewModel PEViewModel { get; set; }
-       public PositionEditWindow(Position position)
+       public PositionEditWindow(PositionDTO position)
         {
             InitializeComponent();
-            PEViewModel = new PositionEditViewModel(position);
+            PEViewModel = new PositionEditViewModel();
+            PEViewModel.Initialize(position.PositionId);
             this.DataContext = PEViewModel.EditedPosition;
         }
 

@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace AF_Desktop_Application_WCF
 {
-    class ColorConverter : IValueConverter
+    public class ColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

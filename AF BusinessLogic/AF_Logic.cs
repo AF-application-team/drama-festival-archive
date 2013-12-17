@@ -15,7 +15,7 @@ namespace AF_BusinessLogic
         IAF_DataAccess DataAccess = new AF_DataAccess();
 
         #region Awards
-        public async Task AddAward(int playId, int festivalId, int categoryId, int userId)
+        public async Task AddAward(int playId, int categoryId, int userId)
         {
             var a = new Award()
             {

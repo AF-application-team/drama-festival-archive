@@ -1,8 +1,8 @@
 ﻿using System.Windows;
+using AF.Common.DTO;
 using AF_Desktop_Application_WCF.View_Models;
-using AF_Models;
 
-namespace AF_Desktop_Application.Edit_Windows
+namespace AF_Desktop_Application_WCF.Edit_Windows
 {
     /// <summary>
     /// Interaction logic for CategoryEditWindow.xaml
@@ -10,10 +10,11 @@ namespace AF_Desktop_Application.Edit_Windows
     public partial class CategoryEditWindow : Window
     {
         public CategoryEditViewModel CEViewModel { get; set; }
-        public CategoryEditWindow(Category category)
+        public CategoryEditWindow(CategoryDTO category)
         {
             InitializeComponent();
-            CEViewModel = new CategoryEditViewModel(category);
+            CEViewModel = new CategoryEditViewModel();
+            CEViewModel.Initialize(category.CategoryId);
             this.DataContext = CEViewModel.EditedCategory;
         }
 

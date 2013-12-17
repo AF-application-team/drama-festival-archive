@@ -7,8 +7,8 @@
     <ProjectGuid>{7D011456-0517-429E-9F49-D9E953CE6AF6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AF_Desktop_Application</RootNamespace>
-    <AssemblyName>AF Desktop Application</AssemblyName>
+    <RootNamespace>AF_Desktop_Application_WCF</RootNamespace>
+    <AssemblyName>AF Desktop Application WCF</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -81,7 +81,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AFProxy.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -168,22 +167,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\AFServiceReference\AFService.wsdl" />
-    <None Include="Service References\AFServiceReference\mex.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AFServiceReference\mex1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AFServiceReference\mex2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AFServiceReference\mex3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AFServiceReference\mex4.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -213,16 +196,12 @@
     <Resource Include="Images\EditIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AF BusinessLogic\AF BusinessLogic.csproj">
-      <Project>{d80da84c-d2d9-4a2a-946f-10a83bd9d02b}</Project>
-      <Name>AF BusinessLogic</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AF Constants\AF Constants.csproj">
       <Project>{2e835597-8cbf-4eb0-b513-13465ea37166}</Project>
       <Name>AF Constants</Name>
     </ProjectReference>
     <ProjectReference Include="..\AF.Common\AF.Common.csproj">
-      <Project>{E668EB49-87EA-4F12-8F87-27D95F63F4E1}</Project>
+      <Project>{e668eb49-87ea-4f12-8f87-27d95f63f4e1}</Project>
       <Name>AF.Common</Name>
     </ProjectReference>
   </ItemGroup>
@@ -233,9 +212,22 @@
     <WCFMetadataStorage Include="Service References\AFServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AFServiceReference\mex.disco" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Service References\AFServiceReference\AFService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AFServiceReference\AFService1.wsdl" />
+    <None Include="Service References\AFServiceReference\AFService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AFServiceReference\AFService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AFServiceReference\AFService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AFServiceReference\AFService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\AFServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +238,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AFServiceReference\AFService.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

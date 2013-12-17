@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AF_Desktop_Application.AFServiceReference {
+namespace AF_Desktop_Application_WCF.AFServiceReference {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18,1397 +18,269 @@ namespace AF_Desktop_Application.AFServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddAward", ReplyAction="http://tempuri.org/IAFService/AddAwardResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> AddAward(AF.Common.DTO.AwardDataDTO newAward);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/AddAward", ReplyAction="http://tempuri.org/IAFService/AddAwardResponse")]
-        System.IAsyncResult BeginAddAward(AF.Common.DTO.AwardDataDTO newAward, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> EndAddAward(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddAward", ReplyAction="http://tempuri.org/IAFService/AddAwardResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO>> AddAwardAsync(AF.Common.DTO.AwardDataDTO newAward);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateAward", ReplyAction="http://tempuri.org/IAFService/UpdateAwardResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> UpdateAward(AF.Common.DTO.AwardDataDTO updateData);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/UpdateAward", ReplyAction="http://tempuri.org/IAFService/UpdateAwardResponse")]
-        System.IAsyncResult BeginUpdateAward(AF.Common.DTO.AwardDataDTO updateData, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> EndUpdateAward(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateAward", ReplyAction="http://tempuri.org/IAFService/UpdateAwardResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO>> UpdateAwardAsync(AF.Common.DTO.AwardDataDTO updateData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAward", ReplyAction="http://tempuri.org/IAFService/GetAwardResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> GetAward(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetAward", ReplyAction="http://tempuri.org/IAFService/GetAwardResponse")]
-        System.IAsyncResult BeginGetAward(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> EndGetAward(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAward", ReplyAction="http://tempuri.org/IAFService/GetAwardResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO>> GetAwardAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/SearchAwards", ReplyAction="http://tempuri.org/IAFService/SearchAwardsResponse")]
         AF.Common.Requests.ListResponse<AF.Common.DTO.AwardMixedDTO> SearchAwards(AF.Common.Queries.AwardsSearchingCriteria criteria, int pageNr, int pageAmount);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/SearchAwards", ReplyAction="http://tempuri.org/IAFService/SearchAwardsResponse")]
-        System.IAsyncResult BeginSearchAwards(AF.Common.Queries.AwardsSearchingCriteria criteria, int pageNr, int pageAmount, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.ListResponse<AF.Common.DTO.AwardMixedDTO> EndSearchAwards(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/SearchAwards", ReplyAction="http://tempuri.org/IAFService/SearchAwardsResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.AwardMixedDTO>> SearchAwardsAsync(AF.Common.Queries.AwardsSearchingCriteria criteria, int pageNr, int pageAmount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddCategory", ReplyAction="http://tempuri.org/IAFService/AddCategoryResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> AddCategory(AF.Common.DTO.CategoryDTO newCategory);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/AddCategory", ReplyAction="http://tempuri.org/IAFService/AddCategoryResponse")]
-        System.IAsyncResult BeginAddCategory(AF.Common.DTO.CategoryDTO newCategory, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> EndAddCategory(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddCategory", ReplyAction="http://tempuri.org/IAFService/AddCategoryResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO>> AddCategoryAsync(AF.Common.DTO.CategoryDTO newCategory);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateCategory", ReplyAction="http://tempuri.org/IAFService/UpdateCategoryResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> UpdateCategory(AF.Common.DTO.CategoryDTO updateData);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/UpdateCategory", ReplyAction="http://tempuri.org/IAFService/UpdateCategoryResponse")]
-        System.IAsyncResult BeginUpdateCategory(AF.Common.DTO.CategoryDTO updateData, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> EndUpdateCategory(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateCategory", ReplyAction="http://tempuri.org/IAFService/UpdateCategoryResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO>> UpdateCategoryAsync(AF.Common.DTO.CategoryDTO updateData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetCategory", ReplyAction="http://tempuri.org/IAFService/GetCategoryResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> GetCategory(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetCategory", ReplyAction="http://tempuri.org/IAFService/GetCategoryResponse")]
-        System.IAsyncResult BeginGetCategory(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> EndGetCategory(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetCategory", ReplyAction="http://tempuri.org/IAFService/GetCategoryResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO>> GetCategoryAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllCategories", ReplyAction="http://tempuri.org/IAFService/GetAllCategoriesResponse")]
         AF.Common.Requests.ListResponse<AF.Common.DTO.CategoryDTO> GetAllCategories();
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetAllCategories", ReplyAction="http://tempuri.org/IAFService/GetAllCategoriesResponse")]
-        System.IAsyncResult BeginGetAllCategories(System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.ListResponse<AF.Common.DTO.CategoryDTO> EndGetAllCategories(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllCategories", ReplyAction="http://tempuri.org/IAFService/GetAllCategoriesResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.CategoryDTO>> GetAllCategoriesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddFestival", ReplyAction="http://tempuri.org/IAFService/AddFestivalResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> AddFestival(AF.Common.DTO.FestivalDTO newFestival);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/AddFestival", ReplyAction="http://tempuri.org/IAFService/AddFestivalResponse")]
-        System.IAsyncResult BeginAddFestival(AF.Common.DTO.FestivalDTO newFestival, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> EndAddFestival(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddFestival", ReplyAction="http://tempuri.org/IAFService/AddFestivalResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO>> AddFestivalAsync(AF.Common.DTO.FestivalDTO newFestival);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateFestival", ReplyAction="http://tempuri.org/IAFService/UpdateFestivalResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> UpdateFestival(AF.Common.DTO.FestivalDTO updateData);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/UpdateFestival", ReplyAction="http://tempuri.org/IAFService/UpdateFestivalResponse")]
-        System.IAsyncResult BeginUpdateFestival(AF.Common.DTO.FestivalDTO updateData, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> EndUpdateFestival(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateFestival", ReplyAction="http://tempuri.org/IAFService/UpdateFestivalResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO>> UpdateFestivalAsync(AF.Common.DTO.FestivalDTO updateData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetFestival", ReplyAction="http://tempuri.org/IAFService/GetFestivalResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> GetFestival(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetFestival", ReplyAction="http://tempuri.org/IAFService/GetFestivalResponse")]
-        System.IAsyncResult BeginGetFestival(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> EndGetFestival(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetFestival", ReplyAction="http://tempuri.org/IAFService/GetFestivalResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO>> GetFestivalAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetFestivalsPaged", ReplyAction="http://tempuri.org/IAFService/GetFestivalsPagedResponse")]
         AF.Common.Requests.ListResponse<AF.Common.DTO.FestivalDTO> GetFestivalsPaged(int pageNr, int pageAmount);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetFestivalsPaged", ReplyAction="http://tempuri.org/IAFService/GetFestivalsPagedResponse")]
-        System.IAsyncResult BeginGetFestivalsPaged(int pageNr, int pageAmount, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetFestivalsPaged", ReplyAction="http://tempuri.org/IAFService/GetFestivalsPagedResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.FestivalDTO>> GetFestivalsPagedAsync(int pageNr, int pageAmount);
         
-        AF.Common.Requests.ListResponse<AF.Common.DTO.FestivalDTO> EndGetFestivalsPaged(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/CountFestivals", ReplyAction="http://tempuri.org/IAFService/CountFestivalsResponse")]
+        AF.Common.Requests.SingleItemResponse<int> CountFestivals();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/CountFestivals", ReplyAction="http://tempuri.org/IAFService/CountFestivalsResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<int>> CountFestivalsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddJob", ReplyAction="http://tempuri.org/IAFService/AddJobResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> AddJob(AF.Common.DTO.JobDTO newJob);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/AddJob", ReplyAction="http://tempuri.org/IAFService/AddJobResponse")]
-        System.IAsyncResult BeginAddJob(AF.Common.DTO.JobDTO newJob, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> EndAddJob(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddJob", ReplyAction="http://tempuri.org/IAFService/AddJobResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO>> AddJobAsync(AF.Common.DTO.JobDTO newJob);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateJob", ReplyAction="http://tempuri.org/IAFService/UpdateJobResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> UpdateJob(AF.Common.DTO.JobDTO updateData);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/UpdateJob", ReplyAction="http://tempuri.org/IAFService/UpdateJobResponse")]
-        System.IAsyncResult BeginUpdateJob(AF.Common.DTO.JobDTO updateData, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> EndUpdateJob(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateJob", ReplyAction="http://tempuri.org/IAFService/UpdateJobResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO>> UpdateJobAsync(AF.Common.DTO.JobDTO updateData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetJob", ReplyAction="http://tempuri.org/IAFService/GetJobResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> GetJob(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetJob", ReplyAction="http://tempuri.org/IAFService/GetJobResponse")]
-        System.IAsyncResult BeginGetJob(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> EndGetJob(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetJob", ReplyAction="http://tempuri.org/IAFService/GetJobResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO>> GetJobAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllJobs", ReplyAction="http://tempuri.org/IAFService/GetAllJobsResponse")]
         AF.Common.Requests.ListResponse<AF.Common.DTO.JobDTO> GetAllJobs();
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetAllJobs", ReplyAction="http://tempuri.org/IAFService/GetAllJobsResponse")]
-        System.IAsyncResult BeginGetAllJobs(System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.ListResponse<AF.Common.DTO.JobDTO> EndGetAllJobs(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllJobs", ReplyAction="http://tempuri.org/IAFService/GetAllJobsResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.JobDTO>> GetAllJobsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddPlay", ReplyAction="http://tempuri.org/IAFService/AddPlayResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> AddPlay(AF.Common.DTO.PlayDataDTO newPlay);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/AddPlay", ReplyAction="http://tempuri.org/IAFService/AddPlayResponse")]
-        System.IAsyncResult BeginAddPlay(AF.Common.DTO.PlayDataDTO newPlay, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> EndAddPlay(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddPlay", ReplyAction="http://tempuri.org/IAFService/AddPlayResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO>> AddPlayAsync(AF.Common.DTO.PlayDataDTO newPlay);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdatePlay", ReplyAction="http://tempuri.org/IAFService/UpdatePlayResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> UpdatePlay(AF.Common.DTO.PlayDataDTO updateData);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/UpdatePlay", ReplyAction="http://tempuri.org/IAFService/UpdatePlayResponse")]
-        System.IAsyncResult BeginUpdatePlay(AF.Common.DTO.PlayDataDTO updateData, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> EndUpdatePlay(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdatePlay", ReplyAction="http://tempuri.org/IAFService/UpdatePlayResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO>> UpdatePlayAsync(AF.Common.DTO.PlayDataDTO updateData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetPlay", ReplyAction="http://tempuri.org/IAFService/GetPlayResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> GetPlay(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetPlay", ReplyAction="http://tempuri.org/IAFService/GetPlayResponse")]
-        System.IAsyncResult BeginGetPlay(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> EndGetPlay(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetPlay", ReplyAction="http://tempuri.org/IAFService/GetPlayResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO>> GetPlayAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/SearchPlays", ReplyAction="http://tempuri.org/IAFService/SearchPlaysResponse")]
         AF.Common.Requests.ListResponse<AF.Common.DTO.PlayDataDTO> SearchPlays(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/SearchPlays", ReplyAction="http://tempuri.org/IAFService/SearchPlaysResponse")]
-        System.IAsyncResult BeginSearchPlays(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.ListResponse<AF.Common.DTO.PlayDataDTO> EndSearchPlays(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/SearchPlays", ReplyAction="http://tempuri.org/IAFService/SearchPlaysResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.PlayDataDTO>> SearchPlaysAsync(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddPosition", ReplyAction="http://tempuri.org/IAFService/AddPositionResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> AddPosition(AF.Common.DTO.PositionDTO newPosition);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/AddPosition", ReplyAction="http://tempuri.org/IAFService/AddPositionResponse")]
-        System.IAsyncResult BeginAddPosition(AF.Common.DTO.PositionDTO newPosition, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> EndAddPosition(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddPosition", ReplyAction="http://tempuri.org/IAFService/AddPositionResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO>> AddPositionAsync(AF.Common.DTO.PositionDTO newPosition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdatePosition", ReplyAction="http://tempuri.org/IAFService/UpdatePositionResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> UpdatePosition(AF.Common.DTO.PositionDTO updateData);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/UpdatePosition", ReplyAction="http://tempuri.org/IAFService/UpdatePositionResponse")]
-        System.IAsyncResult BeginUpdatePosition(AF.Common.DTO.PositionDTO updateData, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> EndUpdatePosition(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdatePosition", ReplyAction="http://tempuri.org/IAFService/UpdatePositionResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO>> UpdatePositionAsync(AF.Common.DTO.PositionDTO updateData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetPosition", ReplyAction="http://tempuri.org/IAFService/GetPositionResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> GetPosition(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetPosition", ReplyAction="http://tempuri.org/IAFService/GetPositionResponse")]
-        System.IAsyncResult BeginGetPosition(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> EndGetPosition(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetPosition", ReplyAction="http://tempuri.org/IAFService/GetPositionResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO>> GetPositionAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllPositions", ReplyAction="http://tempuri.org/IAFService/GetAllPositionsResponse")]
         AF.Common.Requests.ListResponse<AF.Common.DTO.PositionDTO> GetAllPositions();
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetAllPositions", ReplyAction="http://tempuri.org/IAFService/GetAllPositionsResponse")]
-        System.IAsyncResult BeginGetAllPositions(System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.ListResponse<AF.Common.DTO.PositionDTO> EndGetAllPositions(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllPositions", ReplyAction="http://tempuri.org/IAFService/GetAllPositionsResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.PositionDTO>> GetAllPositionsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/AddRelationFestivalPersonPositionResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> AddRelationFestivalPersonPosition(AF.Common.DTO.RelationFestivalPersonPositionDTO newRelationFestivalPersonPosition);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/AddRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/AddRelationFestivalPersonPositionResponse")]
-        System.IAsyncResult BeginAddRelationFestivalPersonPosition(AF.Common.DTO.RelationFestivalPersonPositionDTO newRelationFestivalPersonPosition, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> EndAddRelationFestivalPersonPosition(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/AddRelationFestivalPersonPositionResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO>> AddRelationFestivalPersonPositionAsync(AF.Common.DTO.RelationFestivalPersonPositionDTO newRelationFestivalPersonPosition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/RemoveRelationFestivalPersonPositionResponse")]
         AF.Common.Requests.SingleItemResponse<bool> RemoveRelationFestivalPersonPosition(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/RemoveRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/RemoveRelationFestivalPersonPositionResponse")]
-        System.IAsyncResult BeginRemoveRelationFestivalPersonPosition(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<bool> EndRemoveRelationFestivalPersonPosition(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/RemoveRelationFestivalPersonPositionResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<bool>> RemoveRelationFestivalPersonPositionAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/UpdateRelationFestivalPersonPositionResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> UpdateRelationFestivalPersonPosition(AF.Common.DTO.RelationFestivalPersonPositionDTO updateData);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/UpdateRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/UpdateRelationFestivalPersonPositionResponse")]
-        System.IAsyncResult BeginUpdateRelationFestivalPersonPosition(AF.Common.DTO.RelationFestivalPersonPositionDTO updateData, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> EndUpdateRelationFestivalPersonPosition(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/UpdateRelationFestivalPersonPositionResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO>> UpdateRelationFestivalPersonPositionAsync(AF.Common.DTO.RelationFestivalPersonPositionDTO updateData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/GetRelationFestivalPersonPositionResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> GetRelationFestivalPersonPosition(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/GetRelationFestivalPersonPositionResponse")]
-        System.IAsyncResult BeginGetRelationFestivalPersonPosition(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> EndGetRelationFestivalPersonPosition(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationFestivalPersonPosition", ReplyAction="http://tempuri.org/IAFService/GetRelationFestivalPersonPositionResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO>> GetRelationFestivalPersonPositionAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonAwardResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> AddRelationPersonAward(AF.Common.DTO.RelationPersonAwardDTO newRelationPersonAward);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/AddRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonAwardResponse")]
-        System.IAsyncResult BeginAddRelationPersonAward(AF.Common.DTO.RelationPersonAwardDTO newRelationPersonAward, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> EndAddRelationPersonAward(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonAwardResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO>> AddRelationPersonAwardAsync(AF.Common.DTO.RelationPersonAwardDTO newRelationPersonAward);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonAwardResponse")]
         AF.Common.Requests.SingleItemResponse<bool> RemoveRelationPersonAward(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/RemoveRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonAwardResponse")]
-        System.IAsyncResult BeginRemoveRelationPersonAward(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<bool> EndRemoveRelationPersonAward(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonAwardResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<bool>> RemoveRelationPersonAwardAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonAwardResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> UpdateRelationPersonAward(AF.Common.DTO.RelationPersonAwardDTO updateData);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/UpdateRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonAwardResponse")]
-        System.IAsyncResult BeginUpdateRelationPersonAward(AF.Common.DTO.RelationPersonAwardDTO updateData, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> EndUpdateRelationPersonAward(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonAwardResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO>> UpdateRelationPersonAwardAsync(AF.Common.DTO.RelationPersonAwardDTO updateData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonAwardResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> GetRelationPersonAward(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonAwardResponse")]
-        System.IAsyncResult BeginGetRelationPersonAward(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> EndGetRelationPersonAward(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationPersonAward", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonAwardResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO>> GetRelationPersonAwardAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonPlayJobResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> AddRelationPersonPlayJob(AF.Common.DTO.RelationPersonPlayJobDTO newRelationPersonPlayJob);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/AddRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonPlayJobResponse")]
-        System.IAsyncResult BeginAddRelationPersonPlayJob(AF.Common.DTO.RelationPersonPlayJobDTO newRelationPersonPlayJob, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> EndAddRelationPersonPlayJob(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonPlayJobResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO>> AddRelationPersonPlayJobAsync(AF.Common.DTO.RelationPersonPlayJobDTO newRelationPersonPlayJob);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonPlayJobResponse")]
         AF.Common.Requests.SingleItemResponse<bool> RemoveRelationPersonPlayJob(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/RemoveRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonPlayJobResponse")]
-        System.IAsyncResult BeginRemoveRelationPersonPlayJob(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<bool> EndRemoveRelationPersonPlayJob(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonPlayJobResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<bool>> RemoveRelationPersonPlayJobAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonPlayJobResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> UpdateRelationPersonPlayJob(AF.Common.DTO.RelationPersonPlayJobDTO updateData);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/UpdateRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonPlayJobResponse")]
-        System.IAsyncResult BeginUpdateRelationPersonPlayJob(AF.Common.DTO.RelationPersonPlayJobDTO updateData, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> EndUpdateRelationPersonPlayJob(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonPlayJobResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO>> UpdateRelationPersonPlayJobAsync(AF.Common.DTO.RelationPersonPlayJobDTO updateData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonPlayJobResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> GetRelationPersonPlayJob(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonPlayJobResponse")]
-        System.IAsyncResult BeginGetRelationPersonPlayJob(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> EndGetRelationPersonPlayJob(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationPersonPlayJob", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonPlayJobResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO>> GetRelationPersonPlayJobAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonPlayRoleResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> AddRelationPersonPlayRole(AF.Common.DTO.RelationPersonPlayRoleDTO newRelationPersonPlayRole);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/AddRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonPlayRoleResponse")]
-        System.IAsyncResult BeginAddRelationPersonPlayRole(AF.Common.DTO.RelationPersonPlayRoleDTO newRelationPersonPlayRole, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> EndAddRelationPersonPlayRole(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/AddRelationPersonPlayRoleResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO>> AddRelationPersonPlayRoleAsync(AF.Common.DTO.RelationPersonPlayRoleDTO newRelationPersonPlayRole);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonPlayRoleResponse")]
         AF.Common.Requests.SingleItemResponse<bool> RemoveRelationPersonPlayRole(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/RemoveRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonPlayRoleResponse")]
-        System.IAsyncResult BeginRemoveRelationPersonPlayRole(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<bool> EndRemoveRelationPersonPlayRole(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/RemoveRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/RemoveRelationPersonPlayRoleResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<bool>> RemoveRelationPersonPlayRoleAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonPlayRoleResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> UpdateRelationPersonPlayRole(AF.Common.DTO.RelationPersonPlayRoleDTO updateData);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/UpdateRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonPlayRoleResponse")]
-        System.IAsyncResult BeginUpdateRelationPersonPlayRole(AF.Common.DTO.RelationPersonPlayRoleDTO updateData, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> EndUpdateRelationPersonPlayRole(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/UpdateRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/UpdateRelationPersonPlayRoleResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO>> UpdateRelationPersonPlayRoleAsync(AF.Common.DTO.RelationPersonPlayRoleDTO updateData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonPlayRoleResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> GetRelationPersonPlayRole(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonPlayRoleResponse")]
-        System.IAsyncResult BeginGetRelationPersonPlayRole(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> EndGetRelationPersonPlayRole(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetRelationPersonPlayRole", ReplyAction="http://tempuri.org/IAFService/GetRelationPersonPlayRoleResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO>> GetRelationPersonPlayRoleAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetUser", ReplyAction="http://tempuri.org/IAFService/GetUserResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.UserDTO> GetUser(int id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetUser", ReplyAction="http://tempuri.org/IAFService/GetUserResponse")]
-        System.IAsyncResult BeginGetUser(int id, System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.UserDTO> EndGetUser(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetUser", ReplyAction="http://tempuri.org/IAFService/GetUserResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.UserDTO>> GetUserAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllUsers", ReplyAction="http://tempuri.org/IAFService/GetAllUsersResponse")]
         AF.Common.Requests.ListResponse<AF.Common.DTO.UserDTO> GetAllUsers();
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IAFService/GetAllUsers", ReplyAction="http://tempuri.org/IAFService/GetAllUsersResponse")]
-        System.IAsyncResult BeginGetAllUsers(System.AsyncCallback callback, object asyncState);
-        
-        AF.Common.Requests.ListResponse<AF.Common.DTO.UserDTO> EndGetAllUsers(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetAllUsers", ReplyAction="http://tempuri.org/IAFService/GetAllUsersResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.UserDTO>> GetAllUsersAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAFServiceChannel : AF_Desktop_Application.AFServiceReference.IAFService, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddAwardCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddAwardCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO>)(this.results[0]));
-            }
-        }
+    public interface IAFServiceChannel : AF_Desktop_Application_WCF.AFServiceReference.IAFService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdateAwardCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdateAwardCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetAwardCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetAwardCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SearchAwardsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public SearchAwardsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.AwardMixedDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.ListResponse<AF.Common.DTO.AwardMixedDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddCategoryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddCategoryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdateCategoryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdateCategoryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetCategoryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetCategoryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetAllCategoriesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetAllCategoriesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.CategoryDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.ListResponse<AF.Common.DTO.CategoryDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddFestivalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddFestivalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdateFestivalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdateFestivalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetFestivalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetFestivalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetFestivalsPagedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetFestivalsPagedCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.FestivalDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.ListResponse<AF.Common.DTO.FestivalDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddJobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddJobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdateJobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdateJobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetJobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetJobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetAllJobsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetAllJobsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.JobDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.ListResponse<AF.Common.DTO.JobDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddPlayCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddPlayCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdatePlayCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdatePlayCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetPlayCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetPlayCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SearchPlaysCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public SearchPlaysCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.PlayDataDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.ListResponse<AF.Common.DTO.PlayDataDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddPositionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddPositionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdatePositionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdatePositionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetPositionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetPositionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetAllPositionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetAllPositionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.PositionDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.ListResponse<AF.Common.DTO.PositionDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddRelationFestivalPersonPositionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddRelationFestivalPersonPositionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RemoveRelationFestivalPersonPositionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public RemoveRelationFestivalPersonPositionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<bool> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<bool>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdateRelationFestivalPersonPositionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdateRelationFestivalPersonPositionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetRelationFestivalPersonPositionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetRelationFestivalPersonPositionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddRelationPersonAwardCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddRelationPersonAwardCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RemoveRelationPersonAwardCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public RemoveRelationPersonAwardCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<bool> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<bool>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdateRelationPersonAwardCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdateRelationPersonAwardCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetRelationPersonAwardCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetRelationPersonAwardCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddRelationPersonPlayJobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddRelationPersonPlayJobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RemoveRelationPersonPlayJobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public RemoveRelationPersonPlayJobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<bool> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<bool>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdateRelationPersonPlayJobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdateRelationPersonPlayJobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetRelationPersonPlayJobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetRelationPersonPlayJobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddRelationPersonPlayRoleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddRelationPersonPlayRoleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RemoveRelationPersonPlayRoleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public RemoveRelationPersonPlayRoleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<bool> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<bool>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdateRelationPersonPlayRoleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdateRelationPersonPlayRoleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetRelationPersonPlayRoleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetRelationPersonPlayRoleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.UserDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.SingleItemResponse<AF.Common.DTO.UserDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetAllUsersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetAllUsersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.UserDTO> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AF.Common.Requests.ListResponse<AF.Common.DTO.UserDTO>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AFServiceClient : System.ServiceModel.ClientBase<AF_Desktop_Application.AFServiceReference.IAFService>, AF_Desktop_Application.AFServiceReference.IAFService {
-        
-        private BeginOperationDelegate onBeginAddAwardDelegate;
-        
-        private EndOperationDelegate onEndAddAwardDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddAwardCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginUpdateAwardDelegate;
-        
-        private EndOperationDelegate onEndUpdateAwardDelegate;
-        
-        private System.Threading.SendOrPostCallback onUpdateAwardCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetAwardDelegate;
-        
-        private EndOperationDelegate onEndGetAwardDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetAwardCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginSearchAwardsDelegate;
-        
-        private EndOperationDelegate onEndSearchAwardsDelegate;
-        
-        private System.Threading.SendOrPostCallback onSearchAwardsCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginAddCategoryDelegate;
-        
-        private EndOperationDelegate onEndAddCategoryDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddCategoryCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginUpdateCategoryDelegate;
-        
-        private EndOperationDelegate onEndUpdateCategoryDelegate;
-        
-        private System.Threading.SendOrPostCallback onUpdateCategoryCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetCategoryDelegate;
-        
-        private EndOperationDelegate onEndGetCategoryDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetCategoryCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetAllCategoriesDelegate;
-        
-        private EndOperationDelegate onEndGetAllCategoriesDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetAllCategoriesCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginAddFestivalDelegate;
-        
-        private EndOperationDelegate onEndAddFestivalDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddFestivalCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginUpdateFestivalDelegate;
-        
-        private EndOperationDelegate onEndUpdateFestivalDelegate;
-        
-        private System.Threading.SendOrPostCallback onUpdateFestivalCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetFestivalDelegate;
-        
-        private EndOperationDelegate onEndGetFestivalDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetFestivalCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetFestivalsPagedDelegate;
-        
-        private EndOperationDelegate onEndGetFestivalsPagedDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetFestivalsPagedCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginAddJobDelegate;
-        
-        private EndOperationDelegate onEndAddJobDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddJobCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginUpdateJobDelegate;
-        
-        private EndOperationDelegate onEndUpdateJobDelegate;
-        
-        private System.Threading.SendOrPostCallback onUpdateJobCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetJobDelegate;
-        
-        private EndOperationDelegate onEndGetJobDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetJobCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetAllJobsDelegate;
-        
-        private EndOperationDelegate onEndGetAllJobsDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetAllJobsCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginAddPlayDelegate;
-        
-        private EndOperationDelegate onEndAddPlayDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddPlayCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginUpdatePlayDelegate;
-        
-        private EndOperationDelegate onEndUpdatePlayDelegate;
-        
-        private System.Threading.SendOrPostCallback onUpdatePlayCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetPlayDelegate;
-        
-        private EndOperationDelegate onEndGetPlayDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetPlayCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginSearchPlaysDelegate;
-        
-        private EndOperationDelegate onEndSearchPlaysDelegate;
-        
-        private System.Threading.SendOrPostCallback onSearchPlaysCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginAddPositionDelegate;
-        
-        private EndOperationDelegate onEndAddPositionDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddPositionCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginUpdatePositionDelegate;
-        
-        private EndOperationDelegate onEndUpdatePositionDelegate;
-        
-        private System.Threading.SendOrPostCallback onUpdatePositionCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetPositionDelegate;
-        
-        private EndOperationDelegate onEndGetPositionDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetPositionCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetAllPositionsDelegate;
-        
-        private EndOperationDelegate onEndGetAllPositionsDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetAllPositionsCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginAddRelationFestivalPersonPositionDelegate;
-        
-        private EndOperationDelegate onEndAddRelationFestivalPersonPositionDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddRelationFestivalPersonPositionCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginRemoveRelationFestivalPersonPositionDelegate;
-        
-        private EndOperationDelegate onEndRemoveRelationFestivalPersonPositionDelegate;
-        
-        private System.Threading.SendOrPostCallback onRemoveRelationFestivalPersonPositionCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginUpdateRelationFestivalPersonPositionDelegate;
-        
-        private EndOperationDelegate onEndUpdateRelationFestivalPersonPositionDelegate;
-        
-        private System.Threading.SendOrPostCallback onUpdateRelationFestivalPersonPositionCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetRelationFestivalPersonPositionDelegate;
-        
-        private EndOperationDelegate onEndGetRelationFestivalPersonPositionDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetRelationFestivalPersonPositionCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginAddRelationPersonAwardDelegate;
-        
-        private EndOperationDelegate onEndAddRelationPersonAwardDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddRelationPersonAwardCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginRemoveRelationPersonAwardDelegate;
-        
-        private EndOperationDelegate onEndRemoveRelationPersonAwardDelegate;
-        
-        private System.Threading.SendOrPostCallback onRemoveRelationPersonAwardCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginUpdateRelationPersonAwardDelegate;
-        
-        private EndOperationDelegate onEndUpdateRelationPersonAwardDelegate;
-        
-        private System.Threading.SendOrPostCallback onUpdateRelationPersonAwardCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetRelationPersonAwardDelegate;
-        
-        private EndOperationDelegate onEndGetRelationPersonAwardDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetRelationPersonAwardCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginAddRelationPersonPlayJobDelegate;
-        
-        private EndOperationDelegate onEndAddRelationPersonPlayJobDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddRelationPersonPlayJobCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginRemoveRelationPersonPlayJobDelegate;
-        
-        private EndOperationDelegate onEndRemoveRelationPersonPlayJobDelegate;
-        
-        private System.Threading.SendOrPostCallback onRemoveRelationPersonPlayJobCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginUpdateRelationPersonPlayJobDelegate;
-        
-        private EndOperationDelegate onEndUpdateRelationPersonPlayJobDelegate;
-        
-        private System.Threading.SendOrPostCallback onUpdateRelationPersonPlayJobCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetRelationPersonPlayJobDelegate;
-        
-        private EndOperationDelegate onEndGetRelationPersonPlayJobDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetRelationPersonPlayJobCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginAddRelationPersonPlayRoleDelegate;
-        
-        private EndOperationDelegate onEndAddRelationPersonPlayRoleDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddRelationPersonPlayRoleCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginRemoveRelationPersonPlayRoleDelegate;
-        
-        private EndOperationDelegate onEndRemoveRelationPersonPlayRoleDelegate;
-        
-        private System.Threading.SendOrPostCallback onRemoveRelationPersonPlayRoleCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginUpdateRelationPersonPlayRoleDelegate;
-        
-        private EndOperationDelegate onEndUpdateRelationPersonPlayRoleDelegate;
-        
-        private System.Threading.SendOrPostCallback onUpdateRelationPersonPlayRoleCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetRelationPersonPlayRoleDelegate;
-        
-        private EndOperationDelegate onEndGetRelationPersonPlayRoleDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetRelationPersonPlayRoleCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetUserDelegate;
-        
-        private EndOperationDelegate onEndGetUserDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetUserCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetAllUsersDelegate;
-        
-        private EndOperationDelegate onEndGetAllUsersDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetAllUsersCompletedDelegate;
+    public partial class AFServiceClient : System.ServiceModel.ClientBase<AF_Desktop_Application_WCF.AFServiceReference.IAFService>, AF_Desktop_Application_WCF.AFServiceReference.IAFService {
         
         public AFServiceClient() {
         }
@@ -1429,2190 +301,348 @@ namespace AF_Desktop_Application.AFServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public event System.EventHandler<AddAwardCompletedEventArgs> AddAwardCompleted;
-        
-        public event System.EventHandler<UpdateAwardCompletedEventArgs> UpdateAwardCompleted;
-        
-        public event System.EventHandler<GetAwardCompletedEventArgs> GetAwardCompleted;
-        
-        public event System.EventHandler<SearchAwardsCompletedEventArgs> SearchAwardsCompleted;
-        
-        public event System.EventHandler<AddCategoryCompletedEventArgs> AddCategoryCompleted;
-        
-        public event System.EventHandler<UpdateCategoryCompletedEventArgs> UpdateCategoryCompleted;
-        
-        public event System.EventHandler<GetCategoryCompletedEventArgs> GetCategoryCompleted;
-        
-        public event System.EventHandler<GetAllCategoriesCompletedEventArgs> GetAllCategoriesCompleted;
-        
-        public event System.EventHandler<AddFestivalCompletedEventArgs> AddFestivalCompleted;
-        
-        public event System.EventHandler<UpdateFestivalCompletedEventArgs> UpdateFestivalCompleted;
-        
-        public event System.EventHandler<GetFestivalCompletedEventArgs> GetFestivalCompleted;
-        
-        public event System.EventHandler<GetFestivalsPagedCompletedEventArgs> GetFestivalsPagedCompleted;
-        
-        public event System.EventHandler<AddJobCompletedEventArgs> AddJobCompleted;
-        
-        public event System.EventHandler<UpdateJobCompletedEventArgs> UpdateJobCompleted;
-        
-        public event System.EventHandler<GetJobCompletedEventArgs> GetJobCompleted;
-        
-        public event System.EventHandler<GetAllJobsCompletedEventArgs> GetAllJobsCompleted;
-        
-        public event System.EventHandler<AddPlayCompletedEventArgs> AddPlayCompleted;
-        
-        public event System.EventHandler<UpdatePlayCompletedEventArgs> UpdatePlayCompleted;
-        
-        public event System.EventHandler<GetPlayCompletedEventArgs> GetPlayCompleted;
-        
-        public event System.EventHandler<SearchPlaysCompletedEventArgs> SearchPlaysCompleted;
-        
-        public event System.EventHandler<AddPositionCompletedEventArgs> AddPositionCompleted;
-        
-        public event System.EventHandler<UpdatePositionCompletedEventArgs> UpdatePositionCompleted;
-        
-        public event System.EventHandler<GetPositionCompletedEventArgs> GetPositionCompleted;
-        
-        public event System.EventHandler<GetAllPositionsCompletedEventArgs> GetAllPositionsCompleted;
-        
-        public event System.EventHandler<AddRelationFestivalPersonPositionCompletedEventArgs> AddRelationFestivalPersonPositionCompleted;
-        
-        public event System.EventHandler<RemoveRelationFestivalPersonPositionCompletedEventArgs> RemoveRelationFestivalPersonPositionCompleted;
-        
-        public event System.EventHandler<UpdateRelationFestivalPersonPositionCompletedEventArgs> UpdateRelationFestivalPersonPositionCompleted;
-        
-        public event System.EventHandler<GetRelationFestivalPersonPositionCompletedEventArgs> GetRelationFestivalPersonPositionCompleted;
-        
-        public event System.EventHandler<AddRelationPersonAwardCompletedEventArgs> AddRelationPersonAwardCompleted;
-        
-        public event System.EventHandler<RemoveRelationPersonAwardCompletedEventArgs> RemoveRelationPersonAwardCompleted;
-        
-        public event System.EventHandler<UpdateRelationPersonAwardCompletedEventArgs> UpdateRelationPersonAwardCompleted;
-        
-        public event System.EventHandler<GetRelationPersonAwardCompletedEventArgs> GetRelationPersonAwardCompleted;
-        
-        public event System.EventHandler<AddRelationPersonPlayJobCompletedEventArgs> AddRelationPersonPlayJobCompleted;
-        
-        public event System.EventHandler<RemoveRelationPersonPlayJobCompletedEventArgs> RemoveRelationPersonPlayJobCompleted;
-        
-        public event System.EventHandler<UpdateRelationPersonPlayJobCompletedEventArgs> UpdateRelationPersonPlayJobCompleted;
-        
-        public event System.EventHandler<GetRelationPersonPlayJobCompletedEventArgs> GetRelationPersonPlayJobCompleted;
-        
-        public event System.EventHandler<AddRelationPersonPlayRoleCompletedEventArgs> AddRelationPersonPlayRoleCompleted;
-        
-        public event System.EventHandler<RemoveRelationPersonPlayRoleCompletedEventArgs> RemoveRelationPersonPlayRoleCompleted;
-        
-        public event System.EventHandler<UpdateRelationPersonPlayRoleCompletedEventArgs> UpdateRelationPersonPlayRoleCompleted;
-        
-        public event System.EventHandler<GetRelationPersonPlayRoleCompletedEventArgs> GetRelationPersonPlayRoleCompleted;
-        
-        public event System.EventHandler<GetUserCompletedEventArgs> GetUserCompleted;
-        
-        public event System.EventHandler<GetAllUsersCompletedEventArgs> GetAllUsersCompleted;
-        
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> AddAward(AF.Common.DTO.AwardDataDTO newAward) {
             return base.Channel.AddAward(newAward);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddAward(AF.Common.DTO.AwardDataDTO newAward, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddAward(newAward, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> EndAddAward(System.IAsyncResult result) {
-            return base.Channel.EndAddAward(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddAward(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.AwardDataDTO newAward = ((AF.Common.DTO.AwardDataDTO)(inValues[0]));
-            return this.BeginAddAward(newAward, callback, asyncState);
-        }
-        
-        private object[] OnEndAddAward(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> retVal = this.EndAddAward(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddAwardCompleted(object state) {
-            if ((this.AddAwardCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddAwardCompleted(this, new AddAwardCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddAwardAsync(AF.Common.DTO.AwardDataDTO newAward) {
-            this.AddAwardAsync(newAward, null);
-        }
-        
-        public void AddAwardAsync(AF.Common.DTO.AwardDataDTO newAward, object userState) {
-            if ((this.onBeginAddAwardDelegate == null)) {
-                this.onBeginAddAwardDelegate = new BeginOperationDelegate(this.OnBeginAddAward);
-            }
-            if ((this.onEndAddAwardDelegate == null)) {
-                this.onEndAddAwardDelegate = new EndOperationDelegate(this.OnEndAddAward);
-            }
-            if ((this.onAddAwardCompletedDelegate == null)) {
-                this.onAddAwardCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddAwardCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddAwardDelegate, new object[] {
-                        newAward}, this.onEndAddAwardDelegate, this.onAddAwardCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO>> AddAwardAsync(AF.Common.DTO.AwardDataDTO newAward) {
+            return base.Channel.AddAwardAsync(newAward);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> UpdateAward(AF.Common.DTO.AwardDataDTO updateData) {
             return base.Channel.UpdateAward(updateData);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginUpdateAward(AF.Common.DTO.AwardDataDTO updateData, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdateAward(updateData, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> EndUpdateAward(System.IAsyncResult result) {
-            return base.Channel.EndUpdateAward(result);
-        }
-        
-        private System.IAsyncResult OnBeginUpdateAward(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.AwardDataDTO updateData = ((AF.Common.DTO.AwardDataDTO)(inValues[0]));
-            return this.BeginUpdateAward(updateData, callback, asyncState);
-        }
-        
-        private object[] OnEndUpdateAward(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> retVal = this.EndUpdateAward(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnUpdateAwardCompleted(object state) {
-            if ((this.UpdateAwardCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdateAwardCompleted(this, new UpdateAwardCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void UpdateAwardAsync(AF.Common.DTO.AwardDataDTO updateData) {
-            this.UpdateAwardAsync(updateData, null);
-        }
-        
-        public void UpdateAwardAsync(AF.Common.DTO.AwardDataDTO updateData, object userState) {
-            if ((this.onBeginUpdateAwardDelegate == null)) {
-                this.onBeginUpdateAwardDelegate = new BeginOperationDelegate(this.OnBeginUpdateAward);
-            }
-            if ((this.onEndUpdateAwardDelegate == null)) {
-                this.onEndUpdateAwardDelegate = new EndOperationDelegate(this.OnEndUpdateAward);
-            }
-            if ((this.onUpdateAwardCompletedDelegate == null)) {
-                this.onUpdateAwardCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateAwardCompleted);
-            }
-            base.InvokeAsync(this.onBeginUpdateAwardDelegate, new object[] {
-                        updateData}, this.onEndUpdateAwardDelegate, this.onUpdateAwardCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO>> UpdateAwardAsync(AF.Common.DTO.AwardDataDTO updateData) {
+            return base.Channel.UpdateAwardAsync(updateData);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> GetAward(int id) {
             return base.Channel.GetAward(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetAward(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetAward(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> EndGetAward(System.IAsyncResult result) {
-            return base.Channel.EndGetAward(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetAward(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginGetAward(id, callback, asyncState);
-        }
-        
-        private object[] OnEndGetAward(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO> retVal = this.EndGetAward(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetAwardCompleted(object state) {
-            if ((this.GetAwardCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetAwardCompleted(this, new GetAwardCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetAwardAsync(int id) {
-            this.GetAwardAsync(id, null);
-        }
-        
-        public void GetAwardAsync(int id, object userState) {
-            if ((this.onBeginGetAwardDelegate == null)) {
-                this.onBeginGetAwardDelegate = new BeginOperationDelegate(this.OnBeginGetAward);
-            }
-            if ((this.onEndGetAwardDelegate == null)) {
-                this.onEndGetAwardDelegate = new EndOperationDelegate(this.OnEndGetAward);
-            }
-            if ((this.onGetAwardCompletedDelegate == null)) {
-                this.onGetAwardCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAwardCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetAwardDelegate, new object[] {
-                        id}, this.onEndGetAwardDelegate, this.onGetAwardCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.AwardDataDTO>> GetAwardAsync(int id) {
+            return base.Channel.GetAwardAsync(id);
         }
         
         public AF.Common.Requests.ListResponse<AF.Common.DTO.AwardMixedDTO> SearchAwards(AF.Common.Queries.AwardsSearchingCriteria criteria, int pageNr, int pageAmount) {
             return base.Channel.SearchAwards(criteria, pageNr, pageAmount);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginSearchAwards(AF.Common.Queries.AwardsSearchingCriteria criteria, int pageNr, int pageAmount, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginSearchAwards(criteria, pageNr, pageAmount, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.AwardMixedDTO> EndSearchAwards(System.IAsyncResult result) {
-            return base.Channel.EndSearchAwards(result);
-        }
-        
-        private System.IAsyncResult OnBeginSearchAwards(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.Queries.AwardsSearchingCriteria criteria = ((AF.Common.Queries.AwardsSearchingCriteria)(inValues[0]));
-            int pageNr = ((int)(inValues[1]));
-            int pageAmount = ((int)(inValues[2]));
-            return this.BeginSearchAwards(criteria, pageNr, pageAmount, callback, asyncState);
-        }
-        
-        private object[] OnEndSearchAwards(System.IAsyncResult result) {
-            AF.Common.Requests.ListResponse<AF.Common.DTO.AwardMixedDTO> retVal = this.EndSearchAwards(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnSearchAwardsCompleted(object state) {
-            if ((this.SearchAwardsCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.SearchAwardsCompleted(this, new SearchAwardsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void SearchAwardsAsync(AF.Common.Queries.AwardsSearchingCriteria criteria, int pageNr, int pageAmount) {
-            this.SearchAwardsAsync(criteria, pageNr, pageAmount, null);
-        }
-        
-        public void SearchAwardsAsync(AF.Common.Queries.AwardsSearchingCriteria criteria, int pageNr, int pageAmount, object userState) {
-            if ((this.onBeginSearchAwardsDelegate == null)) {
-                this.onBeginSearchAwardsDelegate = new BeginOperationDelegate(this.OnBeginSearchAwards);
-            }
-            if ((this.onEndSearchAwardsDelegate == null)) {
-                this.onEndSearchAwardsDelegate = new EndOperationDelegate(this.OnEndSearchAwards);
-            }
-            if ((this.onSearchAwardsCompletedDelegate == null)) {
-                this.onSearchAwardsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSearchAwardsCompleted);
-            }
-            base.InvokeAsync(this.onBeginSearchAwardsDelegate, new object[] {
-                        criteria,
-                        pageNr,
-                        pageAmount}, this.onEndSearchAwardsDelegate, this.onSearchAwardsCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.AwardMixedDTO>> SearchAwardsAsync(AF.Common.Queries.AwardsSearchingCriteria criteria, int pageNr, int pageAmount) {
+            return base.Channel.SearchAwardsAsync(criteria, pageNr, pageAmount);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> AddCategory(AF.Common.DTO.CategoryDTO newCategory) {
             return base.Channel.AddCategory(newCategory);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddCategory(AF.Common.DTO.CategoryDTO newCategory, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddCategory(newCategory, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> EndAddCategory(System.IAsyncResult result) {
-            return base.Channel.EndAddCategory(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddCategory(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.CategoryDTO newCategory = ((AF.Common.DTO.CategoryDTO)(inValues[0]));
-            return this.BeginAddCategory(newCategory, callback, asyncState);
-        }
-        
-        private object[] OnEndAddCategory(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> retVal = this.EndAddCategory(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddCategoryCompleted(object state) {
-            if ((this.AddCategoryCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddCategoryCompleted(this, new AddCategoryCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddCategoryAsync(AF.Common.DTO.CategoryDTO newCategory) {
-            this.AddCategoryAsync(newCategory, null);
-        }
-        
-        public void AddCategoryAsync(AF.Common.DTO.CategoryDTO newCategory, object userState) {
-            if ((this.onBeginAddCategoryDelegate == null)) {
-                this.onBeginAddCategoryDelegate = new BeginOperationDelegate(this.OnBeginAddCategory);
-            }
-            if ((this.onEndAddCategoryDelegate == null)) {
-                this.onEndAddCategoryDelegate = new EndOperationDelegate(this.OnEndAddCategory);
-            }
-            if ((this.onAddCategoryCompletedDelegate == null)) {
-                this.onAddCategoryCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddCategoryCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddCategoryDelegate, new object[] {
-                        newCategory}, this.onEndAddCategoryDelegate, this.onAddCategoryCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO>> AddCategoryAsync(AF.Common.DTO.CategoryDTO newCategory) {
+            return base.Channel.AddCategoryAsync(newCategory);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> UpdateCategory(AF.Common.DTO.CategoryDTO updateData) {
             return base.Channel.UpdateCategory(updateData);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginUpdateCategory(AF.Common.DTO.CategoryDTO updateData, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdateCategory(updateData, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> EndUpdateCategory(System.IAsyncResult result) {
-            return base.Channel.EndUpdateCategory(result);
-        }
-        
-        private System.IAsyncResult OnBeginUpdateCategory(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.CategoryDTO updateData = ((AF.Common.DTO.CategoryDTO)(inValues[0]));
-            return this.BeginUpdateCategory(updateData, callback, asyncState);
-        }
-        
-        private object[] OnEndUpdateCategory(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> retVal = this.EndUpdateCategory(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnUpdateCategoryCompleted(object state) {
-            if ((this.UpdateCategoryCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdateCategoryCompleted(this, new UpdateCategoryCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void UpdateCategoryAsync(AF.Common.DTO.CategoryDTO updateData) {
-            this.UpdateCategoryAsync(updateData, null);
-        }
-        
-        public void UpdateCategoryAsync(AF.Common.DTO.CategoryDTO updateData, object userState) {
-            if ((this.onBeginUpdateCategoryDelegate == null)) {
-                this.onBeginUpdateCategoryDelegate = new BeginOperationDelegate(this.OnBeginUpdateCategory);
-            }
-            if ((this.onEndUpdateCategoryDelegate == null)) {
-                this.onEndUpdateCategoryDelegate = new EndOperationDelegate(this.OnEndUpdateCategory);
-            }
-            if ((this.onUpdateCategoryCompletedDelegate == null)) {
-                this.onUpdateCategoryCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateCategoryCompleted);
-            }
-            base.InvokeAsync(this.onBeginUpdateCategoryDelegate, new object[] {
-                        updateData}, this.onEndUpdateCategoryDelegate, this.onUpdateCategoryCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO>> UpdateCategoryAsync(AF.Common.DTO.CategoryDTO updateData) {
+            return base.Channel.UpdateCategoryAsync(updateData);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> GetCategory(int id) {
             return base.Channel.GetCategory(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetCategory(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetCategory(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> EndGetCategory(System.IAsyncResult result) {
-            return base.Channel.EndGetCategory(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetCategory(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginGetCategory(id, callback, asyncState);
-        }
-        
-        private object[] OnEndGetCategory(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO> retVal = this.EndGetCategory(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetCategoryCompleted(object state) {
-            if ((this.GetCategoryCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetCategoryCompleted(this, new GetCategoryCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetCategoryAsync(int id) {
-            this.GetCategoryAsync(id, null);
-        }
-        
-        public void GetCategoryAsync(int id, object userState) {
-            if ((this.onBeginGetCategoryDelegate == null)) {
-                this.onBeginGetCategoryDelegate = new BeginOperationDelegate(this.OnBeginGetCategory);
-            }
-            if ((this.onEndGetCategoryDelegate == null)) {
-                this.onEndGetCategoryDelegate = new EndOperationDelegate(this.OnEndGetCategory);
-            }
-            if ((this.onGetCategoryCompletedDelegate == null)) {
-                this.onGetCategoryCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCategoryCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetCategoryDelegate, new object[] {
-                        id}, this.onEndGetCategoryDelegate, this.onGetCategoryCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.CategoryDTO>> GetCategoryAsync(int id) {
+            return base.Channel.GetCategoryAsync(id);
         }
         
         public AF.Common.Requests.ListResponse<AF.Common.DTO.CategoryDTO> GetAllCategories() {
             return base.Channel.GetAllCategories();
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetAllCategories(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetAllCategories(callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.CategoryDTO> EndGetAllCategories(System.IAsyncResult result) {
-            return base.Channel.EndGetAllCategories(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetAllCategories(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return this.BeginGetAllCategories(callback, asyncState);
-        }
-        
-        private object[] OnEndGetAllCategories(System.IAsyncResult result) {
-            AF.Common.Requests.ListResponse<AF.Common.DTO.CategoryDTO> retVal = this.EndGetAllCategories(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetAllCategoriesCompleted(object state) {
-            if ((this.GetAllCategoriesCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetAllCategoriesCompleted(this, new GetAllCategoriesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetAllCategoriesAsync() {
-            this.GetAllCategoriesAsync(null);
-        }
-        
-        public void GetAllCategoriesAsync(object userState) {
-            if ((this.onBeginGetAllCategoriesDelegate == null)) {
-                this.onBeginGetAllCategoriesDelegate = new BeginOperationDelegate(this.OnBeginGetAllCategories);
-            }
-            if ((this.onEndGetAllCategoriesDelegate == null)) {
-                this.onEndGetAllCategoriesDelegate = new EndOperationDelegate(this.OnEndGetAllCategories);
-            }
-            if ((this.onGetAllCategoriesCompletedDelegate == null)) {
-                this.onGetAllCategoriesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllCategoriesCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetAllCategoriesDelegate, null, this.onEndGetAllCategoriesDelegate, this.onGetAllCategoriesCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.CategoryDTO>> GetAllCategoriesAsync() {
+            return base.Channel.GetAllCategoriesAsync();
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> AddFestival(AF.Common.DTO.FestivalDTO newFestival) {
             return base.Channel.AddFestival(newFestival);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddFestival(AF.Common.DTO.FestivalDTO newFestival, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddFestival(newFestival, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> EndAddFestival(System.IAsyncResult result) {
-            return base.Channel.EndAddFestival(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddFestival(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.FestivalDTO newFestival = ((AF.Common.DTO.FestivalDTO)(inValues[0]));
-            return this.BeginAddFestival(newFestival, callback, asyncState);
-        }
-        
-        private object[] OnEndAddFestival(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> retVal = this.EndAddFestival(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddFestivalCompleted(object state) {
-            if ((this.AddFestivalCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddFestivalCompleted(this, new AddFestivalCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddFestivalAsync(AF.Common.DTO.FestivalDTO newFestival) {
-            this.AddFestivalAsync(newFestival, null);
-        }
-        
-        public void AddFestivalAsync(AF.Common.DTO.FestivalDTO newFestival, object userState) {
-            if ((this.onBeginAddFestivalDelegate == null)) {
-                this.onBeginAddFestivalDelegate = new BeginOperationDelegate(this.OnBeginAddFestival);
-            }
-            if ((this.onEndAddFestivalDelegate == null)) {
-                this.onEndAddFestivalDelegate = new EndOperationDelegate(this.OnEndAddFestival);
-            }
-            if ((this.onAddFestivalCompletedDelegate == null)) {
-                this.onAddFestivalCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddFestivalCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddFestivalDelegate, new object[] {
-                        newFestival}, this.onEndAddFestivalDelegate, this.onAddFestivalCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO>> AddFestivalAsync(AF.Common.DTO.FestivalDTO newFestival) {
+            return base.Channel.AddFestivalAsync(newFestival);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> UpdateFestival(AF.Common.DTO.FestivalDTO updateData) {
             return base.Channel.UpdateFestival(updateData);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginUpdateFestival(AF.Common.DTO.FestivalDTO updateData, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdateFestival(updateData, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> EndUpdateFestival(System.IAsyncResult result) {
-            return base.Channel.EndUpdateFestival(result);
-        }
-        
-        private System.IAsyncResult OnBeginUpdateFestival(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.FestivalDTO updateData = ((AF.Common.DTO.FestivalDTO)(inValues[0]));
-            return this.BeginUpdateFestival(updateData, callback, asyncState);
-        }
-        
-        private object[] OnEndUpdateFestival(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> retVal = this.EndUpdateFestival(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnUpdateFestivalCompleted(object state) {
-            if ((this.UpdateFestivalCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdateFestivalCompleted(this, new UpdateFestivalCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void UpdateFestivalAsync(AF.Common.DTO.FestivalDTO updateData) {
-            this.UpdateFestivalAsync(updateData, null);
-        }
-        
-        public void UpdateFestivalAsync(AF.Common.DTO.FestivalDTO updateData, object userState) {
-            if ((this.onBeginUpdateFestivalDelegate == null)) {
-                this.onBeginUpdateFestivalDelegate = new BeginOperationDelegate(this.OnBeginUpdateFestival);
-            }
-            if ((this.onEndUpdateFestivalDelegate == null)) {
-                this.onEndUpdateFestivalDelegate = new EndOperationDelegate(this.OnEndUpdateFestival);
-            }
-            if ((this.onUpdateFestivalCompletedDelegate == null)) {
-                this.onUpdateFestivalCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateFestivalCompleted);
-            }
-            base.InvokeAsync(this.onBeginUpdateFestivalDelegate, new object[] {
-                        updateData}, this.onEndUpdateFestivalDelegate, this.onUpdateFestivalCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO>> UpdateFestivalAsync(AF.Common.DTO.FestivalDTO updateData) {
+            return base.Channel.UpdateFestivalAsync(updateData);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> GetFestival(int id) {
             return base.Channel.GetFestival(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetFestival(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetFestival(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> EndGetFestival(System.IAsyncResult result) {
-            return base.Channel.EndGetFestival(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetFestival(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginGetFestival(id, callback, asyncState);
-        }
-        
-        private object[] OnEndGetFestival(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO> retVal = this.EndGetFestival(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetFestivalCompleted(object state) {
-            if ((this.GetFestivalCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetFestivalCompleted(this, new GetFestivalCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetFestivalAsync(int id) {
-            this.GetFestivalAsync(id, null);
-        }
-        
-        public void GetFestivalAsync(int id, object userState) {
-            if ((this.onBeginGetFestivalDelegate == null)) {
-                this.onBeginGetFestivalDelegate = new BeginOperationDelegate(this.OnBeginGetFestival);
-            }
-            if ((this.onEndGetFestivalDelegate == null)) {
-                this.onEndGetFestivalDelegate = new EndOperationDelegate(this.OnEndGetFestival);
-            }
-            if ((this.onGetFestivalCompletedDelegate == null)) {
-                this.onGetFestivalCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetFestivalCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetFestivalDelegate, new object[] {
-                        id}, this.onEndGetFestivalDelegate, this.onGetFestivalCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.FestivalDTO>> GetFestivalAsync(int id) {
+            return base.Channel.GetFestivalAsync(id);
         }
         
         public AF.Common.Requests.ListResponse<AF.Common.DTO.FestivalDTO> GetFestivalsPaged(int pageNr, int pageAmount) {
             return base.Channel.GetFestivalsPaged(pageNr, pageAmount);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetFestivalsPaged(int pageNr, int pageAmount, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetFestivalsPaged(pageNr, pageAmount, callback, asyncState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.FestivalDTO>> GetFestivalsPagedAsync(int pageNr, int pageAmount) {
+            return base.Channel.GetFestivalsPagedAsync(pageNr, pageAmount);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.FestivalDTO> EndGetFestivalsPaged(System.IAsyncResult result) {
-            return base.Channel.EndGetFestivalsPaged(result);
+        public AF.Common.Requests.SingleItemResponse<int> CountFestivals() {
+            return base.Channel.CountFestivals();
         }
         
-        private System.IAsyncResult OnBeginGetFestivalsPaged(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int pageNr = ((int)(inValues[0]));
-            int pageAmount = ((int)(inValues[1]));
-            return this.BeginGetFestivalsPaged(pageNr, pageAmount, callback, asyncState);
-        }
-        
-        private object[] OnEndGetFestivalsPaged(System.IAsyncResult result) {
-            AF.Common.Requests.ListResponse<AF.Common.DTO.FestivalDTO> retVal = this.EndGetFestivalsPaged(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetFestivalsPagedCompleted(object state) {
-            if ((this.GetFestivalsPagedCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetFestivalsPagedCompleted(this, new GetFestivalsPagedCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetFestivalsPagedAsync(int pageNr, int pageAmount) {
-            this.GetFestivalsPagedAsync(pageNr, pageAmount, null);
-        }
-        
-        public void GetFestivalsPagedAsync(int pageNr, int pageAmount, object userState) {
-            if ((this.onBeginGetFestivalsPagedDelegate == null)) {
-                this.onBeginGetFestivalsPagedDelegate = new BeginOperationDelegate(this.OnBeginGetFestivalsPaged);
-            }
-            if ((this.onEndGetFestivalsPagedDelegate == null)) {
-                this.onEndGetFestivalsPagedDelegate = new EndOperationDelegate(this.OnEndGetFestivalsPaged);
-            }
-            if ((this.onGetFestivalsPagedCompletedDelegate == null)) {
-                this.onGetFestivalsPagedCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetFestivalsPagedCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetFestivalsPagedDelegate, new object[] {
-                        pageNr,
-                        pageAmount}, this.onEndGetFestivalsPagedDelegate, this.onGetFestivalsPagedCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<int>> CountFestivalsAsync() {
+            return base.Channel.CountFestivalsAsync();
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> AddJob(AF.Common.DTO.JobDTO newJob) {
             return base.Channel.AddJob(newJob);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddJob(AF.Common.DTO.JobDTO newJob, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddJob(newJob, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> EndAddJob(System.IAsyncResult result) {
-            return base.Channel.EndAddJob(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddJob(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.JobDTO newJob = ((AF.Common.DTO.JobDTO)(inValues[0]));
-            return this.BeginAddJob(newJob, callback, asyncState);
-        }
-        
-        private object[] OnEndAddJob(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> retVal = this.EndAddJob(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddJobCompleted(object state) {
-            if ((this.AddJobCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddJobCompleted(this, new AddJobCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddJobAsync(AF.Common.DTO.JobDTO newJob) {
-            this.AddJobAsync(newJob, null);
-        }
-        
-        public void AddJobAsync(AF.Common.DTO.JobDTO newJob, object userState) {
-            if ((this.onBeginAddJobDelegate == null)) {
-                this.onBeginAddJobDelegate = new BeginOperationDelegate(this.OnBeginAddJob);
-            }
-            if ((this.onEndAddJobDelegate == null)) {
-                this.onEndAddJobDelegate = new EndOperationDelegate(this.OnEndAddJob);
-            }
-            if ((this.onAddJobCompletedDelegate == null)) {
-                this.onAddJobCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddJobCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddJobDelegate, new object[] {
-                        newJob}, this.onEndAddJobDelegate, this.onAddJobCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO>> AddJobAsync(AF.Common.DTO.JobDTO newJob) {
+            return base.Channel.AddJobAsync(newJob);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> UpdateJob(AF.Common.DTO.JobDTO updateData) {
             return base.Channel.UpdateJob(updateData);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginUpdateJob(AF.Common.DTO.JobDTO updateData, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdateJob(updateData, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> EndUpdateJob(System.IAsyncResult result) {
-            return base.Channel.EndUpdateJob(result);
-        }
-        
-        private System.IAsyncResult OnBeginUpdateJob(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.JobDTO updateData = ((AF.Common.DTO.JobDTO)(inValues[0]));
-            return this.BeginUpdateJob(updateData, callback, asyncState);
-        }
-        
-        private object[] OnEndUpdateJob(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> retVal = this.EndUpdateJob(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnUpdateJobCompleted(object state) {
-            if ((this.UpdateJobCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdateJobCompleted(this, new UpdateJobCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void UpdateJobAsync(AF.Common.DTO.JobDTO updateData) {
-            this.UpdateJobAsync(updateData, null);
-        }
-        
-        public void UpdateJobAsync(AF.Common.DTO.JobDTO updateData, object userState) {
-            if ((this.onBeginUpdateJobDelegate == null)) {
-                this.onBeginUpdateJobDelegate = new BeginOperationDelegate(this.OnBeginUpdateJob);
-            }
-            if ((this.onEndUpdateJobDelegate == null)) {
-                this.onEndUpdateJobDelegate = new EndOperationDelegate(this.OnEndUpdateJob);
-            }
-            if ((this.onUpdateJobCompletedDelegate == null)) {
-                this.onUpdateJobCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateJobCompleted);
-            }
-            base.InvokeAsync(this.onBeginUpdateJobDelegate, new object[] {
-                        updateData}, this.onEndUpdateJobDelegate, this.onUpdateJobCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO>> UpdateJobAsync(AF.Common.DTO.JobDTO updateData) {
+            return base.Channel.UpdateJobAsync(updateData);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> GetJob(int id) {
             return base.Channel.GetJob(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetJob(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetJob(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> EndGetJob(System.IAsyncResult result) {
-            return base.Channel.EndGetJob(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetJob(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginGetJob(id, callback, asyncState);
-        }
-        
-        private object[] OnEndGetJob(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO> retVal = this.EndGetJob(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetJobCompleted(object state) {
-            if ((this.GetJobCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetJobCompleted(this, new GetJobCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetJobAsync(int id) {
-            this.GetJobAsync(id, null);
-        }
-        
-        public void GetJobAsync(int id, object userState) {
-            if ((this.onBeginGetJobDelegate == null)) {
-                this.onBeginGetJobDelegate = new BeginOperationDelegate(this.OnBeginGetJob);
-            }
-            if ((this.onEndGetJobDelegate == null)) {
-                this.onEndGetJobDelegate = new EndOperationDelegate(this.OnEndGetJob);
-            }
-            if ((this.onGetJobCompletedDelegate == null)) {
-                this.onGetJobCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetJobCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetJobDelegate, new object[] {
-                        id}, this.onEndGetJobDelegate, this.onGetJobCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.JobDTO>> GetJobAsync(int id) {
+            return base.Channel.GetJobAsync(id);
         }
         
         public AF.Common.Requests.ListResponse<AF.Common.DTO.JobDTO> GetAllJobs() {
             return base.Channel.GetAllJobs();
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetAllJobs(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetAllJobs(callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.JobDTO> EndGetAllJobs(System.IAsyncResult result) {
-            return base.Channel.EndGetAllJobs(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetAllJobs(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return this.BeginGetAllJobs(callback, asyncState);
-        }
-        
-        private object[] OnEndGetAllJobs(System.IAsyncResult result) {
-            AF.Common.Requests.ListResponse<AF.Common.DTO.JobDTO> retVal = this.EndGetAllJobs(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetAllJobsCompleted(object state) {
-            if ((this.GetAllJobsCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetAllJobsCompleted(this, new GetAllJobsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetAllJobsAsync() {
-            this.GetAllJobsAsync(null);
-        }
-        
-        public void GetAllJobsAsync(object userState) {
-            if ((this.onBeginGetAllJobsDelegate == null)) {
-                this.onBeginGetAllJobsDelegate = new BeginOperationDelegate(this.OnBeginGetAllJobs);
-            }
-            if ((this.onEndGetAllJobsDelegate == null)) {
-                this.onEndGetAllJobsDelegate = new EndOperationDelegate(this.OnEndGetAllJobs);
-            }
-            if ((this.onGetAllJobsCompletedDelegate == null)) {
-                this.onGetAllJobsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllJobsCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetAllJobsDelegate, null, this.onEndGetAllJobsDelegate, this.onGetAllJobsCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.JobDTO>> GetAllJobsAsync() {
+            return base.Channel.GetAllJobsAsync();
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> AddPlay(AF.Common.DTO.PlayDataDTO newPlay) {
             return base.Channel.AddPlay(newPlay);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddPlay(AF.Common.DTO.PlayDataDTO newPlay, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddPlay(newPlay, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> EndAddPlay(System.IAsyncResult result) {
-            return base.Channel.EndAddPlay(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddPlay(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.PlayDataDTO newPlay = ((AF.Common.DTO.PlayDataDTO)(inValues[0]));
-            return this.BeginAddPlay(newPlay, callback, asyncState);
-        }
-        
-        private object[] OnEndAddPlay(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> retVal = this.EndAddPlay(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddPlayCompleted(object state) {
-            if ((this.AddPlayCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddPlayCompleted(this, new AddPlayCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddPlayAsync(AF.Common.DTO.PlayDataDTO newPlay) {
-            this.AddPlayAsync(newPlay, null);
-        }
-        
-        public void AddPlayAsync(AF.Common.DTO.PlayDataDTO newPlay, object userState) {
-            if ((this.onBeginAddPlayDelegate == null)) {
-                this.onBeginAddPlayDelegate = new BeginOperationDelegate(this.OnBeginAddPlay);
-            }
-            if ((this.onEndAddPlayDelegate == null)) {
-                this.onEndAddPlayDelegate = new EndOperationDelegate(this.OnEndAddPlay);
-            }
-            if ((this.onAddPlayCompletedDelegate == null)) {
-                this.onAddPlayCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddPlayCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddPlayDelegate, new object[] {
-                        newPlay}, this.onEndAddPlayDelegate, this.onAddPlayCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO>> AddPlayAsync(AF.Common.DTO.PlayDataDTO newPlay) {
+            return base.Channel.AddPlayAsync(newPlay);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> UpdatePlay(AF.Common.DTO.PlayDataDTO updateData) {
             return base.Channel.UpdatePlay(updateData);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginUpdatePlay(AF.Common.DTO.PlayDataDTO updateData, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdatePlay(updateData, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> EndUpdatePlay(System.IAsyncResult result) {
-            return base.Channel.EndUpdatePlay(result);
-        }
-        
-        private System.IAsyncResult OnBeginUpdatePlay(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.PlayDataDTO updateData = ((AF.Common.DTO.PlayDataDTO)(inValues[0]));
-            return this.BeginUpdatePlay(updateData, callback, asyncState);
-        }
-        
-        private object[] OnEndUpdatePlay(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> retVal = this.EndUpdatePlay(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnUpdatePlayCompleted(object state) {
-            if ((this.UpdatePlayCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdatePlayCompleted(this, new UpdatePlayCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void UpdatePlayAsync(AF.Common.DTO.PlayDataDTO updateData) {
-            this.UpdatePlayAsync(updateData, null);
-        }
-        
-        public void UpdatePlayAsync(AF.Common.DTO.PlayDataDTO updateData, object userState) {
-            if ((this.onBeginUpdatePlayDelegate == null)) {
-                this.onBeginUpdatePlayDelegate = new BeginOperationDelegate(this.OnBeginUpdatePlay);
-            }
-            if ((this.onEndUpdatePlayDelegate == null)) {
-                this.onEndUpdatePlayDelegate = new EndOperationDelegate(this.OnEndUpdatePlay);
-            }
-            if ((this.onUpdatePlayCompletedDelegate == null)) {
-                this.onUpdatePlayCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdatePlayCompleted);
-            }
-            base.InvokeAsync(this.onBeginUpdatePlayDelegate, new object[] {
-                        updateData}, this.onEndUpdatePlayDelegate, this.onUpdatePlayCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO>> UpdatePlayAsync(AF.Common.DTO.PlayDataDTO updateData) {
+            return base.Channel.UpdatePlayAsync(updateData);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> GetPlay(int id) {
             return base.Channel.GetPlay(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetPlay(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetPlay(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> EndGetPlay(System.IAsyncResult result) {
-            return base.Channel.EndGetPlay(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetPlay(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginGetPlay(id, callback, asyncState);
-        }
-        
-        private object[] OnEndGetPlay(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO> retVal = this.EndGetPlay(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetPlayCompleted(object state) {
-            if ((this.GetPlayCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetPlayCompleted(this, new GetPlayCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetPlayAsync(int id) {
-            this.GetPlayAsync(id, null);
-        }
-        
-        public void GetPlayAsync(int id, object userState) {
-            if ((this.onBeginGetPlayDelegate == null)) {
-                this.onBeginGetPlayDelegate = new BeginOperationDelegate(this.OnBeginGetPlay);
-            }
-            if ((this.onEndGetPlayDelegate == null)) {
-                this.onEndGetPlayDelegate = new EndOperationDelegate(this.OnEndGetPlay);
-            }
-            if ((this.onGetPlayCompletedDelegate == null)) {
-                this.onGetPlayCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetPlayCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetPlayDelegate, new object[] {
-                        id}, this.onEndGetPlayDelegate, this.onGetPlayCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayDataDTO>> GetPlayAsync(int id) {
+            return base.Channel.GetPlayAsync(id);
         }
         
         public AF.Common.Requests.ListResponse<AF.Common.DTO.PlayDataDTO> SearchPlays(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount) {
             return base.Channel.SearchPlays(criteria, pageNr, pageAmount);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginSearchPlays(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginSearchPlays(criteria, pageNr, pageAmount, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.PlayDataDTO> EndSearchPlays(System.IAsyncResult result) {
-            return base.Channel.EndSearchPlays(result);
-        }
-        
-        private System.IAsyncResult OnBeginSearchPlays(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.Queries.PlaysSearchingCriteria criteria = ((AF.Common.Queries.PlaysSearchingCriteria)(inValues[0]));
-            int pageNr = ((int)(inValues[1]));
-            int pageAmount = ((int)(inValues[2]));
-            return this.BeginSearchPlays(criteria, pageNr, pageAmount, callback, asyncState);
-        }
-        
-        private object[] OnEndSearchPlays(System.IAsyncResult result) {
-            AF.Common.Requests.ListResponse<AF.Common.DTO.PlayDataDTO> retVal = this.EndSearchPlays(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnSearchPlaysCompleted(object state) {
-            if ((this.SearchPlaysCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.SearchPlaysCompleted(this, new SearchPlaysCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void SearchPlaysAsync(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount) {
-            this.SearchPlaysAsync(criteria, pageNr, pageAmount, null);
-        }
-        
-        public void SearchPlaysAsync(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount, object userState) {
-            if ((this.onBeginSearchPlaysDelegate == null)) {
-                this.onBeginSearchPlaysDelegate = new BeginOperationDelegate(this.OnBeginSearchPlays);
-            }
-            if ((this.onEndSearchPlaysDelegate == null)) {
-                this.onEndSearchPlaysDelegate = new EndOperationDelegate(this.OnEndSearchPlays);
-            }
-            if ((this.onSearchPlaysCompletedDelegate == null)) {
-                this.onSearchPlaysCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSearchPlaysCompleted);
-            }
-            base.InvokeAsync(this.onBeginSearchPlaysDelegate, new object[] {
-                        criteria,
-                        pageNr,
-                        pageAmount}, this.onEndSearchPlaysDelegate, this.onSearchPlaysCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.PlayDataDTO>> SearchPlaysAsync(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount) {
+            return base.Channel.SearchPlaysAsync(criteria, pageNr, pageAmount);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> AddPosition(AF.Common.DTO.PositionDTO newPosition) {
             return base.Channel.AddPosition(newPosition);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddPosition(AF.Common.DTO.PositionDTO newPosition, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddPosition(newPosition, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> EndAddPosition(System.IAsyncResult result) {
-            return base.Channel.EndAddPosition(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddPosition(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.PositionDTO newPosition = ((AF.Common.DTO.PositionDTO)(inValues[0]));
-            return this.BeginAddPosition(newPosition, callback, asyncState);
-        }
-        
-        private object[] OnEndAddPosition(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> retVal = this.EndAddPosition(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddPositionCompleted(object state) {
-            if ((this.AddPositionCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddPositionCompleted(this, new AddPositionCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddPositionAsync(AF.Common.DTO.PositionDTO newPosition) {
-            this.AddPositionAsync(newPosition, null);
-        }
-        
-        public void AddPositionAsync(AF.Common.DTO.PositionDTO newPosition, object userState) {
-            if ((this.onBeginAddPositionDelegate == null)) {
-                this.onBeginAddPositionDelegate = new BeginOperationDelegate(this.OnBeginAddPosition);
-            }
-            if ((this.onEndAddPositionDelegate == null)) {
-                this.onEndAddPositionDelegate = new EndOperationDelegate(this.OnEndAddPosition);
-            }
-            if ((this.onAddPositionCompletedDelegate == null)) {
-                this.onAddPositionCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddPositionCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddPositionDelegate, new object[] {
-                        newPosition}, this.onEndAddPositionDelegate, this.onAddPositionCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO>> AddPositionAsync(AF.Common.DTO.PositionDTO newPosition) {
+            return base.Channel.AddPositionAsync(newPosition);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> UpdatePosition(AF.Common.DTO.PositionDTO updateData) {
             return base.Channel.UpdatePosition(updateData);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginUpdatePosition(AF.Common.DTO.PositionDTO updateData, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdatePosition(updateData, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> EndUpdatePosition(System.IAsyncResult result) {
-            return base.Channel.EndUpdatePosition(result);
-        }
-        
-        private System.IAsyncResult OnBeginUpdatePosition(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.PositionDTO updateData = ((AF.Common.DTO.PositionDTO)(inValues[0]));
-            return this.BeginUpdatePosition(updateData, callback, asyncState);
-        }
-        
-        private object[] OnEndUpdatePosition(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> retVal = this.EndUpdatePosition(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnUpdatePositionCompleted(object state) {
-            if ((this.UpdatePositionCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdatePositionCompleted(this, new UpdatePositionCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void UpdatePositionAsync(AF.Common.DTO.PositionDTO updateData) {
-            this.UpdatePositionAsync(updateData, null);
-        }
-        
-        public void UpdatePositionAsync(AF.Common.DTO.PositionDTO updateData, object userState) {
-            if ((this.onBeginUpdatePositionDelegate == null)) {
-                this.onBeginUpdatePositionDelegate = new BeginOperationDelegate(this.OnBeginUpdatePosition);
-            }
-            if ((this.onEndUpdatePositionDelegate == null)) {
-                this.onEndUpdatePositionDelegate = new EndOperationDelegate(this.OnEndUpdatePosition);
-            }
-            if ((this.onUpdatePositionCompletedDelegate == null)) {
-                this.onUpdatePositionCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdatePositionCompleted);
-            }
-            base.InvokeAsync(this.onBeginUpdatePositionDelegate, new object[] {
-                        updateData}, this.onEndUpdatePositionDelegate, this.onUpdatePositionCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO>> UpdatePositionAsync(AF.Common.DTO.PositionDTO updateData) {
+            return base.Channel.UpdatePositionAsync(updateData);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> GetPosition(int id) {
             return base.Channel.GetPosition(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetPosition(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetPosition(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> EndGetPosition(System.IAsyncResult result) {
-            return base.Channel.EndGetPosition(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetPosition(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginGetPosition(id, callback, asyncState);
-        }
-        
-        private object[] OnEndGetPosition(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> retVal = this.EndGetPosition(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetPositionCompleted(object state) {
-            if ((this.GetPositionCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetPositionCompleted(this, new GetPositionCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetPositionAsync(int id) {
-            this.GetPositionAsync(id, null);
-        }
-        
-        public void GetPositionAsync(int id, object userState) {
-            if ((this.onBeginGetPositionDelegate == null)) {
-                this.onBeginGetPositionDelegate = new BeginOperationDelegate(this.OnBeginGetPosition);
-            }
-            if ((this.onEndGetPositionDelegate == null)) {
-                this.onEndGetPositionDelegate = new EndOperationDelegate(this.OnEndGetPosition);
-            }
-            if ((this.onGetPositionCompletedDelegate == null)) {
-                this.onGetPositionCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetPositionCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetPositionDelegate, new object[] {
-                        id}, this.onEndGetPositionDelegate, this.onGetPositionCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO>> GetPositionAsync(int id) {
+            return base.Channel.GetPositionAsync(id);
         }
         
         public AF.Common.Requests.ListResponse<AF.Common.DTO.PositionDTO> GetAllPositions() {
             return base.Channel.GetAllPositions();
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetAllPositions(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetAllPositions(callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.PositionDTO> EndGetAllPositions(System.IAsyncResult result) {
-            return base.Channel.EndGetAllPositions(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetAllPositions(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return this.BeginGetAllPositions(callback, asyncState);
-        }
-        
-        private object[] OnEndGetAllPositions(System.IAsyncResult result) {
-            AF.Common.Requests.ListResponse<AF.Common.DTO.PositionDTO> retVal = this.EndGetAllPositions(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetAllPositionsCompleted(object state) {
-            if ((this.GetAllPositionsCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetAllPositionsCompleted(this, new GetAllPositionsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetAllPositionsAsync() {
-            this.GetAllPositionsAsync(null);
-        }
-        
-        public void GetAllPositionsAsync(object userState) {
-            if ((this.onBeginGetAllPositionsDelegate == null)) {
-                this.onBeginGetAllPositionsDelegate = new BeginOperationDelegate(this.OnBeginGetAllPositions);
-            }
-            if ((this.onEndGetAllPositionsDelegate == null)) {
-                this.onEndGetAllPositionsDelegate = new EndOperationDelegate(this.OnEndGetAllPositions);
-            }
-            if ((this.onGetAllPositionsCompletedDelegate == null)) {
-                this.onGetAllPositionsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllPositionsCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetAllPositionsDelegate, null, this.onEndGetAllPositionsDelegate, this.onGetAllPositionsCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.PositionDTO>> GetAllPositionsAsync() {
+            return base.Channel.GetAllPositionsAsync();
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> AddRelationFestivalPersonPosition(AF.Common.DTO.RelationFestivalPersonPositionDTO newRelationFestivalPersonPosition) {
             return base.Channel.AddRelationFestivalPersonPosition(newRelationFestivalPersonPosition);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddRelationFestivalPersonPosition(AF.Common.DTO.RelationFestivalPersonPositionDTO newRelationFestivalPersonPosition, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddRelationFestivalPersonPosition(newRelationFestivalPersonPosition, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> EndAddRelationFestivalPersonPosition(System.IAsyncResult result) {
-            return base.Channel.EndAddRelationFestivalPersonPosition(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddRelationFestivalPersonPosition(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.RelationFestivalPersonPositionDTO newRelationFestivalPersonPosition = ((AF.Common.DTO.RelationFestivalPersonPositionDTO)(inValues[0]));
-            return this.BeginAddRelationFestivalPersonPosition(newRelationFestivalPersonPosition, callback, asyncState);
-        }
-        
-        private object[] OnEndAddRelationFestivalPersonPosition(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> retVal = this.EndAddRelationFestivalPersonPosition(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddRelationFestivalPersonPositionCompleted(object state) {
-            if ((this.AddRelationFestivalPersonPositionCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddRelationFestivalPersonPositionCompleted(this, new AddRelationFestivalPersonPositionCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddRelationFestivalPersonPositionAsync(AF.Common.DTO.RelationFestivalPersonPositionDTO newRelationFestivalPersonPosition) {
-            this.AddRelationFestivalPersonPositionAsync(newRelationFestivalPersonPosition, null);
-        }
-        
-        public void AddRelationFestivalPersonPositionAsync(AF.Common.DTO.RelationFestivalPersonPositionDTO newRelationFestivalPersonPosition, object userState) {
-            if ((this.onBeginAddRelationFestivalPersonPositionDelegate == null)) {
-                this.onBeginAddRelationFestivalPersonPositionDelegate = new BeginOperationDelegate(this.OnBeginAddRelationFestivalPersonPosition);
-            }
-            if ((this.onEndAddRelationFestivalPersonPositionDelegate == null)) {
-                this.onEndAddRelationFestivalPersonPositionDelegate = new EndOperationDelegate(this.OnEndAddRelationFestivalPersonPosition);
-            }
-            if ((this.onAddRelationFestivalPersonPositionCompletedDelegate == null)) {
-                this.onAddRelationFestivalPersonPositionCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddRelationFestivalPersonPositionCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddRelationFestivalPersonPositionDelegate, new object[] {
-                        newRelationFestivalPersonPosition}, this.onEndAddRelationFestivalPersonPositionDelegate, this.onAddRelationFestivalPersonPositionCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO>> AddRelationFestivalPersonPositionAsync(AF.Common.DTO.RelationFestivalPersonPositionDTO newRelationFestivalPersonPosition) {
+            return base.Channel.AddRelationFestivalPersonPositionAsync(newRelationFestivalPersonPosition);
         }
         
         public AF.Common.Requests.SingleItemResponse<bool> RemoveRelationFestivalPersonPosition(int id) {
             return base.Channel.RemoveRelationFestivalPersonPosition(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginRemoveRelationFestivalPersonPosition(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginRemoveRelationFestivalPersonPosition(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<bool> EndRemoveRelationFestivalPersonPosition(System.IAsyncResult result) {
-            return base.Channel.EndRemoveRelationFestivalPersonPosition(result);
-        }
-        
-        private System.IAsyncResult OnBeginRemoveRelationFestivalPersonPosition(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginRemoveRelationFestivalPersonPosition(id, callback, asyncState);
-        }
-        
-        private object[] OnEndRemoveRelationFestivalPersonPosition(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<bool> retVal = this.EndRemoveRelationFestivalPersonPosition(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnRemoveRelationFestivalPersonPositionCompleted(object state) {
-            if ((this.RemoveRelationFestivalPersonPositionCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.RemoveRelationFestivalPersonPositionCompleted(this, new RemoveRelationFestivalPersonPositionCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void RemoveRelationFestivalPersonPositionAsync(int id) {
-            this.RemoveRelationFestivalPersonPositionAsync(id, null);
-        }
-        
-        public void RemoveRelationFestivalPersonPositionAsync(int id, object userState) {
-            if ((this.onBeginRemoveRelationFestivalPersonPositionDelegate == null)) {
-                this.onBeginRemoveRelationFestivalPersonPositionDelegate = new BeginOperationDelegate(this.OnBeginRemoveRelationFestivalPersonPosition);
-            }
-            if ((this.onEndRemoveRelationFestivalPersonPositionDelegate == null)) {
-                this.onEndRemoveRelationFestivalPersonPositionDelegate = new EndOperationDelegate(this.OnEndRemoveRelationFestivalPersonPosition);
-            }
-            if ((this.onRemoveRelationFestivalPersonPositionCompletedDelegate == null)) {
-                this.onRemoveRelationFestivalPersonPositionCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRemoveRelationFestivalPersonPositionCompleted);
-            }
-            base.InvokeAsync(this.onBeginRemoveRelationFestivalPersonPositionDelegate, new object[] {
-                        id}, this.onEndRemoveRelationFestivalPersonPositionDelegate, this.onRemoveRelationFestivalPersonPositionCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<bool>> RemoveRelationFestivalPersonPositionAsync(int id) {
+            return base.Channel.RemoveRelationFestivalPersonPositionAsync(id);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> UpdateRelationFestivalPersonPosition(AF.Common.DTO.RelationFestivalPersonPositionDTO updateData) {
             return base.Channel.UpdateRelationFestivalPersonPosition(updateData);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginUpdateRelationFestivalPersonPosition(AF.Common.DTO.RelationFestivalPersonPositionDTO updateData, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdateRelationFestivalPersonPosition(updateData, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> EndUpdateRelationFestivalPersonPosition(System.IAsyncResult result) {
-            return base.Channel.EndUpdateRelationFestivalPersonPosition(result);
-        }
-        
-        private System.IAsyncResult OnBeginUpdateRelationFestivalPersonPosition(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.RelationFestivalPersonPositionDTO updateData = ((AF.Common.DTO.RelationFestivalPersonPositionDTO)(inValues[0]));
-            return this.BeginUpdateRelationFestivalPersonPosition(updateData, callback, asyncState);
-        }
-        
-        private object[] OnEndUpdateRelationFestivalPersonPosition(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> retVal = this.EndUpdateRelationFestivalPersonPosition(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnUpdateRelationFestivalPersonPositionCompleted(object state) {
-            if ((this.UpdateRelationFestivalPersonPositionCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdateRelationFestivalPersonPositionCompleted(this, new UpdateRelationFestivalPersonPositionCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void UpdateRelationFestivalPersonPositionAsync(AF.Common.DTO.RelationFestivalPersonPositionDTO updateData) {
-            this.UpdateRelationFestivalPersonPositionAsync(updateData, null);
-        }
-        
-        public void UpdateRelationFestivalPersonPositionAsync(AF.Common.DTO.RelationFestivalPersonPositionDTO updateData, object userState) {
-            if ((this.onBeginUpdateRelationFestivalPersonPositionDelegate == null)) {
-                this.onBeginUpdateRelationFestivalPersonPositionDelegate = new BeginOperationDelegate(this.OnBeginUpdateRelationFestivalPersonPosition);
-            }
-            if ((this.onEndUpdateRelationFestivalPersonPositionDelegate == null)) {
-                this.onEndUpdateRelationFestivalPersonPositionDelegate = new EndOperationDelegate(this.OnEndUpdateRelationFestivalPersonPosition);
-            }
-            if ((this.onUpdateRelationFestivalPersonPositionCompletedDelegate == null)) {
-                this.onUpdateRelationFestivalPersonPositionCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateRelationFestivalPersonPositionCompleted);
-            }
-            base.InvokeAsync(this.onBeginUpdateRelationFestivalPersonPositionDelegate, new object[] {
-                        updateData}, this.onEndUpdateRelationFestivalPersonPositionDelegate, this.onUpdateRelationFestivalPersonPositionCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO>> UpdateRelationFestivalPersonPositionAsync(AF.Common.DTO.RelationFestivalPersonPositionDTO updateData) {
+            return base.Channel.UpdateRelationFestivalPersonPositionAsync(updateData);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> GetRelationFestivalPersonPosition(int id) {
             return base.Channel.GetRelationFestivalPersonPosition(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetRelationFestivalPersonPosition(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetRelationFestivalPersonPosition(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> EndGetRelationFestivalPersonPosition(System.IAsyncResult result) {
-            return base.Channel.EndGetRelationFestivalPersonPosition(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetRelationFestivalPersonPosition(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginGetRelationFestivalPersonPosition(id, callback, asyncState);
-        }
-        
-        private object[] OnEndGetRelationFestivalPersonPosition(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO> retVal = this.EndGetRelationFestivalPersonPosition(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetRelationFestivalPersonPositionCompleted(object state) {
-            if ((this.GetRelationFestivalPersonPositionCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetRelationFestivalPersonPositionCompleted(this, new GetRelationFestivalPersonPositionCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetRelationFestivalPersonPositionAsync(int id) {
-            this.GetRelationFestivalPersonPositionAsync(id, null);
-        }
-        
-        public void GetRelationFestivalPersonPositionAsync(int id, object userState) {
-            if ((this.onBeginGetRelationFestivalPersonPositionDelegate == null)) {
-                this.onBeginGetRelationFestivalPersonPositionDelegate = new BeginOperationDelegate(this.OnBeginGetRelationFestivalPersonPosition);
-            }
-            if ((this.onEndGetRelationFestivalPersonPositionDelegate == null)) {
-                this.onEndGetRelationFestivalPersonPositionDelegate = new EndOperationDelegate(this.OnEndGetRelationFestivalPersonPosition);
-            }
-            if ((this.onGetRelationFestivalPersonPositionCompletedDelegate == null)) {
-                this.onGetRelationFestivalPersonPositionCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetRelationFestivalPersonPositionCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetRelationFestivalPersonPositionDelegate, new object[] {
-                        id}, this.onEndGetRelationFestivalPersonPositionDelegate, this.onGetRelationFestivalPersonPositionCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationFestivalPersonPositionDTO>> GetRelationFestivalPersonPositionAsync(int id) {
+            return base.Channel.GetRelationFestivalPersonPositionAsync(id);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> AddRelationPersonAward(AF.Common.DTO.RelationPersonAwardDTO newRelationPersonAward) {
             return base.Channel.AddRelationPersonAward(newRelationPersonAward);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddRelationPersonAward(AF.Common.DTO.RelationPersonAwardDTO newRelationPersonAward, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddRelationPersonAward(newRelationPersonAward, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> EndAddRelationPersonAward(System.IAsyncResult result) {
-            return base.Channel.EndAddRelationPersonAward(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddRelationPersonAward(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.RelationPersonAwardDTO newRelationPersonAward = ((AF.Common.DTO.RelationPersonAwardDTO)(inValues[0]));
-            return this.BeginAddRelationPersonAward(newRelationPersonAward, callback, asyncState);
-        }
-        
-        private object[] OnEndAddRelationPersonAward(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> retVal = this.EndAddRelationPersonAward(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddRelationPersonAwardCompleted(object state) {
-            if ((this.AddRelationPersonAwardCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddRelationPersonAwardCompleted(this, new AddRelationPersonAwardCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddRelationPersonAwardAsync(AF.Common.DTO.RelationPersonAwardDTO newRelationPersonAward) {
-            this.AddRelationPersonAwardAsync(newRelationPersonAward, null);
-        }
-        
-        public void AddRelationPersonAwardAsync(AF.Common.DTO.RelationPersonAwardDTO newRelationPersonAward, object userState) {
-            if ((this.onBeginAddRelationPersonAwardDelegate == null)) {
-                this.onBeginAddRelationPersonAwardDelegate = new BeginOperationDelegate(this.OnBeginAddRelationPersonAward);
-            }
-            if ((this.onEndAddRelationPersonAwardDelegate == null)) {
-                this.onEndAddRelationPersonAwardDelegate = new EndOperationDelegate(this.OnEndAddRelationPersonAward);
-            }
-            if ((this.onAddRelationPersonAwardCompletedDelegate == null)) {
-                this.onAddRelationPersonAwardCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddRelationPersonAwardCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddRelationPersonAwardDelegate, new object[] {
-                        newRelationPersonAward}, this.onEndAddRelationPersonAwardDelegate, this.onAddRelationPersonAwardCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO>> AddRelationPersonAwardAsync(AF.Common.DTO.RelationPersonAwardDTO newRelationPersonAward) {
+            return base.Channel.AddRelationPersonAwardAsync(newRelationPersonAward);
         }
         
         public AF.Common.Requests.SingleItemResponse<bool> RemoveRelationPersonAward(int id) {
             return base.Channel.RemoveRelationPersonAward(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginRemoveRelationPersonAward(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginRemoveRelationPersonAward(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<bool> EndRemoveRelationPersonAward(System.IAsyncResult result) {
-            return base.Channel.EndRemoveRelationPersonAward(result);
-        }
-        
-        private System.IAsyncResult OnBeginRemoveRelationPersonAward(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginRemoveRelationPersonAward(id, callback, asyncState);
-        }
-        
-        private object[] OnEndRemoveRelationPersonAward(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<bool> retVal = this.EndRemoveRelationPersonAward(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnRemoveRelationPersonAwardCompleted(object state) {
-            if ((this.RemoveRelationPersonAwardCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.RemoveRelationPersonAwardCompleted(this, new RemoveRelationPersonAwardCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void RemoveRelationPersonAwardAsync(int id) {
-            this.RemoveRelationPersonAwardAsync(id, null);
-        }
-        
-        public void RemoveRelationPersonAwardAsync(int id, object userState) {
-            if ((this.onBeginRemoveRelationPersonAwardDelegate == null)) {
-                this.onBeginRemoveRelationPersonAwardDelegate = new BeginOperationDelegate(this.OnBeginRemoveRelationPersonAward);
-            }
-            if ((this.onEndRemoveRelationPersonAwardDelegate == null)) {
-                this.onEndRemoveRelationPersonAwardDelegate = new EndOperationDelegate(this.OnEndRemoveRelationPersonAward);
-            }
-            if ((this.onRemoveRelationPersonAwardCompletedDelegate == null)) {
-                this.onRemoveRelationPersonAwardCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRemoveRelationPersonAwardCompleted);
-            }
-            base.InvokeAsync(this.onBeginRemoveRelationPersonAwardDelegate, new object[] {
-                        id}, this.onEndRemoveRelationPersonAwardDelegate, this.onRemoveRelationPersonAwardCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<bool>> RemoveRelationPersonAwardAsync(int id) {
+            return base.Channel.RemoveRelationPersonAwardAsync(id);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> UpdateRelationPersonAward(AF.Common.DTO.RelationPersonAwardDTO updateData) {
             return base.Channel.UpdateRelationPersonAward(updateData);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginUpdateRelationPersonAward(AF.Common.DTO.RelationPersonAwardDTO updateData, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdateRelationPersonAward(updateData, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> EndUpdateRelationPersonAward(System.IAsyncResult result) {
-            return base.Channel.EndUpdateRelationPersonAward(result);
-        }
-        
-        private System.IAsyncResult OnBeginUpdateRelationPersonAward(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.RelationPersonAwardDTO updateData = ((AF.Common.DTO.RelationPersonAwardDTO)(inValues[0]));
-            return this.BeginUpdateRelationPersonAward(updateData, callback, asyncState);
-        }
-        
-        private object[] OnEndUpdateRelationPersonAward(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> retVal = this.EndUpdateRelationPersonAward(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnUpdateRelationPersonAwardCompleted(object state) {
-            if ((this.UpdateRelationPersonAwardCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdateRelationPersonAwardCompleted(this, new UpdateRelationPersonAwardCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void UpdateRelationPersonAwardAsync(AF.Common.DTO.RelationPersonAwardDTO updateData) {
-            this.UpdateRelationPersonAwardAsync(updateData, null);
-        }
-        
-        public void UpdateRelationPersonAwardAsync(AF.Common.DTO.RelationPersonAwardDTO updateData, object userState) {
-            if ((this.onBeginUpdateRelationPersonAwardDelegate == null)) {
-                this.onBeginUpdateRelationPersonAwardDelegate = new BeginOperationDelegate(this.OnBeginUpdateRelationPersonAward);
-            }
-            if ((this.onEndUpdateRelationPersonAwardDelegate == null)) {
-                this.onEndUpdateRelationPersonAwardDelegate = new EndOperationDelegate(this.OnEndUpdateRelationPersonAward);
-            }
-            if ((this.onUpdateRelationPersonAwardCompletedDelegate == null)) {
-                this.onUpdateRelationPersonAwardCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateRelationPersonAwardCompleted);
-            }
-            base.InvokeAsync(this.onBeginUpdateRelationPersonAwardDelegate, new object[] {
-                        updateData}, this.onEndUpdateRelationPersonAwardDelegate, this.onUpdateRelationPersonAwardCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO>> UpdateRelationPersonAwardAsync(AF.Common.DTO.RelationPersonAwardDTO updateData) {
+            return base.Channel.UpdateRelationPersonAwardAsync(updateData);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> GetRelationPersonAward(int id) {
             return base.Channel.GetRelationPersonAward(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetRelationPersonAward(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetRelationPersonAward(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> EndGetRelationPersonAward(System.IAsyncResult result) {
-            return base.Channel.EndGetRelationPersonAward(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetRelationPersonAward(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginGetRelationPersonAward(id, callback, asyncState);
-        }
-        
-        private object[] OnEndGetRelationPersonAward(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO> retVal = this.EndGetRelationPersonAward(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetRelationPersonAwardCompleted(object state) {
-            if ((this.GetRelationPersonAwardCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetRelationPersonAwardCompleted(this, new GetRelationPersonAwardCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetRelationPersonAwardAsync(int id) {
-            this.GetRelationPersonAwardAsync(id, null);
-        }
-        
-        public void GetRelationPersonAwardAsync(int id, object userState) {
-            if ((this.onBeginGetRelationPersonAwardDelegate == null)) {
-                this.onBeginGetRelationPersonAwardDelegate = new BeginOperationDelegate(this.OnBeginGetRelationPersonAward);
-            }
-            if ((this.onEndGetRelationPersonAwardDelegate == null)) {
-                this.onEndGetRelationPersonAwardDelegate = new EndOperationDelegate(this.OnEndGetRelationPersonAward);
-            }
-            if ((this.onGetRelationPersonAwardCompletedDelegate == null)) {
-                this.onGetRelationPersonAwardCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetRelationPersonAwardCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetRelationPersonAwardDelegate, new object[] {
-                        id}, this.onEndGetRelationPersonAwardDelegate, this.onGetRelationPersonAwardCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonAwardDTO>> GetRelationPersonAwardAsync(int id) {
+            return base.Channel.GetRelationPersonAwardAsync(id);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> AddRelationPersonPlayJob(AF.Common.DTO.RelationPersonPlayJobDTO newRelationPersonPlayJob) {
             return base.Channel.AddRelationPersonPlayJob(newRelationPersonPlayJob);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddRelationPersonPlayJob(AF.Common.DTO.RelationPersonPlayJobDTO newRelationPersonPlayJob, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddRelationPersonPlayJob(newRelationPersonPlayJob, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> EndAddRelationPersonPlayJob(System.IAsyncResult result) {
-            return base.Channel.EndAddRelationPersonPlayJob(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddRelationPersonPlayJob(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.RelationPersonPlayJobDTO newRelationPersonPlayJob = ((AF.Common.DTO.RelationPersonPlayJobDTO)(inValues[0]));
-            return this.BeginAddRelationPersonPlayJob(newRelationPersonPlayJob, callback, asyncState);
-        }
-        
-        private object[] OnEndAddRelationPersonPlayJob(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> retVal = this.EndAddRelationPersonPlayJob(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddRelationPersonPlayJobCompleted(object state) {
-            if ((this.AddRelationPersonPlayJobCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddRelationPersonPlayJobCompleted(this, new AddRelationPersonPlayJobCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddRelationPersonPlayJobAsync(AF.Common.DTO.RelationPersonPlayJobDTO newRelationPersonPlayJob) {
-            this.AddRelationPersonPlayJobAsync(newRelationPersonPlayJob, null);
-        }
-        
-        public void AddRelationPersonPlayJobAsync(AF.Common.DTO.RelationPersonPlayJobDTO newRelationPersonPlayJob, object userState) {
-            if ((this.onBeginAddRelationPersonPlayJobDelegate == null)) {
-                this.onBeginAddRelationPersonPlayJobDelegate = new BeginOperationDelegate(this.OnBeginAddRelationPersonPlayJob);
-            }
-            if ((this.onEndAddRelationPersonPlayJobDelegate == null)) {
-                this.onEndAddRelationPersonPlayJobDelegate = new EndOperationDelegate(this.OnEndAddRelationPersonPlayJob);
-            }
-            if ((this.onAddRelationPersonPlayJobCompletedDelegate == null)) {
-                this.onAddRelationPersonPlayJobCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddRelationPersonPlayJobCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddRelationPersonPlayJobDelegate, new object[] {
-                        newRelationPersonPlayJob}, this.onEndAddRelationPersonPlayJobDelegate, this.onAddRelationPersonPlayJobCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO>> AddRelationPersonPlayJobAsync(AF.Common.DTO.RelationPersonPlayJobDTO newRelationPersonPlayJob) {
+            return base.Channel.AddRelationPersonPlayJobAsync(newRelationPersonPlayJob);
         }
         
         public AF.Common.Requests.SingleItemResponse<bool> RemoveRelationPersonPlayJob(int id) {
             return base.Channel.RemoveRelationPersonPlayJob(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginRemoveRelationPersonPlayJob(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginRemoveRelationPersonPlayJob(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<bool> EndRemoveRelationPersonPlayJob(System.IAsyncResult result) {
-            return base.Channel.EndRemoveRelationPersonPlayJob(result);
-        }
-        
-        private System.IAsyncResult OnBeginRemoveRelationPersonPlayJob(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginRemoveRelationPersonPlayJob(id, callback, asyncState);
-        }
-        
-        private object[] OnEndRemoveRelationPersonPlayJob(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<bool> retVal = this.EndRemoveRelationPersonPlayJob(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnRemoveRelationPersonPlayJobCompleted(object state) {
-            if ((this.RemoveRelationPersonPlayJobCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.RemoveRelationPersonPlayJobCompleted(this, new RemoveRelationPersonPlayJobCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void RemoveRelationPersonPlayJobAsync(int id) {
-            this.RemoveRelationPersonPlayJobAsync(id, null);
-        }
-        
-        public void RemoveRelationPersonPlayJobAsync(int id, object userState) {
-            if ((this.onBeginRemoveRelationPersonPlayJobDelegate == null)) {
-                this.onBeginRemoveRelationPersonPlayJobDelegate = new BeginOperationDelegate(this.OnBeginRemoveRelationPersonPlayJob);
-            }
-            if ((this.onEndRemoveRelationPersonPlayJobDelegate == null)) {
-                this.onEndRemoveRelationPersonPlayJobDelegate = new EndOperationDelegate(this.OnEndRemoveRelationPersonPlayJob);
-            }
-            if ((this.onRemoveRelationPersonPlayJobCompletedDelegate == null)) {
-                this.onRemoveRelationPersonPlayJobCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRemoveRelationPersonPlayJobCompleted);
-            }
-            base.InvokeAsync(this.onBeginRemoveRelationPersonPlayJobDelegate, new object[] {
-                        id}, this.onEndRemoveRelationPersonPlayJobDelegate, this.onRemoveRelationPersonPlayJobCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<bool>> RemoveRelationPersonPlayJobAsync(int id) {
+            return base.Channel.RemoveRelationPersonPlayJobAsync(id);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> UpdateRelationPersonPlayJob(AF.Common.DTO.RelationPersonPlayJobDTO updateData) {
             return base.Channel.UpdateRelationPersonPlayJob(updateData);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginUpdateRelationPersonPlayJob(AF.Common.DTO.RelationPersonPlayJobDTO updateData, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdateRelationPersonPlayJob(updateData, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> EndUpdateRelationPersonPlayJob(System.IAsyncResult result) {
-            return base.Channel.EndUpdateRelationPersonPlayJob(result);
-        }
-        
-        private System.IAsyncResult OnBeginUpdateRelationPersonPlayJob(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.RelationPersonPlayJobDTO updateData = ((AF.Common.DTO.RelationPersonPlayJobDTO)(inValues[0]));
-            return this.BeginUpdateRelationPersonPlayJob(updateData, callback, asyncState);
-        }
-        
-        private object[] OnEndUpdateRelationPersonPlayJob(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> retVal = this.EndUpdateRelationPersonPlayJob(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnUpdateRelationPersonPlayJobCompleted(object state) {
-            if ((this.UpdateRelationPersonPlayJobCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdateRelationPersonPlayJobCompleted(this, new UpdateRelationPersonPlayJobCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void UpdateRelationPersonPlayJobAsync(AF.Common.DTO.RelationPersonPlayJobDTO updateData) {
-            this.UpdateRelationPersonPlayJobAsync(updateData, null);
-        }
-        
-        public void UpdateRelationPersonPlayJobAsync(AF.Common.DTO.RelationPersonPlayJobDTO updateData, object userState) {
-            if ((this.onBeginUpdateRelationPersonPlayJobDelegate == null)) {
-                this.onBeginUpdateRelationPersonPlayJobDelegate = new BeginOperationDelegate(this.OnBeginUpdateRelationPersonPlayJob);
-            }
-            if ((this.onEndUpdateRelationPersonPlayJobDelegate == null)) {
-                this.onEndUpdateRelationPersonPlayJobDelegate = new EndOperationDelegate(this.OnEndUpdateRelationPersonPlayJob);
-            }
-            if ((this.onUpdateRelationPersonPlayJobCompletedDelegate == null)) {
-                this.onUpdateRelationPersonPlayJobCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateRelationPersonPlayJobCompleted);
-            }
-            base.InvokeAsync(this.onBeginUpdateRelationPersonPlayJobDelegate, new object[] {
-                        updateData}, this.onEndUpdateRelationPersonPlayJobDelegate, this.onUpdateRelationPersonPlayJobCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO>> UpdateRelationPersonPlayJobAsync(AF.Common.DTO.RelationPersonPlayJobDTO updateData) {
+            return base.Channel.UpdateRelationPersonPlayJobAsync(updateData);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> GetRelationPersonPlayJob(int id) {
             return base.Channel.GetRelationPersonPlayJob(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetRelationPersonPlayJob(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetRelationPersonPlayJob(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> EndGetRelationPersonPlayJob(System.IAsyncResult result) {
-            return base.Channel.EndGetRelationPersonPlayJob(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetRelationPersonPlayJob(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginGetRelationPersonPlayJob(id, callback, asyncState);
-        }
-        
-        private object[] OnEndGetRelationPersonPlayJob(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO> retVal = this.EndGetRelationPersonPlayJob(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetRelationPersonPlayJobCompleted(object state) {
-            if ((this.GetRelationPersonPlayJobCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetRelationPersonPlayJobCompleted(this, new GetRelationPersonPlayJobCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetRelationPersonPlayJobAsync(int id) {
-            this.GetRelationPersonPlayJobAsync(id, null);
-        }
-        
-        public void GetRelationPersonPlayJobAsync(int id, object userState) {
-            if ((this.onBeginGetRelationPersonPlayJobDelegate == null)) {
-                this.onBeginGetRelationPersonPlayJobDelegate = new BeginOperationDelegate(this.OnBeginGetRelationPersonPlayJob);
-            }
-            if ((this.onEndGetRelationPersonPlayJobDelegate == null)) {
-                this.onEndGetRelationPersonPlayJobDelegate = new EndOperationDelegate(this.OnEndGetRelationPersonPlayJob);
-            }
-            if ((this.onGetRelationPersonPlayJobCompletedDelegate == null)) {
-                this.onGetRelationPersonPlayJobCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetRelationPersonPlayJobCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetRelationPersonPlayJobDelegate, new object[] {
-                        id}, this.onEndGetRelationPersonPlayJobDelegate, this.onGetRelationPersonPlayJobCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayJobDTO>> GetRelationPersonPlayJobAsync(int id) {
+            return base.Channel.GetRelationPersonPlayJobAsync(id);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> AddRelationPersonPlayRole(AF.Common.DTO.RelationPersonPlayRoleDTO newRelationPersonPlayRole) {
             return base.Channel.AddRelationPersonPlayRole(newRelationPersonPlayRole);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddRelationPersonPlayRole(AF.Common.DTO.RelationPersonPlayRoleDTO newRelationPersonPlayRole, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddRelationPersonPlayRole(newRelationPersonPlayRole, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> EndAddRelationPersonPlayRole(System.IAsyncResult result) {
-            return base.Channel.EndAddRelationPersonPlayRole(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddRelationPersonPlayRole(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.RelationPersonPlayRoleDTO newRelationPersonPlayRole = ((AF.Common.DTO.RelationPersonPlayRoleDTO)(inValues[0]));
-            return this.BeginAddRelationPersonPlayRole(newRelationPersonPlayRole, callback, asyncState);
-        }
-        
-        private object[] OnEndAddRelationPersonPlayRole(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> retVal = this.EndAddRelationPersonPlayRole(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddRelationPersonPlayRoleCompleted(object state) {
-            if ((this.AddRelationPersonPlayRoleCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddRelationPersonPlayRoleCompleted(this, new AddRelationPersonPlayRoleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddRelationPersonPlayRoleAsync(AF.Common.DTO.RelationPersonPlayRoleDTO newRelationPersonPlayRole) {
-            this.AddRelationPersonPlayRoleAsync(newRelationPersonPlayRole, null);
-        }
-        
-        public void AddRelationPersonPlayRoleAsync(AF.Common.DTO.RelationPersonPlayRoleDTO newRelationPersonPlayRole, object userState) {
-            if ((this.onBeginAddRelationPersonPlayRoleDelegate == null)) {
-                this.onBeginAddRelationPersonPlayRoleDelegate = new BeginOperationDelegate(this.OnBeginAddRelationPersonPlayRole);
-            }
-            if ((this.onEndAddRelationPersonPlayRoleDelegate == null)) {
-                this.onEndAddRelationPersonPlayRoleDelegate = new EndOperationDelegate(this.OnEndAddRelationPersonPlayRole);
-            }
-            if ((this.onAddRelationPersonPlayRoleCompletedDelegate == null)) {
-                this.onAddRelationPersonPlayRoleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddRelationPersonPlayRoleCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddRelationPersonPlayRoleDelegate, new object[] {
-                        newRelationPersonPlayRole}, this.onEndAddRelationPersonPlayRoleDelegate, this.onAddRelationPersonPlayRoleCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO>> AddRelationPersonPlayRoleAsync(AF.Common.DTO.RelationPersonPlayRoleDTO newRelationPersonPlayRole) {
+            return base.Channel.AddRelationPersonPlayRoleAsync(newRelationPersonPlayRole);
         }
         
         public AF.Common.Requests.SingleItemResponse<bool> RemoveRelationPersonPlayRole(int id) {
             return base.Channel.RemoveRelationPersonPlayRole(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginRemoveRelationPersonPlayRole(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginRemoveRelationPersonPlayRole(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<bool> EndRemoveRelationPersonPlayRole(System.IAsyncResult result) {
-            return base.Channel.EndRemoveRelationPersonPlayRole(result);
-        }
-        
-        private System.IAsyncResult OnBeginRemoveRelationPersonPlayRole(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginRemoveRelationPersonPlayRole(id, callback, asyncState);
-        }
-        
-        private object[] OnEndRemoveRelationPersonPlayRole(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<bool> retVal = this.EndRemoveRelationPersonPlayRole(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnRemoveRelationPersonPlayRoleCompleted(object state) {
-            if ((this.RemoveRelationPersonPlayRoleCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.RemoveRelationPersonPlayRoleCompleted(this, new RemoveRelationPersonPlayRoleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void RemoveRelationPersonPlayRoleAsync(int id) {
-            this.RemoveRelationPersonPlayRoleAsync(id, null);
-        }
-        
-        public void RemoveRelationPersonPlayRoleAsync(int id, object userState) {
-            if ((this.onBeginRemoveRelationPersonPlayRoleDelegate == null)) {
-                this.onBeginRemoveRelationPersonPlayRoleDelegate = new BeginOperationDelegate(this.OnBeginRemoveRelationPersonPlayRole);
-            }
-            if ((this.onEndRemoveRelationPersonPlayRoleDelegate == null)) {
-                this.onEndRemoveRelationPersonPlayRoleDelegate = new EndOperationDelegate(this.OnEndRemoveRelationPersonPlayRole);
-            }
-            if ((this.onRemoveRelationPersonPlayRoleCompletedDelegate == null)) {
-                this.onRemoveRelationPersonPlayRoleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRemoveRelationPersonPlayRoleCompleted);
-            }
-            base.InvokeAsync(this.onBeginRemoveRelationPersonPlayRoleDelegate, new object[] {
-                        id}, this.onEndRemoveRelationPersonPlayRoleDelegate, this.onRemoveRelationPersonPlayRoleCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<bool>> RemoveRelationPersonPlayRoleAsync(int id) {
+            return base.Channel.RemoveRelationPersonPlayRoleAsync(id);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> UpdateRelationPersonPlayRole(AF.Common.DTO.RelationPersonPlayRoleDTO updateData) {
             return base.Channel.UpdateRelationPersonPlayRole(updateData);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginUpdateRelationPersonPlayRole(AF.Common.DTO.RelationPersonPlayRoleDTO updateData, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdateRelationPersonPlayRole(updateData, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> EndUpdateRelationPersonPlayRole(System.IAsyncResult result) {
-            return base.Channel.EndUpdateRelationPersonPlayRole(result);
-        }
-        
-        private System.IAsyncResult OnBeginUpdateRelationPersonPlayRole(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AF.Common.DTO.RelationPersonPlayRoleDTO updateData = ((AF.Common.DTO.RelationPersonPlayRoleDTO)(inValues[0]));
-            return this.BeginUpdateRelationPersonPlayRole(updateData, callback, asyncState);
-        }
-        
-        private object[] OnEndUpdateRelationPersonPlayRole(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> retVal = this.EndUpdateRelationPersonPlayRole(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnUpdateRelationPersonPlayRoleCompleted(object state) {
-            if ((this.UpdateRelationPersonPlayRoleCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdateRelationPersonPlayRoleCompleted(this, new UpdateRelationPersonPlayRoleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void UpdateRelationPersonPlayRoleAsync(AF.Common.DTO.RelationPersonPlayRoleDTO updateData) {
-            this.UpdateRelationPersonPlayRoleAsync(updateData, null);
-        }
-        
-        public void UpdateRelationPersonPlayRoleAsync(AF.Common.DTO.RelationPersonPlayRoleDTO updateData, object userState) {
-            if ((this.onBeginUpdateRelationPersonPlayRoleDelegate == null)) {
-                this.onBeginUpdateRelationPersonPlayRoleDelegate = new BeginOperationDelegate(this.OnBeginUpdateRelationPersonPlayRole);
-            }
-            if ((this.onEndUpdateRelationPersonPlayRoleDelegate == null)) {
-                this.onEndUpdateRelationPersonPlayRoleDelegate = new EndOperationDelegate(this.OnEndUpdateRelationPersonPlayRole);
-            }
-            if ((this.onUpdateRelationPersonPlayRoleCompletedDelegate == null)) {
-                this.onUpdateRelationPersonPlayRoleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateRelationPersonPlayRoleCompleted);
-            }
-            base.InvokeAsync(this.onBeginUpdateRelationPersonPlayRoleDelegate, new object[] {
-                        updateData}, this.onEndUpdateRelationPersonPlayRoleDelegate, this.onUpdateRelationPersonPlayRoleCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO>> UpdateRelationPersonPlayRoleAsync(AF.Common.DTO.RelationPersonPlayRoleDTO updateData) {
+            return base.Channel.UpdateRelationPersonPlayRoleAsync(updateData);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> GetRelationPersonPlayRole(int id) {
             return base.Channel.GetRelationPersonPlayRole(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetRelationPersonPlayRole(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetRelationPersonPlayRole(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> EndGetRelationPersonPlayRole(System.IAsyncResult result) {
-            return base.Channel.EndGetRelationPersonPlayRole(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetRelationPersonPlayRole(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginGetRelationPersonPlayRole(id, callback, asyncState);
-        }
-        
-        private object[] OnEndGetRelationPersonPlayRole(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO> retVal = this.EndGetRelationPersonPlayRole(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetRelationPersonPlayRoleCompleted(object state) {
-            if ((this.GetRelationPersonPlayRoleCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetRelationPersonPlayRoleCompleted(this, new GetRelationPersonPlayRoleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetRelationPersonPlayRoleAsync(int id) {
-            this.GetRelationPersonPlayRoleAsync(id, null);
-        }
-        
-        public void GetRelationPersonPlayRoleAsync(int id, object userState) {
-            if ((this.onBeginGetRelationPersonPlayRoleDelegate == null)) {
-                this.onBeginGetRelationPersonPlayRoleDelegate = new BeginOperationDelegate(this.OnBeginGetRelationPersonPlayRole);
-            }
-            if ((this.onEndGetRelationPersonPlayRoleDelegate == null)) {
-                this.onEndGetRelationPersonPlayRoleDelegate = new EndOperationDelegate(this.OnEndGetRelationPersonPlayRole);
-            }
-            if ((this.onGetRelationPersonPlayRoleCompletedDelegate == null)) {
-                this.onGetRelationPersonPlayRoleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetRelationPersonPlayRoleCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetRelationPersonPlayRoleDelegate, new object[] {
-                        id}, this.onEndGetRelationPersonPlayRoleDelegate, this.onGetRelationPersonPlayRoleCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.RelationPersonPlayRoleDTO>> GetRelationPersonPlayRoleAsync(int id) {
+            return base.Channel.GetRelationPersonPlayRoleAsync(id);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.UserDTO> GetUser(int id) {
             return base.Channel.GetUser(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetUser(int id, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetUser(id, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.UserDTO> EndGetUser(System.IAsyncResult result) {
-            return base.Channel.EndGetUser(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id = ((int)(inValues[0]));
-            return this.BeginGetUser(id, callback, asyncState);
-        }
-        
-        private object[] OnEndGetUser(System.IAsyncResult result) {
-            AF.Common.Requests.SingleItemResponse<AF.Common.DTO.UserDTO> retVal = this.EndGetUser(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetUserCompleted(object state) {
-            if ((this.GetUserCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetUserCompleted(this, new GetUserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetUserAsync(int id) {
-            this.GetUserAsync(id, null);
-        }
-        
-        public void GetUserAsync(int id, object userState) {
-            if ((this.onBeginGetUserDelegate == null)) {
-                this.onBeginGetUserDelegate = new BeginOperationDelegate(this.OnBeginGetUser);
-            }
-            if ((this.onEndGetUserDelegate == null)) {
-                this.onEndGetUserDelegate = new EndOperationDelegate(this.OnEndGetUser);
-            }
-            if ((this.onGetUserCompletedDelegate == null)) {
-                this.onGetUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetUserCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetUserDelegate, new object[] {
-                        id}, this.onEndGetUserDelegate, this.onGetUserCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.UserDTO>> GetUserAsync(int id) {
+            return base.Channel.GetUserAsync(id);
         }
         
         public AF.Common.Requests.ListResponse<AF.Common.DTO.UserDTO> GetAllUsers() {
             return base.Channel.GetAllUsers();
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetAllUsers(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetAllUsers(callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AF.Common.Requests.ListResponse<AF.Common.DTO.UserDTO> EndGetAllUsers(System.IAsyncResult result) {
-            return base.Channel.EndGetAllUsers(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetAllUsers(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return this.BeginGetAllUsers(callback, asyncState);
-        }
-        
-        private object[] OnEndGetAllUsers(System.IAsyncResult result) {
-            AF.Common.Requests.ListResponse<AF.Common.DTO.UserDTO> retVal = this.EndGetAllUsers(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetAllUsersCompleted(object state) {
-            if ((this.GetAllUsersCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetAllUsersCompleted(this, new GetAllUsersCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetAllUsersAsync() {
-            this.GetAllUsersAsync(null);
-        }
-        
-        public void GetAllUsersAsync(object userState) {
-            if ((this.onBeginGetAllUsersDelegate == null)) {
-                this.onBeginGetAllUsersDelegate = new BeginOperationDelegate(this.OnBeginGetAllUsers);
-            }
-            if ((this.onEndGetAllUsersDelegate == null)) {
-                this.onEndGetAllUsersDelegate = new EndOperationDelegate(this.OnEndGetAllUsers);
-            }
-            if ((this.onGetAllUsersCompletedDelegate == null)) {
-                this.onGetAllUsersCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllUsersCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetAllUsersDelegate, null, this.onEndGetAllUsersDelegate, this.onGetAllUsersCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.UserDTO>> GetAllUsersAsync() {
+            return base.Channel.GetAllUsersAsync();
         }
     }
 }

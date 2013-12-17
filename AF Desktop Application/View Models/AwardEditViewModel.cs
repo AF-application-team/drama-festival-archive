@@ -44,7 +44,7 @@ namespace AF_Desktop_Application.View_Models
         {
             if (originalAward == null)
             {
-                await DB.AddAward(EditedAward.PlayId, EditedAward.FestivalId, EditedAward.CategoryId,
+                await DB.AddAward(EditedAward.PlayId, EditedAward.CategoryId,
                     MainViewModel.LoggedUser.UserId);
                 return true;
             }

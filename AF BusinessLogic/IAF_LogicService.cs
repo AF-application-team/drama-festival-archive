@@ -12,7 +12,7 @@ namespace AF_BusinessLogic
     public interface IAF_LogicService
     {
         #region Award
-        Task AddAward(int playId, int festivalId, int categoryId, int userId);
+        Task AddAward(int playId, int categoryId, int userId);
         Task RemoveAward(int id);
         Task UpdateAward(Award updateData);
         Task<Award> GetAward(int id);

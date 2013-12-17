@@ -1,8 +1,8 @@
 ﻿using System.Windows;
+using AF.Common.DTO;
 using AF_Desktop_Application_WCF.View_Models;
-using AF_Models;
 
-namespace AF_Desktop_Application.Edit_Windows
+namespace AF_Desktop_Application_WCF.Edit_Windows
 {
     /// <summary>
     /// Interaction logic for JobEditWindow.xaml
@@ -10,10 +10,11 @@ namespace AF_Desktop_Application.Edit_Windows
     public partial class JobEditWindow : Window
     {
         public JobEditViewModel JEViewModel { get; set; }
-        public JobEditWindow(Job job)
+        public JobEditWindow(JobDTO job)
         {
             InitializeComponent();
-            JEViewModel = new JobEditViewModel(job);
+            JEViewModel = new JobEditViewModel();
+            JEViewModel.Initialize(job.JobId);
             this.DataContext = JEViewModel.EditedJob;
         }
 

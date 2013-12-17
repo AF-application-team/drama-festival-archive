@@ -19,8 +19,8 @@ namespace AF_Models
         
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
-        [ForeignKey("FestivalId")]
-        public virtual Festival Festival { get; set; }
+        //[ForeignKey("FestivalId")]
+        //public virtual Festival Festival { get; set; }
         [ForeignKey("PlayId")]
         public virtual Play Play { get; set; }
         [ForeignKey("EditedBy")]

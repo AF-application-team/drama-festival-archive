@@ -48,6 +48,7 @@ namespace AF.Common.Services
         [OperationContract]
         ListResponse<FestivalDTO> GetFestivalsPaged(int pageNr, int pageAmount);
         //List<Festival> GetAllFestivals();
+        [OperationContract]
         SingleItemResponse<int> CountFestivals();
         #endregion
         #region Job

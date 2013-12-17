@@ -13,10 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AF.Common.DTO;
 using AF_Constants;
-using AF_BusinessLogic;
-using AF_Desktop_Application.Edit_Windows;
-using AF_Models;
+using AF_Desktop_Application_WCF.Edit_Windows;
 
 namespace AF_Desktop_Application_WCF
 {
@@ -83,7 +82,7 @@ namespace AF_Desktop_Application_WCF
         {
             if (PlaysDataGrid.SelectedIndex != -1)
                 //TODO Czy okna nie powinien wywoływać ViewModel??
-                if (new PlayEditWindow((Play)PlaysDataGrid.SelectedItem, MViewModel.FestivalsList).ShowDialog() == true)
+                if (new PlayEditWindow((PlayDataDTO)PlaysDataGrid.SelectedItem, MViewModel.FestivalsList).ShowDialog() == true)
                 {
                     PlaysSearchButton_Click(this, new RoutedEventArgs());
                 }
