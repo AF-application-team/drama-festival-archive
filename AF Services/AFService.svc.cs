@@ -114,7 +114,7 @@ namespace AF.Services
                     Award awa = context.Awards.First(a => a.AwardId == id);
                     //awa.Editor = context.Users.First(u => u.UserId == awa.EditedBy);
 
-                    var newAwardDto = new AwardDataDTO()
+                    var newAwardDto = new AwardDataDTO
                     {
                         AwardId = awa.AwardId,
                         CategoryId = awa.CategoryId,
@@ -640,6 +640,46 @@ namespace AF.Services
                         tmp.Add(newPlayDto);
                     }
                     return (new ListResponse<PlayDataDTO>(tmp));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+        }
+
+        public ListResponse<PlayTitleDTO> SearchPlaysTitles(PlaysSearchingCriteria criteria, int pageNr, int pageAmount)
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    var skip = pageAmount * (pageNr - 1);
+                    var query = (from p in context.Plays select p);
+                    if (criteria.FestivalIdFilter != null)
+                        query = query.Where(p => p.FestivalId == criteria.FestivalIdFilter);
+                    if (!String.IsNullOrEmpty(criteria.Author))
+                        query = query.Where(p => p.Author.Contains(criteria.Author));
+                    if (!String.IsNullOrEmpty(criteria.Title))
+                        query = query.Where(p => p.Title.Contains(criteria.Title));
+                    if (!String.IsNullOrEmpty(criteria.Motto))
+                        query = query.Where(p => p.Motto.Contains(criteria.Motto));
+
+                    List<PlayTitleDTO> tmp = new List<PlayTitleDTO>();
+                    foreach (Play pla in (query.OrderBy(p => p.FestivalId)
+                        .ThenBy(p => p.Day)
+                        .ThenBy(p => p.Order)
+                        .Skip(skip)
+                        .Take(pageAmount)))
+                    {
+                        var newPlayDto = new PlayTitleDTO()
+                        {
+                            PlayId = pla.PlayId,
+                            Title = pla.Title,
+                        };
+                        tmp.Add(newPlayDto);
+                    }
+                    return (new ListResponse<PlayTitleDTO>(tmp));
                 }
                 catch (Exception ex)
                 {

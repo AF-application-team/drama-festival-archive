@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace AF.Common.DTO
 {
-    public class JobDTO
+    public class PlayTitleDTO
     {
-        public int JobId { get; set; }
-        public string JobTitle { get; set; }
+        public int PlayId { get; set; }
+        public string Title { get; set; }
 
-        public JobDTO() { }
-        public JobDTO(JobDTO job)
+        public PlayTitleDTO() { }
+        public PlayTitleDTO(PlayTitleDTO play)
         {
-            JobId = job.JobId;
-            JobTitle = job.JobTitle;
+            PlayId = play.PlayId;
+            Title = play.Title;
         }
 
         public override bool Equals(object obj)
@@ -25,12 +25,12 @@ namespace AF.Common.DTO
                 return false;
             }
 
-            var c = obj as JobDTO;
+            var c = obj as PlayTitleDTO;
             if (c == null)
             {
                 return false;
             }
-            return (JobId == c.JobId) && (JobTitle == c.JobTitle);
+            return (PlayId == c.PlayId) && (Title == c.Title);
         }
     }
 }

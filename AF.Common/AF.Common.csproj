@@ -48,6 +48,7 @@
     <Compile Include="DTO\JobDTO.cs" />
     <Compile Include="DTO\PersonDataDTO.cs" />
     <Compile Include="DTO\PlayDataDTO.cs" />
+    <Compile Include="DTO\PlayTitleDTO.cs" />
     <Compile Include="DTO\PositionDTO.cs" />
     <Compile Include="DTO\RelationFestivalPersonPositionDTO.cs" />
     <Compile Include="DTO\RelationPersonAwardDTO.cs" />
