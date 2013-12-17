@@ -15,15 +15,14 @@ namespace AF_Desktop_Application_WCF.Edit_Windows
     {
         public AwardEditViewModel AEViewModel { get; set; }
         
-        public AwardWindow(List<int> festivalsList, ObservableCollection<CategoryDTO> categoriesList)
+        public AwardWindow(ObservableCollection<CategoryDTO> categoriesList)
         {
             AEViewModel = new AwardEditViewModel(categoriesList);
             InitializeComponent();
         }
-        public AwardWindow(AwardMixedDTO award, List<int> festivalsList, ObservableCollection<CategoryDTO> categoriesList)
+        public AwardWindow(AwardDataDTO awardData, AwardMixedDTO award, ObservableCollection<CategoryDTO> categoriesList)
         {
-            AEViewModel = new AwardEditViewModel(categoriesList);
-            AEViewModel.Initialize(award.AwardId);
+            AEViewModel = new AwardEditViewModel(categoriesList){OriginalAward = awardData,  MixedDTO = award};
             InitializeComponent();
         }
 

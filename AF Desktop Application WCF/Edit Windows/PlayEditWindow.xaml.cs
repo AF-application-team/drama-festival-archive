@@ -31,8 +31,7 @@ namespace AF_Desktop_Application_WCF
 
         public PlayEditWindow(PlayDataDTO editedPlay, List<int> fesitvalsList)
         {
-            PEViewModel = new PlayEditViewModel(fesitvalsList);
-            PEViewModel.Initialize(editedPlay.PlayId);
+            PEViewModel = new PlayEditViewModel(fesitvalsList){OriginalPlay = editedPlay};
             InitializeComponent();
         }
 

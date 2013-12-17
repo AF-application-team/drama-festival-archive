@@ -12,9 +12,8 @@ namespace AF_Desktop_Application_WCF.Edit_Windows
         public CategoryEditViewModel CEViewModel { get; set; }
         public CategoryEditWindow(CategoryDTO category)
         {
+            CEViewModel = new CategoryEditViewModel {OriginalCategory = category};
             InitializeComponent();
-            CEViewModel = new CategoryEditViewModel();
-            CEViewModel.Initialize(category.CategoryId);
             this.DataContext = CEViewModel.EditedCategory;
         }
 

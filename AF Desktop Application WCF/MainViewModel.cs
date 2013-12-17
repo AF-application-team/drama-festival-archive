@@ -17,7 +17,7 @@ namespace AF_Desktop_Application_WCF
     public class MainViewModel
     {
         //static IAF_LogicService DB = new AF_Logic();
-        static  public AFServiceClient _client = new AFServiceClient("WSHttpBinding_IAFService");
+        static public AFServiceClient Client = new AFServiceClient("WSHttpBinding_IAFService");
         static public UserDTO LoggedUser { get; set; }
         public List<int> FestivalsList { get; set; }
         private string[] _logins = { "Janusz", "Ania", "Janusz" };
@@ -31,15 +31,15 @@ namespace AF_Desktop_Application_WCF
         }
         public async Task Initialize()
         {
-            _client.ClientCredentials.UserName.UserName = _logins[0];
-            _client.ClientCredentials.UserName.Password = _passes[0];
+            Client.ClientCredentials.UserName.UserName = _logins[0];
+            Client.ClientCredentials.UserName.Password = _passes[0];
 
             await RefreshCategories();
             await RefreshPositions();
             await RefreshJobs();
 
             FestivalsList = new List<int>();
-            int f = (await _client.CountFestivalsAsync()).Data;
+            int f = (await Client.CountFestivalsAsync()).Data;
             for (int i = 1; i < f; i++)
                 FestivalsList.Add(i);
         }
@@ -71,15 +71,15 @@ namespace AF_Desktop_Application_WCF
         #region Refeshing Lists
         public async Task RefreshCategories()
         {
-            CategoriesList = new ObservableCollection<CategoryDTO>((await _client.GetAllCategoriesAsync()).Data);
+            CategoriesList = new ObservableCollection<CategoryDTO>((await Client.GetAllCategoriesAsync()).Data);
         }
         public async Task RefreshJobs()
         {
-            JobsList = new ObservableCollection<JobDTO>((await _client.GetAllJobsAsync()).Data);
+            JobsList = new ObservableCollection<JobDTO>((await Client.GetAllJobsAsync()).Data);
         }
         public async Task RefreshPositions()
         {
-            PositionsList = new ObservableCollection<PositionDTO>((await _client.GetAllPositionsAsync()).Data);
+            PositionsList = new ObservableCollection<PositionDTO>((await Client.GetAllPositionsAsync()).Data);
         }
         #endregion
 
@@ -87,7 +87,7 @@ namespace AF_Desktop_Application_WCF
         {
             if (title != "")
             {
-                await _client.AddCategoryAsync(new CategoryDTO { Title = title, Group = group, Order = order });
+                await Client.AddCategoryAsync(new CategoryDTO { Title = title, Group = group, Order = order });
                 await RefreshCategories();
             }
         }
@@ -95,7 +95,7 @@ namespace AF_Desktop_Application_WCF
         {
             if (title != "")
             {
-                await _client.AddJobAsync(new JobDTO { JobTitle = title });
+                await Client.AddJobAsync(new JobDTO { JobTitle = title });
                 await RefreshJobs();
             }
         }
@@ -103,7 +103,7 @@ namespace AF_Desktop_Application_WCF
         {
             if (title != "")
             {
-                await _client.AddPositionAsync(new PositionDTO { PositionTitle = title, Section = section, Order = order });
+                await Client.AddPositionAsync(new PositionDTO { PositionTitle = title, Section = section, Order = order });
                 await RefreshPositions();
             }
         }
@@ -111,21 +111,20 @@ namespace AF_Desktop_Application_WCF
         #region Searching
         public async Task SearchPlays(int pageNr, int pageAmount)
         {
-            QuerriedPlays = new ObservableCollection<PlayDataDTO>((await _client.SearchPlaysAsync(PlaysCriteria, pageNr, pageAmount)).Data);
+            QuerriedPlays = new ObservableCollection<PlayDataDTO>((await Client.SearchPlaysAsync(PlaysCriteria, pageNr, pageAmount)).Data);
         }
 
         public async Task SearchAwards(int pageNr, int pageAmount)
         {
-            QuerriedAwards = (await _client.SearchAwardsAsync(AwardsCriteria, pageNr, pageAmount)).Data;
+            QuerriedAwards = (await Client.SearchAwardsAsync(AwardsCriteria, pageNr, pageAmount)).Data;
         }
         #endregion
 
-        public async Task<bool> ChangeUser(int userId)
+        public void ChangeUser(int n)
         {
-            if (LoggedUser.UserId == userId)
-                return false;
-            LoggedUser = (await _client.GetUserAsync(userId)).Data;
-            return true;
+            Client = new AFServiceClient("WSHttpBinding_IAFService");
+            Client.ClientCredentials.UserName.UserName = _logins[n];
+            Client.ClientCredentials.UserName.Password = _passes[n];
         }
 
     }

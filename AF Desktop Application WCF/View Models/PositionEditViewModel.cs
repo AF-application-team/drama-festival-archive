@@ -12,16 +12,19 @@ namespace AF_Desktop_Application_WCF.View_Models
 {
     public class PositionEditViewModel
     {
-        //static IAF_LogicService DB = new AF_Logic();
-        private static AFServiceClient _client = new AFServiceClient("WSHttpBinding_IAFService");
-        public PositionDTO OriginalPosition { get; set; }
-        public PositionDTO EditedPosition { get; set; }
-
-        public async void Initialize(int id)
-        {
-            OriginalPosition = (await _client.GetPositionAsync(id)).Data;
-            EditedPosition = new PositionDTO(OriginalPosition);
+        //private static AFServiceClient _client = new AFServiceClient("WSHttpBinding_IAFService");
+        private AFServiceClient _client = MainViewModel.Client;
+        private PositionDTO _originalPosition;
+        public PositionDTO OriginalPosition { 
+            get { return _originalPosition; }
+            set
+            {
+                _originalPosition = value; 
+                EditedPosition=new PositionDTO(value);
+            } 
         }
+
+        public PositionDTO EditedPosition { get; set; }
 
         public async Task<bool> SaveChanges()
         {

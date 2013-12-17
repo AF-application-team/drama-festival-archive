@@ -12,9 +12,8 @@ namespace AF_Desktop_Application_WCF.Edit_Windows
         public JobEditViewModel JEViewModel { get; set; }
         public JobEditWindow(JobDTO job)
         {
+            JEViewModel = new JobEditViewModel {OriginalJob = job};
             InitializeComponent();
-            JEViewModel = new JobEditViewModel();
-            JEViewModel.Initialize(job.JobId);
             this.DataContext = JEViewModel.EditedJob;
         }
 

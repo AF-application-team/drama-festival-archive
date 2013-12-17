@@ -1,7 +1,7 @@
 ﻿<Window x:Class="AF_Desktop_Application_WCF.PositionEditWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="PositionEditWindow" Height="265" Width="545">
+        Title="PositionEditWindow" Height="200" Width="545">
     <DockPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,5">
             <Button Content="Anuluj" IsCancel="True" Padding="5,5" Margin="5,0,5,0"/>

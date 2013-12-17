@@ -19,9 +19,10 @@
                 <MenuItem.Icon>
                     <Image Source="Images/SettingsIcon.png" Height="20" />
                 </MenuItem.Icon>
-                <MenuItem x:Name="UserMenuItem1" Background="OliveDrab" IsChecked="True" Foreground="White" Header="Janek" Click="UserMenuItem_Click" Tag="1"/>
-                <MenuItem x:Name="UserMenuItem2" Background="CornflowerBlue" IsChecked="False" Foreground="White" Header="Ania" Click="UserMenuItem_Click" Tag="2"/>
-            </MenuItem>
+                <MenuItem x:Name="UserMenuItem1" Background="OliveDrab" IsChecked="True" Foreground="White" Header="Janek" Click="UserMenuItem_Click" Tag="0"/>
+                <MenuItem x:Name="UserMenuItem2" Background="CornflowerBlue" IsChecked="False" Foreground="White" Header="Ania" Click="UserMenuItem_Click" Tag="1"/>
+                <MenuItem x:Name="UserMenuItem3" Background="DarkGray" IsChecked="False" Foreground="White" Header="Wrong Password" Click="UserMenuItem_Click" Tag="2"/>
+           </MenuItem>
 
         </Menu>
         <TabControl x:Name="TabControl" DataContext="">
@@ -376,8 +377,8 @@
                         <DataGrid.Columns>
                             <!--<DataGridCheckBoxColumn Binding="{x:Null}" CanUserSort="False" CanUserReorder="False" CanUserResize="False" ClipboardContentBinding="{x:Null}"/>-->
                             <DataGridTextColumn Binding="{Binding Path=AwardId}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Id Nagrody" IsReadOnly="True" Visibility="Visible"/>
-                            <DataGridTextColumn Binding="{Binding Path=Category.Title}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Kategoria" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardCategoryColumnCheckbox}}"/>
-                            <DataGridTextColumn Binding="{Binding Path=Play.Title}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Przedstawienie" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardPlayColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=CategoryTitle}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Kategoria" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardCategoryColumnCheckbox}}"/>
+                            <DataGridTextColumn Binding="{Binding Path=PlayTitle}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Przedstawienie" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardPlayColumnCheckbox}}"/>
                             <DataGridTextColumn Binding="{Binding Path=FestivalId}" CanUserReorder="False" ClipboardContentBinding="{x:Null}" Header="Festiwal" IsReadOnly="True" Visibility="{Binding Path=IsChecked, Converter={StaticResource Bool2Visibility}, Source={x:Reference Name=AwardFestivalColumnCheckbox}}"/>
                         </DataGrid.Columns>
                     </DataGrid>

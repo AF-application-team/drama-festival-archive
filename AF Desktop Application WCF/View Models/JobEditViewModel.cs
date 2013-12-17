@@ -11,15 +11,19 @@ namespace AF_Desktop_Application_WCF.View_Models
 {
     public class JobEditViewModel
     {
-        private static AFServiceClient _client = new AFServiceClient("WSHttpBinding_IAFService");
-        public JobDTO OriginalJob { get; set; }
-        public JobDTO EditedJob { get; set; }
+        //private static AFServiceClient _client = new AFServiceClient("WSHttpBinding_IAFService");
+        private AFServiceClient _client = MainViewModel.Client;
+        private JobDTO _originalJob;
 
-        public async void Initialize(int id)
+        public JobDTO OriginalJob
         {
-            OriginalJob = (await _client.GetJobAsync(id)).Data;
-            EditedJob = new JobDTO(OriginalJob);
+            get { return _originalJob; } 
+            set { 
+                _originalJob = value; 
+                EditedJob = new JobDTO(value); 
+            }
         }
+        public JobDTO EditedJob { get; set; }
 
         public async Task<bool> SaveChanges()
         {

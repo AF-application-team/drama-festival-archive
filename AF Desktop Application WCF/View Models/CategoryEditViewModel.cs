@@ -11,15 +11,20 @@ namespace AF_Desktop_Application_WCF.View_Models
 {
     public class CategoryEditViewModel
     {
-        static AFServiceClient _client = new AFServiceClient("WSHttpBinding_IAFService");
-        public CategoryDTO OriginalCategory { get; set; }
-        public CategoryDTO EditedCategory { get; set; }
-        
-        public async void Initialize(int id)
+        //private AFServiceClient _client = new AFServiceClient("WSHttpBinding_IAFService");
+        private AFServiceClient _client = MainViewModel.Client;
+        private CategoryDTO _originalCategory;
+
+        public CategoryDTO OriginalCategory
         {
-            OriginalCategory = (await _client.GetCategoryAsync(id)).Data;
-            EditedCategory = new CategoryDTO(OriginalCategory);
+            get { return _originalCategory; }
+            set
+            {
+                _originalCategory = value;
+                EditedCategory = new CategoryDTO(value);
+            }
         }
+        public CategoryDTO EditedCategory { get; set; }
 
         public async Task<bool> SaveChanges()
         {
@@ -28,8 +33,8 @@ namespace AF_Desktop_Application_WCF.View_Models
                 MessageBox.Show("Kategoria musi mieć nazwę! Dane nie zostaną przesłane.");
                 return false;
             }
-            
-            if(EditedCategory.Equals(OriginalCategory))
+
+            if (EditedCategory.Equals(OriginalCategory))
                 return true;
             else
             {

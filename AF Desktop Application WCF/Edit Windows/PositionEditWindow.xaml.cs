@@ -24,9 +24,8 @@ namespace AF_Desktop_Application_WCF
        public PositionEditViewModel PEViewModel { get; set; }
        public PositionEditWindow(PositionDTO position)
         {
+            PEViewModel = new PositionEditViewModel{OriginalPosition = position};
             InitializeComponent();
-            PEViewModel = new PositionEditViewModel();
-            PEViewModel.Initialize(position.PositionId);
             this.DataContext = PEViewModel.EditedPosition;
         }
 
