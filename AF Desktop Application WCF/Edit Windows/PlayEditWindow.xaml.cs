@@ -1,4 +1,5 @@
-﻿using AF_Constants;
+﻿using AF.Common.DTO;
+using AF_Constants;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using AF_Desktop_Application_WCF.View_Models;
-using AF_Models;
 
 namespace AF_Desktop_Application_WCF
 {
@@ -29,9 +29,10 @@ namespace AF_Desktop_Application_WCF
             InitializeComponent();
         }
 
-        public PlayEditWindow(Play editedPlay, List<int> fesitvalsList)
+        public PlayEditWindow(PlayDataDTO editedPlay, List<int> fesitvalsList)
         {
-            PEViewModel = new PlayEditViewModel(editedPlay, fesitvalsList);
+            PEViewModel = new PlayEditViewModel(fesitvalsList);
+            PEViewModel.Initialize(editedPlay.PlayId);
             InitializeComponent();
         }
 

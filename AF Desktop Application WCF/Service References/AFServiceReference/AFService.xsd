@@ -196,6 +196,40 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ListResponseOfPlayDataDTO3eQi8U0z" nillable="true" type="tns:ListResponseOfPlayDataDTO3eQi8U0z" />
+  <xs:complexType name="SingleItemResponseOfPlayTitleDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleItemResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PlayTitleDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q11:PlayTitleDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleItemResponseOfPlayTitleDTO3eQi8U0z" nillable="true" type="tns:SingleItemResponseOfPlayTitleDTO3eQi8U0z" />
+  <xs:complexType name="ListResponseOfPlayTitleDTO3eQi8U0z">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ListResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.Requests" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PlayTitleDTO" Namespace="http://schemas.datacontract.org/2004/07/AF.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q12:ArrayOfPlayTitleDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListResponseOfPlayTitleDTO3eQi8U0z" nillable="true" type="tns:ListResponseOfPlayTitleDTO3eQi8U0z" />
   <xs:complexType name="SingleItemResponseOfPositionDTO3eQi8U0z">
     <xs:annotation>
       <xs:appinfo>
@@ -207,7 +241,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseBase">
         <xs:sequence>
-          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q11:PositionDTO" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q13:PositionDTO" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -224,7 +258,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseBase">
         <xs:sequence>
-          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q12:ArrayOfPositionDTO" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q14:ArrayOfPositionDTO" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -241,7 +275,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseBase">
         <xs:sequence>
-          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q13:RelationFestivalPersonPositionDTO" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q15:RelationFestivalPersonPositionDTO" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -275,7 +309,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseBase">
         <xs:sequence>
-          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q14:RelationPersonAwardDTO" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q16:RelationPersonAwardDTO" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -292,7 +326,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseBase">
         <xs:sequence>
-          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q15:RelationPersonPlayJobDTO" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q17:RelationPersonPlayJobDTO" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -309,7 +343,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseBase">
         <xs:sequence>
-          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q16:RelationPersonPlayRoleDTO" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q18:RelationPersonPlayRoleDTO" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -326,7 +360,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseBase">
         <xs:sequence>
-          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q17:UserDTO" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q19:UserDTO" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -343,7 +377,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseBase">
         <xs:sequence>
-          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q18:ArrayOfUserDTO" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/AF.Common.DTO" minOccurs="0" name="Data" nillable="true" type="q20:ArrayOfUserDTO" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

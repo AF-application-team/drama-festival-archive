@@ -236,6 +236,18 @@
   <wsdl:message name="IAFService_SearchPlays_OutputMessage">
     <wsdl:part name="parameters" element="tns:SearchPlaysResponse" />
   </wsdl:message>
+  <wsdl:message name="IAFService_GetPlayTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayTitle" />
+  </wsdl:message>
+  <wsdl:message name="IAFService_GetPlayTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAFService_SearchPlaysTitles_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPlaysTitles" />
+  </wsdl:message>
+  <wsdl:message name="IAFService_SearchPlaysTitles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPlaysTitlesResponse" />
+  </wsdl:message>
   <wsdl:message name="IAFService_AddPosition_InputMessage">
     <wsdl:part name="parameters" element="tns:AddPosition" />
   </wsdl:message>
@@ -452,6 +464,14 @@
     <wsdl:operation name="SearchPlays">
       <wsdl:input wsaw:Action="http://tempuri.org/IAFService/SearchPlays" message="tns:IAFService_SearchPlays_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAFService/SearchPlaysResponse" message="tns:IAFService_SearchPlays_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAFService/GetPlayTitle" message="tns:IAFService_GetPlayTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAFService/GetPlayTitleResponse" message="tns:IAFService_GetPlayTitle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPlaysTitles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAFService/SearchPlaysTitles" message="tns:IAFService_SearchPlaysTitles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAFService/SearchPlaysTitlesResponse" message="tns:IAFService_SearchPlaysTitles_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddPosition">
       <wsdl:input wsaw:Action="http://tempuri.org/IAFService/AddPosition" message="tns:IAFService_AddPosition_InputMessage" />
@@ -727,6 +747,24 @@
     </wsdl:operation>
     <wsdl:operation name="SearchPlays">
       <soap12:operation soapAction="http://tempuri.org/IAFService/SearchPlays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayTitle">
+      <soap12:operation soapAction="http://tempuri.org/IAFService/GetPlayTitle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPlaysTitles">
+      <soap12:operation soapAction="http://tempuri.org/IAFService/SearchPlaysTitles" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

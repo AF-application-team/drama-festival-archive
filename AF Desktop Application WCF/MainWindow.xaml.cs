@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net;
+using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -27,6 +29,14 @@ namespace AF_Desktop_Application_WCF
         static MainViewModel MViewModel { get; set; }
         public MainWindow()
         {
+#if DEBUG
+            ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(
+            delegate
+            {
+                return true;
+            });
+#endif
+
             MViewModel = new MainViewModel();
             InitializeComponent();
         }
@@ -118,7 +128,7 @@ namespace AF_Desktop_Application_WCF
         {
             if (AwardsDataGrid.SelectedIndex != -1)
                 //TODO Czy okna nie powinien wywoływać ViewModel??
-                if (new AwardWindow((Award) AwardsDataGrid.SelectedItem, MViewModel.FestivalsList,
+                if (new AwardWindow((AwardMixedDTO) AwardsDataGrid.SelectedItem, MViewModel.FestivalsList,
                         MViewModel.CategoriesList).ShowDialog() == true)
                 {
                     AwardsSearchButton_Click(this,new RoutedEventArgs());
@@ -158,7 +168,7 @@ namespace AF_Desktop_Application_WCF
         private async void Category_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
             var tb = (TextBlock)sender;
-            Category c = (Category)tb.DataContext;
+            CategoryDTO c = (CategoryDTO)tb.DataContext;
             if (new CategoryEditWindow(c).ShowDialog() == true)
             {
                 await RefreshCategories();
@@ -168,7 +178,7 @@ namespace AF_Desktop_Application_WCF
         private async void Job_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
             var tb = (TextBlock)sender;
-            Job j = (Job)tb.DataContext;
+            JobDTO j = (JobDTO)tb.DataContext;
             if (new JobEditWindow(j).ShowDialog() == true)
             {
                 await RefreshJobs();
@@ -178,7 +188,7 @@ namespace AF_Desktop_Application_WCF
         private async void Position_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
             var tb = (TextBlock)sender;
-            Position p = (Position)tb.DataContext;
+            PositionDTO p = (PositionDTO)tb.DataContext;
             if (new PositionEditWindow(p).ShowDialog() == true)
             {
                 await RefreshPositions();

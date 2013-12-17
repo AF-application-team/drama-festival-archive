@@ -141,6 +141,18 @@ namespace AF_Desktop_Application_WCF.AFServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/SearchPlays", ReplyAction="http://tempuri.org/IAFService/SearchPlaysResponse")]
         System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.PlayDataDTO>> SearchPlaysAsync(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetPlayTitle", ReplyAction="http://tempuri.org/IAFService/GetPlayTitleResponse")]
+        AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayTitleDTO> GetPlayTitle(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/GetPlayTitle", ReplyAction="http://tempuri.org/IAFService/GetPlayTitleResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayTitleDTO>> GetPlayTitleAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/SearchPlaysTitles", ReplyAction="http://tempuri.org/IAFService/SearchPlaysTitlesResponse")]
+        AF.Common.Requests.ListResponse<AF.Common.DTO.PlayTitleDTO> SearchPlaysTitles(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/SearchPlaysTitles", ReplyAction="http://tempuri.org/IAFService/SearchPlaysTitlesResponse")]
+        System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.PlayTitleDTO>> SearchPlaysTitlesAsync(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAFService/AddPosition", ReplyAction="http://tempuri.org/IAFService/AddPositionResponse")]
         AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> AddPosition(AF.Common.DTO.PositionDTO newPosition);
         
@@ -467,6 +479,22 @@ namespace AF_Desktop_Application_WCF.AFServiceReference {
         
         public System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.PlayDataDTO>> SearchPlaysAsync(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount) {
             return base.Channel.SearchPlaysAsync(criteria, pageNr, pageAmount);
+        }
+        
+        public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayTitleDTO> GetPlayTitle(int id) {
+            return base.Channel.GetPlayTitle(id);
+        }
+        
+        public System.Threading.Tasks.Task<AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PlayTitleDTO>> GetPlayTitleAsync(int id) {
+            return base.Channel.GetPlayTitleAsync(id);
+        }
+        
+        public AF.Common.Requests.ListResponse<AF.Common.DTO.PlayTitleDTO> SearchPlaysTitles(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount) {
+            return base.Channel.SearchPlaysTitles(criteria, pageNr, pageAmount);
+        }
+        
+        public System.Threading.Tasks.Task<AF.Common.Requests.ListResponse<AF.Common.DTO.PlayTitleDTO>> SearchPlaysTitlesAsync(AF.Common.Queries.PlaysSearchingCriteria criteria, int pageNr, int pageAmount) {
+            return base.Channel.SearchPlaysTitlesAsync(criteria, pageNr, pageAmount);
         }
         
         public AF.Common.Requests.SingleItemResponse<AF.Common.DTO.PositionDTO> AddPosition(AF.Common.DTO.PositionDTO newPosition) {

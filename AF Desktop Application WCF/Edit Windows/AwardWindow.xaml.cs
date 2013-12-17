@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using AF.Common.DTO;
 using AF_Desktop_Application_WCF.View_Models;
-using AF_Models;
 
-namespace AF_Desktop_Application.Edit_Windows
+namespace AF_Desktop_Application_WCF.Edit_Windows
 {
     /// <summary>
     /// Interaction logic for AwardWindow.xaml
@@ -15,14 +15,15 @@ namespace AF_Desktop_Application.Edit_Windows
     {
         public AwardEditViewModel AEViewModel { get; set; }
         
-        public AwardWindow(List<int> festivalsList, ObservableCollection<Category> categoriesList)
+        public AwardWindow(List<int> festivalsList, ObservableCollection<CategoryDTO> categoriesList)
         {
-            AEViewModel = new AwardEditViewModel(festivalsList, categoriesList);
+            AEViewModel = new AwardEditViewModel(categoriesList);
             InitializeComponent();
         }
-        public AwardWindow(Award award, List<int> festivalsList, ObservableCollection<Category> categoriesList)
+        public AwardWindow(AwardMixedDTO award, List<int> festivalsList, ObservableCollection<CategoryDTO> categoriesList)
         {
-            AEViewModel = new AwardEditViewModel(award, festivalsList, categoriesList);
+            AEViewModel = new AwardEditViewModel(categoriesList);
+            AEViewModel.Initialize(award.AwardId);
             InitializeComponent();
         }
 
@@ -34,11 +35,9 @@ namespace AF_Desktop_Application.Edit_Windows
 
         private void Window_Initialized(object sender, EventArgs e)
         {
-            PlayFestivalComboBox.DataContext = AEViewModel.EditedAward;
             PlayCategoryComboBox.DataContext = AEViewModel.EditedAward;
             PlaysList.DataContext = AEViewModel.EditedAward;
            
-            PlayFestivalComboBox.ItemsSource = AEViewModel.FestivalsList;
             PlayCategoryComboBox.ItemsSource = AEViewModel.CategoriesList;
             PlaysList.ItemsSource = AEViewModel.PlaysList;
         }

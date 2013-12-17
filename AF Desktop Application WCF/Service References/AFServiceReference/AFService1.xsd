@@ -4,7 +4,6 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="AwardId" type="xs:int" />
       <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
-      <xs:element minOccurs="0" name="FestivalId" type="xs:int" />
       <xs:element minOccurs="0" name="PlayId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
@@ -86,6 +85,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfPlayDataDTO" nillable="true" type="tns:ArrayOfPlayDataDTO" />
+  <xs:complexType name="PlayTitleDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PlayId" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayTitleDTO" nillable="true" type="tns:PlayTitleDTO" />
+  <xs:complexType name="ArrayOfPlayTitleDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayTitleDTO" nillable="true" type="tns:PlayTitleDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayTitleDTO" nillable="true" type="tns:ArrayOfPlayTitleDTO" />
   <xs:complexType name="PositionDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="Order" type="xs:int" />
@@ -102,7 +114,14 @@
   </xs:complexType>
   <xs:element name="ArrayOfPositionDTO" nillable="true" type="tns:ArrayOfPositionDTO" />
   <xs:complexType name="RelationFestivalPersonPositionDTO">
-    <xs:sequence />
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EditDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EditedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="FestivalId" type="xs:int" />
+      <xs:element minOccurs="0" name="PersonId" type="xs:int" />
+      <xs:element minOccurs="0" name="PositionId" type="xs:int" />
+      <xs:element minOccurs="0" name="RelationFestivalPersonPositionId" type="xs:int" />
+    </xs:sequence>
   </xs:complexType>
   <xs:element name="RelationFestivalPersonPositionDTO" nillable="true" type="tns:RelationFestivalPersonPositionDTO" />
   <xs:complexType name="RelationPersonAwardDTO">

@@ -688,6 +688,28 @@ namespace AF.Services
             }
         }
 
+        public SingleItemResponse<PlayTitleDTO> GetPlayTitle(int id)
+        {
+            using (var context = new AF_Context())
+            {
+                try
+                {
+                    Play pla = context.Plays.First(p => p.PlayId == id);
+
+                    var newPlayDto = new PlayTitleDTO()
+                    {
+                        PlayId = pla.PlayId,
+                        Title = pla.Title,
+                    };
+                    return (new SingleItemResponse<PlayTitleDTO>(newPlayDto));
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+        } 
+
         #endregion
         #region Position
 

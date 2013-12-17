@@ -82,15 +82,23 @@ namespace AF.Common.Services
         #region Play
         [OperationContract]
         SingleItemResponse<PlayDataDTO> AddPlay(PlayDataDTO newPlay);
+
+        //[OperationContract]
         //RemovePlay(int id);
+        
         [OperationContract]
         SingleItemResponse<PlayDataDTO> UpdatePlay(PlayDataDTO updateData);
+        
         [OperationContract]
         SingleItemResponse<PlayDataDTO> GetPlay(int id);
-        //List<PlayDTO> GetPlaysPaged(int pageNr, int pageAmount);
-        //List<Play> GetAllPlays();
+        
         [OperationContract]
         ListResponse<PlayDataDTO> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
+
+        [OperationContract]
+        SingleItemResponse<PlayTitleDTO> GetPlayTitle(int id);
+        
+        [OperationContract]
         ListResponse<PlayTitleDTO> SearchPlaysTitles(PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
         #endregion
         #region Position

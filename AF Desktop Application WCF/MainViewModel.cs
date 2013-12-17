@@ -17,11 +17,11 @@ namespace AF_Desktop_Application_WCF
     public class MainViewModel
     {
         //static IAF_LogicService DB = new AF_Logic();
-        static AFServiceClient _client = new AFServiceClient("WSHttpBinding_IAFService");
+        static  public AFServiceClient _client = new AFServiceClient("WSHttpBinding_IAFService");
         static public UserDTO LoggedUser { get; set; }
         public List<int> FestivalsList { get; set; }
-        private string[] _logins = {"Janusz", "Ania", "Janusz"};
-        private string[] _passes = {"AFtest", "hobbit", "WrongPassword"};
+        private string[] _logins = { "Janusz", "Ania", "Janusz" };
+        private string[] _passes = { "AFtest", "hobbit", "WrongPassword" };
 
         public MainViewModel()
         {
@@ -31,17 +31,19 @@ namespace AF_Desktop_Application_WCF
         }
         public async Task Initialize()
         {
+            _client.ClientCredentials.UserName.UserName = _logins[0];
+            _client.ClientCredentials.UserName.Password = _passes[0];
+
             await RefreshCategories();
             await RefreshPositions();
             await RefreshJobs();
-            _client.ClientCredentials.UserName.UserName = _logins[0];
-            _client.ClientCredentials.UserName.Password = _passes[0];
+
             FestivalsList = new List<int>();
             int f = (await _client.CountFestivalsAsync()).Data;
             for (int i = 1; i < f; i++)
                 FestivalsList.Add(i);
         }
-        
+
         #region Tab Properties
         #region People Tab
         public PeopleSearchingCriteria PeopleCriteria { get; set; }
@@ -85,7 +87,7 @@ namespace AF_Desktop_Application_WCF
         {
             if (title != "")
             {
-                await _client.AddCategoryAsync(new CategoryDTO{Title = title, Group = group, Order = order});
+                await _client.AddCategoryAsync(new CategoryDTO { Title = title, Group = group, Order = order });
                 await RefreshCategories();
             }
         }
@@ -93,7 +95,7 @@ namespace AF_Desktop_Application_WCF
         {
             if (title != "")
             {
-                await _client.AddJobAsync(new JobDTO{JobTitle = title});
+                await _client.AddJobAsync(new JobDTO { JobTitle = title });
                 await RefreshJobs();
             }
         }
@@ -101,7 +103,7 @@ namespace AF_Desktop_Application_WCF
         {
             if (title != "")
             {
-                await _client.AddPositionAsync(new PositionDTO{PositionTitle = title, Section = section, Order = order});
+                await _client.AddPositionAsync(new PositionDTO { PositionTitle = title, Section = section, Order = order });
                 await RefreshPositions();
             }
         }
@@ -115,7 +117,7 @@ namespace AF_Desktop_Application_WCF
         public async Task SearchAwards(int pageNr, int pageAmount)
         {
             QuerriedAwards = (await _client.SearchAwardsAsync(AwardsCriteria, pageNr, pageAmount)).Data;
-        } 
+        }
         #endregion
 
         public async Task<bool> ChangeUser(int userId)

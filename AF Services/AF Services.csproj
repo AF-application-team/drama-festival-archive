@@ -85,6 +85,7 @@
     <Compile Include="AFService.svc.cs">
       <DependentUpon>AFService.svc</DependentUpon>
     </Compile>
+    <Compile Include="MyX509Validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserValidator.cs" />
   </ItemGroup>

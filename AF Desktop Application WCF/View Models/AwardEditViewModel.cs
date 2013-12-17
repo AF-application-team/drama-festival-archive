@@ -1,57 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using AF_BusinessLogic;
-using AF_Models;
+using AF.Common.DTO;
 using AF.Common.Queries;
+using AF_Desktop_Application_WCF.AFServiceReference;
 
 namespace AF_Desktop_Application_WCF.View_Models
 {
     public class AwardEditViewModel
     {
-        private AF_Logic DB = new AF_Logic();
-        private Award originalAward=null;
-        public Award EditedAward { get; set; }
-        public List<Play> PlaysList { get; set; }
-        public List<int> FestivalsList { get; set; }
-        public ObservableCollection<Category> CategoriesList { get; set; }
+        static AFServiceClient _client = new AFServiceClient("secureBinding");
+        private AwardDataDTO originalAward = null;
+        public AwardDataDTO EditedAward { get; set; }
+        public List<PlayTitleDTO> PlaysList { get; set; }
+        public ObservableCollection<CategoryDTO> CategoriesList { get; set; }
 
-        public AwardEditViewModel(List<int> festivalsList, ObservableCollection<Category> categoriesList)
+        public AwardEditViewModel( ObservableCollection<CategoryDTO> categoriesList)
         {
-            FestivalsList = festivalsList;
             CategoriesList = categoriesList;
-            EditedAward = new Award();
+            EditedAward = new AwardDataDTO();
         }
 
-        public AwardEditViewModel(Award editedAward,List<int> festivalsList, ObservableCollection<Category> categoriesList)
+        public async void Initialize(int id)
         {
-            FestivalsList = festivalsList;
-            CategoriesList = categoriesList;
-            originalAward = editedAward;
-            var l = new List<Play>();
-            l.Add(editedAward.Play);
+            originalAward = (await _client.GetAwardAsync(id)).Data;
+            var l = new List<PlayTitleDTO>();
+            l.Add((await _client.GetPlayTitleAsync(originalAward.PlayId)).Data);
             PlaysList = l;
-            EditedAward = new Award(editedAward);
+            EditedAward = new AwardDataDTO(originalAward);
         }
         public async Task UpdateList(string s)
         {
-            PlaysList = await DB.SearchPlays(new PlaysSearchingCriteria(){Title = s},  1, 35);
+            PlaysList = (await _client.SearchPlaysTitlesAsync(new PlaysSearchingCriteria(){Title = s},  1, 35)).Data;
         }
         public async Task<bool> SaveAward()
         {
             if (originalAward == null)
             {
-                await DB.AddAward(EditedAward.PlayId, EditedAward.FestivalId, EditedAward.CategoryId,
-                    MainViewModel.LoggedUser.UserId);
+                await _client.AddAwardAsync(EditedAward);
                 return true;
             }
             else if (!EditedAward.Equals(originalAward))
             {
-                EditedAward.EditedBy = MainViewModel.LoggedUser.UserId; 
-                await DB.UpdateAward(EditedAward);
+                await _client.UpdateAwardAsync(EditedAward);
                 return true;
             }
             return false;
