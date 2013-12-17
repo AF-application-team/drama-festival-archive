@@ -90,6 +90,7 @@ namespace AF.Common.Services
         //List<Play> GetAllPlays();
         [OperationContract]
         ListResponse<PlayDataDTO> SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
+        ListResponse<PlayTitleDTO> SearchPlaysTitles(PlaysSearchingCriteria criteria, int pageNr, int pageAmount);
         #endregion
         #region Position
         [OperationContract]
