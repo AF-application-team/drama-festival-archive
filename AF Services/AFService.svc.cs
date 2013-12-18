@@ -82,6 +82,7 @@ namespace AF.Services
         {
             var updateDataFull = new Award()
             {
+                AwardId = updateData.AwardId,
                 CategoryId = updateData.CategoryId,
                 PlayId = updateData.PlayId,
                 EditedBy = GetUserId(),
@@ -205,6 +206,7 @@ namespace AF.Services
         {
             var updateDataFull = new Category
             {
+                CategoryId = updateData.CategoryId,
                 Title = updateData.Title,
                 EditDate = DateTime.Now,
                 EditedBy = GetUserId(),
@@ -315,6 +317,7 @@ namespace AF.Services
         {
             var updateDataFull = new Festival()
             {
+                FestivalId = updateData.FestivalId,
                 Year = updateData.Year,
                 BeginningDate = updateData.BeginningDate,
                 EndDate = updateData.EndDate,
@@ -440,6 +443,7 @@ namespace AF.Services
         {
             var updateDataFull = new Job()
             {
+                JobId = updateData.JobId,
                 JobTitle = updateData.JobTitle,
                 EditedBy = GetUserId(),
                 EditDate = DateTime.Now
@@ -547,6 +551,7 @@ namespace AF.Services
         {
             var updateDataFull = new Play()
             {
+                PlayId = updateData.PlayId,
                 Title = updateData.Title,
                 Author = updateData.Author,
                 FestivalId = updateData.FestivalId,
@@ -745,6 +750,7 @@ namespace AF.Services
         {
             var updateDataFull = new Position()
             {
+                PositionId = updateData.PositionId,
                 PositionTitle = updateData.PositionTitle,
                 Section = updateData.Section,
                 Order = updateData.Order,
