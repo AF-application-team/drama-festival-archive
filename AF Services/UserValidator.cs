@@ -12,15 +12,15 @@ namespace AF.Services
     {
         public override void Validate(string userName, string password)
         {
-            //if (1 != 1)
-            //    throw new SecurityTokenException("Wrong Username or Password");
             using (var context = new AF_Context())
             {
                 const string pepper = "50.L1`(f761OJdG6fc835M(5(+Ju2!P6,4330_N*/%xz<j7(N15KC'8l997'0c0CEg";
                 ICryptoService cryptoService = new PBKDF2();
                 try
                 {
-                    User u = context.Users.First(c => c.Login == userName);
+                    User u = context.Users.FirstOrDefault(c => c.Login == userName);
+                    if (u == null)
+                        throw new SecurityTokenException("Wrong Username or Password");
                     bool verified = cryptoService.Compare(cryptoService.Compute(cryptoService.Compute(password, u.Salt), pepper), u.Password);
                     if (!verified)
                         throw new SecurityTokenException("Wrong Username or Password");

@@ -25,8 +25,8 @@
            </MenuItem>
 
         </Menu>
-        <TabControl x:Name="TabControl" DataContext="">
-            <TabItem x:Name="PeopleTab">
+        <TabControl x:Name="TabControl" DataContext="" SelectedIndex="1" IsEnabled="True">
+            <TabItem x:Name="PeopleTab" Visibility="Collapsed" IsEnabled="False">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image Name="PeopleImg" Height="24" Width="auto" Source="Images/PeopleIcon.png" />
