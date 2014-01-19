@@ -48,7 +48,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF Desktop Application WCF"
 		{A87D2133-4F77-42C1-B257-31DD747E1E58} = {A87D2133-4F77-42C1-B257-31DD747E1E58}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF.WebApplication.MVC", "AF.WebApplication.MVC\AF.WebApplication.MVC.csproj", "{CA788946-675A-426E-805E-CE4D897DBE01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF.WebApplication.MVC", "AF.WebApplication.MVC\AF.WebApplication.MVC.csproj", "{4FA2EF3D-24F8-458C-9C8C-076D5E0DA3E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,10 +105,10 @@ Global
 		{7D011456-0517-429E-9F49-D9E953CE6AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D011456-0517-429E-9F49-D9E953CE6AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D011456-0517-429E-9F49-D9E953CE6AF6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA788946-675A-426E-805E-CE4D897DBE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA788946-675A-426E-805E-CE4D897DBE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA788946-675A-426E-805E-CE4D897DBE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA788946-675A-426E-805E-CE4D897DBE01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FA2EF3D-24F8-458C-9C8C-076D5E0DA3E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA2EF3D-24F8-458C-9C8C-076D5E0DA3E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA2EF3D-24F8-458C-9C8C-076D5E0DA3E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA2EF3D-24F8-458C-9C8C-076D5E0DA3E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
