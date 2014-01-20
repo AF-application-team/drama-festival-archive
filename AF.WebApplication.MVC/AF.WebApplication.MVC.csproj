@@ -180,6 +180,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FestivalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -240,6 +241,11 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Festival\Create.cshtml" />
+    <Content Include="Views\Festival\Delete.cshtml" />
+    <Content Include="Views\Festival\Details.cshtml" />
+    <Content Include="Views\Festival\Edit.cshtml" />
+    <Content Include="Views\Festival\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -249,6 +255,20 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AF DataAccessLayer\AF DataAccessLayer.csproj">
+      <Project>{457cbc3d-7ee1-4e1d-9830-1f48083740fa}</Project>
+      <Name>AF DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AF Models\AF Models.csproj">
+      <Project>{87104c17-7465-465f-99d6-c2c95051a714}</Project>
+      <Name>AF Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AF.Common\AF.Common.csproj">
+      <Project>{e668eb49-87ea-4f12-8f87-27d95f63f4e1}</Project>
+      <Name>AF.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

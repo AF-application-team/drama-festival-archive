@@ -18,6 +18,12 @@ namespace AF.WebApplication.MVC
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            /*routes.MapRoute(
+                name: "Festivals",
+                url: "{controller}/{id}",
+                defaults: new { controller = "Festival", id = UrlParameter.Optional }
+            ); */
         }
     }
 }

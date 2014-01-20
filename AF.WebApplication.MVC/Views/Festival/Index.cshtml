@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AF.Common.DTO.PlayDataDTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <!--<th>
+            Html.DisplayNameFor(model => model.Editor.Login)
+        </th>-->
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Motto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Motto)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FestivalId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FestivalId }) 
+            <!--Html.ActionLink("Delete", "Delete", new { id=item.FestivalId })-->
+        </td>
+    </tr>
+}
+
+</table>
