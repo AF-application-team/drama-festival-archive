@@ -34,6 +34,14 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.FestivalId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FestivalId)
+                @Html.ValidationMessageFor(model => model.FestivalId)
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.Day, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Day)
@@ -54,6 +62,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.PlayedBy)
                 @Html.ValidationMessageFor(model => model.PlayedBy)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Order, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Order)
+                @Html.ValidationMessageFor(model => model.Order)
             </div>
         </div>
 <!--

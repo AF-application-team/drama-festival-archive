@@ -165,16 +165,38 @@ namespace AF.WebApplication.MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="FestivalId,Year,BeginningDate,EndDate,EditDate,EditedBy")] Festival festival)
+        public ActionResult Edit([Bind(Include="PlayId,Title,Author,FestivalId,Day,Order,PlayedBy,Motto")] PlayDataDTO updateData)
         {
-            if (ModelState.IsValid)
+            var updateDataFull = new Play()
             {
-                db.Entry(festival).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                PlayId = updateData.PlayId,
+                Title = updateData.Title,
+                Author = updateData.Author,
+                FestivalId = updateData.FestivalId,
+                Day = updateData.Day,
+                Order = updateData.Order,
+                PlayedBy = updateData.PlayedBy,
+                Motto = updateData.Motto,
+                EditedBy = 1,
+                //EditedBy = GetUserId(),    //???????
+                EditDate = DateTime.Now
+            };
+
+            using (var context = new AF_Context())
+            {
+                if (ModelState.IsValid)
+                {
+                    Play pla = context.Plays.Find(updateData.PlayId);// First(p => p.PlayId == updateData.PlayId);
+                    context.Entry(pla).CurrentValues.SetValues(updateDataFull); //check for substituding only edited
+                    //context.Entry(updateDataFull).State = EntityState.Modified;
+                    context.SaveChanges();
+                    int id = updateData.PlayId;
+                    return Redirect(Request.UrlReferrer.ToString()); //RedirectToAction("Index")
+                }
+                return View(updateData);
             }
-            ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", festival.EditedBy);
-            return View(festival);
+            //ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", festival.EditedBy);
+            //return View(updateData);
         }
         /*
         // GET: /Festival/Delete/5
