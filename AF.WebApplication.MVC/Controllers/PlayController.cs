@@ -63,7 +63,7 @@ namespace AF.WebApplication.MVC.Controllers
         // GET: /Play/Create
         public ActionResult Create()
         {
-            var tmp = new PlayDataDTO(){FestivalId=18};
+            var tmp = new PlayDataDTO(){FestivalId=18}; //to change
             //ViewBag.FestivalId = 18;
             //ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login");
             return View(tmp);
@@ -76,7 +76,7 @@ namespace AF.WebApplication.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "PlayId,Title,Author,FestivalId,Day,Order,PlayedBy,Motto")] PlayDataDTO updateData)
         {
-            using (var context = new AF_Context())
+            if (ModelState.IsValid)
             {
                 var updateDataFull = new Play()
                 {
@@ -92,17 +92,17 @@ namespace AF.WebApplication.MVC.Controllers
                     //EditedBy = GetUserId(),    //???????
                     EditDate = DateTime.Now
                 };
-                if (ModelState.IsValid)
+                using (var context = new AF_Context())
                 {
                     context.Plays.Add(updateDataFull);
                     string return_s = "Details/" + updateDataFull.FestivalId;
                     context.SaveChanges();
                     return RedirectToAction(return_s, "Festival"); //TODO: Correct for many and for old id
                 }
-
-                //ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", updateData.EditedBy);
-                return View(updateData);
             }
+            //ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", updateData.EditedBy);
+            return View(updateData);
+            
         }
         
         // GET: /Play/Edit/5
@@ -115,6 +115,10 @@ namespace AF.WebApplication.MVC.Controllers
             using (var context = new AF_Context())
             {
                 Play pla = context.Plays.Find(id);// First(p => p.PlayId == id);
+                if (pla == null)
+                {
+                    return HttpNotFound();
+                }
                 var newPlayDto = new PlayDataDTO()
                 {
                     PlayId = pla.PlayId,
@@ -126,10 +130,6 @@ namespace AF.WebApplication.MVC.Controllers
                     PlayedBy = pla.PlayedBy,
                     Motto = pla.Motto
                 };
-                if (newPlayDto == null)
-                {
-                    return HttpNotFound();
-                }
                 //ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", festival.EditedBy);
                 return View(newPlayDto);
             }   
@@ -142,27 +142,27 @@ namespace AF.WebApplication.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="PlayId,Title,Author,FestivalId,Day,Order,PlayedBy,Motto")] PlayDataDTO updateData)
         {
-            var updateDataFull = new Play()
+            if (ModelState.IsValid)
             {
-                PlayId = updateData.PlayId,
-                Title = updateData.Title,
-                Author = updateData.Author,
-                FestivalId = updateData.FestivalId,
-                Day = updateData.Day,
-                Order = updateData.Order,
-                PlayedBy = updateData.PlayedBy,
-                Motto = updateData.Motto,
-                EditedBy = 1,
-                //EditedBy = GetUserId(),    //???????
-                EditDate = DateTime.Now
-            };
+                var updateDataFull = new Play()
+                {
+                    PlayId = updateData.PlayId,
+                    Title = updateData.Title,
+                    Author = updateData.Author,
+                    FestivalId = updateData.FestivalId,
+                    Day = updateData.Day,
+                    Order = updateData.Order,
+                    PlayedBy = updateData.PlayedBy,
+                    Motto = updateData.Motto,
+                    EditedBy = 1,
+                    //EditedBy = GetUserId(),    //???????
+                    EditDate = DateTime.Now
+                };
 
-            using (var context = new AF_Context())
-            {
-                if (ModelState.IsValid)
+                using (var context = new AF_Context())
                 {
                     Play pla = context.Plays.Find(updateData.PlayId);// First(p => p.PlayId == updateData.PlayId);
-                    string return_s = "Details/"+pla.FestivalId;
+                    string return_s = "Details/" + pla.FestivalId;
                     context.Entry(pla).CurrentValues.SetValues(updateDataFull); //check for substituding only edited
                     //context.Entry(updateDataFull).State = EntityState.Modified;
                     context.SaveChanges();
@@ -171,10 +171,9 @@ namespace AF.WebApplication.MVC.Controllers
                     //return RedirectToAction(return_s);
                     return RedirectToAction(return_s, "Festival");
                 }
-                return View(updateData);
             }
             //ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", festival.EditedBy);
-            //return View(updateData);
+            return View(updateData);
         }
         /*
         // GET: /Play/Delete/5
@@ -202,7 +201,7 @@ namespace AF.WebApplication.MVC.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        */
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -210,6 +209,6 @@ namespace AF.WebApplication.MVC.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }*/
+        }
     }
 }

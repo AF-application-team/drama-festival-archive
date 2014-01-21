@@ -1,4 +1,4 @@
-﻿@model AF_Models.Play
+﻿@model AF.Common.DTO.FestivalDTO
 
 @{
     ViewBag.Title = "Edit";
@@ -15,77 +15,37 @@
         <h4>Play</h4>
         <hr />
         @Html.ValidationSummary(true)
-        @Html.HiddenFor(model => model.PlayId)
+        @Html.HiddenFor(model => model.FestivalId)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Year, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Title)
-                @Html.ValidationMessageFor(model => model.Title)
+                @Html.EditorFor(model => model.Year)
+                @Html.ValidationMessageFor(model => model.Year)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Author, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BeginningDate, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Author)
-                @Html.ValidationMessageFor(model => model.Author)
+                @Html.EditorFor(model => model.BeginningDate)
+                @Html.ValidationMessageFor(model => model.BeginningDate)
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.FestivalId, "FestivalId", new { @class = "control-label col-md-2" })
+        <!--<div class="form-group">
+            Html.LabelFor(model => model.FestivalId, "FestivalId", new { class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("FestivalId", String.Empty)
-                @Html.ValidationMessageFor(model => model.FestivalId)
+                Html.DropDownList("FestivalId", String.Empty)
+                Html.ValidationMessageFor(model => model.FestivalId)
             </div>
-        </div>
+        </div>-->
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Day, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EndDate, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Day)
-                @Html.ValidationMessageFor(model => model.Day)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Order, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Order)
-                @Html.ValidationMessageFor(model => model.Order)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PlayedBy, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PlayedBy)
-                @Html.ValidationMessageFor(model => model.PlayedBy)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Motto, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Motto)
-                @Html.ValidationMessageFor(model => model.Motto)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EditDate, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EditDate)
-                @Html.ValidationMessageFor(model => model.EditDate)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EditedBy, "EditedBy", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EditedBy", String.Empty)
-                @Html.ValidationMessageFor(model => model.EditedBy)
+                @Html.EditorFor(model => model.EndDate)
+                @Html.ValidationMessageFor(model => model.EndDate)
             </div>
         </div>
 
