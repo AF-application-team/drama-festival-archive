@@ -21,14 +21,37 @@ namespace AF.WebApplication.MVC.Controllers
         {
             var plays = db.Plays.Include(p => p.Editor).Include(p => p.Festival);
             return View(plays.ToList());
-        } 
+        }
 
         // GET: /Play/Details/5
-        public ActionResult Details(int? id) 
+        public ActionResult Details(int? id)
         {
-            throw new NotImplementedException();
+            using (var context = new AF_Context())
+            {
+                var play = (from p in context.Plays select p).FirstOrDefault(p => p.PlayId == id);
+                if (play == null)
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                var data = new PlayCastDTO(play);
+
+                data.Helpers = (from pjob in context.RelationsPersonPlayJob select pjob)
+                    .Where(pjob => pjob.PlayId == data.PlayId)
+                    .Include(pjob => pjob.Person)
+                    .Include(pjob => pjob.Job)
+                    .OrderBy(pjob => pjob.JobId)
+                    .ToList()
+                    .Select(PersonFunctionDTO.FromJobEntity);
+
+                data.Cast = (from prole in context.RelationsPersonPlayRole select prole)
+                    .Where(prole => prole.PlayId == data.PlayId)
+                    .Include(prole => prole.Person)
+                    .OrderBy(prole => prole.RelationPersonPlayRoleId)
+                    .ToList()
+                    .Select(PersonFunctionDTO.FromRoleEntity);
+
+                return View(data);
+            }
         }
-        
+
         // GET: /Play/Create
         public ActionResult Create()
         {
@@ -39,21 +62,21 @@ namespace AF.WebApplication.MVC.Controllers
         // POST: /Play/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-       /* [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PlayId,Title,Author,FestivalId,Day,Order,PlayedBy,Motto")] PlayDataDTO updateData)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Festivals.Add(updateData);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        /* [HttpPost]
+         [ValidateAntiForgeryToken]
+         public ActionResult Create([Bind(Include = "PlayId,Title,Author,FestivalId,Day,Order,PlayedBy,Motto")] PlayDataDTO updateData)
+         {
+             if (ModelState.IsValid)
+             {
+                 db.Festivals.Add(updateData);
+                 db.SaveChanges();
+                 return RedirectToAction("Index");
+             }
 
-            ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", updateData.EditedBy);
-            return View(updateData);
-        }*/
-        
+             ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", updateData.EditedBy);
+             return View(updateData);
+         }*/
+
         // GET: /Play/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -81,7 +104,7 @@ namespace AF.WebApplication.MVC.Controllers
                 }
                 //ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", festival.EditedBy);
                 return View(newPlayDto);
-            }   
+            }
         }
 
         // POST: /Play/Edit/5
@@ -89,7 +112,7 @@ namespace AF.WebApplication.MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="PlayId,Title,Author,FestivalId,Day,Order,PlayedBy,Motto")] PlayDataDTO updateData)
+        public ActionResult Edit([Bind(Include = "PlayId,Title,Author,FestivalId,Day,Order,PlayedBy,Motto")] PlayDataDTO updateData)
         {
             var updateDataFull = new Play()
             {
@@ -111,7 +134,7 @@ namespace AF.WebApplication.MVC.Controllers
                 if (ModelState.IsValid)
                 {
                     Play pla = context.Plays.Find(updateData.PlayId);// First(p => p.PlayId == updateData.PlayId);
-                    string return_s = "Details/"+pla.FestivalId;
+                    string return_s = "Details/" + pla.FestivalId;
                     context.Entry(pla).CurrentValues.SetValues(updateDataFull); //check for substituding only edited
                     //context.Entry(updateDataFull).State = EntityState.Modified;
                     context.SaveChanges();

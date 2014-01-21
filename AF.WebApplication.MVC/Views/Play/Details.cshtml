@@ -1,4 +1,7 @@
-﻿@model AF_Models.Play
+﻿@using AF.Common.DTO
+@using AF_Models
+@using Microsoft.Ajax.Utilities
+@model AF.Common.DTO.PlayCastDTO
 
 @{
     ViewBag.Title = "Details";
@@ -6,83 +9,62 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Play</h4>
-	<hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Editor.Login)
-        </dt>
+<div id="przedstawienie">
+    <br><br>
+    <div style="text-align: center">-- dzień @Model.Day., sztuka @Model.Order. --</div><div style="font-family: Times New Roman, Courier New; text-decoration: underline; font-size: 26px; text-align: center">@Model.Title</div><br><div style="font-family: Times New Roman, Courier New; font-style: italic; font-size: 13px; text-align: center"></div><br>
+    <div class="listazadan">			- wykonanie: @Model.PlayedBy<br><br></div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Editor.Login)
-        </dd>
+    @if (!String.IsNullOrEmpty(Model.Motto))
+    {
+        <div style="font-size: 11px; text-align: center">.:: motto ::.</div>
+        <div style="font-family: Times New Roman, Courier New; font-style: italic; font-size: 13px; text-align: center">@Model.Motto</div>
+        <br />
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Festival.FestivalId)
-        </dt>
+    <div class="listazadan">
+        - reżyseria: @foreach (PersonFunctionDTO person in Model.Helpers.Where(p => p.Role == "reżyseria"))
+        {
+            @Html.ActionLink(person.FirstName + " " + person.LastName + " ", "Details", "People", new { id = person.PersonId }, null);
+        };
+        <br>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Festival.FestivalId)
-        </dd>
+    <div class="listazadan">
+        - scenariusz: @Model.Author
+        (
+        @foreach (PersonFunctionDTO person in Model.Helpers.Where(p => p.Role == "scenariusz"))
+        {
+            @Html.ActionLink(person.FirstName + " " + person.LastName + " ", "Details", "People", new { id = person.PersonId }, null);
+        }
+        )
+        <br>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+    @foreach (var type in Model.Helpers.Where(person => person.Role.Equals("reżyseria") == false || person.Role.Equals("scenariusz") == false).GroupBy(person => person.Role))
+    {
+        <div class="listazadan">
+            - @type.Key:
+            @foreach (var p in Model.Helpers.Where(p => p.Role == type.Key))
+            {
+                @Html.ActionLink(p.FirstName + " " + p.LastName + " ", "Details", "People", new { id = p.PersonId }, null);
+            }
+            <br>
+        </div>
+    }
+    <div style="text-indent: -90px; padding-left: 100px">
+        - obsada:
+        @foreach (var actor in Model.Cast)
+        {
+            @Html.ActionLink(actor.FirstName + " " + actor.LastName + " ", "Details", "People", new { id = actor.PersonId }, null);
+            @:-
+            @actor.Role
+            <br>
+        }
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Day)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Day)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Order)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Order)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PlayedBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PlayedBy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Motto)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Motto)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EditDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EditDate)
-        </dd>
-
-    </dl>
+        <br><br>
+    </div>
+    <div style="text-indent: -90px; padding-left: 100px"></div>
+    <br><br>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.PlayId }) |

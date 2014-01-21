@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AF_Models;
 
 namespace AF.Common.DTO
 {
@@ -17,7 +18,26 @@ namespace AF.Common.DTO
         public string PlayedBy { get; set; }
         public string Motto { get; set; }
 
-        public List<PersonFunctionDTO> Helpers;
-        public List<PersonFunctionDTO> Cast;
+        public IEnumerable<PersonFunctionDTO> Helpers;
+        public IEnumerable<PersonFunctionDTO> Cast;
+
+        public PlayCastDTO()
+        {
+        }
+
+        public PlayCastDTO(Play play)
+        {
+            PlayId = play.PlayId;
+            Title = play.Title;
+            Author = play.Author;
+            FestivalId = play.FestivalId;
+            Day = play.Day;
+            Order = play.Order;
+            PlayedBy = play.PlayedBy;
+            Motto = play.Motto;
+        }
     }
+    
+    
+
 }
