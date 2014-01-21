@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<AF.Common.DTO.PlayDataDTO>
+<!--model IEnumerable<AF_Models.Play>-->
 
 @{
     ViewBag.Title = "Index";
@@ -21,10 +22,19 @@
             @Html.DisplayNameFor(model => model.Author)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.FestivalId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Day)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Motto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order)
         </th>
         <th></th>
     </tr>
@@ -39,10 +49,19 @@
                 @Html.DisplayFor(modelItem => item.Author)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.FestivalId)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Day)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Motto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.PlayId }) |

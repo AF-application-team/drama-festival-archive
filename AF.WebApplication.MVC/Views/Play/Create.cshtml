@@ -1,4 +1,4 @@
-﻿@model AF_Models.Play
+﻿@model AF.Common.DTO.PlayDataDTO
 
 @{
     ViewBag.Title = "Create";
@@ -33,34 +33,26 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FestivalId, "FestivalId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.FestivalId, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("FestivalId", String.Empty)
+                @Html.EditorFor(model => model.FestivalId)
                 @Html.ValidationMessageFor(model => model.FestivalId)
             </div>
         </div>
+
+        <!--<div class="form-group">
+            Html.LabelFor(model => model.FestivalId, "FestivalId", new { class = "control-label col-md-2" })
+            <div class="col-md-10">
+                Html.DropDownList("FestivalId", String.Empty)
+                Html.ValidationMessageFor(model => model.FestivalId)
+            </div>
+        </div>-->
 
         <div class="form-group">
             @Html.LabelFor(model => model.Day, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Day)
                 @Html.ValidationMessageFor(model => model.Day)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Order, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Order)
-                @Html.ValidationMessageFor(model => model.Order)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PlayedBy, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PlayedBy)
-                @Html.ValidationMessageFor(model => model.PlayedBy)
             </div>
         </div>
 
@@ -73,20 +65,28 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EditDate, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PlayedBy, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EditDate)
-                @Html.ValidationMessageFor(model => model.EditDate)
+                @Html.EditorFor(model => model.PlayedBy)
+                @Html.ValidationMessageFor(model => model.PlayedBy)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EditedBy, "EditedBy", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Order, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("EditedBy", String.Empty)
-                @Html.ValidationMessageFor(model => model.EditedBy)
+                @Html.EditorFor(model => model.Order)
+                @Html.ValidationMessageFor(model => model.Order)
             </div>
         </div>
+
+        <!--<div class="form-group">
+            Html.LabelFor(model => model.EditedBy, "EditedBy", new { class = "control-label col-md-2" })
+            <div class="col-md-10">
+                Html.DropDownList("EditedBy", String.Empty)
+                Html.ValidationMessageFor(model => model.EditedBy)
+            </div>
+        </div>-->
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -97,7 +97,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("View List", "Index") <!--consider Back to List-->
 </div>
 
 @section Scripts {
