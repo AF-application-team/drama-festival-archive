@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AF_Models.Play>
+﻿@model IEnumerable<AF.Common.DTO.FestivalDTO>
 
 @{
     ViewBag.Title = "Index";
@@ -12,31 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Editor.Login)
+            @Html.DisplayNameFor(model => model.Year)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Festival.FestivalId)
+            @Html.DisplayNameFor(model => model.BeginningDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Author)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Day)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Order)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlayedBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Motto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EditDate)
+            @Html.DisplayNameFor(model => model.EndDate)
         </th>
         <th></th>
     </tr>
@@ -45,36 +27,18 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Editor.Login)
+                @Html.DisplayFor(modelItem => item.Year)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Festival.FestivalId)
+                @Html.DisplayFor(modelItem => item.BeginningDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => item.EndDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Day)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Order)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayedBy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Motto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EditDate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.PlayId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.PlayId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.PlayId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.FestivalId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FestivalId }) <!--|
+                Html.ActionLink("Delete", "Delete", new { id = item.PlayId }) -->
             </td>
         </tr>
     }
