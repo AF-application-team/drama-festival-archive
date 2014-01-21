@@ -45,8 +45,8 @@
                 @Html.DisplayFor(modelItem => item.Motto)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", "Play", new { id = item.PlayId }, null) | <!--("Edit", "Edit", new { id = item.PlayId })> -->
-                @Html.ActionLink("Details", "Details", "Play", new { id = item.PlayId }, null)  <!--("Details", "Details", new { id = item.PlayId })  -->    
+                @Html.ActionLink("Edit", "Edit", new { id = item.PlayId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PlayId })
                 <!--Html.ActionLink("Delete", "Delete", new { id=item.FestivalId })-->
             </td>
         </tr>

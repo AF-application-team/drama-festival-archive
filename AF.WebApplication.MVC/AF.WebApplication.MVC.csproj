@@ -182,6 +182,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FestivalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PlayController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -246,6 +247,11 @@
     <Content Include="Views\Festival\Details.cshtml" />
     <Content Include="Views\Festival\Edit.cshtml" />
     <Content Include="Views\Festival\Index.cshtml" />
+    <Content Include="Views\Play\Create.cshtml" />
+    <Content Include="Views\Play\Delete.cshtml" />
+    <Content Include="Views\Play\Details.cshtml" />
+    <Content Include="Views\Play\Edit.cshtml" />
+    <Content Include="Views\Play\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

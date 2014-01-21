@@ -17,60 +17,28 @@ namespace AF.WebApplication.MVC.Controllers
         private AF_Context db = new AF_Context();
 
         // GET: /Festival/
-       /* public ActionResult Index()
+        public ActionResult Index()
         {
             var festivals = db.Festivals.Include(f => f.Editor);
             return View(festivals.ToList());
-        } */
-
-        public ActionResult Index(int? id) {
-            using (var context = new AF_Context())
-            {
-                var skip = 0;//pageAmount * (pageNr - 1);
-                int pageAmount = 100;
-                var query = (from p in context.Plays select p);
-
-                query = query.Where(p => p.FestivalId == id);
-                List<PlayDataDTO> tmp = new List<PlayDataDTO>();
-                foreach (Play pla in (query.OrderBy(p => p.FestivalId)
-                    .ThenBy(p => p.Day)
-                    .ThenBy(p => p.Order)
-                    .Skip(skip)
-                    .Take(pageAmount)))
-                {
-                    var newPlayDto = new PlayDataDTO()
-                    {
-                        PlayId = pla.PlayId,
-                        Title = pla.Title,
-                        Author = pla.Author,
-                        FestivalId = pla.FestivalId,
-                        Day = pla.Day,
-                        Order = pla.Order,
-                        PlayedBy = pla.PlayedBy,
-                        Motto = pla.Motto
-                    };
-                    tmp.Add(newPlayDto);
-                }
-                return View(tmp);
-            }
-            /*
-
-            //SearchPlays(PlaysSearchingCriteria criteria, int pageNr, int pageAmount)
-            var festivals = GetFestivalsPaged(int pageNr, int pageAmount);
-            //var festivals = db.Festivals.Include(f => f.Editor);
-            return View(festivals.ToList());*/
         }
 
         // GET: /Festival/Details/5
-       /* public ActionResult Details(int? id)
+        public ActionResult Details(int? id)
         {
             using (var context = new AF_Context())
             {
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
                 var skip = 0;//pageAmount * (pageNr - 1);
                 int pageAmount = 100;
-                var query = (from p in context.Plays select p);
-
-                query = query.Where(p => p.FestivalId == id);
+                var query = (from p in context.Plays select p).Where(p => p.FestivalId == id);
+                if (query == null)
+                {
+                    return HttpNotFound();
+                }
                 List<PlayDataDTO> tmp = new List<PlayDataDTO>();
                 foreach (Play pla in (query.OrderBy(p => p.FestivalId)
                     .ThenBy(p => p.Day)
@@ -93,43 +61,35 @@ namespace AF.WebApplication.MVC.Controllers
                 }
                 return View(tmp);
             }
-            /*if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Festival festival = db.Festivals.Find(id);
-            if (festival == null)
-            {
-                return HttpNotFound();
-            }
-            return View(festival);
-        }*/
-        /*
-        // GET: /Festival/Create
+        }
+
+        // GET: /Play/Create
         public ActionResult Create()
         {
             ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login");
+            ViewBag.FestivalId = new SelectList(db.Festivals, "FestivalId", "FestivalId");
             return View();
         }
 
-        // POST: /Festival/Create
+        // POST: /Play/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="FestivalId,Year,BeginningDate,EndDate,EditDate,EditedBy")] Festival festival)
+        public ActionResult Create([Bind(Include = "PlayId,Title,Author,FestivalId,Day,Order,PlayedBy,Motto,EditDate,EditedBy")] Play play)
         {
             if (ModelState.IsValid)
             {
-                db.Festivals.Add(festival);
+                db.Plays.Add(play);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", festival.EditedBy);
-            return View(festival);
+            ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", play.EditedBy);
+            ViewBag.FestivalId = new SelectList(db.Festivals, "FestivalId", "FestivalId", play.FestivalId);
+            return View(play);
         }
-        */
+
         // GET: /Festival/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -137,90 +97,56 @@ namespace AF.WebApplication.MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            using (var context = new AF_Context())
+            Play play = db.Plays.Find(id);
+            if (play == null)
             {
-                Play pla = context.Plays.Find(id);// First(p => p.PlayId == id);
-                var newPlayDto = new PlayDataDTO()
-                {
-                    PlayId = pla.PlayId,
-                    Title = pla.Title,
-                    Author = pla.Author,
-                    FestivalId = pla.FestivalId,
-                    Day = pla.Day,
-                    Order = pla.Order,
-                    PlayedBy = pla.PlayedBy,
-                    Motto = pla.Motto
-                };
-                if (newPlayDto == null)
-                {
-                    return HttpNotFound();
-                }
-                //ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", festival.EditedBy);
-                return View(newPlayDto);
-            }   
+                return HttpNotFound();
+            }
+            ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", play.EditedBy);
+            ViewBag.FestivalId = new SelectList(db.Festivals, "FestivalId", "FestivalId", play.FestivalId);
+            return View(play);
         }
 
-        // POST: /Festival/Edit/5
+        // POST: /Play/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="PlayId,Title,Author,FestivalId,Day,Order,PlayedBy,Motto")] PlayDataDTO updateData)
+        public ActionResult Edit([Bind(Include = "PlayId,Title,Author,FestivalId,Day,Order,PlayedBy,Motto,EditDate,EditedBy")] Play play)
         {
-            var updateDataFull = new Play()
+            if (ModelState.IsValid)
             {
-                PlayId = updateData.PlayId,
-                Title = updateData.Title,
-                Author = updateData.Author,
-                FestivalId = updateData.FestivalId,
-                Day = updateData.Day,
-                Order = updateData.Order,
-                PlayedBy = updateData.PlayedBy,
-                Motto = updateData.Motto,
-                EditedBy = 1,
-                //EditedBy = GetUserId(),    //???????
-                EditDate = DateTime.Now
-            };
-
-            using (var context = new AF_Context())
-            {
-                if (ModelState.IsValid)
-                {
-                    Play pla = context.Plays.Find(updateData.PlayId);// First(p => p.PlayId == updateData.PlayId);
-                    context.Entry(pla).CurrentValues.SetValues(updateDataFull); //check for substituding only edited
-                    //context.Entry(updateDataFull).State = EntityState.Modified;
-                    context.SaveChanges();
-                    int id = updateData.PlayId;
-                    return Redirect(Request.UrlReferrer.ToString()); //RedirectToAction("Index")
-                }
-                return View(updateData);
+                db.Entry(play).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            //ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", festival.EditedBy);
-            //return View(updateData);
+            ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login", play.EditedBy);
+            ViewBag.FestivalId = new SelectList(db.Festivals, "FestivalId", "FestivalId", play.FestivalId);
+            return View(play);
         }
-        /*
-        // GET: /Festival/Delete/5
+
+        // GET: /Play/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Festival festival = db.Festivals.Find(id);
-            if (festival == null)
+            Play play = db.Plays.Find(id);
+            if (play == null)
             {
                 return HttpNotFound();
             }
-            return View(festival);
+            return View(play);
         }
 
-        // POST: /Festival/Delete/5
+        // POST: /Play/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Festival festival = db.Festivals.Find(id);
-            db.Festivals.Remove(festival);
+            Play play = db.Plays.Find(id);
+            db.Plays.Remove(play);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -232,6 +158,6 @@ namespace AF.WebApplication.MVC.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }*/
+        }
     }
 }
