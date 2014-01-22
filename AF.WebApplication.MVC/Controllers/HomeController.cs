@@ -1,16 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using AF_DataAccessLayer;
 
 namespace AF.WebApplication.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View();
+            using (var context = new AF_Context())
+            {
+                var festivals = (from ft in context.Festivals select ft.FestivalId).ToArrayAsync();
+                return View(await festivals);
+            }
         }
 
         public ActionResult About()

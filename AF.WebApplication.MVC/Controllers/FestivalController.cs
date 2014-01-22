@@ -83,6 +83,7 @@ namespace AF.WebApplication.MVC.Controllers
         }
 
         // GET: /Festival/Create
+        [Authorize]
         public ActionResult Create()
         {
             //ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login");
@@ -121,6 +122,7 @@ namespace AF.WebApplication.MVC.Controllers
         }
 
         // GET: /Festival/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -151,6 +153,7 @@ namespace AF.WebApplication.MVC.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "FestivalId,Year,BeginningDate,EndDate")] FestivalDTO updateData)
         {

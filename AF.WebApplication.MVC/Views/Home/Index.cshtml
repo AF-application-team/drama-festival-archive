@@ -1,108 +1,25 @@
-﻿@{
+﻿@model IEnumerable<int>
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>Archiwum Festiwalowe</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    <img src="http://dummyimage.com/1600x250&text=Logo Archiwum Festiwalowego" class="img-responsive" alt="" /> 
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Festival I</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control.
-        </p>
-        <p>@Html.ActionLink("Learn more »", "Details/1", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival II</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/2", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival III</h2>
-        <p>ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/3", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival IV</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/4", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival V</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/5", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival VI</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/6", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival VII</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/7", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival VIII</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/8", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival IX</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/9", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival X</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/10", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival XI</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/11", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival XII</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/12", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival XIII</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/13", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival XIV</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/14", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival XV</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/15", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival XVI</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/16", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival XVII</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/17", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Festival XVIII</h2>
-        <p>XVIII Festiwal odbywał się w dniach 8-11 grudnia 2005 roku. Wystawiono wtedy 15 sztuk, które wzięły udział w konkursie, oraz 5 sztuk pozakonkursowych. W dwóch z nich brali także udział absolwenci naszej szkoły.</p>
-        <p>@Html.ActionLink("Learn more »", "Details/18", "Festival", null, new { @class = "btn btn-default" })</p>
-    </div>
+    @foreach (var ft in Model)
+    {
+        <div class="col-md-4">
+            <img src="http://dummyimage.com/300x175&text=Logo @ft Festiwalu" alt="" class="img-responsive" />            
+            <h4>Festival I</h4>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control.
+            </p>
+            <p>@Html.ActionLink("Learn more »", "Details", "Festival", new {id = ft}, new {@class = "btn btn-default"})</p>
+        </div>
+    }
 </div>
 
 <!--<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>-->

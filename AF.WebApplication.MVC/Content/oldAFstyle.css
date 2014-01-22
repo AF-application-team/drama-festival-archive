@@ -1,0 +1,270 @@
+html, body			{
+					background-color: #000000;
+					color: #000000;
+					font-family: Arial; margin: 0px;
+					}
+
+/* FORMATOWANIE DIVA G£ÓWNEGO */
+div#glowny			{
+					width: 900px;
+					height: 1300px;
+					margin: 20px auto 0px auto;
+					background-image: url('./grafiki/zielony_pasek.png');
+					background-repeat: repeat-y;
+					}
+					
+div#lewy				{
+					width: 160px;
+					float: left;
+					}
+					
+div#prawy			{
+					width: 740px;
+					float: right;
+					margin-bottom: 20px;
+					}
+
+/* FORMATOWANIE DIVA LEWEGO */
+img#logo 			{
+					width: 160px;
+					height: 160px;
+					background: url('./grafiki/logo_ciemno.png');
+					font-family: Courier New, Arial;
+					}
+
+img#logo:hover 		{
+					background: url('./grafiki/logo_jasno.png') no-repeat;
+					}
+					
+div#szafki			{
+					margin-top: 2px;
+					}
+
+div#szafki a 			{
+					text-decoration: none;
+					color: #000000;
+					font-family: Courier New, Arial;
+					}
+					
+img#szafka			{
+					/*border-style: none;*/
+					font-family: Courier New, Arial;
+					}
+					
+p#pierwszaSzuflada 	{	
+					display: block;
+					position: absolute;
+					top: 270px;
+					}
+					
+p#drugaSzuflada 		{	
+					display: block;
+					position: absolute ;
+					top: 354px;
+					}
+					
+p#trzeciaSzuflada 	{	
+					display: block;
+					position: absolute ;
+					top: 438px;
+					}
+
+p#czwartaSzuflada 	{
+					display: block;
+					position: absolute ;
+					top: 522px;
+					}
+
+p#piataSzuflada 		{	
+					display: block;
+					position: absolute ;
+					top: 606px;
+					}		
+			
+img#poprz			{ 
+					/*position: absolute;
+					display: block;*/
+					/*top: 185px;*/
+					}
+
+img#nast				{ 
+					/*position: absolute;
+					display: block;*/
+					/*top: 690px;*/
+					}
+
+div#aktualnosci		{
+					background-image: url(./grafiki/tlo_akt.png);
+					font-size: 11px;
+					line-height: 13px;
+					font-family: Arial;
+					}
+					
+div#aktualnosci p		{
+					font-family: Courier New, Arial;
+					padding: 11px 10px 20px 10px;
+					}
+					
+img#dol_akt			{
+					margin-bottom: -5px;
+					}					
+
+/* FORMATOWANIE DIVA PRAWEGO */
+div#banner			{
+					display: inline;
+					float: right;
+					font-family: Courier New, Arial;
+					}
+
+div#zakladki			{
+					float: right;
+					margin-right: 5px;
+					}
+					
+div#kartka			{ 
+					float: right;
+					width: 665px;
+					height: 934px;
+					padding: 0px 30px 51px 30px;
+					margin-right: 5px;					
+					margin-top: -5px;
+					background-image: url(./grafiki/pasek_kartka.png);
+					font-size: 15px;
+					line-height: 24px;
+					font-family: Courier New, Arial;
+					}	
+					
+div#kartka p			{							/* formatowanie akapitów na g³ównej kartce */
+					text-indent: 50px;
+					margin: 0px 0px 0px 0px;
+					font-family: Courier New, Arial;
+					}
+
+table#gazetki			{ 
+					border-collapse: collapse;
+					table-layout: fixed;
+					width: 80%;
+					margin: 0px auto 0px auto;
+					}
+					
+table#gazetki	 td		{
+					padding-left: 40px;
+					}
+					
+table#str1			{
+					display: block;
+					border: none;
+					}
+					
+table.strony			{
+					border-collapse: collapse;					
+					table-layout: auto; 
+					width: 665px;
+					position: absolute;
+					top: 350px;
+					display: none;
+					}
+			
+table.strony	td		{
+					width: 665px;				
+					}
+					
+td.kategoria			{
+					background-color: #ddd8bf;
+					padding-left: 20px;
+					}
+					
+table#klikadlo		{
+					border-collapse: separate;
+					border-width: 0px;
+					position: relative;
+					top: 840px;
+					margin: 0px auto 0px auto;
+					}
+
+td.klik				{
+					border-style: none;
+					width: 20px;
+					text-align: center;
+					background-color: #ddd8bf;
+					}
+
+td.klik:hover		{
+					cursor: pointer;
+					}					
+
+div#przedstawienie	{
+					padding-left: 10px;
+					background-color: #ddd8bf;
+					border-style: solid;
+					border-color: #b4af9c;
+					}
+
+div.listazadan		{
+					padding-left: 30px;
+					padding-right: 30px;
+					text-indent: -20px;
+					}
+
+div#stopka			{
+					float: right;
+					width: 735px;
+					background-image: url(./grafiki/stopka_pasek.png);
+					font-size: 12px;
+					text-align: center;
+					font-family: Courier New, Arial;
+					}
+					
+img.stopka			{
+					margin-bottom: -5px
+					}
+					
+/* POZOSTA£E ELEMENTY */
+p					{
+					margin: 0px;
+					}					
+					
+p.etykietki			{
+					display: block;
+					width: 160px;
+					z-index: 1;
+					font-family: Courier, Courier New, Arial;
+					font-size: 12px;
+					font-weight: 700;
+					text-align: center;
+					}					
+					
+img					{
+					border-style: none;
+					}
+
+a					{
+					color: #1d6f6d;
+					text-decoration: none;
+					}
+
+a:hover				{
+					color: #b15e5e;
+					text-decoration: underline;
+					}
+					
+h1					{
+					font-size: 15px;
+					font-weight: 700;
+					line-height: 15px;
+					text-align: center;
+					padding: 24px 0px 0px 0px;
+					margin-bottom: 0px;
+					font-family: Courier New, Arial;
+					}					
+					
+					/*
+					wzór 
+					position: relative;
+					width: px;
+					height: px; 
+					left: px;
+					top: px;
+					z-index: 0;							
+					*/
+					

@@ -38,6 +38,7 @@ namespace AF.WebApplication.MVC.Controllers
         }
 
         // GET: /People/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.EditedBy = new SelectList(db.Users, "UserId", "Login");
@@ -63,6 +64,7 @@ namespace AF.WebApplication.MVC.Controllers
         }
 
         // GET: /People/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -82,6 +84,7 @@ namespace AF.WebApplication.MVC.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="PersonId,FirstName,LastName,Sex,Year,EditDate,EditedBy,Profile")] Person person)
         {
@@ -96,6 +99,7 @@ namespace AF.WebApplication.MVC.Controllers
         }
 
         // GET: /People/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -112,6 +116,7 @@ namespace AF.WebApplication.MVC.Controllers
 
         // POST: /People/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

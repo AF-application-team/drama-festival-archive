@@ -84,6 +84,7 @@ namespace AF.WebApplication.MVC.Controllers
         }
         
         // GET: /Play/Create
+        [Authorize]
         public ActionResult Create()
         {
             var tmp = new PlayDataDTO(){FestivalId=18}; //to change
@@ -129,6 +130,7 @@ namespace AF.WebApplication.MVC.Controllers
             }
         
         // GET: /Play/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -162,6 +164,7 @@ namespace AF.WebApplication.MVC.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "PlayId,Title,Author,FestivalId,Day,Order,PlayedBy,Motto")] PlayDataDTO updateData)
         {
