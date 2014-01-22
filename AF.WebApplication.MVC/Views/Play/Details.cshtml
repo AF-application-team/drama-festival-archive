@@ -12,15 +12,15 @@
 <div id="przedstawienie">
     <br><br>
     <div style="text-align: center">-- dzień @Model.Day., sztuka @Model.Order. --</div><div style="font-family: Times New Roman, Courier New; text-decoration: underline; font-size: 26px; text-align: center">@Model.Title</div><br><div style="font-family: Times New Roman, Courier New; font-style: italic; font-size: 13px; text-align: center"></div><br>
-    <div class="listazadan">			- wykonanie: @Model.PlayedBy<br><br></div>
-
     @if (!String.IsNullOrEmpty(Model.Motto))
     {
         <div style="font-size: 11px; text-align: center">.:: motto ::.</div>
         <div style="font-family: Times New Roman, Courier New; font-style: italic; font-size: 13px; text-align: center">@Model.Motto</div>
-        <br />
+        <br>
+        <br>
     }
-
+        
+    <div class="listazadan">			- wykonanie: @Model.PlayedBy</div><br>
     <div class="listazadan">
         - reżyseria: @foreach (PersonFunctionDTO person in Model.Helpers.Where(p => p.Role == "reżyseria"))
         {
@@ -67,6 +67,10 @@
     <br><br>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PlayId }) |
+    @if (Request.IsAuthenticated)
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PlayId });
+        @:|
+    }
     @Html.ActionLink("Back to List", "Index")
 </p>

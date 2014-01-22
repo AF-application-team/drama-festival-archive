@@ -59,9 +59,12 @@
             @Html.DisplayFor(modelItem => item.Profile)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PersonId }) |
+            @if (Request.IsAuthenticated)
+            {
+                @Html.ActionLink("Edit", "Edit", new {id = item.PersonId}); @:|
+            }
             @Html.ActionLink("Details", "Details", new { id=item.PersonId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PersonId })
+            <!--Html.ActionLink("Delete", "Delete", new { id=item.PersonId })-->
         </td>
     </tr>
 }
